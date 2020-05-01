@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="SendAct" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SendAct.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="Image1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Image1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close-icon.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="droid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\droid.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="bo_appointment" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bo_appointment.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="hide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reload-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reload-icon.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="settings-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings-icon.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="loader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sort-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sort-icon.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="electronics_phoneandroid1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\electronics_phoneandroid1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="GUX" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GUX.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="blockedLogs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blockedLogs.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="app" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\app.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="actionLogs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\actionLogs.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="close_all" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close_all.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stop-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stop-icon.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="drive-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\drive-icon.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="hidyy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hidyy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="play" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\play.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vectorpaint" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vectorpaint.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="appium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\appium.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ForwardAct" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ForwardAct.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="start-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\start-icon.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="actionsIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\actionsIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="setupIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setupIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gaugestylelinearhorizontal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gaugestylelinearhorizontal.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="neworder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\neworder.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="actions_refresh1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\actions_refresh1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="ScrollAct" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ScrollAct.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DbCheck" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DbCheck.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="install-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\install-icon.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="OpenAct" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OpenAct.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="ImportantAct" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImportantAct.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="stop_all" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stop_all.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="disabledLogs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\disabledLogs.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="disabled-account" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\disabled-account.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="FlagAct" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FlagAct.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="warningLogs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warningLogs.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="PinAct" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PinAct.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="actions_checkcircled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\actions_checkcircled.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="circlo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\circlo.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="actions_clear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\actions_clear.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="NotSpamAct" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NotSpamAct.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="blocked-account" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blocked-account.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="errorLogs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\errorLogs.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="install" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\install.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="windows" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\windows.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="gaugestylelinearhorizontal1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gaugestylelinearhorizontal1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="bringtofrontoftext" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bringtofrontoftext.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="android" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\android1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClickAct" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClickAct.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="ReplyAct" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReplyAct.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="run-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\run-icon.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="start" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\start.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="open" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\open.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="StarAct" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StarAct.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="convertto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\convertto.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="server-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\server-icon.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="SnoozAct" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SnoozAct.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="threads-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\threads-icon.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="DeleteAct" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeleteAct.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="electronics_phoneandroid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\electronics_phoneandroid.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="closeyy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\closeyy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="datavalidation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\datavalidation.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="sort" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sort.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="display-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\display-icon.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="setup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gaugestylelinearvertical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gaugestylelinearvertical.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="Warmup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Warmup.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pause.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="actions_refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\actions_refresh.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="gettingstarted" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gettingstarted.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="disconnect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\disconnect.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reload" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="business_diagram" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\business_diagram.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="process-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\process-icon.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="errors-logs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\errors-logs.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="itemtypestandard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\itemtypestandard.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="actions_deletecircled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\actions_deletecircled.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="androidsvg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\androidsvg.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="android_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\android-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="smartphone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smartphone.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="undraw_online_transactions_02ka" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\undraw_online_transactions_02ka.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="actions-log" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\actions-log.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="undraw_file_sync_ot38" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\undraw_file_sync_ot38.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="scenario-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\scenario-icon.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="between" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\between.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="ArchiveAct" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ArchiveAct.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="other-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\other-icon.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+</root>
