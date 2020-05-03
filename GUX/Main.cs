@@ -425,6 +425,7 @@ namespace GUX
 
             outputDockPanel.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Visible;
             accordionControl1.SelectElement(accordionProcess);
+            ScenarioTablePanel.AutoScroll = true;
 
             await SetFileWatcher(true);
             await LoadDbConfig();
@@ -545,6 +546,7 @@ namespace GUX
                 try
                 {
                     _Devices = _psqlHelper.DirectQuery("select d.* from devices d where d.directory in ('" + location.Replace(",", "','") + "') order by d.id;");
+                    if (_Devices == null) return;
                     var hasRows = _Devices.Rows.Count > 0;
                     var dirs = location.Split(',');
                     iStackPanel.BeginInvoke((MethodInvoker)delegate
@@ -2453,8 +2455,27 @@ namespace GUX
                     {
                         var name = item.First()["name"].ToString();
                         var actions = item.First()["actions"].ToString().Split(',');
+                        var keyword = item.First()["keyword"].ToString();
+                        var date = item.First()["date_filter"].ToString();
+
+                        var stt = new SuperToolTip();
+                        stt.Items.AddTitle(name);
+                        stt.Items.Add($"Keyword: {keyword}");
+                        stt.Items.Add($"Date Filter: {date}");
+
+                        var CaptionControl = new iTools();
+                        CaptionControl.Title = name;
+                        CaptionControl.DataID = (int)item.First()["id"];
+                        CaptionControl.ButtonClick += CaptionControl_ButtonClick;
+                        CaptionControl.ToolTip = stt;
+
                         var galGroup = new DevExpress.XtraBars.Ribbon.GalleryItemGroup() { Caption = name };
                         galGroup.CaptionAlignment = DevExpress.XtraBars.Ribbon.GalleryItemGroupCaptionAlignment.Center;
+                        galGroup.Tag = (int)item.First()["id"];
+                        galGroup.CaptionControl = CaptionControl;
+                        galGroup.CaptionAlignment = DevExpress.XtraBars.Ribbon.GalleryItemGroupCaptionAlignment.Stretch;
+
+                        
 
                         foreach (var act in actions)
                         {
@@ -2479,6 +2500,30 @@ namespace GUX
             });
         }
 
+        private async void CaptionControl_ButtonClick(object sender, ButtonPressedEventArgs e)
+        {
+            var id = (sender as iTools).DataID;
+            var dialog = XtraMessageBox.Show("Are you sure?", "Delete scenario", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+                await Task.Factory.StartNew(() =>
+                {
+                    try
+                    {
+                        var dt = _psqlHelper.DirectNonQuery($"delete from scenario where id = {id};");
+                        iAlert.Show(this, dt == 1 ? "Delete scenario successed!" : "Delete scenario failed!", "Scenario");
+                        _psqlHelper.Dispose();
+                    }
+                    catch (NpgsqlException ex)
+                    {
+                        XtraMessageBox.Show(ex.Message);
+                    }
+                }).ContinueWith(async (ads) =>
+                {
+                    if (ads.IsCompleted)
+                        await ReloadScenarios();
+                });
+        }
+
         private async void scenarioReloadButton_Click(object sender, EventArgs e)
         {
             await ReloadScenarios();
@@ -2490,14 +2535,17 @@ namespace GUX
             {
                 var name = scenarioName.Text.Trim();
                 var actions = string.Join(",", galleryControl1.Gallery.GetCheckedItems().Select(cc => cc.Caption));
+                var keyword = ScenarioKeywordFilter.Text.Trim();
+                var type = (string)ScenarioDateFilterType.EditValue;
+                var val = ScenarioDateFilterValue.Value;
+                var kind = ScenarioDateFilterKind.SelectedText[0].ToString().ToLower();
+                var date = ScenarioDateFilterType.EditValue != null ? type + val + kind : "";
                 await Task.Factory.StartNew(() =>
                 {
                     try
                     {
-                        var dt = _psqlHelper.DirectNonQuery($"insert into scenario values (DEFAULT,'{name}','{actions}');");
-
-                        XtraMessageBox.Show(dt == 1 ? "Create Scenario Successed!" : "Create Scenario Failed!", "Scenario");
-
+                        var dt = _psqlHelper.DirectNonQuery($"insert into scenario values (DEFAULT,'{name}','{actions}','{keyword}','{date}');");
+                        iAlert.Show(this, dt == 1 ? "Create scenario successed!" : "Create scenario failed!", "Scenario");
                         _psqlHelper.Dispose();
                     }
                     catch (NpgsqlException ex)

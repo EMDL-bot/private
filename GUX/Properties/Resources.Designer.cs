@@ -413,6 +413,16 @@ namespace GUX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage editquery {
+            get {
+                object obj = ResourceManager.GetObject("editquery", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
         internal static DevExpress.Utils.Svg.SvgImage electronics_phoneandroid {
             get {
                 object obj = ResourceManager.GetObject("electronics_phoneandroid", resourceCulture);
@@ -716,6 +726,26 @@ namespace GUX.Properties {
         internal static DevExpress.Utils.Svg.SvgImage reload_icon {
             get {
                 object obj = ResourceManager.GetObject("reload-icon", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage removesheetrows {
+            get {
+                object obj = ResourceManager.GetObject("removesheetrows", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage renamequery {
+            get {
+                object obj = ResourceManager.GetObject("renamequery", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
             }
         }

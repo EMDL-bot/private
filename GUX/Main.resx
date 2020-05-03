@@ -129,17 +129,20 @@
   <data name="splitContainerControl3.Panel1.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="dateEdit1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+  <data name="ScenarioTablePanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
-  <data name="dateEdit1.EditValue" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="ScenarioKeywordFilter.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="dateEdit1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>227, 329</value>
+  <data name="ScenarioKeywordFilter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 308</value>
+  </data>
+  <data name="ScenarioKeywordFilter.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
   </data>
   <metadata name="iBarManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>545, 56</value>
+    <value>162, 95</value>
   </metadata>
   <data name="ramLabel.Caption" xml:space="preserve">
     <value>0%</value>
@@ -287,7 +290,7 @@
     <value>True</value>
   </data>
   <metadata name="behaviorManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 95</value>
+    <value>710, 95</value>
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>806, 484</value>
@@ -307,131 +310,1290 @@
   <data name="MainTabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="scenarioReloadButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+  <data name="settingSplitContainer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="scenarioReloadButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>669, 5</value>
+  <data name="settingSplitContainer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
   </data>
-  <data name="scenarioReloadButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 22</value>
-  </data>
-  <data name="scenarioReloadButton.TabIndex" type="System.Int32, mscorlib">
-    <value>116</value>
-  </data>
-  <data name="scenarioReloadButton.Text" xml:space="preserve">
-    <value>Reload</value>
-  </data>
-  <data name="&gt;&gt;scenarioReloadButton.Name" xml:space="preserve">
-    <value>scenarioReloadButton</value>
-  </data>
-  <data name="&gt;&gt;scenarioReloadButton.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;scenarioReloadButton.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;scenarioReloadButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="scenarioSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 5</value>
-  </data>
-  <data name="scenarioSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 22</value>
-  </data>
-  <data name="scenarioSave.TabIndex" type="System.Int32, mscorlib">
-    <value>115</value>
-  </data>
-  <data name="scenarioSave.Text" xml:space="preserve">
-    <value>Save</value>
-  </data>
-  <data name="&gt;&gt;scenarioSave.Name" xml:space="preserve">
-    <value>scenarioSave</value>
-  </data>
-  <data name="&gt;&gt;scenarioSave.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;scenarioSave.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;scenarioSave.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="scenarioReset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 5</value>
-  </data>
-  <data name="scenarioReset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 22</value>
-  </data>
-  <data name="scenarioReset.TabIndex" type="System.Int32, mscorlib">
-    <value>116</value>
-  </data>
-  <data name="scenarioReset.Text" xml:space="preserve">
-    <value>Reset</value>
-  </data>
-  <data name="&gt;&gt;scenarioReset.Name" xml:space="preserve">
-    <value>scenarioReset</value>
-  </data>
-  <data name="&gt;&gt;scenarioReset.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;scenarioReset.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;scenarioReset.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 383</value>
-  </data>
-  <data name="panel3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="settingSplitContainer.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 33</value>
+  <data name="settingSplitContainer.Panel1.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
-    <value>118</value>
+  <data name="tablePanel1.Appearance.GradientMode" type="System.Drawing.Drawing2D.LinearGradientMode, System.Drawing">
+    <value>BackwardDiagonal</value>
   </data>
-  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
-    <value>panel3</value>
+  <data name="labelControl4.Appearance.BackColor2" type="System.Drawing.Color, System.Drawing">
+    <value>45, 45, 48</value>
   </data>
-  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="labelControl4.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11pt</value>
   </data>
-  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
-    <value>ActionsXtraTabPage</value>
+  <data name="labelControl4.AppearanceHovered.GradientMode" type="System.Drawing.Drawing2D.LinearGradientMode, System.Drawing">
+    <value>ForwardDiagonal</value>
   </data>
-  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
+  <assembly alias="DevExpress.XtraEditors.v19.2" name="DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="labelControl4.AutoSizeMode" type="DevExpress.XtraEditors.LabelAutoSizeMode, DevExpress.XtraEditors.v19.2">
+    <value>None</value>
+  </data>
+  <data name="labelControl4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 191</value>
+  </data>
+  <data name="labelControl4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="labelControl4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 26</value>
+  </data>
+  <data name="labelControl4.TabIndex" type="System.Int32, mscorlib">
+    <value>117</value>
+  </data>
+  <data name="labelControl4.Text" xml:space="preserve">
+    <value>Drive / VMs</value>
+  </data>
+  <data name="&gt;&gt;labelControl4.Name" xml:space="preserve">
+    <value>labelControl4</value>
+  </data>
+  <data name="&gt;&gt;labelControl4.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;labelControl4.Parent" xml:space="preserve">
+    <value>tablePanel1</value>
+  </data>
+  <data name="&gt;&gt;labelControl4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="labelControl3.Appearance.BackColor2" type="System.Drawing.Color, System.Drawing">
+    <value>45, 45, 48</value>
+  </data>
+  <data name="labelControl3.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11pt</value>
+  </data>
+  <data name="labelControl3.AppearanceHovered.GradientMode" type="System.Drawing.Drawing2D.LinearGradientMode, System.Drawing">
+    <value>ForwardDiagonal</value>
+  </data>
+  <data name="labelControl3.AutoSizeMode" type="DevExpress.XtraEditors.LabelAutoSizeMode, DevExpress.XtraEditors.v19.2">
+    <value>None</value>
+  </data>
+  <data name="labelControl3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 5</value>
+  </data>
+  <data name="labelControl3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="labelControl3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>362, 26</value>
+  </data>
+  <data name="labelControl3.TabIndex" type="System.Int32, mscorlib">
+    <value>116</value>
+  </data>
+  <data name="labelControl3.Text" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="&gt;&gt;labelControl3.Name" xml:space="preserve">
+    <value>labelControl3</value>
+  </data>
+  <data name="&gt;&gt;labelControl3.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;labelControl3.Parent" xml:space="preserve">
+    <value>tablePanel1</value>
+  </data>
+  <data name="&gt;&gt;labelControl3.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="ActionsXtraTabPage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="failedMAxRetriesNum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="failedMAxRetriesNum.EditValue" type="System.Decimal, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="failedMAxRetriesNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 343</value>
+  </data>
+  <data name="failedMAxRetriesNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11pt</value>
+  </data>
+  <data name="failedMAxRetriesNum.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
+    <value>Combo</value>
+  </data>
+  <data name="failedMAxRetriesNum.Properties.Mask.EditMask" xml:space="preserve">
+    <value>N00</value>
+  </data>
+  <data name="failedMAxRetriesNum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 24</value>
+  </data>
+  <data name="failedMAxRetriesNum.TabIndex" type="System.Int32, mscorlib">
+    <value>102</value>
+  </data>
+  <data name="&gt;&gt;failedMAxRetriesNum.Name" xml:space="preserve">
+    <value>failedMAxRetriesNum</value>
+  </data>
+  <data name="&gt;&gt;failedMAxRetriesNum.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;failedMAxRetriesNum.Parent" xml:space="preserve">
+    <value>tablePanel1</value>
+  </data>
+  <data name="&gt;&gt;failedMAxRetriesNum.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pollingNum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pollingNum.EditValue" type="System.Decimal, mscorlib">
+    <value>150</value>
+  </data>
+  <data name="pollingNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 155</value>
+  </data>
+  <data name="pollingNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11pt</value>
+  </data>
+  <data name="pollingNum.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
+    <value>Combo</value>
+  </data>
+  <data name="pollingNum.Properties.Mask.EditMask" xml:space="preserve">
+    <value>N00</value>
+  </data>
+  <data name="pollingNum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 24</value>
+  </data>
+  <data name="pollingNum.TabIndex" type="System.Int32, mscorlib">
+    <value>89</value>
+  </data>
+  <data name="&gt;&gt;pollingNum.Name" xml:space="preserve">
+    <value>pollingNum</value>
+  </data>
+  <data name="&gt;&gt;pollingNum.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;pollingNum.Parent" xml:space="preserve">
+    <value>tablePanel1</value>
+  </data>
+  <data name="&gt;&gt;pollingNum.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="failedAutoRetrySwitch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="failedAutoRetrySwitch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 306</value>
+  </data>
+  <data name="failedAutoRetrySwitch.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>30, 22</value>
+  </data>
+  <data name="failedAutoRetrySwitch.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>30, 22</value>
+  </data>
+  <data name="failedAutoRetrySwitch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 22</value>
+  </data>
+  <data name="failedAutoRetrySwitch.TabIndex" type="System.Int32, mscorlib">
+    <value>98</value>
+  </data>
+  <data name="failedAutoRetrySwitch.Text" xml:space="preserve">
+    <value>xuiSwitch3</value>
+  </data>
+  <data name="&gt;&gt;failedAutoRetrySwitch.Name" xml:space="preserve">
+    <value>failedAutoRetrySwitch</value>
+  </data>
+  <data name="&gt;&gt;failedAutoRetrySwitch.Type" xml:space="preserve">
+    <value>XanderUI.XUISwitch, XanderUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;failedAutoRetrySwitch.Parent" xml:space="preserve">
+    <value>tablePanel1</value>
+  </data>
+  <data name="&gt;&gt;failedAutoRetrySwitch.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="driverLetterText.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="driverLetterText.EditValue" xml:space="preserve">
+    <value>D</value>
+  </data>
+  <data name="driverLetterText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 229</value>
+  </data>
+  <data name="driverLetterText.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11pt</value>
+  </data>
+  <data name="driverLetterText.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
+    <value>Combo</value>
+  </data>
+  <data name="driverLetterText.Properties.Items" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="driverLetterText.Properties.Items1" xml:space="preserve">
+    <value>B</value>
+  </data>
+  <data name="driverLetterText.Properties.Items2" xml:space="preserve">
+    <value>C</value>
+  </data>
+  <data name="driverLetterText.Properties.Items3" xml:space="preserve">
+    <value>D</value>
+  </data>
+  <data name="driverLetterText.Properties.Items4" xml:space="preserve">
+    <value>E</value>
+  </data>
+  <data name="driverLetterText.Properties.Items5" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="driverLetterText.Properties.Items6" xml:space="preserve">
+    <value>G</value>
+  </data>
+  <data name="driverLetterText.Properties.Items7" xml:space="preserve">
+    <value>H</value>
+  </data>
+  <data name="driverLetterText.Properties.Items8" xml:space="preserve">
+    <value>I</value>
+  </data>
+  <data name="driverLetterText.Properties.Items9" xml:space="preserve">
+    <value>J</value>
+  </data>
+  <data name="driverLetterText.Properties.Items10" xml:space="preserve">
+    <value>K</value>
+  </data>
+  <data name="driverLetterText.Properties.Items11" xml:space="preserve">
+    <value>L</value>
+  </data>
+  <data name="driverLetterText.Properties.Items12" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="driverLetterText.Properties.Items13" xml:space="preserve">
+    <value>N</value>
+  </data>
+  <data name="driverLetterText.Properties.Items14" xml:space="preserve">
+    <value>O</value>
+  </data>
+  <data name="driverLetterText.Properties.Items15" xml:space="preserve">
+    <value>P</value>
+  </data>
+  <data name="driverLetterText.Properties.Items16" xml:space="preserve">
+    <value>Q</value>
+  </data>
+  <data name="driverLetterText.Properties.Items17" xml:space="preserve">
+    <value>R</value>
+  </data>
+  <data name="driverLetterText.Properties.Items18" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="driverLetterText.Properties.Items19" xml:space="preserve">
+    <value>T</value>
+  </data>
+  <data name="driverLetterText.Properties.Items20" xml:space="preserve">
+    <value>U</value>
+  </data>
+  <data name="driverLetterText.Properties.Items21" xml:space="preserve">
+    <value>V</value>
+  </data>
+  <data name="driverLetterText.Properties.Items22" xml:space="preserve">
+    <value>W</value>
+  </data>
+  <data name="driverLetterText.Properties.Items23" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="driverLetterText.Properties.Items24" xml:space="preserve">
+    <value>Y</value>
+  </data>
+  <data name="driverLetterText.Properties.Items25" xml:space="preserve">
+    <value>Z</value>
+  </data>
+  <data name="driverLetterText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 24</value>
+  </data>
+  <data name="driverLetterText.TabIndex" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="&gt;&gt;driverLetterText.Name" xml:space="preserve">
+    <value>driverLetterText</value>
+  </data>
+  <data name="&gt;&gt;driverLetterText.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.ComboBoxEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;driverLetterText.Parent" xml:space="preserve">
+    <value>tablePanel1</value>
+  </data>
+  <data name="&gt;&gt;driverLetterText.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="vmsDirectoryText.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="vmsDirectoryText.EditValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="vmsDirectoryText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 266</value>
+  </data>
+  <data name="vmsDirectoryText.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11pt</value>
+  </data>
+  <data name="vmsDirectoryText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 24</value>
+  </data>
+  <data name="vmsDirectoryText.TabIndex" type="System.Int32, mscorlib">
+    <value>101</value>
+  </data>
+  <data name="&gt;&gt;vmsDirectoryText.Name" xml:space="preserve">
+    <value>vmsDirectoryText</value>
+  </data>
+  <data name="&gt;&gt;vmsDirectoryText.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;vmsDirectoryText.Parent" xml:space="preserve">
+    <value>tablePanel1</value>
+  </data>
+  <data name="&gt;&gt;vmsDirectoryText.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label18.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="label18.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label18.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 348</value>
+  </data>
+  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 14</value>
+  </data>
+  <data name="label18.TabIndex" type="System.Int32, mscorlib">
+    <value>93</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>Failed Max Retries :</value>
+  </data>
+  <data name="&gt;&gt;label18.Name" xml:space="preserve">
+    <value>label18</value>
+  </data>
+  <data name="&gt;&gt;label18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label18.Parent" xml:space="preserve">
+    <value>tablePanel1</value>
+  </data>
+  <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 48</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 14</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Server Port :</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>tablePanel1</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="label19.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="label19.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label19.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 234</value>
+  </data>
+  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 14</value>
+  </data>
+  <data name="label19.TabIndex" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Drive Letter :</value>
+  </data>
+  <data name="&gt;&gt;label19.Name" xml:space="preserve">
+    <value>label19</value>
+  </data>
+  <data name="&gt;&gt;label19.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label19.Parent" xml:space="preserve">
+    <value>tablePanel1</value>
+  </data>
+  <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="label20.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="label20.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label20.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 310</value>
+  </data>
+  <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 14</value>
+  </data>
+  <data name="label20.TabIndex" type="System.Int32, mscorlib">
+    <value>92</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>Failed Auto Retry :</value>
+  </data>
+  <data name="&gt;&gt;label20.Name" xml:space="preserve">
+    <value>label20</value>
+  </data>
+  <data name="&gt;&gt;label20.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
+    <value>tablePanel1</value>
+  </data>
+  <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="label17.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="label17.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label17.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 160</value>
+  </data>
+  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 14</value>
+  </data>
+  <data name="label17.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Wait Polling Interval (ms) :</value>
+  </data>
+  <data name="&gt;&gt;label17.Name" xml:space="preserve">
+    <value>label17</value>
+  </data>
+  <data name="&gt;&gt;label17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
+    <value>tablePanel1</value>
+  </data>
+  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="label16.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="label16.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 123</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 14</value>
+  </data>
+  <data name="label16.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Wait Timout (s) :</value>
+  </data>
+  <data name="&gt;&gt;label16.Name" xml:space="preserve">
+    <value>label16</value>
+  </data>
+  <data name="&gt;&gt;label16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
+    <value>tablePanel1</value>
+  </data>
+  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="label21.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="label21.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label21.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label21.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 271</value>
+  </data>
+  <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 14</value>
+  </data>
+  <data name="label21.TabIndex" type="System.Int32, mscorlib">
+    <value>91</value>
+  </data>
+  <data name="label21.Text" xml:space="preserve">
+    <value>VMs Directory :</value>
+  </data>
+  <data name="&gt;&gt;label21.Name" xml:space="preserve">
+    <value>label21</value>
+  </data>
+  <data name="&gt;&gt;label21.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label21.Parent" xml:space="preserve">
+    <value>tablePanel1</value>
+  </data>
+  <data name="&gt;&gt;label21.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="waitNum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="waitNum.EditValue" type="System.Decimal, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="waitNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 118</value>
+  </data>
+  <data name="waitNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11pt</value>
+  </data>
+  <data name="waitNum.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
+    <value>Combo</value>
+  </data>
+  <data name="waitNum.Properties.Mask.EditMask" xml:space="preserve">
+    <value>N00</value>
+  </data>
+  <data name="waitNum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 24</value>
+  </data>
+  <data name="waitNum.TabIndex" type="System.Int32, mscorlib">
+    <value>88</value>
+  </data>
+  <data name="&gt;&gt;waitNum.Name" xml:space="preserve">
+    <value>waitNum</value>
+  </data>
+  <data name="&gt;&gt;waitNum.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;waitNum.Parent" xml:space="preserve">
+    <value>tablePanel1</value>
+  </data>
+  <data name="&gt;&gt;waitNum.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="testDriverToNum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="testDriverToNum.EditValue" type="System.Decimal, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="testDriverToNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 81</value>
+  </data>
+  <data name="testDriverToNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11pt</value>
+  </data>
+  <data name="testDriverToNum.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
+    <value>Combo</value>
+  </data>
+  <data name="testDriverToNum.Properties.Mask.EditMask" xml:space="preserve">
+    <value>N00</value>
+  </data>
+  <data name="testDriverToNum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 24</value>
+  </data>
+  <data name="testDriverToNum.TabIndex" type="System.Int32, mscorlib">
+    <value>87</value>
+  </data>
+  <data name="&gt;&gt;testDriverToNum.Name" xml:space="preserve">
+    <value>testDriverToNum</value>
+  </data>
+  <data name="&gt;&gt;testDriverToNum.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;testDriverToNum.Parent" xml:space="preserve">
+    <value>tablePanel1</value>
+  </data>
+  <data name="&gt;&gt;testDriverToNum.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="portNum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="portNum.EditValue" type="System.Decimal, mscorlib">
+    <value>10102</value>
+  </data>
+  <data name="portNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 43</value>
+  </data>
+  <data name="portNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11pt</value>
+  </data>
+  <data name="portNum.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
+    <value>Combo</value>
+  </data>
+  <data name="portNum.Properties.Mask.EditMask" xml:space="preserve">
+    <value>N00</value>
+  </data>
+  <data name="portNum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 24</value>
+  </data>
+  <data name="portNum.TabIndex" type="System.Int32, mscorlib">
+    <value>86</value>
+  </data>
+  <data name="&gt;&gt;portNum.Name" xml:space="preserve">
+    <value>portNum</value>
+  </data>
+  <data name="&gt;&gt;portNum.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;portNum.Parent" xml:space="preserve">
+    <value>tablePanel1</value>
+  </data>
+  <data name="&gt;&gt;portNum.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="label3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 86</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 14</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Test Driver Timout (s) :</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>tablePanel1</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="tablePanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="tablePanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tablePanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>368, 374</value>
+  </data>
+  <data name="tablePanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>114</value>
+  </data>
+  <data name="&gt;&gt;tablePanel1.Name" xml:space="preserve">
+    <value>tablePanel1</value>
+  </data>
+  <data name="&gt;&gt;tablePanel1.Type" xml:space="preserve">
+    <value>DevExpress.Utils.Layout.TablePanel, DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;tablePanel1.Parent" xml:space="preserve">
+    <value>settingSplitContainer.Panel1</value>
+  </data>
+  <data name="&gt;&gt;tablePanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="settingSplitContainer.Panel1.Text" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="settingSplitContainer.Panel2.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tablePanel2.Appearance.GradientMode" type="System.Drawing.Drawing2D.LinearGradientMode, System.Drawing">
+    <value>ForwardDiagonal</value>
+  </data>
+  <data name="labelControl2.Appearance.BackColor2" type="System.Drawing.Color, System.Drawing">
+    <value>45, 45, 48</value>
+  </data>
+  <data name="labelControl2.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11pt</value>
+  </data>
+  <data name="labelControl2.AppearanceHovered.GradientMode" type="System.Drawing.Drawing2D.LinearGradientMode, System.Drawing">
+    <value>ForwardDiagonal</value>
+  </data>
+  <data name="labelControl2.AutoSizeMode" type="DevExpress.XtraEditors.LabelAutoSizeMode, DevExpress.XtraEditors.v19.2">
+    <value>None</value>
+  </data>
+  <data name="labelControl2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 120</value>
+  </data>
+  <data name="labelControl2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="labelControl2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>368, 26</value>
+  </data>
+  <data name="labelControl2.TabIndex" type="System.Int32, mscorlib">
+    <value>116</value>
+  </data>
+  <data name="labelControl2.Text" xml:space="preserve">
+    <value>Threading</value>
+  </data>
+  <data name="&gt;&gt;labelControl2.Name" xml:space="preserve">
+    <value>labelControl2</value>
+  </data>
+  <data name="&gt;&gt;labelControl2.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;labelControl2.Parent" xml:space="preserve">
+    <value>tablePanel2</value>
+  </data>
+  <data name="&gt;&gt;labelControl2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="labelControl1.Appearance.BackColor2" type="System.Drawing.Color, System.Drawing">
+    <value>45, 45, 48</value>
+  </data>
+  <data name="labelControl1.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11pt</value>
+  </data>
+  <data name="labelControl1.AppearanceHovered.GradientMode" type="System.Drawing.Drawing2D.LinearGradientMode, System.Drawing">
+    <value>ForwardDiagonal</value>
+  </data>
+  <data name="labelControl1.AutoSizeMode" type="DevExpress.XtraEditors.LabelAutoSizeMode, DevExpress.XtraEditors.v19.2">
+    <value>None</value>
+  </data>
+  <data name="labelControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 6</value>
+  </data>
+  <data name="labelControl1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="labelControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>368, 26</value>
+  </data>
+  <data name="labelControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>105</value>
+  </data>
+  <data name="labelControl1.Text" xml:space="preserve">
+    <value>Interface</value>
+  </data>
+  <data name="&gt;&gt;labelControl1.Name" xml:space="preserve">
+    <value>labelControl1</value>
+  </data>
+  <data name="&gt;&gt;labelControl1.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;labelControl1.Parent" xml:space="preserve">
+    <value>tablePanel2</value>
+  </data>
+  <data name="&gt;&gt;labelControl1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="failedActionsMaxRetriesNum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="failedActionsMaxRetriesNum.EditValue" type="System.Decimal, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="failedActionsMaxRetriesNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 233</value>
+  </data>
+  <data name="failedActionsMaxRetriesNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11pt</value>
+  </data>
+  <data name="failedActionsMaxRetriesNum.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
+    <value>Combo</value>
+  </data>
+  <data name="failedActionsMaxRetriesNum.Properties.Mask.EditMask" xml:space="preserve">
+    <value>N00</value>
+  </data>
+  <data name="failedActionsMaxRetriesNum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 24</value>
+  </data>
+  <data name="failedActionsMaxRetriesNum.TabIndex" type="System.Int32, mscorlib">
+    <value>104</value>
+  </data>
+  <data name="&gt;&gt;failedActionsMaxRetriesNum.Name" xml:space="preserve">
+    <value>failedActionsMaxRetriesNum</value>
+  </data>
+  <data name="&gt;&gt;failedActionsMaxRetriesNum.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;failedActionsMaxRetriesNum.Parent" xml:space="preserve">
+    <value>tablePanel2</value>
+  </data>
+  <data name="&gt;&gt;failedActionsMaxRetriesNum.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="appTransparentSwitch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="appTransparentSwitch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 84</value>
+  </data>
+  <data name="appTransparentSwitch.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>30, 22</value>
+  </data>
+  <data name="appTransparentSwitch.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>30, 22</value>
+  </data>
+  <data name="appTransparentSwitch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 22</value>
+  </data>
+  <data name="appTransparentSwitch.TabIndex" type="System.Int32, mscorlib">
+    <value>78</value>
+  </data>
+  <data name="appTransparentSwitch.Text" xml:space="preserve">
+    <value>xuiSwitch2</value>
+  </data>
+  <data name="&gt;&gt;appTransparentSwitch.Name" xml:space="preserve">
+    <value>appTransparentSwitch</value>
+  </data>
+  <data name="&gt;&gt;appTransparentSwitch.Type" xml:space="preserve">
+    <value>XanderUI.XUISwitch, XanderUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;appTransparentSwitch.Parent" xml:space="preserve">
+    <value>tablePanel2</value>
+  </data>
+  <data name="&gt;&gt;appTransparentSwitch.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="threadsIntervalNum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="threadsIntervalNum.EditValue" type="System.Decimal, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="threadsIntervalNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 197</value>
+  </data>
+  <data name="threadsIntervalNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11pt</value>
+  </data>
+  <data name="threadsIntervalNum.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
+    <value>Combo</value>
+  </data>
+  <data name="threadsIntervalNum.Properties.Mask.EditMask" xml:space="preserve">
+    <value>N00</value>
+  </data>
+  <data name="threadsIntervalNum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 24</value>
+  </data>
+  <data name="threadsIntervalNum.TabIndex" type="System.Int32, mscorlib">
+    <value>91</value>
+  </data>
+  <data name="&gt;&gt;threadsIntervalNum.Name" xml:space="preserve">
+    <value>threadsIntervalNum</value>
+  </data>
+  <data name="&gt;&gt;threadsIntervalNum.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;threadsIntervalNum.Parent" xml:space="preserve">
+    <value>tablePanel2</value>
+  </data>
+  <data name="&gt;&gt;threadsIntervalNum.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="concurrentThreadsNum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="concurrentThreadsNum.EditValue" type="System.Decimal, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="concurrentThreadsNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 159</value>
+  </data>
+  <data name="concurrentThreadsNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11pt</value>
+  </data>
+  <data name="concurrentThreadsNum.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
+    <value>Combo</value>
+  </data>
+  <data name="concurrentThreadsNum.Properties.Mask.EditMask" xml:space="preserve">
+    <value>N00</value>
+  </data>
+  <data name="concurrentThreadsNum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 24</value>
+  </data>
+  <data name="concurrentThreadsNum.TabIndex" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="&gt;&gt;concurrentThreadsNum.Name" xml:space="preserve">
+    <value>concurrentThreadsNum</value>
+  </data>
+  <data name="&gt;&gt;concurrentThreadsNum.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;concurrentThreadsNum.Parent" xml:space="preserve">
+    <value>tablePanel2</value>
+  </data>
+  <data name="&gt;&gt;concurrentThreadsNum.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 238</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 14</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>103</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Failed Actions Max Retries :</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>tablePanel2</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="appTopMostSwitch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="appTopMostSwitch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 46</value>
+  </data>
+  <data name="appTopMostSwitch.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>30, 22</value>
+  </data>
+  <data name="appTopMostSwitch.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>30, 22</value>
+  </data>
+  <data name="appTopMostSwitch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 22</value>
+  </data>
+  <data name="appTopMostSwitch.TabIndex" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="appTopMostSwitch.Text" xml:space="preserve">
+    <value>xuiSwitch3</value>
+  </data>
+  <data name="&gt;&gt;appTopMostSwitch.Name" xml:space="preserve">
+    <value>appTopMostSwitch</value>
+  </data>
+  <data name="&gt;&gt;appTopMostSwitch.Type" xml:space="preserve">
+    <value>XanderUI.XUISwitch, XanderUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;appTopMostSwitch.Parent" xml:space="preserve">
+    <value>tablePanel2</value>
+  </data>
+  <data name="&gt;&gt;appTopMostSwitch.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="label25.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="label25.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label25.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label25.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 88</value>
+  </data>
+  <data name="label25.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 14</value>
+  </data>
+  <data name="label25.TabIndex" type="System.Int32, mscorlib">
+    <value>79</value>
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>App Transparent :</value>
+  </data>
+  <data name="&gt;&gt;label25.Name" xml:space="preserve">
+    <value>label25</value>
+  </data>
+  <data name="&gt;&gt;label25.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label25.Parent" xml:space="preserve">
+    <value>tablePanel2</value>
+  </data>
+  <data name="&gt;&gt;label25.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="label24.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="label24.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label24.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label24.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 50</value>
+  </data>
+  <data name="label24.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 14</value>
+  </data>
+  <data name="label24.TabIndex" type="System.Int32, mscorlib">
+    <value>81</value>
+  </data>
+  <data name="label24.Text" xml:space="preserve">
+    <value>App Top most :</value>
+  </data>
+  <data name="&gt;&gt;label24.Name" xml:space="preserve">
+    <value>label24</value>
+  </data>
+  <data name="&gt;&gt;label24.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label24.Parent" xml:space="preserve">
+    <value>tablePanel2</value>
+  </data>
+  <data name="&gt;&gt;label24.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="label23.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="label23.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label23.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label23.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 202</value>
+  </data>
+  <data name="label23.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 14</value>
+  </data>
+  <data name="label23.TabIndex" type="System.Int32, mscorlib">
+    <value>87</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>Threads Interval (s) :</value>
+  </data>
+  <data name="&gt;&gt;label23.Name" xml:space="preserve">
+    <value>label23</value>
+  </data>
+  <data name="&gt;&gt;label23.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label23.Parent" xml:space="preserve">
+    <value>tablePanel2</value>
+  </data>
+  <data name="&gt;&gt;label23.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="label22.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="label22.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label22.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label22.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 164</value>
+  </data>
+  <data name="label22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 14</value>
+  </data>
+  <data name="label22.TabIndex" type="System.Int32, mscorlib">
+    <value>86</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>Concurrent Threads :</value>
+  </data>
+  <data name="&gt;&gt;label22.Name" xml:space="preserve">
+    <value>label22</value>
+  </data>
+  <data name="&gt;&gt;label22.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label22.Parent" xml:space="preserve">
+    <value>tablePanel2</value>
+  </data>
+  <data name="&gt;&gt;label22.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="tablePanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="tablePanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tablePanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>374, 263</value>
+  </data>
+  <data name="tablePanel2.TabIndex" type="System.Int32, mscorlib">
+    <value>115</value>
+  </data>
+  <data name="&gt;&gt;tablePanel2.Name" xml:space="preserve">
+    <value>tablePanel2</value>
+  </data>
+  <data name="&gt;&gt;tablePanel2.Type" xml:space="preserve">
+    <value>DevExpress.Utils.Layout.TablePanel, DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;tablePanel2.Parent" xml:space="preserve">
+    <value>settingSplitContainer.Panel2</value>
+  </data>
+  <data name="&gt;&gt;tablePanel2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="settingSplitContainer.Panel2.Text" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="settingSplitContainer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>760, 380</value>
+  </data>
+  <data name="settingSplitContainer.TabIndex" type="System.Int32, mscorlib">
+    <value>115</value>
+  </data>
+  <data name="&gt;&gt;settingSplitContainer.Name" xml:space="preserve">
+    <value>settingSplitContainer</value>
+  </data>
+  <data name="&gt;&gt;settingSplitContainer.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SplitContainerControl, DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;settingSplitContainer.Parent" xml:space="preserve">
+    <value>SettingsXtraTabPage</value>
+  </data>
+  <data name="&gt;&gt;settingSplitContainer.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="saveSettingsButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="saveSettingsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>684, 5</value>
+  </data>
+  <data name="saveSettingsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 22</value>
+  </data>
+  <data name="saveSettingsButton.TabIndex" type="System.Int32, mscorlib">
+    <value>116</value>
+  </data>
+  <data name="saveSettingsButton.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="&gt;&gt;saveSettingsButton.Name" xml:space="preserve">
+    <value>saveSettingsButton</value>
+  </data>
+  <data name="&gt;&gt;saveSettingsButton.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;saveSettingsButton.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;saveSettingsButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 382</value>
+  </data>
+  <data name="panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>760, 34</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>114</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>SettingsXtraTabPage</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SettingsXtraTabPage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="ActionsXtraTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="SettingsXtraTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="ActionsXtraTabPage.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="SettingsXtraTabPage.Size" type="System.Drawing.Size, System.Drawing">
     <value>764, 418</value>
   </data>
-  <data name="ActionsXtraTabPage.Text" xml:space="preserve">
-    <value>Blocked</value>
+  <data name="SettingsXtraTabPage.Text" xml:space="preserve">
+    <value>Errors</value>
   </data>
-  <data name="&gt;&gt;ActionsXtraTabPage.Name" xml:space="preserve">
-    <value>ActionsXtraTabPage</value>
+  <data name="&gt;&gt;SettingsXtraTabPage.Name" xml:space="preserve">
+    <value>SettingsXtraTabPage</value>
   </data>
-  <data name="&gt;&gt;ActionsXtraTabPage.Type" xml:space="preserve">
+  <data name="&gt;&gt;SettingsXtraTabPage.Type" xml:space="preserve">
     <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;ActionsXtraTabPage.Parent" xml:space="preserve">
+  <data name="&gt;&gt;SettingsXtraTabPage.Parent" xml:space="preserve">
     <value>MainTabControl</value>
   </data>
-  <data name="&gt;&gt;ActionsXtraTabPage.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;SettingsXtraTabPage.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <assembly alias="DevExpress.Data.v19.2" name="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
   <data name="MainTabControl.ShowTabHeader" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v19.2">
@@ -454,40 +1616,6 @@
   </data>
   <data name="iFlyoutScenarioPanel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="noDevicLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="noDevicLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="noDevicLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-58, 21</value>
-  </data>
-  <data name="noDevicLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>531, 336</value>
-  </data>
-  <data name="noDevicLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="noDevicLabel.Text" xml:space="preserve">
-    <value>All caught up!
-No available devices.</value>
-  </data>
-  <data name="noDevicLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;noDevicLabel.Name" xml:space="preserve">
-    <value>noDevicLabel</value>
-  </data>
-  <data name="&gt;&gt;noDevicLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;noDevicLabel.Parent" xml:space="preserve">
-    <value>flyoutPanelControl1</value>
-  </data>
-  <data name="&gt;&gt;noDevicLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="WarmupDateFilterType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -541,7 +1669,7 @@ No available devices.</value>
     <value>flyoutPanelControl1</value>
   </data>
   <data name="&gt;&gt;WarmupDateFilterType.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="WarmupDateFilterVal.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -577,7 +1705,7 @@ No available devices.</value>
     <value>flyoutPanelControl1</value>
   </data>
   <data name="&gt;&gt;WarmupDateFilterVal.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="WarmupDateFilterKind.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -616,7 +1744,7 @@ No available devices.</value>
     <value>flyoutPanelControl1</value>
   </data>
   <data name="&gt;&gt;WarmupDateFilterKind.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="WarmupKeyword.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -646,7 +1774,7 @@ No available devices.</value>
     <value>flyoutPanelControl1</value>
   </data>
   <data name="&gt;&gt;WarmupKeyword.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="ScenarioListBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -682,7 +1810,7 @@ No available devices.</value>
     <value>flyoutPanelControl1</value>
   </data>
   <data name="&gt;&gt;ScenarioListBox.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="searchControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -706,6 +1834,40 @@ No available devices.</value>
     <value>flyoutPanelControl1</value>
   </data>
   <data name="&gt;&gt;searchControl1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="noDevicLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="noDevicLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="noDevicLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-58, 21</value>
+  </data>
+  <data name="noDevicLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>531, 336</value>
+  </data>
+  <data name="noDevicLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="noDevicLabel.Text" xml:space="preserve">
+    <value>All caught up!
+No available devices.</value>
+  </data>
+  <data name="noDevicLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;noDevicLabel.Name" xml:space="preserve">
+    <value>noDevicLabel</value>
+  </data>
+  <data name="&gt;&gt;noDevicLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;noDevicLabel.Parent" xml:space="preserve">
+    <value>flyoutPanelControl1</value>
+  </data>
+  <data name="&gt;&gt;noDevicLabel.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
   <data name="flyoutPanelControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -826,7 +1988,7 @@ No available devices.</value>
     <value>5, 5, 5, 5</value>
   </data>
   <data name="iStackPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>586, 217</value>
+    <value>586, 341</value>
   </data>
   <data name="iStackPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -940,14 +2102,14 @@ No available devices.</value>
     <value>Fill</value>
   </data>
   <metadata name="ImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>378, 56</value>
   </metadata>
   <data name="ImageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAA4
-        GgAAAk1TRnQBSQFMAwEBAAFAAQgBQAEIATIBAAEgAQAE/wEhAQAI/wFCAU0BNgcAATYDAAEoAwAByAMA
+        GgAAAk1TRnQBSQFMAwEBAAH4AQgB+AEIATIBAAEgAQAE/wEhAQAI/wFCAU0BNgcAATYDAAEoAwAByAMA
         ASADAAEBAQABIAYAAWQSAAMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgEN
         AwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgEN
         AwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgEN
@@ -1065,7 +2227,7 @@ No available devices.</value>
     <value>0, 46</value>
   </data>
   <data name="directoryCLB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 193</value>
+    <value>157, 317</value>
   </data>
   <data name="directoryCLB.TabIndex" type="System.Int32, mscorlib">
     <value>110</value>
@@ -1149,7 +2311,7 @@ No available devices.</value>
     <value>Panel2</value>
   </data>
   <data name="DevicesSplitContainer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 239</value>
+    <value>760, 363</value>
   </data>
   <data name="DevicesSplitContainer.TabIndex" type="System.Int32, mscorlib">
     <value>127</value>
@@ -1596,7 +2758,7 @@ No available devices.</value>
     <value>2, 2, 2, 2</value>
   </data>
   <data name="ProcessXtraTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>764, 294</value>
+    <value>764, 418</value>
   </data>
   <data name="ProcessXtraTabPage.Text" xml:space="preserve">
     <value>Actions</value>
@@ -1613,1370 +2775,131 @@ No available devices.</value>
   <data name="&gt;&gt;ProcessXtraTabPage.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="settingSplitContainer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="settingSplitContainer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 2</value>
-  </data>
-  <data name="settingSplitContainer.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="settingSplitContainer.Panel1.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SettingsTablePanelLeft.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="groupControl1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="pollingNum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="pollingNum.EditValue" type="System.Decimal, mscorlib">
-    <value>150</value>
-  </data>
-  <data name="pollingNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 128</value>
-  </data>
-  <data name="pollingNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11pt</value>
-  </data>
-  <data name="pollingNum.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
-    <value>Combo</value>
-  </data>
-  <data name="pollingNum.Properties.Mask.EditMask" xml:space="preserve">
-    <value>N00</value>
-  </data>
-  <data name="pollingNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 24</value>
-  </data>
-  <data name="pollingNum.TabIndex" type="System.Int32, mscorlib">
-    <value>89</value>
-  </data>
-  <data name="&gt;&gt;pollingNum.Name" xml:space="preserve">
-    <value>pollingNum</value>
-  </data>
-  <data name="&gt;&gt;pollingNum.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;pollingNum.Parent" xml:space="preserve">
-    <value>groupControl1</value>
-  </data>
-  <data name="&gt;&gt;pollingNum.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="testDriverToNum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="testDriverToNum.EditValue" type="System.Decimal, mscorlib">
-    <value>60</value>
-  </data>
-  <data name="testDriverToNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 62</value>
-  </data>
-  <data name="testDriverToNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11pt</value>
-  </data>
-  <data name="testDriverToNum.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
-    <value>Combo</value>
-  </data>
-  <data name="testDriverToNum.Properties.Mask.EditMask" xml:space="preserve">
-    <value>N00</value>
-  </data>
-  <data name="testDriverToNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 24</value>
-  </data>
-  <data name="testDriverToNum.TabIndex" type="System.Int32, mscorlib">
-    <value>87</value>
-  </data>
-  <data name="&gt;&gt;testDriverToNum.Name" xml:space="preserve">
-    <value>testDriverToNum</value>
-  </data>
-  <data name="&gt;&gt;testDriverToNum.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;testDriverToNum.Parent" xml:space="preserve">
-    <value>groupControl1</value>
-  </data>
-  <data name="&gt;&gt;testDriverToNum.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 34</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 14</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Server Port :</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>groupControl1</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 68</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 14</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Test Driver Timout (s) :</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>groupControl1</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="label16.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="label16.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>95, 100</value>
-  </data>
-  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 14</value>
-  </data>
-  <data name="label16.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="label16.Text" xml:space="preserve">
-    <value>Wait Timout (s) :</value>
-  </data>
-  <data name="&gt;&gt;label16.Name" xml:space="preserve">
-    <value>label16</value>
-  </data>
-  <data name="&gt;&gt;label16.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
-    <value>groupControl1</value>
-  </data>
-  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="label17.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="label17.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label17.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 134</value>
-  </data>
-  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 14</value>
-  </data>
-  <data name="label17.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="label17.Text" xml:space="preserve">
-    <value>Wait Polling Interval (ms) :</value>
-  </data>
-  <data name="&gt;&gt;label17.Name" xml:space="preserve">
-    <value>label17</value>
-  </data>
-  <data name="&gt;&gt;label17.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
-    <value>groupControl1</value>
-  </data>
-  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="portNum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="portNum.EditValue" type="System.Decimal, mscorlib">
-    <value>10102</value>
-  </data>
-  <data name="portNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 28</value>
-  </data>
-  <data name="portNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11pt</value>
-  </data>
-  <data name="portNum.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
-    <value>Combo</value>
-  </data>
-  <data name="portNum.Properties.Mask.EditMask" xml:space="preserve">
-    <value>N00</value>
-  </data>
-  <data name="portNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 24</value>
-  </data>
-  <data name="portNum.TabIndex" type="System.Int32, mscorlib">
-    <value>86</value>
-  </data>
-  <data name="&gt;&gt;portNum.Name" xml:space="preserve">
-    <value>portNum</value>
-  </data>
-  <data name="&gt;&gt;portNum.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;portNum.Parent" xml:space="preserve">
-    <value>groupControl1</value>
-  </data>
-  <data name="&gt;&gt;portNum.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="waitNum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="waitNum.EditValue" type="System.Decimal, mscorlib">
-    <value>60</value>
-  </data>
-  <data name="waitNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 94</value>
-  </data>
-  <data name="waitNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11pt</value>
-  </data>
-  <data name="waitNum.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
-    <value>Combo</value>
-  </data>
-  <data name="waitNum.Properties.Mask.EditMask" xml:space="preserve">
-    <value>N00</value>
-  </data>
-  <data name="waitNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 24</value>
-  </data>
-  <data name="waitNum.TabIndex" type="System.Int32, mscorlib">
-    <value>88</value>
-  </data>
-  <data name="&gt;&gt;waitNum.Name" xml:space="preserve">
-    <value>waitNum</value>
-  </data>
-  <data name="&gt;&gt;waitNum.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;waitNum.Parent" xml:space="preserve">
-    <value>groupControl1</value>
-  </data>
-  <data name="&gt;&gt;waitNum.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="groupControl1.CustomHeaderButtons" xml:space="preserve">
-    <value>Reset</value>
-  </data>
-  <data name="groupControl1.CustomHeaderButtons1" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="groupControl1.CustomHeaderButtons2" type="DevExpress.XtraBars.Docking2010.ButtonStyle, DevExpress.Utils.v19.2">
-    <value>PushButton</value>
-  </data>
-  <data name="groupControl1.CustomHeaderButtons3" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupControl1.CustomHeaderButtons4" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="groupControl1.CustomHeaderButtons5" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="groupControl1.CustomHeaderButtons6" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="groupControl1.CustomHeaderButtons7" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="groupControl1.CustomHeaderButtons8" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="groupControl1.CustomHeaderButtons9" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="groupControl1.CustomHeaderButtons10" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="groupControl1.CustomHeaderButtons11" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="groupControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="groupControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="groupControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>353, 14</value>
-  </data>
-  <data name="groupControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>109</value>
-  </data>
-  <data name="groupControl1.Text" xml:space="preserve">
-    <value>Server / Driver</value>
-  </data>
-  <data name="&gt;&gt;groupControl1.Name" xml:space="preserve">
-    <value>groupControl1</value>
-  </data>
-  <data name="&gt;&gt;groupControl1.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.GroupControl, DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;groupControl1.Parent" xml:space="preserve">
-    <value>SettingsTablePanelLeft</value>
-  </data>
-  <data name="&gt;&gt;groupControl1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="failedMAxRetriesNum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="failedMAxRetriesNum.EditValue" type="System.Decimal, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="failedMAxRetriesNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 128</value>
-  </data>
-  <data name="failedMAxRetriesNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11pt</value>
-  </data>
-  <data name="failedMAxRetriesNum.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
-    <value>Combo</value>
-  </data>
-  <data name="failedMAxRetriesNum.Properties.Mask.EditMask" xml:space="preserve">
-    <value>N00</value>
-  </data>
-  <data name="failedMAxRetriesNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 24</value>
-  </data>
-  <data name="failedMAxRetriesNum.TabIndex" type="System.Int32, mscorlib">
-    <value>102</value>
-  </data>
-  <data name="&gt;&gt;failedMAxRetriesNum.Name" xml:space="preserve">
-    <value>failedMAxRetriesNum</value>
-  </data>
-  <data name="&gt;&gt;failedMAxRetriesNum.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;failedMAxRetriesNum.Parent" xml:space="preserve">
-    <value>groupControl2</value>
-  </data>
-  <data name="&gt;&gt;failedMAxRetriesNum.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label18.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="label18.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label18.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
-    <value>59, 134</value>
-  </data>
-  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 14</value>
-  </data>
-  <data name="label18.TabIndex" type="System.Int32, mscorlib">
-    <value>93</value>
-  </data>
-  <data name="label18.Text" xml:space="preserve">
-    <value>Failed Max Retries :</value>
-  </data>
-  <data name="&gt;&gt;label18.Name" xml:space="preserve">
-    <value>label18</value>
-  </data>
-  <data name="&gt;&gt;label18.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label18.Parent" xml:space="preserve">
-    <value>groupControl2</value>
-  </data>
-  <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label19.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="label19.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label19.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
-    <value>99, 35</value>
-  </data>
-  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 14</value>
-  </data>
-  <data name="label19.TabIndex" type="System.Int32, mscorlib">
-    <value>90</value>
-  </data>
-  <data name="label19.Text" xml:space="preserve">
-    <value>Drive Letter :</value>
-  </data>
-  <data name="&gt;&gt;label19.Name" xml:space="preserve">
-    <value>label19</value>
-  </data>
-  <data name="&gt;&gt;label19.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label19.Parent" xml:space="preserve">
-    <value>groupControl2</value>
-  </data>
-  <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="driverLetterText.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="driverLetterText.EditValue" xml:space="preserve">
-    <value>D</value>
-  </data>
-  <data name="driverLetterText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 29</value>
-  </data>
-  <data name="driverLetterText.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11pt</value>
-  </data>
-  <data name="driverLetterText.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
-    <value>Combo</value>
-  </data>
-  <data name="driverLetterText.Properties.Items" xml:space="preserve">
-    <value>A</value>
-  </data>
-  <data name="driverLetterText.Properties.Items1" xml:space="preserve">
-    <value>B</value>
-  </data>
-  <data name="driverLetterText.Properties.Items2" xml:space="preserve">
-    <value>C</value>
-  </data>
-  <data name="driverLetterText.Properties.Items3" xml:space="preserve">
-    <value>D</value>
-  </data>
-  <data name="driverLetterText.Properties.Items4" xml:space="preserve">
-    <value>E</value>
-  </data>
-  <data name="driverLetterText.Properties.Items5" xml:space="preserve">
-    <value>F</value>
-  </data>
-  <data name="driverLetterText.Properties.Items6" xml:space="preserve">
-    <value>G</value>
-  </data>
-  <data name="driverLetterText.Properties.Items7" xml:space="preserve">
-    <value>H</value>
-  </data>
-  <data name="driverLetterText.Properties.Items8" xml:space="preserve">
-    <value>I</value>
-  </data>
-  <data name="driverLetterText.Properties.Items9" xml:space="preserve">
-    <value>J</value>
-  </data>
-  <data name="driverLetterText.Properties.Items10" xml:space="preserve">
-    <value>K</value>
-  </data>
-  <data name="driverLetterText.Properties.Items11" xml:space="preserve">
-    <value>L</value>
-  </data>
-  <data name="driverLetterText.Properties.Items12" xml:space="preserve">
-    <value>M</value>
-  </data>
-  <data name="driverLetterText.Properties.Items13" xml:space="preserve">
-    <value>N</value>
-  </data>
-  <data name="driverLetterText.Properties.Items14" xml:space="preserve">
-    <value>O</value>
-  </data>
-  <data name="driverLetterText.Properties.Items15" xml:space="preserve">
-    <value>P</value>
-  </data>
-  <data name="driverLetterText.Properties.Items16" xml:space="preserve">
-    <value>Q</value>
-  </data>
-  <data name="driverLetterText.Properties.Items17" xml:space="preserve">
-    <value>R</value>
-  </data>
-  <data name="driverLetterText.Properties.Items18" xml:space="preserve">
-    <value>S</value>
-  </data>
-  <data name="driverLetterText.Properties.Items19" xml:space="preserve">
-    <value>T</value>
-  </data>
-  <data name="driverLetterText.Properties.Items20" xml:space="preserve">
-    <value>U</value>
-  </data>
-  <data name="driverLetterText.Properties.Items21" xml:space="preserve">
-    <value>V</value>
-  </data>
-  <data name="driverLetterText.Properties.Items22" xml:space="preserve">
-    <value>W</value>
-  </data>
-  <data name="driverLetterText.Properties.Items23" xml:space="preserve">
-    <value>X</value>
-  </data>
-  <data name="driverLetterText.Properties.Items24" xml:space="preserve">
-    <value>Y</value>
-  </data>
-  <data name="driverLetterText.Properties.Items25" xml:space="preserve">
-    <value>Z</value>
-  </data>
-  <data name="driverLetterText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 24</value>
-  </data>
-  <data name="driverLetterText.TabIndex" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="&gt;&gt;driverLetterText.Name" xml:space="preserve">
-    <value>driverLetterText</value>
-  </data>
-  <data name="&gt;&gt;driverLetterText.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.ComboBoxEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;driverLetterText.Parent" xml:space="preserve">
-    <value>groupControl2</value>
-  </data>
-  <data name="&gt;&gt;driverLetterText.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="label20.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="label20.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label20.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
-    <value>68, 101</value>
-  </data>
-  <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 14</value>
-  </data>
-  <data name="label20.TabIndex" type="System.Int32, mscorlib">
-    <value>92</value>
-  </data>
-  <data name="label20.Text" xml:space="preserve">
-    <value>Failed Auto Retry :</value>
-  </data>
-  <data name="&gt;&gt;label20.Name" xml:space="preserve">
-    <value>label20</value>
-  </data>
-  <data name="&gt;&gt;label20.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
-    <value>groupControl2</value>
-  </data>
-  <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="failedAutoRetrySwitch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="failedAutoRetrySwitch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 97</value>
-  </data>
-  <data name="failedAutoRetrySwitch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 22</value>
-  </data>
-  <data name="failedAutoRetrySwitch.TabIndex" type="System.Int32, mscorlib">
-    <value>98</value>
-  </data>
-  <data name="failedAutoRetrySwitch.Text" xml:space="preserve">
-    <value>xuiSwitch3</value>
-  </data>
-  <data name="&gt;&gt;failedAutoRetrySwitch.Name" xml:space="preserve">
-    <value>failedAutoRetrySwitch</value>
-  </data>
-  <data name="&gt;&gt;failedAutoRetrySwitch.Type" xml:space="preserve">
-    <value>XanderUI.XUISwitch, XanderUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;failedAutoRetrySwitch.Parent" xml:space="preserve">
-    <value>groupControl2</value>
-  </data>
-  <data name="&gt;&gt;failedAutoRetrySwitch.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="label21.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="label21.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label21.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label21.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 68</value>
-  </data>
-  <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 14</value>
-  </data>
-  <data name="label21.TabIndex" type="System.Int32, mscorlib">
-    <value>91</value>
-  </data>
-  <data name="label21.Text" xml:space="preserve">
-    <value>VMs Directory :</value>
-  </data>
-  <data name="&gt;&gt;label21.Name" xml:space="preserve">
-    <value>label21</value>
-  </data>
-  <data name="&gt;&gt;label21.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label21.Parent" xml:space="preserve">
-    <value>groupControl2</value>
-  </data>
-  <data name="&gt;&gt;label21.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="vmsDirectoryText.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="vmsDirectoryText.EditValue" xml:space="preserve">
-    <value />
-  </data>
-  <data name="vmsDirectoryText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 62</value>
-  </data>
-  <data name="vmsDirectoryText.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11pt</value>
-  </data>
-  <data name="vmsDirectoryText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 24</value>
-  </data>
-  <data name="vmsDirectoryText.TabIndex" type="System.Int32, mscorlib">
-    <value>101</value>
-  </data>
-  <data name="&gt;&gt;vmsDirectoryText.Name" xml:space="preserve">
-    <value>vmsDirectoryText</value>
-  </data>
-  <data name="&gt;&gt;vmsDirectoryText.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;vmsDirectoryText.Parent" xml:space="preserve">
-    <value>groupControl2</value>
-  </data>
-  <data name="&gt;&gt;vmsDirectoryText.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="groupControl2.CustomHeaderButtons" xml:space="preserve">
-    <value>Reset</value>
-  </data>
-  <data name="groupControl2.CustomHeaderButtons1" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="groupControl2.CustomHeaderButtons2" type="DevExpress.XtraBars.Docking2010.ButtonStyle, DevExpress.Utils.v19.2">
-    <value>PushButton</value>
-  </data>
-  <data name="groupControl2.CustomHeaderButtons3" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupControl2.CustomHeaderButtons4" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="groupControl2.CustomHeaderButtons5" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="groupControl2.CustomHeaderButtons6" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="groupControl2.CustomHeaderButtons7" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="groupControl2.CustomHeaderButtons8" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="groupControl2.CustomHeaderButtons9" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="groupControl2.CustomHeaderButtons10" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="groupControl2.CustomHeaderButtons11" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="groupControl2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="groupControl2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 23</value>
-  </data>
-  <data name="groupControl2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>353, 348</value>
-  </data>
-  <data name="groupControl2.TabIndex" type="System.Int32, mscorlib">
-    <value>110</value>
-  </data>
-  <data name="groupControl2.Text" xml:space="preserve">
-    <value>Drive / VMs</value>
-  </data>
-  <data name="&gt;&gt;groupControl2.Name" xml:space="preserve">
-    <value>groupControl2</value>
-  </data>
-  <data name="&gt;&gt;groupControl2.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.GroupControl, DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;groupControl2.Parent" xml:space="preserve">
-    <value>SettingsTablePanelLeft</value>
-  </data>
-  <data name="&gt;&gt;groupControl2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="SettingsTablePanelLeft.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="SettingsTablePanelLeft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 374</value>
-  </data>
-  <data name="SettingsTablePanelLeft.TabIndex" type="System.Int32, mscorlib">
-    <value>113</value>
-  </data>
-  <data name="&gt;&gt;SettingsTablePanelLeft.Name" xml:space="preserve">
-    <value>SettingsTablePanelLeft</value>
-  </data>
-  <data name="&gt;&gt;SettingsTablePanelLeft.Type" xml:space="preserve">
-    <value>DevExpress.Utils.Layout.TablePanel, DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;SettingsTablePanelLeft.Parent" xml:space="preserve">
-    <value>settingSplitContainer.Panel1</value>
-  </data>
-  <data name="&gt;&gt;SettingsTablePanelLeft.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="settingSplitContainer.Panel1.Text" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="settingSplitContainer.Panel2.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="SettingsTablePanelRight.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="groupControl4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="failedActionsMaxRetriesNum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="failedActionsMaxRetriesNum.EditValue" type="System.Decimal, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="failedActionsMaxRetriesNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>194, 116</value>
-  </data>
-  <data name="failedActionsMaxRetriesNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11pt</value>
-  </data>
-  <data name="failedActionsMaxRetriesNum.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
-    <value>Combo</value>
-  </data>
-  <data name="failedActionsMaxRetriesNum.Properties.Mask.EditMask" xml:space="preserve">
-    <value>N00</value>
-  </data>
-  <data name="failedActionsMaxRetriesNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 24</value>
-  </data>
-  <data name="failedActionsMaxRetriesNum.TabIndex" type="System.Int32, mscorlib">
-    <value>104</value>
-  </data>
-  <data name="&gt;&gt;failedActionsMaxRetriesNum.Name" xml:space="preserve">
-    <value>failedActionsMaxRetriesNum</value>
-  </data>
-  <data name="&gt;&gt;failedActionsMaxRetriesNum.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;failedActionsMaxRetriesNum.Parent" xml:space="preserve">
-    <value>groupControl4</value>
-  </data>
-  <data name="&gt;&gt;failedActionsMaxRetriesNum.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 122</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 14</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>103</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Failed Actions Max Retries :</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>groupControl4</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="concurrentThreadsNum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="concurrentThreadsNum.EditValue" type="System.Decimal, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="concurrentThreadsNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>194, 46</value>
-  </data>
-  <data name="concurrentThreadsNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11pt</value>
-  </data>
-  <data name="concurrentThreadsNum.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
-    <value>Combo</value>
-  </data>
-  <data name="concurrentThreadsNum.Properties.Mask.EditMask" xml:space="preserve">
-    <value>N00</value>
-  </data>
-  <data name="concurrentThreadsNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 24</value>
-  </data>
-  <data name="concurrentThreadsNum.TabIndex" type="System.Int32, mscorlib">
-    <value>90</value>
-  </data>
-  <data name="&gt;&gt;concurrentThreadsNum.Name" xml:space="preserve">
-    <value>concurrentThreadsNum</value>
-  </data>
-  <data name="&gt;&gt;concurrentThreadsNum.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;concurrentThreadsNum.Parent" xml:space="preserve">
-    <value>groupControl4</value>
-  </data>
-  <data name="&gt;&gt;concurrentThreadsNum.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="threadsIntervalNum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="threadsIntervalNum.EditValue" type="System.Decimal, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="threadsIntervalNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>194, 79</value>
-  </data>
-  <data name="threadsIntervalNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 11pt</value>
-  </data>
-  <data name="threadsIntervalNum.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
-    <value>Combo</value>
-  </data>
-  <data name="threadsIntervalNum.Properties.Mask.EditMask" xml:space="preserve">
-    <value>N00</value>
-  </data>
-  <data name="threadsIntervalNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 24</value>
-  </data>
-  <data name="threadsIntervalNum.TabIndex" type="System.Int32, mscorlib">
-    <value>91</value>
-  </data>
-  <data name="&gt;&gt;threadsIntervalNum.Name" xml:space="preserve">
-    <value>threadsIntervalNum</value>
-  </data>
-  <data name="&gt;&gt;threadsIntervalNum.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;threadsIntervalNum.Parent" xml:space="preserve">
-    <value>groupControl4</value>
-  </data>
-  <data name="&gt;&gt;threadsIntervalNum.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="label22.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="label22.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label22.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label22.Location" type="System.Drawing.Point, System.Drawing">
-    <value>61, 52</value>
-  </data>
-  <data name="label22.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 14</value>
-  </data>
-  <data name="label22.TabIndex" type="System.Int32, mscorlib">
-    <value>86</value>
-  </data>
-  <data name="label22.Text" xml:space="preserve">
-    <value>Concurrent Threads :</value>
-  </data>
-  <data name="&gt;&gt;label22.Name" xml:space="preserve">
-    <value>label22</value>
-  </data>
-  <data name="&gt;&gt;label22.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label22.Parent" xml:space="preserve">
-    <value>groupControl4</value>
-  </data>
-  <data name="&gt;&gt;label22.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="label23.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="label23.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label23.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label23.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 85</value>
-  </data>
-  <data name="label23.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 14</value>
-  </data>
-  <data name="label23.TabIndex" type="System.Int32, mscorlib">
-    <value>87</value>
-  </data>
-  <data name="label23.Text" xml:space="preserve">
-    <value>Threads Interval (s) :</value>
-  </data>
-  <data name="&gt;&gt;label23.Name" xml:space="preserve">
-    <value>label23</value>
-  </data>
-  <data name="&gt;&gt;label23.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label23.Parent" xml:space="preserve">
-    <value>groupControl4</value>
-  </data>
-  <data name="&gt;&gt;label23.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="groupControl4.CustomHeaderButtons" xml:space="preserve">
-    <value>Reset</value>
-  </data>
-  <data name="groupControl4.CustomHeaderButtons1" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="groupControl4.CustomHeaderButtons2" type="DevExpress.XtraBars.Docking2010.ButtonStyle, DevExpress.Utils.v19.2">
-    <value>PushButton</value>
-  </data>
-  <data name="groupControl4.CustomHeaderButtons3" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupControl4.CustomHeaderButtons4" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="groupControl4.CustomHeaderButtons5" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="groupControl4.CustomHeaderButtons6" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="groupControl4.CustomHeaderButtons7" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="groupControl4.CustomHeaderButtons8" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="groupControl4.CustomHeaderButtons9" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="groupControl4.CustomHeaderButtons10" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="groupControl4.CustomHeaderButtons11" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="groupControl4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="groupControl4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="groupControl4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>309, 14</value>
-  </data>
-  <data name="groupControl4.TabIndex" type="System.Int32, mscorlib">
-    <value>112</value>
-  </data>
-  <data name="groupControl4.Text" xml:space="preserve">
-    <value>Threads</value>
-  </data>
-  <data name="&gt;&gt;groupControl4.Name" xml:space="preserve">
-    <value>groupControl4</value>
-  </data>
-  <data name="&gt;&gt;groupControl4.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.GroupControl, DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;groupControl4.Parent" xml:space="preserve">
-    <value>SettingsTablePanelRight</value>
-  </data>
-  <data name="&gt;&gt;groupControl4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="groupControl3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label24.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="label24.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label24.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label24.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 48</value>
-  </data>
-  <data name="label24.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 14</value>
-  </data>
-  <data name="label24.TabIndex" type="System.Int32, mscorlib">
-    <value>81</value>
-  </data>
-  <data name="label24.Text" xml:space="preserve">
-    <value>App Top most :</value>
-  </data>
-  <data name="&gt;&gt;label24.Name" xml:space="preserve">
-    <value>label24</value>
-  </data>
-  <data name="&gt;&gt;label24.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label24.Parent" xml:space="preserve">
-    <value>groupControl3</value>
-  </data>
-  <data name="&gt;&gt;label24.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label25.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="label25.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label25.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label25.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 83</value>
-  </data>
-  <data name="label25.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 14</value>
-  </data>
-  <data name="label25.TabIndex" type="System.Int32, mscorlib">
-    <value>79</value>
-  </data>
-  <data name="label25.Text" xml:space="preserve">
-    <value>App Transparent :</value>
-  </data>
-  <data name="&gt;&gt;label25.Name" xml:space="preserve">
-    <value>label25</value>
-  </data>
-  <data name="&gt;&gt;label25.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label25.Parent" xml:space="preserve">
-    <value>groupControl3</value>
-  </data>
-  <data name="&gt;&gt;label25.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="appTopMostSwitch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="appTopMostSwitch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>198, 44</value>
-  </data>
-  <data name="appTopMostSwitch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 22</value>
-  </data>
-  <data name="appTopMostSwitch.TabIndex" type="System.Int32, mscorlib">
-    <value>80</value>
-  </data>
-  <data name="appTopMostSwitch.Text" xml:space="preserve">
-    <value>xuiSwitch3</value>
-  </data>
-  <data name="&gt;&gt;appTopMostSwitch.Name" xml:space="preserve">
-    <value>appTopMostSwitch</value>
-  </data>
-  <data name="&gt;&gt;appTopMostSwitch.Type" xml:space="preserve">
-    <value>XanderUI.XUISwitch, XanderUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;appTopMostSwitch.Parent" xml:space="preserve">
-    <value>groupControl3</value>
-  </data>
-  <data name="&gt;&gt;appTopMostSwitch.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="appTransparentSwitch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="appTransparentSwitch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>198, 79</value>
-  </data>
-  <data name="appTransparentSwitch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 22</value>
-  </data>
-  <data name="appTransparentSwitch.TabIndex" type="System.Int32, mscorlib">
-    <value>78</value>
-  </data>
-  <data name="appTransparentSwitch.Text" xml:space="preserve">
-    <value>xuiSwitch2</value>
-  </data>
-  <data name="&gt;&gt;appTransparentSwitch.Name" xml:space="preserve">
-    <value>appTransparentSwitch</value>
-  </data>
-  <data name="&gt;&gt;appTransparentSwitch.Type" xml:space="preserve">
-    <value>XanderUI.XUISwitch, XanderUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;appTransparentSwitch.Parent" xml:space="preserve">
-    <value>groupControl3</value>
-  </data>
-  <data name="&gt;&gt;appTransparentSwitch.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="groupControl3.CustomHeaderButtons" xml:space="preserve">
-    <value>Reset</value>
-  </data>
-  <data name="groupControl3.CustomHeaderButtons1" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="groupControl3.CustomHeaderButtons2" type="DevExpress.XtraBars.Docking2010.ButtonStyle, DevExpress.Utils.v19.2">
-    <value>PushButton</value>
-  </data>
-  <data name="groupControl3.CustomHeaderButtons3" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupControl3.CustomHeaderButtons4" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="groupControl3.CustomHeaderButtons5" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="groupControl3.CustomHeaderButtons6" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="groupControl3.CustomHeaderButtons7" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="groupControl3.CustomHeaderButtons8" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="groupControl3.CustomHeaderButtons9" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="groupControl3.CustomHeaderButtons10" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="groupControl3.CustomHeaderButtons11" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="groupControl3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="groupControl3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 23</value>
-  </data>
-  <data name="groupControl3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>309, 348</value>
-  </data>
-  <data name="groupControl3.TabIndex" type="System.Int32, mscorlib">
-    <value>111</value>
-  </data>
-  <data name="groupControl3.Text" xml:space="preserve">
-    <value>Design</value>
-  </data>
-  <data name="&gt;&gt;groupControl3.Name" xml:space="preserve">
-    <value>groupControl3</value>
-  </data>
-  <data name="&gt;&gt;groupControl3.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.GroupControl, DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;groupControl3.Parent" xml:space="preserve">
-    <value>SettingsTablePanelRight</value>
-  </data>
-  <data name="&gt;&gt;groupControl3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="SettingsTablePanelRight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="SettingsTablePanelRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>315, 374</value>
-  </data>
-  <data name="SettingsTablePanelRight.TabIndex" type="System.Int32, mscorlib">
-    <value>114</value>
-  </data>
-  <data name="&gt;&gt;SettingsTablePanelRight.Name" xml:space="preserve">
-    <value>SettingsTablePanelRight</value>
-  </data>
-  <data name="&gt;&gt;SettingsTablePanelRight.Type" xml:space="preserve">
-    <value>DevExpress.Utils.Layout.TablePanel, DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;SettingsTablePanelRight.Parent" xml:space="preserve">
-    <value>settingSplitContainer.Panel2</value>
-  </data>
-  <data name="&gt;&gt;SettingsTablePanelRight.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="settingSplitContainer.Panel2.Text" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="settingSplitContainer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 256</value>
-  </data>
-  <data name="settingSplitContainer.TabIndex" type="System.Int32, mscorlib">
-    <value>115</value>
-  </data>
-  <data name="&gt;&gt;settingSplitContainer.Name" xml:space="preserve">
-    <value>settingSplitContainer</value>
-  </data>
-  <data name="&gt;&gt;settingSplitContainer.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.SplitContainerControl, DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;settingSplitContainer.Parent" xml:space="preserve">
-    <value>SettingsXtraTabPage</value>
-  </data>
-  <data name="&gt;&gt;settingSplitContainer.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="saveSettingsButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="scenarioReloadButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="saveSettingsButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="scenarioReloadButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>684, 5</value>
   </data>
-  <data name="saveSettingsButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="scenarioReloadButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 22</value>
   </data>
-  <data name="saveSettingsButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="scenarioReloadButton.TabIndex" type="System.Int32, mscorlib">
     <value>116</value>
   </data>
-  <data name="saveSettingsButton.Text" xml:space="preserve">
-    <value>Save</value>
+  <data name="scenarioReloadButton.Text" xml:space="preserve">
+    <value>Reload</value>
   </data>
-  <data name="&gt;&gt;saveSettingsButton.Name" xml:space="preserve">
-    <value>saveSettingsButton</value>
+  <data name="&gt;&gt;scenarioReloadButton.Name" xml:space="preserve">
+    <value>scenarioReloadButton</value>
   </data>
-  <data name="&gt;&gt;saveSettingsButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;scenarioReloadButton.Type" xml:space="preserve">
     <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;saveSettingsButton.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;scenarioReloadButton.Parent" xml:space="preserve">
+    <value>panel3</value>
   </data>
-  <data name="&gt;&gt;saveSettingsButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;scenarioReloadButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="scenarioSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 5</value>
+  </data>
+  <data name="scenarioSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 22</value>
+  </data>
+  <data name="scenarioSave.TabIndex" type="System.Int32, mscorlib">
+    <value>115</value>
+  </data>
+  <data name="scenarioSave.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="&gt;&gt;scenarioSave.Name" xml:space="preserve">
+    <value>scenarioSave</value>
+  </data>
+  <data name="&gt;&gt;scenarioSave.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;scenarioSave.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;scenarioSave.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="scenarioReset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 5</value>
+  </data>
+  <data name="scenarioReset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 22</value>
+  </data>
+  <data name="scenarioReset.TabIndex" type="System.Int32, mscorlib">
+    <value>116</value>
+  </data>
+  <data name="scenarioReset.Text" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="&gt;&gt;scenarioReset.Name" xml:space="preserve">
+    <value>scenarioReset</value>
+  </data>
+  <data name="&gt;&gt;scenarioReset.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;scenarioReset.Parent" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;scenarioReset.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 258</value>
+  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 383</value>
   </data>
-  <data name="panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="panel3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 34</value>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>760, 33</value>
   </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>114</value>
+  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>118</value>
   </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
+    <value>panel3</value>
   </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>SettingsXtraTabPage</value>
+  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
+    <value>ActionsXtraTabPage</value>
   </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="SettingsXtraTabPage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="ActionsXtraTabPage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="SettingsXtraTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="ActionsXtraTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="SettingsXtraTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>764, 294</value>
+  <data name="ActionsXtraTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>764, 418</value>
   </data>
-  <data name="SettingsXtraTabPage.Text" xml:space="preserve">
-    <value>Errors</value>
+  <data name="ActionsXtraTabPage.Text" xml:space="preserve">
+    <value>Blocked</value>
   </data>
-  <data name="&gt;&gt;SettingsXtraTabPage.Name" xml:space="preserve">
-    <value>SettingsXtraTabPage</value>
+  <data name="&gt;&gt;ActionsXtraTabPage.Name" xml:space="preserve">
+    <value>ActionsXtraTabPage</value>
   </data>
-  <data name="&gt;&gt;SettingsXtraTabPage.Type" xml:space="preserve">
+  <data name="&gt;&gt;ActionsXtraTabPage.Type" xml:space="preserve">
     <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;SettingsXtraTabPage.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ActionsXtraTabPage.Parent" xml:space="preserve">
     <value>MainTabControl</value>
   </data>
-  <data name="&gt;&gt;SettingsXtraTabPage.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;ActionsXtraTabPage.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;MainTabControl.Name" xml:space="preserve">
     <value>MainTabControl</value>
@@ -3029,7 +2952,6 @@ No available devices.</value>
   <data name="logsTabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <assembly alias="DevExpress.XtraEditors.v19.2" name="DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
   <data name="logsTabControl.HeaderLocation" type="DevExpress.XtraTab.TabHeaderLocation, DevExpress.XtraEditors.v19.2">
     <value>Bottom</value>
   </data>
@@ -3849,80 +3771,35 @@ No available devices.</value>
   <data name="repositoryItemAppointmentStatus1.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
     <value>Combo</value>
   </data>
-  <data name="dateEdit1.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 10pt</value>
+  <data name="ScenarioKeywordFilter.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11pt</value>
   </data>
-  <data name="dateEdit1.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
-    <value>Combo</value>
+  <data name="ScenarioKeywordFilter.Properties.NullText" xml:space="preserve">
+    <value>Keyword</value>
   </data>
-  <data name="dateEdit1.Properties.CalendarTimeProperties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
-    <value>Combo</value>
+  <data name="ScenarioKeywordFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 31</value>
   </data>
-  <data name="dateEdit1.Properties.NullText" xml:space="preserve">
-    <value>Date</value>
+  <data name="ScenarioKeywordFilter.TabIndex" type="System.Int32, mscorlib">
+    <value>120</value>
   </data>
-  <data name="dateEdit1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 22</value>
+  <data name="&gt;&gt;ScenarioKeywordFilter.Name" xml:space="preserve">
+    <value>ScenarioKeywordFilter</value>
   </data>
-  <data name="dateEdit1.TabIndex" type="System.Int32, mscorlib">
-    <value>119</value>
-  </data>
-  <data name="&gt;&gt;dateEdit1.Name" xml:space="preserve">
-    <value>dateEdit1</value>
-  </data>
-  <data name="&gt;&gt;dateEdit1.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.DateEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;dateEdit1.Parent" xml:space="preserve">
-    <value>splitContainerControl3.Panel1</value>
-  </data>
-  <data name="&gt;&gt;dateEdit1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="textEdit1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="textEdit1.EditValue" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textEdit1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 329</value>
-  </data>
-  <data name="textEdit1.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 10pt</value>
-  </data>
-  <data name="textEdit1.Properties.NullText" xml:space="preserve">
-    <value>Scenario Name</value>
-  </data>
-  <data name="textEdit1.Properties.NullValuePrompt" xml:space="preserve">
-    <value>Please enter a name</value>
-  </data>
-  <data name="textEdit1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 22</value>
-  </data>
-  <data name="textEdit1.TabIndex" type="System.Int32, mscorlib">
-    <value>118</value>
-  </data>
-  <data name="&gt;&gt;textEdit1.Name" xml:space="preserve">
-    <value>textEdit1</value>
-  </data>
-  <data name="&gt;&gt;textEdit1.Type" xml:space="preserve">
+  <data name="&gt;&gt;ScenarioKeywordFilter.Type" xml:space="preserve">
     <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;textEdit1.Parent" xml:space="preserve">
-    <value>splitContainerControl3.Panel1</value>
+  <data name="&gt;&gt;ScenarioKeywordFilter.Parent" xml:space="preserve">
+    <value>ScenarioTablePanel</value>
   </data>
-  <data name="&gt;&gt;textEdit1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="galleryControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="&gt;&gt;ScenarioKeywordFilter.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="galleryControlClient1.Location" type="System.Drawing.Point, System.Drawing">
     <value>1, 1</value>
   </data>
   <data name="galleryControlClient1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>346, 193</value>
+    <value>312, 260</value>
   </data>
   <data name="&gt;&gt;galleryControlClient1.Name" xml:space="preserve">
     <value>galleryControlClient1</value>
@@ -3936,11 +3813,14 @@ No available devices.</value>
   <data name="&gt;&gt;galleryControlClient1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="galleryControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
   <data name="galleryItemGroup1.Caption" xml:space="preserve">
     <value>Actions</value>
   </data>
   <data name="ActionSearchControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 6</value>
+    <value>64, 6</value>
   </data>
   <data name="ActionSearchControl.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 20</value>
@@ -4003,13 +3883,13 @@ No available devices.</value>
     <value>Scroll</value>
   </data>
   <data name="galleryControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 68</value>
+    <value>0, 41</value>
   </data>
   <data name="galleryControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="galleryControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>348, 195</value>
+    <value>314, 262</value>
   </data>
   <data name="galleryControl1.TabIndex" type="System.Int32, mscorlib">
     <value>117</value>
@@ -4024,19 +3904,64 @@ No available devices.</value>
     <value>DevExpress.XtraBars.Ribbon.GalleryControl, DevExpress.XtraBars.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;galleryControl1.Parent" xml:space="preserve">
-    <value>splitContainerControl3.Panel1</value>
+    <value>ScenarioTablePanel</value>
   </data>
   <data name="&gt;&gt;galleryControl1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ScenarioDateFilterKind.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="ScenarioDateFilterKind.Location" type="System.Drawing.Point, System.Drawing">
+    <value>211, 349</value>
+  </data>
+  <data name="ScenarioDateFilterKind.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="ScenarioDateFilterKind.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11pt</value>
+  </data>
+  <data name="ScenarioDateFilterKind.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
+    <value>Combo</value>
+  </data>
+  <data name="ScenarioDateFilterKind.Properties.Items" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="ScenarioDateFilterKind.Properties.Items1" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="ScenarioDateFilterKind.Properties.Items2" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="ScenarioDateFilterKind.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 27</value>
+  </data>
+  <data name="ScenarioDateFilterKind.TabIndex" type="System.Int32, mscorlib">
+    <value>121</value>
+  </data>
+  <data name="&gt;&gt;ScenarioDateFilterKind.Name" xml:space="preserve">
+    <value>ScenarioDateFilterKind</value>
+  </data>
+  <data name="&gt;&gt;ScenarioDateFilterKind.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.ComboBoxEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;ScenarioDateFilterKind.Parent" xml:space="preserve">
+    <value>ScenarioTablePanel</value>
+  </data>
+  <data name="&gt;&gt;ScenarioDateFilterKind.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="scenarioName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="scenarioName.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="scenarioName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 32</value>
+    <value>5, 5</value>
+  </data>
+  <data name="scenarioName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
   </data>
   <data name="scenarioName.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 10pt</value>
+    <value>Calibri, 11pt</value>
   </data>
   <data name="scenarioName.Properties.NullText" xml:space="preserve">
     <value>Scenario Name</value>
@@ -4045,7 +3970,7 @@ No available devices.</value>
     <value>Please enter a name</value>
   </data>
   <data name="scenarioName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>318, 22</value>
+    <value>304, 31</value>
   </data>
   <data name="scenarioName.TabIndex" type="System.Int32, mscorlib">
     <value>112</value>
@@ -4057,10 +3982,127 @@ No available devices.</value>
     <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;scenarioName.Parent" xml:space="preserve">
-    <value>splitContainerControl3.Panel1</value>
+    <value>ScenarioTablePanel</value>
   </data>
   <data name="&gt;&gt;scenarioName.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="ScenarioDateFilterValue.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="ScenarioDateFilterValue.EditValue" type="System.Decimal, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ScenarioDateFilterValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 349</value>
+  </data>
+  <data name="ScenarioDateFilterValue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="ScenarioDateFilterValue.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11pt</value>
+  </data>
+  <data name="ScenarioDateFilterValue.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
+    <value>Combo</value>
+  </data>
+  <data name="ScenarioDateFilterValue.Properties.Mask.EditMask" xml:space="preserve">
+    <value>N00</value>
+  </data>
+  <data name="ScenarioDateFilterValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 27</value>
+  </data>
+  <data name="ScenarioDateFilterValue.TabIndex" type="System.Int32, mscorlib">
+    <value>122</value>
+  </data>
+  <data name="&gt;&gt;ScenarioDateFilterValue.Name" xml:space="preserve">
+    <value>ScenarioDateFilterValue</value>
+  </data>
+  <data name="&gt;&gt;ScenarioDateFilterValue.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;ScenarioDateFilterValue.Parent" xml:space="preserve">
+    <value>ScenarioTablePanel</value>
+  </data>
+  <data name="&gt;&gt;ScenarioDateFilterValue.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="ScenarioDateFilterType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="ScenarioDateFilterType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 349</value>
+  </data>
+  <data name="ScenarioDateFilterType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="ScenarioDateFilterType.Properties.Items" xml:space="preserve">
+    <value>older_than:</value>
+  </data>
+  <data name="ScenarioDateFilterType.Properties.Items1" xml:space="preserve">
+    <value>older</value>
+  </data>
+  <data name="ScenarioDateFilterType.Properties.Items2" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ScenarioDateFilterType.Properties.Items3" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="ScenarioDateFilterType.Properties.Items4" xml:space="preserve">
+    <value>older_than</value>
+  </data>
+  <data name="ScenarioDateFilterType.Properties.Items5" xml:space="preserve">
+    <value>newer_than:</value>
+  </data>
+  <data name="ScenarioDateFilterType.Properties.Items6" xml:space="preserve">
+    <value>newer</value>
+  </data>
+  <data name="ScenarioDateFilterType.Properties.Items7" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ScenarioDateFilterType.Properties.Items8" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="ScenarioDateFilterType.Properties.Items9" xml:space="preserve">
+    <value>newer_than</value>
+  </data>
+  <data name="ScenarioDateFilterType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 27</value>
+  </data>
+  <data name="ScenarioDateFilterType.TabIndex" type="System.Int32, mscorlib">
+    <value>123</value>
+  </data>
+  <data name="&gt;&gt;ScenarioDateFilterType.Name" xml:space="preserve">
+    <value>ScenarioDateFilterType</value>
+  </data>
+  <data name="&gt;&gt;ScenarioDateFilterType.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.RadioGroup, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;ScenarioDateFilterType.Parent" xml:space="preserve">
+    <value>ScenarioTablePanel</value>
+  </data>
+  <data name="&gt;&gt;ScenarioDateFilterType.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ScenarioTablePanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="ScenarioTablePanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 381</value>
+  </data>
+  <data name="ScenarioTablePanel.TabIndex" type="System.Int32, mscorlib">
+    <value>124</value>
+  </data>
+  <data name="&gt;&gt;ScenarioTablePanel.Name" xml:space="preserve">
+    <value>ScenarioTablePanel</value>
+  </data>
+  <data name="&gt;&gt;ScenarioTablePanel.Type" xml:space="preserve">
+    <value>DevExpress.Utils.Layout.TablePanel, DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;ScenarioTablePanel.Parent" xml:space="preserve">
+    <value>splitContainerControl3.Panel1</value>
+  </data>
+  <data name="&gt;&gt;ScenarioTablePanel.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="splitContainerControl3.Panel1.Text" xml:space="preserve">
     <value>Panel1</value>
@@ -4068,14 +4110,11 @@ No available devices.</value>
   <data name="splitContainerControl3.Panel2.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="galleryControl2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
   <data name="galleryControlClient2.Location" type="System.Drawing.Point, System.Drawing">
     <value>1, 1</value>
   </data>
   <data name="galleryControlClient2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>348, 300</value>
+    <value>432, 379</value>
   </data>
   <data name="&gt;&gt;galleryControlClient2.Name" xml:space="preserve">
     <value>galleryControlClient2</value>
@@ -4089,14 +4128,29 @@ No available devices.</value>
   <data name="&gt;&gt;galleryControlClient2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="galleryControl2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="contextButton1.Caption" xml:space="preserve">
+    <value>contextButton1</value>
+  </data>
+  <data name="contextButton2.Caption" xml:space="preserve">
+    <value>contextButton2</value>
+  </data>
+  <data name="contextButton3.Caption" xml:space="preserve">
+    <value>contextButton3</value>
+  </data>
+  <data name="contextButton4.Caption" xml:space="preserve">
+    <value>contextButton4</value>
+  </data>
   <data name="galleryControl2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>8, 34</value>
+    <value>0, 0</value>
   </data>
   <data name="galleryControl2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="galleryControl2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 302</value>
+    <value>434, 381</value>
   </data>
   <data name="galleryControl2.TabIndex" type="System.Int32, mscorlib">
     <value>122</value>
@@ -4144,28 +4198,28 @@ No available devices.</value>
     <value>666, 17</value>
   </metadata>
   <metadata name="tooltip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>999, 17</value>
+    <value>148, 56</value>
   </metadata>
   <metadata name="errorLogFSW.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>121, 56</value>
+    <value>482, 56</value>
   </metadata>
   <metadata name="proc.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>244, 56</value>
+    <value>605, 56</value>
   </metadata>
   <metadata name="bgsleeper.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>666, 56</value>
+    <value>283, 95</value>
   </metadata>
   <metadata name="faded.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>771, 56</value>
+    <value>388, 95</value>
   </metadata>
   <metadata name="SM.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>854, 56</value>
+    <value>471, 95</value>
   </metadata>
   <metadata name="lvTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>923, 56</value>
+    <value>540, 95</value>
   </metadata>
   <metadata name="toast.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1014, 56</value>
+    <value>631, 95</value>
   </metadata>
   <data name="toast.Notifications" xml:space="preserve">
     <value>b8c36c4b-00e7-4c8d-ad53-1aefa75929aa</value>
@@ -4190,13 +4244,13 @@ No available devices.</value>
     <value>ImageAndText01</value>
   </data>
   <metadata name="iFormAssistant.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>868, 17</value>
+    <value>17, 56</value>
   </metadata>
   <metadata name="iTaskBarAssistant.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>400, 56</value>
+    <value>17, 95</value>
   </metadata>
   <metadata name="iAlert.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>320, 56</value>
+    <value>681, 56</value>
   </metadata>
   <data name="iAlert.AppearanceCaption.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt, style=Bold</value>
@@ -4205,7 +4259,7 @@ No available devices.</value>
     <value>Calibri, 10pt</value>
   </data>
   <metadata name="dockManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>171, 95</value>
+    <value>17, 134</value>
   </metadata>
   <data name="hideContainerBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -4253,7 +4307,7 @@ No available devices.</value>
     <value>266, 17</value>
   </metadata>
   <metadata name="disabledLogFSW.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1087, 17</value>
+    <value>236, 56</value>
   </metadata>
   <metadata name="iWorkspace.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>151, 17</value>
@@ -4262,6 +4316,6 @@ No available devices.</value>
     <value>746, 17</value>
   </metadata>
   <metadata name="warningLogFSW.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>304, 95</value>
+    <value>150, 134</value>
   </metadata>
 </root>

@@ -104,17 +104,25 @@ namespace GUX.Core
 
         private NpgsqlCommand PrepareCommand(CommandType commandType, string commandText)
         {
-            if (connection == null)
+            try
             {
-                connection = new NpgsqlConnection(this.connectionString);
+                if (connection == null)
+                {
+                    connection = new NpgsqlConnection(this.connectionString);
+                }
+                if (connection.State == ConnectionState.Closed || connection.State == ConnectionState.Broken)
+                {
+                    connection.Open();
+                }
+                NpgsqlCommand command = new NpgsqlCommand(commandText, connection);
+                command.CommandType = commandType;
+                return command;
             }
-            if (connection.State == ConnectionState.Closed || connection.State == ConnectionState.Broken)
+            catch (Exception c)
             {
-                connection.Open();
+                Console.WriteLine(c.Message);
+                return null;
             }
-            NpgsqlCommand command = new NpgsqlCommand(commandText, connection);
-            command.CommandType = commandType;
-            return command;
         }
 
         public NpgsqlCommand GetStoreProcedureCommand(string spname)

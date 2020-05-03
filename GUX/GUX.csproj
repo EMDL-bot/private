@@ -273,6 +273,12 @@
     <Compile Include="iWaitForm.Designer.cs">
       <DependentUpon>iWaitForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\iTools.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\iTools.Designer.cs">
+      <DependentUpon>iTools.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -293,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="iWaitForm.resx">
       <DependentUpon>iWaitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\iTools.resx">
+      <DependentUpon>iTools.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -332,6 +341,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="android_logo_aGh_icon.ico" />
+    <None Include="Resources\renamequery.svg" />
+    <None Include="Resources\editquery.svg" />
+    <None Include="Resources\removesheetrows.svg" />
     <None Include="Resources\other-icon.svg" />
     <None Include="Resources\warningLogs.svg" />
     <None Include="Resources\DbCheck.svg" />

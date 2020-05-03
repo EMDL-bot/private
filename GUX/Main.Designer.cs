@@ -46,10 +46,10 @@
             DevExpress.XtraBars.Ribbon.GalleryItem galleryItem12 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             DevExpress.XtraBars.Ribbon.GalleryItem galleryItem13 = new DevExpress.XtraBars.Ribbon.GalleryItem();
             DevExpress.XtraBars.Ribbon.GalleryItem galleryItem14 = new DevExpress.XtraBars.Ribbon.GalleryItem();
-            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions2 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
-            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions3 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
-            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions4 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
-            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions5 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
+            DevExpress.Utils.ContextButton contextButton1 = new DevExpress.Utils.ContextButton();
+            DevExpress.Utils.ContextButton contextButton2 = new DevExpress.Utils.ContextButton();
+            DevExpress.Utils.ContextButton contextButton3 = new DevExpress.Utils.ContextButton();
+            DevExpress.Utils.ContextButton contextButton4 = new DevExpress.Utils.ContextButton();
             DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions1 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
             DevExpress.XtraEditors.TableLayout.ItemTemplateBase itemTemplateBase1 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition1 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
@@ -80,7 +80,8 @@
             DevExpress.Utils.Animation.CoverTransition coverTransition1 = new DevExpress.Utils.Animation.CoverTransition();
             DevExpress.Utils.Animation.PushTransition pushTransition1 = new DevExpress.Utils.Animation.PushTransition();
             this.splitContainerControl3 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.ScenarioTablePanel = new DevExpress.Utils.Layout.TablePanel();
+            this.ScenarioKeywordFilter = new DevExpress.XtraEditors.TextEdit();
             this.iBarManager = new DevExpress.XtraBars.BarManager(this.components);
             this.statusBar = new DevExpress.XtraBars.Bar();
             this.ramLabel = new DevExpress.XtraBars.BarStaticItem();
@@ -106,56 +107,58 @@
             this.repositoryItemAppointmentStatus1 = new DevExpress.XtraScheduler.UI.RepositoryItemAppointmentStatus();
             this.repositoryItemZoomTrackBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.galleryControl1 = new DevExpress.XtraBars.Ribbon.GalleryControl();
             this.galleryControlClient1 = new DevExpress.XtraBars.Ribbon.GalleryControlClient();
             this.ActionSearchControl = new DevExpress.XtraEditors.SearchControl();
+            this.ScenarioDateFilterKind = new DevExpress.XtraEditors.ComboBoxEdit();
             this.scenarioName = new DevExpress.XtraEditors.TextEdit();
+            this.ScenarioDateFilterValue = new DevExpress.XtraEditors.SpinEdit();
+            this.ScenarioDateFilterType = new DevExpress.XtraEditors.RadioGroup();
             this.galleryControl2 = new DevExpress.XtraBars.Ribbon.GalleryControl();
             this.galleryControlClient2 = new DevExpress.XtraBars.Ribbon.GalleryControlClient();
             this.settingSplitContainer = new DevExpress.XtraEditors.SplitContainerControl();
-            this.SettingsTablePanelLeft = new DevExpress.Utils.Layout.TablePanel();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.pollingNum = new DevExpress.XtraEditors.SpinEdit();
-            this.testDriverToNum = new DevExpress.XtraEditors.SpinEdit();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.portNum = new DevExpress.XtraEditors.SpinEdit();
-            this.waitNum = new DevExpress.XtraEditors.SpinEdit();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.failedMAxRetriesNum = new DevExpress.XtraEditors.SpinEdit();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.driverLetterText = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.label20 = new System.Windows.Forms.Label();
+            this.pollingNum = new DevExpress.XtraEditors.SpinEdit();
             this.failedAutoRetrySwitch = new XanderUI.XUISwitch();
-            this.label21 = new System.Windows.Forms.Label();
+            this.driverLetterText = new DevExpress.XtraEditors.ComboBoxEdit();
             this.vmsDirectoryText = new DevExpress.XtraEditors.TextEdit();
-            this.SettingsTablePanelRight = new DevExpress.Utils.Layout.TablePanel();
-            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.waitNum = new DevExpress.XtraEditors.SpinEdit();
+            this.testDriverToNum = new DevExpress.XtraEditors.SpinEdit();
+            this.portNum = new DevExpress.XtraEditors.SpinEdit();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tablePanel2 = new DevExpress.Utils.Layout.TablePanel();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.failedActionsMaxRetriesNum = new DevExpress.XtraEditors.SpinEdit();
-            this.label4 = new System.Windows.Forms.Label();
-            this.concurrentThreadsNum = new DevExpress.XtraEditors.SpinEdit();
-            this.threadsIntervalNum = new DevExpress.XtraEditors.SpinEdit();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.appTopMostSwitch = new XanderUI.XUISwitch();
             this.appTransparentSwitch = new XanderUI.XUISwitch();
+            this.threadsIntervalNum = new DevExpress.XtraEditors.SpinEdit();
+            this.concurrentThreadsNum = new DevExpress.XtraEditors.SpinEdit();
+            this.label4 = new System.Windows.Forms.Label();
+            this.appTopMostSwitch = new XanderUI.XUISwitch();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.DevicesSplitContainer = new DevExpress.XtraEditors.SplitContainerControl();
             this.iFlyoutScenarioPanel = new DevExpress.Utils.FlyoutPanel();
             this.flyoutPanelControl1 = new DevExpress.Utils.FlyoutPanelControl();
-            this.noDevicLabel = new System.Windows.Forms.Label();
             this.WarmupDateFilterType = new DevExpress.XtraEditors.RadioGroup();
             this.WarmupDateFilterVal = new DevExpress.XtraEditors.SpinEdit();
             this.WarmupDateFilterKind = new DevExpress.XtraEditors.ComboBoxEdit();
             this.WarmupKeyword = new DevExpress.XtraEditors.TextEdit();
             this.ScenarioListBox = new DevExpress.XtraEditors.ListBoxControl();
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
+            this.noDevicLabel = new System.Windows.Forms.Label();
             this.iStackPanel = new DevExpress.Utils.Layout.StackPanel();
             this.selectedLabel = new System.Windows.Forms.Label();
             this.selectAllDeviceCb = new MetroSet_UI.Controls.MetroSetCheckBox();
@@ -193,6 +196,7 @@
             this.jumpListItemTask3 = new DevExpress.Utils.Taskbar.JumpListItemTask();
             this.iAlert = new DevExpress.XtraBars.Alerter.AlertControl(this.components);
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.autoHideContainer1 = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.outputDockPanel = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.logsTabControl = new DevExpress.XtraTab.XtraTabControl();
@@ -227,49 +231,43 @@
             this.iWorkspace = new DevExpress.Utils.WorkspaceManager(this.components);
             this.iPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.warningLogFSW = new System.IO.FileSystemWatcher();
-            this.autoHideContainer1 = new DevExpress.XtraBars.Docking.AutoHideContainer();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3)).BeginInit();
             this.splitContainerControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ScenarioTablePanel)).BeginInit();
+            this.ScenarioTablePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ScenarioKeywordFilter.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iBarManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMarqueeProgressBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemAppointmentStatus1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.galleryControl1)).BeginInit();
             this.galleryControl1.SuspendLayout();
             this.galleryControlClient1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ActionSearchControl.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ScenarioDateFilterKind.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.scenarioName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ScenarioDateFilterValue.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ScenarioDateFilterType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.galleryControl2)).BeginInit();
             this.galleryControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.settingSplitContainer)).BeginInit();
             this.settingSplitContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SettingsTablePanelLeft)).BeginInit();
-            this.SettingsTablePanelLeft.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pollingNum.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDriverToNum.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.portNum.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.waitNum.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
+            this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.failedMAxRetriesNum.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pollingNum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.driverLetterText.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmsDirectoryText.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SettingsTablePanelRight)).BeginInit();
-            this.SettingsTablePanelRight.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
-            this.groupControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.waitNum.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDriverToNum.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.portNum.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).BeginInit();
+            this.tablePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.failedActionsMaxRetriesNum.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.concurrentThreadsNum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.threadsIntervalNum.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
-            this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.concurrentThreadsNum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DevicesSplitContainer)).BeginInit();
             this.DevicesSplitContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iFlyoutScenarioPanel)).BeginInit();
@@ -293,6 +291,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.toast)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
+            this.autoHideContainer1.SuspendLayout();
             this.outputDockPanel.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logsTabControl)).BeginInit();
@@ -317,7 +316,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPopupMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.warningLogFSW)).BeginInit();
-            this.autoHideContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splashManager
@@ -331,28 +329,43 @@
             resources.ApplyResources(this.splitContainerControl3, "splitContainerControl3");
             this.splitContainerControl3.Name = "splitContainerControl3";
             resources.ApplyResources(this.splitContainerControl3.Panel1, "splitContainerControl3.Panel1");
-            this.splitContainerControl3.Panel1.Controls.Add(this.dateEdit1);
-            this.splitContainerControl3.Panel1.Controls.Add(this.textEdit1);
-            this.splitContainerControl3.Panel1.Controls.Add(this.galleryControl1);
-            this.splitContainerControl3.Panel1.Controls.Add(this.scenarioName);
+            this.splitContainerControl3.Panel1.Controls.Add(this.ScenarioTablePanel);
             resources.ApplyResources(this.splitContainerControl3.Panel2, "splitContainerControl3.Panel2");
             this.splitContainerControl3.Panel2.Controls.Add(this.galleryControl2);
-            this.splitContainerControl3.SplitterPosition = 381;
+            this.splitContainerControl3.SplitterPosition = 314;
             // 
-            // dateEdit1
+            // ScenarioTablePanel
             // 
-            resources.ApplyResources(this.dateEdit1, "dateEdit1");
-            this.dateEdit1.MenuManager = this.iBarManager;
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("dateEdit1.Properties.Appearance.Font")));
-            this.dateEdit1.Properties.Appearance.Options.UseFont = true;
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateEdit1.Properties.Buttons"))))});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateEdit1.Properties.CalendarTimeProperties.Buttons"))))});
-            this.dateEdit1.Properties.HighlightHolidays = false;
-            this.dateEdit1.Properties.HighlightTodayCell = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit1.Properties.NullText = resources.GetString("dateEdit1.Properties.NullText");
+            resources.ApplyResources(this.ScenarioTablePanel, "ScenarioTablePanel");
+            this.ScenarioTablePanel.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 51.4F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 20.73F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 37.87F)});
+            this.ScenarioTablePanel.Controls.Add(this.ScenarioKeywordFilter);
+            this.ScenarioTablePanel.Controls.Add(this.galleryControl1);
+            this.ScenarioTablePanel.Controls.Add(this.ScenarioDateFilterKind);
+            this.ScenarioTablePanel.Controls.Add(this.scenarioName);
+            this.ScenarioTablePanel.Controls.Add(this.ScenarioDateFilterValue);
+            this.ScenarioTablePanel.Controls.Add(this.ScenarioDateFilterType);
+            this.ScenarioTablePanel.Name = "ScenarioTablePanel";
+            this.ScenarioTablePanel.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 43.15F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 274.85F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 43.45F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 37.55F)});
+            this.ScenarioTablePanel.ShowGrid = DevExpress.Utils.DefaultBoolean.False;
+            // 
+            // ScenarioKeywordFilter
+            // 
+            this.ScenarioTablePanel.SetColumn(this.ScenarioKeywordFilter, 0);
+            this.ScenarioTablePanel.SetColumnSpan(this.ScenarioKeywordFilter, 3);
+            resources.ApplyResources(this.ScenarioKeywordFilter, "ScenarioKeywordFilter");
+            this.ScenarioKeywordFilter.MenuManager = this.iBarManager;
+            this.ScenarioKeywordFilter.Name = "ScenarioKeywordFilter";
+            this.ScenarioKeywordFilter.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("ScenarioKeywordFilter.Properties.Appearance.Font")));
+            this.ScenarioKeywordFilter.Properties.Appearance.Options.UseFont = true;
+            this.ScenarioKeywordFilter.Properties.NullText = resources.GetString("ScenarioKeywordFilter.Properties.NullText");
+            this.ScenarioTablePanel.SetRow(this.ScenarioKeywordFilter, 2);
             // 
             // iBarManager
             // 
@@ -561,22 +574,13 @@
             // 
             this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
             // 
-            // textEdit1
-            // 
-            resources.ApplyResources(this.textEdit1, "textEdit1");
-            this.textEdit1.MenuManager = this.iBarManager;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.textEdit1.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEdit1.Properties.Appearance.Font")));
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Properties.NullText = resources.GetString("textEdit1.Properties.NullText");
-            this.textEdit1.Properties.NullValuePrompt = resources.GetString("textEdit1.Properties.NullValuePrompt");
-            // 
             // galleryControl1
             // 
-            resources.ApplyResources(this.galleryControl1, "galleryControl1");
             this.galleryControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.ScenarioTablePanel.SetColumn(this.galleryControl1, 0);
+            this.ScenarioTablePanel.SetColumnSpan(this.galleryControl1, 3);
             this.galleryControl1.Controls.Add(this.galleryControlClient1);
+            resources.ApplyResources(this.galleryControl1, "galleryControl1");
             // 
             // 
             // 
@@ -664,6 +668,7 @@
             this.galleryControl1.Gallery.ItemClick += new DevExpress.XtraBars.Ribbon.GalleryItemClickEventHandler(this.Gallery_ItemClick);
             this.galleryControl1.Gallery.ItemCheckedChanged += new DevExpress.XtraBars.Ribbon.GalleryItemEventHandler(this.Gallery_ItemCheckedChanged);
             this.galleryControl1.Name = "galleryControl1";
+            this.ScenarioTablePanel.SetRow(this.galleryControl1, 1);
             this.galleryControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Gallery_MouseDown);
             // 
             // galleryControlClient1
@@ -684,8 +689,26 @@
             this.ActionSearchControl.Properties.FindDelay = 500;
             this.ActionSearchControl.Properties.HighlightedItemStyle = DevExpress.XtraEditors.HighlightStyle.Skinned;
             // 
+            // ScenarioDateFilterKind
+            // 
+            this.ScenarioTablePanel.SetColumn(this.ScenarioDateFilterKind, 2);
+            resources.ApplyResources(this.ScenarioDateFilterKind, "ScenarioDateFilterKind");
+            this.ScenarioDateFilterKind.MenuManager = this.iBarManager;
+            this.ScenarioDateFilterKind.Name = "ScenarioDateFilterKind";
+            this.ScenarioDateFilterKind.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("ScenarioDateFilterKind.Properties.Appearance.Font")));
+            this.ScenarioDateFilterKind.Properties.Appearance.Options.UseFont = true;
+            this.ScenarioDateFilterKind.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("ScenarioDateFilterKind.Properties.Buttons"))))});
+            this.ScenarioDateFilterKind.Properties.Items.AddRange(new object[] {
+            resources.GetString("ScenarioDateFilterKind.Properties.Items"),
+            resources.GetString("ScenarioDateFilterKind.Properties.Items1"),
+            resources.GetString("ScenarioDateFilterKind.Properties.Items2")});
+            this.ScenarioTablePanel.SetRow(this.ScenarioDateFilterKind, 3);
+            // 
             // scenarioName
             // 
+            this.ScenarioTablePanel.SetColumn(this.scenarioName, 0);
+            this.ScenarioTablePanel.SetColumnSpan(this.scenarioName, 3);
             resources.ApplyResources(this.scenarioName, "scenarioName");
             this.scenarioName.MenuManager = this.iBarManager;
             this.scenarioName.Name = "scenarioName";
@@ -694,18 +717,55 @@
             this.scenarioName.Properties.Appearance.Options.UseFont = true;
             this.scenarioName.Properties.NullText = resources.GetString("scenarioName.Properties.NullText");
             this.scenarioName.Properties.NullValuePrompt = resources.GetString("scenarioName.Properties.NullValuePrompt");
+            this.ScenarioTablePanel.SetRow(this.scenarioName, 0);
+            // 
+            // ScenarioDateFilterValue
+            // 
+            this.ScenarioTablePanel.SetColumn(this.ScenarioDateFilterValue, 1);
+            resources.ApplyResources(this.ScenarioDateFilterValue, "ScenarioDateFilterValue");
+            this.ScenarioDateFilterValue.MenuManager = this.iBarManager;
+            this.ScenarioDateFilterValue.Name = "ScenarioDateFilterValue";
+            this.ScenarioDateFilterValue.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("ScenarioDateFilterValue.Properties.Appearance.Font")));
+            this.ScenarioDateFilterValue.Properties.Appearance.Options.UseFont = true;
+            this.ScenarioDateFilterValue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("ScenarioDateFilterValue.Properties.Buttons"))))});
+            this.ScenarioDateFilterValue.Properties.IsFloatValue = false;
+            this.ScenarioDateFilterValue.Properties.Mask.EditMask = resources.GetString("ScenarioDateFilterValue.Properties.Mask.EditMask");
+            this.ScenarioDateFilterValue.Properties.MaxValue = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.ScenarioDateFilterValue.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.ScenarioTablePanel.SetRow(this.ScenarioDateFilterValue, 3);
+            // 
+            // ScenarioDateFilterType
+            // 
+            this.ScenarioDateFilterType.AutoSizeInLayoutControl = true;
+            this.ScenarioTablePanel.SetColumn(this.ScenarioDateFilterType, 0);
+            resources.ApplyResources(this.ScenarioDateFilterType, "ScenarioDateFilterType");
+            this.ScenarioDateFilterType.MenuManager = this.iBarManager;
+            this.ScenarioDateFilterType.Name = "ScenarioDateFilterType";
+            this.ScenarioDateFilterType.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(resources.GetString("ScenarioDateFilterType.Properties.Items"), resources.GetString("ScenarioDateFilterType.Properties.Items1"), ((bool)(resources.GetObject("ScenarioDateFilterType.Properties.Items2"))), ((object)(resources.GetObject("ScenarioDateFilterType.Properties.Items3"))), resources.GetString("ScenarioDateFilterType.Properties.Items4")),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(resources.GetString("ScenarioDateFilterType.Properties.Items5"), resources.GetString("ScenarioDateFilterType.Properties.Items6"), ((bool)(resources.GetObject("ScenarioDateFilterType.Properties.Items7"))), ((object)(resources.GetObject("ScenarioDateFilterType.Properties.Items8"))), resources.GetString("ScenarioDateFilterType.Properties.Items9"))});
+            this.ScenarioDateFilterType.Properties.ItemsLayout = DevExpress.XtraEditors.RadioGroupItemsLayout.Flow;
+            this.ScenarioTablePanel.SetRow(this.ScenarioDateFilterType, 3);
             // 
             // galleryControl2
             // 
-            resources.ApplyResources(this.galleryControl2, "galleryControl2");
             this.galleryControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.galleryControl2.Controls.Add(this.galleryControlClient2);
+            resources.ApplyResources(this.galleryControl2, "galleryControl2");
             // 
             // 
             // 
+            this.galleryControl2.Gallery.AllowFilter = false;
             this.galleryControl2.Gallery.AllowGlyphSkinning = true;
-            this.galleryControl2.Gallery.AllowItemDrag = true;
-            this.galleryControl2.Gallery.AllowMarqueeSelection = true;
             this.galleryControl2.Gallery.Appearance.FilterPanelCaption.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.galleryControl2.Gallery.Appearance.FilterPanelCaption.Options.UseBackColor = true;
             this.galleryControl2.Gallery.Appearance.GroupCaption.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
@@ -715,11 +775,27 @@
             this.galleryControl2.Gallery.CheckSelectedItemViaKeyboard = true;
             this.galleryControl2.Gallery.ClearSelectionOnClickEmptySpace = true;
             this.galleryControl2.Gallery.ContentHorzAlignment = DevExpress.Utils.HorzAlignment.Center;
+            resources.ApplyResources(contextButton1, "contextButton1");
+            contextButton1.Id = new System.Guid("cf08eed5-7172-4d34-9c41-6e42e86ea91a");
+            contextButton1.Name = "contextButton1";
+            resources.ApplyResources(contextButton2, "contextButton2");
+            contextButton2.Id = new System.Guid("61e25e33-01fa-4a72-b69d-b66a182b1960");
+            contextButton2.Name = "contextButton2";
+            resources.ApplyResources(contextButton3, "contextButton3");
+            contextButton3.Id = new System.Guid("97b3e876-e780-4bf3-bc2e-03f0ac453741");
+            contextButton3.Name = "contextButton3";
+            resources.ApplyResources(contextButton4, "contextButton4");
+            contextButton4.Id = new System.Guid("528bf7a5-4147-4dc4-8d9c-c9ce32b56d56");
+            contextButton4.Name = "contextButton4";
+            this.galleryControl2.Gallery.ContextButtons.Add(contextButton1);
+            this.galleryControl2.Gallery.ContextButtons.Add(contextButton2);
+            this.galleryControl2.Gallery.ContextButtons.Add(contextButton3);
+            this.galleryControl2.Gallery.ContextButtons.Add(contextButton4);
             this.galleryControl2.Gallery.FilterCaption = "All Scenarios";
-            this.galleryControl2.Gallery.ItemCheckMode = DevExpress.XtraBars.Ribbon.Gallery.ItemCheckMode.Multiple;
+            this.galleryControl2.Gallery.ItemCheckMode = DevExpress.XtraBars.Ribbon.Gallery.ItemCheckMode.SingleCheck;
             this.galleryControl2.Gallery.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Postponed;
             this.galleryControl2.Gallery.ItemImageLayout = DevExpress.Utils.Drawing.ImageLayoutMode.TopCenter;
-            this.galleryControl2.Gallery.OptionsImageLoad.AnimationType = DevExpress.Utils.ImageContentAnimationType.SegmentedFade;
+            this.galleryControl2.Gallery.OptionsImageLoad.AnimationType = DevExpress.Utils.ImageContentAnimationType.Slide;
             this.galleryControl2.Gallery.OptionsImageLoad.AsyncLoad = true;
             this.galleryControl2.Gallery.ScrollMode = DevExpress.XtraBars.Ribbon.Gallery.GalleryScrollMode.Smooth;
             this.galleryControl2.Gallery.ShowItemText = true;
@@ -747,183 +823,94 @@
             this.settingSplitContainer.LookAndFeel.UseDefaultLookAndFeel = false;
             this.settingSplitContainer.Name = "settingSplitContainer";
             resources.ApplyResources(this.settingSplitContainer.Panel1, "settingSplitContainer.Panel1");
-            this.settingSplitContainer.Panel1.Controls.Add(this.SettingsTablePanelLeft);
+            this.settingSplitContainer.Panel1.Controls.Add(this.tablePanel1);
             resources.ApplyResources(this.settingSplitContainer.Panel2, "settingSplitContainer.Panel2");
-            this.settingSplitContainer.Panel2.Controls.Add(this.SettingsTablePanelRight);
+            this.settingSplitContainer.Panel2.Controls.Add(this.tablePanel2);
             this.settingSplitContainer.ShowSplitGlyph = DevExpress.Utils.DefaultBoolean.True;
-            this.settingSplitContainer.SplitterPosition = 393;
+            this.settingSplitContainer.SplitterPosition = 368;
             // 
-            // SettingsTablePanelLeft
+            // tablePanel1
             // 
-            resources.ApplyResources(this.SettingsTablePanelLeft, "SettingsTablePanelLeft");
-            this.SettingsTablePanelLeft.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 5F)});
-            this.SettingsTablePanelLeft.Controls.Add(this.groupControl1);
-            this.SettingsTablePanelLeft.Controls.Add(this.groupControl2);
-            this.SettingsTablePanelLeft.FireScrollEventOnMouseWheel = true;
-            this.SettingsTablePanelLeft.Name = "SettingsTablePanelLeft";
-            this.SettingsTablePanelLeft.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F)});
-            this.SettingsTablePanelLeft.ShowGrid = DevExpress.Utils.DefaultBoolean.False;
+            this.tablePanel1.Appearance.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("tablePanel1.Appearance.GradientMode")));
+            this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 33.24F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26.76F)});
+            this.tablePanel1.Controls.Add(this.labelControl4);
+            this.tablePanel1.Controls.Add(this.labelControl3);
+            this.tablePanel1.Controls.Add(this.failedMAxRetriesNum);
+            this.tablePanel1.Controls.Add(this.pollingNum);
+            this.tablePanel1.Controls.Add(this.failedAutoRetrySwitch);
+            this.tablePanel1.Controls.Add(this.driverLetterText);
+            this.tablePanel1.Controls.Add(this.vmsDirectoryText);
+            this.tablePanel1.Controls.Add(this.label18);
+            this.tablePanel1.Controls.Add(this.label2);
+            this.tablePanel1.Controls.Add(this.label19);
+            this.tablePanel1.Controls.Add(this.label20);
+            this.tablePanel1.Controls.Add(this.label17);
+            this.tablePanel1.Controls.Add(this.label16);
+            this.tablePanel1.Controls.Add(this.label21);
+            this.tablePanel1.Controls.Add(this.waitNum);
+            this.tablePanel1.Controls.Add(this.testDriverToNum);
+            this.tablePanel1.Controls.Add(this.portNum);
+            this.tablePanel1.Controls.Add(this.label3);
+            resources.ApplyResources(this.tablePanel1, "tablePanel1");
+            this.tablePanel1.Name = "tablePanel1";
+            this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 25F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 27F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 28F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F)});
             // 
-            // groupControl1
+            // labelControl4
             // 
-            resources.ApplyResources(this.groupControl1, "groupControl1");
-            this.groupControl1.CaptionImageOptions.AllowGlyphSkinning = true;
-            this.groupControl1.CaptionImageOptions.Padding = new System.Windows.Forms.Padding(2);
-            this.groupControl1.CaptionImageOptions.SvgImage = global::GUX.Properties.Resources.server_icon;
-            this.groupControl1.CaptionImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.SettingsTablePanelLeft.SetColumn(this.groupControl1, 0);
-            this.groupControl1.Controls.Add(this.pollingNum);
-            this.groupControl1.Controls.Add(this.testDriverToNum);
-            this.groupControl1.Controls.Add(this.label2);
-            this.groupControl1.Controls.Add(this.label3);
-            this.groupControl1.Controls.Add(this.label16);
-            this.groupControl1.Controls.Add(this.label17);
-            this.groupControl1.Controls.Add(this.portNum);
-            this.groupControl1.Controls.Add(this.waitNum);
-            this.groupControl1.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton(resources.GetString("groupControl1.CustomHeaderButtons"), ((bool)(resources.GetObject("groupControl1.CustomHeaderButtons1"))), buttonImageOptions2, ((DevExpress.XtraBars.Docking2010.ButtonStyle)(resources.GetObject("groupControl1.CustomHeaderButtons2"))), resources.GetString("groupControl1.CustomHeaderButtons3"), ((int)(resources.GetObject("groupControl1.CustomHeaderButtons4"))), ((bool)(resources.GetObject("groupControl1.CustomHeaderButtons5"))), ((DevExpress.Utils.SuperToolTip)(resources.GetObject("groupControl1.CustomHeaderButtons6"))), ((bool)(resources.GetObject("groupControl1.CustomHeaderButtons7"))), ((bool)(resources.GetObject("groupControl1.CustomHeaderButtons8"))), ((bool)(resources.GetObject("groupControl1.CustomHeaderButtons9"))), ((object)(resources.GetObject("groupControl1.CustomHeaderButtons10"))), ((int)(resources.GetObject("groupControl1.CustomHeaderButtons11"))))});
-            this.groupControl1.CustomHeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
-            this.groupControl1.GroupStyle = DevExpress.Utils.GroupStyle.Card;
-            this.groupControl1.Name = "groupControl1";
-            this.SettingsTablePanelLeft.SetRow(this.groupControl1, 0);
+            this.labelControl4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.labelControl4.Appearance.BackColor2 = ((System.Drawing.Color)(resources.GetObject("labelControl4.Appearance.BackColor2")));
+            this.labelControl4.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl4.Appearance.Font")));
+            this.labelControl4.Appearance.Options.UseBackColor = true;
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Appearance.Options.UseTextOptions = true;
+            this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl4.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.labelControl4.AppearanceHovered.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("labelControl4.AppearanceHovered.GradientMode")));
+            resources.ApplyResources(this.labelControl4, "labelControl4");
+            this.tablePanel1.SetColumn(this.labelControl4, 0);
+            this.tablePanel1.SetColumnSpan(this.labelControl4, 2);
+            this.labelControl4.ImageOptions.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelControl4.ImageOptions.SvgImage = global::GUX.Properties.Resources.drive_icon;
+            this.labelControl4.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.labelControl4.Name = "labelControl4";
+            this.tablePanel1.SetRow(this.labelControl4, 5);
             // 
-            // pollingNum
+            // labelControl3
             // 
-            resources.ApplyResources(this.pollingNum, "pollingNum");
-            this.pollingNum.Name = "pollingNum";
-            this.pollingNum.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("pollingNum.Properties.Appearance.Font")));
-            this.pollingNum.Properties.Appearance.Options.UseFont = true;
-            this.pollingNum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("pollingNum.Properties.Buttons"))))});
-            this.pollingNum.Properties.IsFloatValue = false;
-            this.pollingNum.Properties.Mask.EditMask = resources.GetString("pollingNum.Properties.Mask.EditMask");
-            this.pollingNum.Properties.MaxValue = new decimal(new int[] {
-            2500,
-            0,
-            0,
-            0});
-            this.pollingNum.Properties.MinValue = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            // 
-            // testDriverToNum
-            // 
-            resources.ApplyResources(this.testDriverToNum, "testDriverToNum");
-            this.testDriverToNum.Name = "testDriverToNum";
-            this.testDriverToNum.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("testDriverToNum.Properties.Appearance.Font")));
-            this.testDriverToNum.Properties.Appearance.Options.UseFont = true;
-            this.testDriverToNum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("testDriverToNum.Properties.Buttons"))))});
-            this.testDriverToNum.Properties.IsFloatValue = false;
-            this.testDriverToNum.Properties.Mask.EditMask = resources.GetString("testDriverToNum.Properties.Mask.EditMask");
-            this.testDriverToNum.Properties.MaxValue = new decimal(new int[] {
-            3600,
-            0,
-            0,
-            0});
-            this.testDriverToNum.Properties.MinValue = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
-            // 
-            // label16
-            // 
-            resources.ApplyResources(this.label16, "label16");
-            this.label16.Name = "label16";
-            // 
-            // label17
-            // 
-            resources.ApplyResources(this.label17, "label17");
-            this.label17.Name = "label17";
-            // 
-            // portNum
-            // 
-            resources.ApplyResources(this.portNum, "portNum");
-            this.portNum.Name = "portNum";
-            this.portNum.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("portNum.Properties.Appearance.Font")));
-            this.portNum.Properties.Appearance.Options.UseFont = true;
-            this.portNum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("portNum.Properties.Buttons"))))});
-            this.portNum.Properties.IsFloatValue = false;
-            this.portNum.Properties.Mask.EditMask = resources.GetString("portNum.Properties.Mask.EditMask");
-            this.portNum.Properties.MaxValue = new decimal(new int[] {
-            26000,
-            0,
-            0,
-            0});
-            this.portNum.Properties.MinValue = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            // 
-            // waitNum
-            // 
-            resources.ApplyResources(this.waitNum, "waitNum");
-            this.waitNum.Name = "waitNum";
-            this.waitNum.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("waitNum.Properties.Appearance.Font")));
-            this.waitNum.Properties.Appearance.Options.UseFont = true;
-            this.waitNum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("waitNum.Properties.Buttons"))))});
-            this.waitNum.Properties.IsFloatValue = false;
-            this.waitNum.Properties.Mask.EditMask = resources.GetString("waitNum.Properties.Mask.EditMask");
-            this.waitNum.Properties.MaxValue = new decimal(new int[] {
-            3600,
-            0,
-            0,
-            0});
-            this.waitNum.Properties.MinValue = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // groupControl2
-            // 
-            this.groupControl2.CaptionImageOptions.AllowGlyphSkinning = true;
-            this.groupControl2.CaptionImageOptions.Location = DevExpress.Utils.GroupElementLocation.BeforeText;
-            this.groupControl2.CaptionImageOptions.Padding = new System.Windows.Forms.Padding(2);
-            this.groupControl2.CaptionImageOptions.SvgImage = global::GUX.Properties.Resources.drive_icon;
-            this.groupControl2.CaptionImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.SettingsTablePanelLeft.SetColumn(this.groupControl2, 0);
-            this.groupControl2.Controls.Add(this.failedMAxRetriesNum);
-            this.groupControl2.Controls.Add(this.label18);
-            this.groupControl2.Controls.Add(this.label19);
-            this.groupControl2.Controls.Add(this.driverLetterText);
-            this.groupControl2.Controls.Add(this.label20);
-            this.groupControl2.Controls.Add(this.failedAutoRetrySwitch);
-            this.groupControl2.Controls.Add(this.label21);
-            this.groupControl2.Controls.Add(this.vmsDirectoryText);
-            this.groupControl2.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton(resources.GetString("groupControl2.CustomHeaderButtons"), ((bool)(resources.GetObject("groupControl2.CustomHeaderButtons1"))), buttonImageOptions3, ((DevExpress.XtraBars.Docking2010.ButtonStyle)(resources.GetObject("groupControl2.CustomHeaderButtons2"))), resources.GetString("groupControl2.CustomHeaderButtons3"), ((int)(resources.GetObject("groupControl2.CustomHeaderButtons4"))), ((bool)(resources.GetObject("groupControl2.CustomHeaderButtons5"))), ((DevExpress.Utils.SuperToolTip)(resources.GetObject("groupControl2.CustomHeaderButtons6"))), ((bool)(resources.GetObject("groupControl2.CustomHeaderButtons7"))), ((bool)(resources.GetObject("groupControl2.CustomHeaderButtons8"))), ((bool)(resources.GetObject("groupControl2.CustomHeaderButtons9"))), ((object)(resources.GetObject("groupControl2.CustomHeaderButtons10"))), ((int)(resources.GetObject("groupControl2.CustomHeaderButtons11"))))});
-            this.groupControl2.CustomHeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
-            resources.ApplyResources(this.groupControl2, "groupControl2");
-            this.groupControl2.FireScrollEventOnMouseWheel = true;
-            this.groupControl2.GroupStyle = DevExpress.Utils.GroupStyle.Card;
-            this.groupControl2.LookAndFeel.SkinName = "Visual Studio 2013 Dark";
-            this.groupControl2.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.groupControl2.Name = "groupControl2";
-            this.SettingsTablePanelLeft.SetRow(this.groupControl2, 1);
+            this.labelControl3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.labelControl3.Appearance.BackColor2 = ((System.Drawing.Color)(resources.GetObject("labelControl3.Appearance.BackColor2")));
+            this.labelControl3.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl3.Appearance.Font")));
+            this.labelControl3.Appearance.Options.UseBackColor = true;
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Appearance.Options.UseTextOptions = true;
+            this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.labelControl3.AppearanceHovered.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("labelControl3.AppearanceHovered.GradientMode")));
+            resources.ApplyResources(this.labelControl3, "labelControl3");
+            this.tablePanel1.SetColumn(this.labelControl3, 0);
+            this.tablePanel1.SetColumnSpan(this.labelControl3, 2);
+            this.labelControl3.ImageOptions.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelControl3.ImageOptions.SvgImage = global::GUX.Properties.Resources.server_icon;
+            this.labelControl3.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.labelControl3.Name = "labelControl3";
+            this.tablePanel1.SetRow(this.labelControl3, 0);
             // 
             // failedMAxRetriesNum
             // 
             resources.ApplyResources(this.failedMAxRetriesNum, "failedMAxRetriesNum");
+            this.tablePanel1.SetColumn(this.failedMAxRetriesNum, 1);
             this.failedMAxRetriesNum.Name = "failedMAxRetriesNum";
             this.failedMAxRetriesNum.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("failedMAxRetriesNum.Properties.Appearance.Font")));
             this.failedMAxRetriesNum.Properties.Appearance.Options.UseFont = true;
@@ -941,20 +928,49 @@
             0,
             0,
             0});
+            this.tablePanel1.SetRow(this.failedMAxRetriesNum, 9);
             // 
-            // label18
+            // pollingNum
             // 
-            resources.ApplyResources(this.label18, "label18");
-            this.label18.Name = "label18";
+            resources.ApplyResources(this.pollingNum, "pollingNum");
+            this.tablePanel1.SetColumn(this.pollingNum, 1);
+            this.pollingNum.Name = "pollingNum";
+            this.pollingNum.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("pollingNum.Properties.Appearance.Font")));
+            this.pollingNum.Properties.Appearance.Options.UseFont = true;
+            this.pollingNum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("pollingNum.Properties.Buttons"))))});
+            this.pollingNum.Properties.IsFloatValue = false;
+            this.pollingNum.Properties.Mask.EditMask = resources.GetString("pollingNum.Properties.Mask.EditMask");
+            this.pollingNum.Properties.MaxValue = new decimal(new int[] {
+            2500,
+            0,
+            0,
+            0});
+            this.pollingNum.Properties.MinValue = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.tablePanel1.SetRow(this.pollingNum, 4);
             // 
-            // label19
+            // failedAutoRetrySwitch
             // 
-            resources.ApplyResources(this.label19, "label19");
-            this.label19.Name = "label19";
+            resources.ApplyResources(this.failedAutoRetrySwitch, "failedAutoRetrySwitch");
+            this.failedAutoRetrySwitch.BackColor = System.Drawing.Color.Transparent;
+            this.tablePanel1.SetColumn(this.failedAutoRetrySwitch, 1);
+            this.failedAutoRetrySwitch.HandleOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.failedAutoRetrySwitch.HandleOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.failedAutoRetrySwitch.Name = "failedAutoRetrySwitch";
+            this.failedAutoRetrySwitch.OffColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.failedAutoRetrySwitch.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.tablePanel1.SetRow(this.failedAutoRetrySwitch, 8);
+            this.failedAutoRetrySwitch.SwitchState = XanderUI.XUISwitch.State.Off;
+            this.failedAutoRetrySwitch.SwitchStyle = XanderUI.XUISwitch.Style.Horizontal;
             // 
             // driverLetterText
             // 
             resources.ApplyResources(this.driverLetterText, "driverLetterText");
+            this.tablePanel1.SetColumn(this.driverLetterText, 1);
             this.driverLetterText.Name = "driverLetterText";
             this.driverLetterText.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("driverLetterText.Properties.Appearance.Font")));
             this.driverLetterText.Properties.Appearance.Options.UseFont = true;
@@ -990,78 +1006,216 @@
             resources.GetString("driverLetterText.Properties.Items25")});
             this.driverLetterText.Properties.Sorted = true;
             this.driverLetterText.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            // 
-            // label20
-            // 
-            resources.ApplyResources(this.label20, "label20");
-            this.label20.Name = "label20";
-            // 
-            // failedAutoRetrySwitch
-            // 
-            resources.ApplyResources(this.failedAutoRetrySwitch, "failedAutoRetrySwitch");
-            this.failedAutoRetrySwitch.BackColor = System.Drawing.Color.Transparent;
-            this.failedAutoRetrySwitch.HandleOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.failedAutoRetrySwitch.HandleOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.failedAutoRetrySwitch.Name = "failedAutoRetrySwitch";
-            this.failedAutoRetrySwitch.OffColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.failedAutoRetrySwitch.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.failedAutoRetrySwitch.SwitchState = XanderUI.XUISwitch.State.Off;
-            this.failedAutoRetrySwitch.SwitchStyle = XanderUI.XUISwitch.Style.Horizontal;
-            // 
-            // label21
-            // 
-            resources.ApplyResources(this.label21, "label21");
-            this.label21.Name = "label21";
+            this.tablePanel1.SetRow(this.driverLetterText, 6);
             // 
             // vmsDirectoryText
             // 
             resources.ApplyResources(this.vmsDirectoryText, "vmsDirectoryText");
+            this.tablePanel1.SetColumn(this.vmsDirectoryText, 1);
             this.vmsDirectoryText.Name = "vmsDirectoryText";
             this.vmsDirectoryText.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("vmsDirectoryText.Properties.Appearance.Font")));
             this.vmsDirectoryText.Properties.Appearance.Options.UseFont = true;
             this.vmsDirectoryText.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
+            this.tablePanel1.SetRow(this.vmsDirectoryText, 7);
             // 
-            // SettingsTablePanelRight
+            // label18
             // 
-            resources.ApplyResources(this.SettingsTablePanelRight, "SettingsTablePanelRight");
-            this.SettingsTablePanelRight.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 5F)});
-            this.SettingsTablePanelRight.Controls.Add(this.groupControl4);
-            this.SettingsTablePanelRight.Controls.Add(this.groupControl3);
-            this.SettingsTablePanelRight.FireScrollEventOnMouseWheel = true;
-            this.SettingsTablePanelRight.Name = "SettingsTablePanelRight";
-            this.SettingsTablePanelRight.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.AutoSize, 26F)});
-            this.SettingsTablePanelRight.ShowGrid = DevExpress.Utils.DefaultBoolean.False;
+            resources.ApplyResources(this.label18, "label18");
+            this.tablePanel1.SetColumn(this.label18, 0);
+            this.label18.Name = "label18";
+            this.tablePanel1.SetRow(this.label18, 9);
             // 
-            // groupControl4
+            // label2
             // 
-            resources.ApplyResources(this.groupControl4, "groupControl4");
-            this.groupControl4.CaptionImageOptions.AllowGlyphSkinning = true;
-            this.groupControl4.CaptionImageOptions.Location = DevExpress.Utils.GroupElementLocation.BeforeText;
-            this.groupControl4.CaptionImageOptions.Padding = new System.Windows.Forms.Padding(2);
-            this.groupControl4.CaptionImageOptions.SvgImage = global::GUX.Properties.Resources.threads_icon;
-            this.groupControl4.CaptionImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.SettingsTablePanelRight.SetColumn(this.groupControl4, 0);
-            this.groupControl4.Controls.Add(this.failedActionsMaxRetriesNum);
-            this.groupControl4.Controls.Add(this.label4);
-            this.groupControl4.Controls.Add(this.concurrentThreadsNum);
-            this.groupControl4.Controls.Add(this.threadsIntervalNum);
-            this.groupControl4.Controls.Add(this.label22);
-            this.groupControl4.Controls.Add(this.label23);
-            this.groupControl4.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton(resources.GetString("groupControl4.CustomHeaderButtons"), ((bool)(resources.GetObject("groupControl4.CustomHeaderButtons1"))), buttonImageOptions4, ((DevExpress.XtraBars.Docking2010.ButtonStyle)(resources.GetObject("groupControl4.CustomHeaderButtons2"))), resources.GetString("groupControl4.CustomHeaderButtons3"), ((int)(resources.GetObject("groupControl4.CustomHeaderButtons4"))), ((bool)(resources.GetObject("groupControl4.CustomHeaderButtons5"))), ((DevExpress.Utils.SuperToolTip)(resources.GetObject("groupControl4.CustomHeaderButtons6"))), ((bool)(resources.GetObject("groupControl4.CustomHeaderButtons7"))), ((bool)(resources.GetObject("groupControl4.CustomHeaderButtons8"))), ((bool)(resources.GetObject("groupControl4.CustomHeaderButtons9"))), ((object)(resources.GetObject("groupControl4.CustomHeaderButtons10"))), ((int)(resources.GetObject("groupControl4.CustomHeaderButtons11"))))});
-            this.groupControl4.CustomHeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
-            this.groupControl4.GroupStyle = DevExpress.Utils.GroupStyle.Card;
-            this.groupControl4.LookAndFeel.SkinName = "Visual Studio 2013 Dark";
-            this.groupControl4.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.groupControl4.Name = "groupControl4";
-            this.SettingsTablePanelRight.SetRow(this.groupControl4, 0);
+            resources.ApplyResources(this.label2, "label2");
+            this.tablePanel1.SetColumn(this.label2, 0);
+            this.label2.Name = "label2";
+            this.tablePanel1.SetRow(this.label2, 1);
+            // 
+            // label19
+            // 
+            resources.ApplyResources(this.label19, "label19");
+            this.tablePanel1.SetColumn(this.label19, 0);
+            this.label19.Name = "label19";
+            this.tablePanel1.SetRow(this.label19, 6);
+            // 
+            // label20
+            // 
+            resources.ApplyResources(this.label20, "label20");
+            this.tablePanel1.SetColumn(this.label20, 0);
+            this.label20.Name = "label20";
+            this.tablePanel1.SetRow(this.label20, 8);
+            // 
+            // label17
+            // 
+            resources.ApplyResources(this.label17, "label17");
+            this.tablePanel1.SetColumn(this.label17, 0);
+            this.label17.Name = "label17";
+            this.tablePanel1.SetRow(this.label17, 4);
+            // 
+            // label16
+            // 
+            resources.ApplyResources(this.label16, "label16");
+            this.tablePanel1.SetColumn(this.label16, 0);
+            this.label16.Name = "label16";
+            this.tablePanel1.SetRow(this.label16, 3);
+            // 
+            // label21
+            // 
+            resources.ApplyResources(this.label21, "label21");
+            this.tablePanel1.SetColumn(this.label21, 0);
+            this.label21.Name = "label21";
+            this.tablePanel1.SetRow(this.label21, 7);
+            // 
+            // waitNum
+            // 
+            resources.ApplyResources(this.waitNum, "waitNum");
+            this.tablePanel1.SetColumn(this.waitNum, 1);
+            this.waitNum.Name = "waitNum";
+            this.waitNum.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("waitNum.Properties.Appearance.Font")));
+            this.waitNum.Properties.Appearance.Options.UseFont = true;
+            this.waitNum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("waitNum.Properties.Buttons"))))});
+            this.waitNum.Properties.IsFloatValue = false;
+            this.waitNum.Properties.Mask.EditMask = resources.GetString("waitNum.Properties.Mask.EditMask");
+            this.waitNum.Properties.MaxValue = new decimal(new int[] {
+            3600,
+            0,
+            0,
+            0});
+            this.waitNum.Properties.MinValue = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.tablePanel1.SetRow(this.waitNum, 3);
+            // 
+            // testDriverToNum
+            // 
+            resources.ApplyResources(this.testDriverToNum, "testDriverToNum");
+            this.tablePanel1.SetColumn(this.testDriverToNum, 1);
+            this.testDriverToNum.Name = "testDriverToNum";
+            this.testDriverToNum.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("testDriverToNum.Properties.Appearance.Font")));
+            this.testDriverToNum.Properties.Appearance.Options.UseFont = true;
+            this.testDriverToNum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("testDriverToNum.Properties.Buttons"))))});
+            this.testDriverToNum.Properties.IsFloatValue = false;
+            this.testDriverToNum.Properties.Mask.EditMask = resources.GetString("testDriverToNum.Properties.Mask.EditMask");
+            this.testDriverToNum.Properties.MaxValue = new decimal(new int[] {
+            3600,
+            0,
+            0,
+            0});
+            this.testDriverToNum.Properties.MinValue = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.tablePanel1.SetRow(this.testDriverToNum, 2);
+            // 
+            // portNum
+            // 
+            resources.ApplyResources(this.portNum, "portNum");
+            this.tablePanel1.SetColumn(this.portNum, 1);
+            this.portNum.Name = "portNum";
+            this.portNum.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("portNum.Properties.Appearance.Font")));
+            this.portNum.Properties.Appearance.Options.UseFont = true;
+            this.portNum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("portNum.Properties.Buttons"))))});
+            this.portNum.Properties.IsFloatValue = false;
+            this.portNum.Properties.Mask.EditMask = resources.GetString("portNum.Properties.Mask.EditMask");
+            this.portNum.Properties.MaxValue = new decimal(new int[] {
+            26000,
+            0,
+            0,
+            0});
+            this.portNum.Properties.MinValue = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.tablePanel1.SetRow(this.portNum, 1);
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.tablePanel1.SetColumn(this.label3, 0);
+            this.label3.Name = "label3";
+            this.tablePanel1.SetRow(this.label3, 2);
+            // 
+            // tablePanel2
+            // 
+            this.tablePanel2.Appearance.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("tablePanel2.Appearance.GradientMode")));
+            this.tablePanel2.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 30.92F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 29.08F)});
+            this.tablePanel2.Controls.Add(this.labelControl2);
+            this.tablePanel2.Controls.Add(this.labelControl1);
+            this.tablePanel2.Controls.Add(this.failedActionsMaxRetriesNum);
+            this.tablePanel2.Controls.Add(this.appTransparentSwitch);
+            this.tablePanel2.Controls.Add(this.threadsIntervalNum);
+            this.tablePanel2.Controls.Add(this.concurrentThreadsNum);
+            this.tablePanel2.Controls.Add(this.label4);
+            this.tablePanel2.Controls.Add(this.appTopMostSwitch);
+            this.tablePanel2.Controls.Add(this.label25);
+            this.tablePanel2.Controls.Add(this.label24);
+            this.tablePanel2.Controls.Add(this.label23);
+            this.tablePanel2.Controls.Add(this.label22);
+            resources.ApplyResources(this.tablePanel2, "tablePanel2");
+            this.tablePanel2.Name = "tablePanel2";
+            this.tablePanel2.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F)});
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.labelControl2.Appearance.BackColor2 = ((System.Drawing.Color)(resources.GetObject("labelControl2.Appearance.BackColor2")));
+            this.labelControl2.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl2.Appearance.Font")));
+            this.labelControl2.Appearance.Options.UseBackColor = true;
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseTextOptions = true;
+            this.labelControl2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.labelControl2.AppearanceHovered.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("labelControl2.AppearanceHovered.GradientMode")));
+            resources.ApplyResources(this.labelControl2, "labelControl2");
+            this.tablePanel2.SetColumn(this.labelControl2, 0);
+            this.tablePanel2.SetColumnSpan(this.labelControl2, 2);
+            this.labelControl2.ImageOptions.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelControl2.ImageOptions.SvgImage = global::GUX.Properties.Resources.threads_icon;
+            this.labelControl2.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.labelControl2.Name = "labelControl2";
+            this.tablePanel2.SetRow(this.labelControl2, 3);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.labelControl1.Appearance.BackColor2 = ((System.Drawing.Color)(resources.GetObject("labelControl1.Appearance.BackColor2")));
+            this.labelControl1.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl1.Appearance.Font")));
+            this.labelControl1.Appearance.Options.UseBackColor = true;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseTextOptions = true;
+            this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.labelControl1.AppearanceHovered.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("labelControl1.AppearanceHovered.GradientMode")));
+            resources.ApplyResources(this.labelControl1, "labelControl1");
+            this.tablePanel2.SetColumn(this.labelControl1, 0);
+            this.tablePanel2.SetColumnSpan(this.labelControl1, 2);
+            this.labelControl1.ImageOptions.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelControl1.ImageOptions.SvgImage = global::GUX.Properties.Resources.display_icon;
+            this.labelControl1.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.labelControl1.Name = "labelControl1";
+            this.tablePanel2.SetRow(this.labelControl1, 0);
             // 
             // failedActionsMaxRetriesNum
             // 
             resources.ApplyResources(this.failedActionsMaxRetriesNum, "failedActionsMaxRetriesNum");
+            this.tablePanel2.SetColumn(this.failedActionsMaxRetriesNum, 1);
             this.failedActionsMaxRetriesNum.Name = "failedActionsMaxRetriesNum";
             this.failedActionsMaxRetriesNum.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("failedActionsMaxRetriesNum.Properties.Appearance.Font")));
             this.failedActionsMaxRetriesNum.Properties.Appearance.Options.UseFont = true;
@@ -1079,36 +1233,27 @@
             0,
             0,
             0});
+            this.tablePanel2.SetRow(this.failedActionsMaxRetriesNum, 6);
             // 
-            // label4
+            // appTransparentSwitch
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
-            // 
-            // concurrentThreadsNum
-            // 
-            resources.ApplyResources(this.concurrentThreadsNum, "concurrentThreadsNum");
-            this.concurrentThreadsNum.Name = "concurrentThreadsNum";
-            this.concurrentThreadsNum.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("concurrentThreadsNum.Properties.Appearance.Font")));
-            this.concurrentThreadsNum.Properties.Appearance.Options.UseFont = true;
-            this.concurrentThreadsNum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("concurrentThreadsNum.Properties.Buttons"))))});
-            this.concurrentThreadsNum.Properties.IsFloatValue = false;
-            this.concurrentThreadsNum.Properties.Mask.EditMask = resources.GetString("concurrentThreadsNum.Properties.Mask.EditMask");
-            this.concurrentThreadsNum.Properties.MaxValue = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-            this.concurrentThreadsNum.Properties.MinValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            resources.ApplyResources(this.appTransparentSwitch, "appTransparentSwitch");
+            this.appTransparentSwitch.BackColor = System.Drawing.Color.Transparent;
+            this.tablePanel2.SetColumn(this.appTransparentSwitch, 1);
+            this.appTransparentSwitch.HandleOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.appTransparentSwitch.HandleOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.appTransparentSwitch.Name = "appTransparentSwitch";
+            this.appTransparentSwitch.OffColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.appTransparentSwitch.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.tablePanel2.SetRow(this.appTransparentSwitch, 2);
+            this.appTransparentSwitch.SwitchState = XanderUI.XUISwitch.State.Off;
+            this.appTransparentSwitch.SwitchStyle = XanderUI.XUISwitch.Style.Horizontal;
+            this.appTransparentSwitch.SwitchStateChanged += new System.EventHandler(this.isTransSwitch_SwitchStateChanged);
             // 
             // threadsIntervalNum
             // 
             resources.ApplyResources(this.threadsIntervalNum, "threadsIntervalNum");
+            this.tablePanel2.SetColumn(this.threadsIntervalNum, 1);
             this.threadsIntervalNum.Name = "threadsIntervalNum";
             this.threadsIntervalNum.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("threadsIntervalNum.Properties.Appearance.Font")));
             this.threadsIntervalNum.Properties.Appearance.Options.UseFont = true;
@@ -1126,75 +1271,80 @@
             0,
             0,
             0});
+            this.tablePanel2.SetRow(this.threadsIntervalNum, 5);
             // 
-            // label22
+            // concurrentThreadsNum
             // 
-            resources.ApplyResources(this.label22, "label22");
-            this.label22.Name = "label22";
+            resources.ApplyResources(this.concurrentThreadsNum, "concurrentThreadsNum");
+            this.tablePanel2.SetColumn(this.concurrentThreadsNum, 1);
+            this.concurrentThreadsNum.Name = "concurrentThreadsNum";
+            this.concurrentThreadsNum.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("concurrentThreadsNum.Properties.Appearance.Font")));
+            this.concurrentThreadsNum.Properties.Appearance.Options.UseFont = true;
+            this.concurrentThreadsNum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("concurrentThreadsNum.Properties.Buttons"))))});
+            this.concurrentThreadsNum.Properties.IsFloatValue = false;
+            this.concurrentThreadsNum.Properties.Mask.EditMask = resources.GetString("concurrentThreadsNum.Properties.Mask.EditMask");
+            this.concurrentThreadsNum.Properties.MaxValue = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.concurrentThreadsNum.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.tablePanel2.SetRow(this.concurrentThreadsNum, 4);
             // 
-            // label23
+            // label4
             // 
-            resources.ApplyResources(this.label23, "label23");
-            this.label23.Name = "label23";
-            // 
-            // groupControl3
-            // 
-            resources.ApplyResources(this.groupControl3, "groupControl3");
-            this.groupControl3.CaptionImageOptions.AllowGlyphSkinning = true;
-            this.groupControl3.CaptionImageOptions.Location = DevExpress.Utils.GroupElementLocation.BeforeText;
-            this.groupControl3.CaptionImageOptions.Padding = new System.Windows.Forms.Padding(2);
-            this.groupControl3.CaptionImageOptions.SvgImage = global::GUX.Properties.Resources.display_icon;
-            this.groupControl3.CaptionImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
-            this.SettingsTablePanelRight.SetColumn(this.groupControl3, 0);
-            this.groupControl3.Controls.Add(this.label24);
-            this.groupControl3.Controls.Add(this.label25);
-            this.groupControl3.Controls.Add(this.appTopMostSwitch);
-            this.groupControl3.Controls.Add(this.appTransparentSwitch);
-            this.groupControl3.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton(resources.GetString("groupControl3.CustomHeaderButtons"), ((bool)(resources.GetObject("groupControl3.CustomHeaderButtons1"))), buttonImageOptions5, ((DevExpress.XtraBars.Docking2010.ButtonStyle)(resources.GetObject("groupControl3.CustomHeaderButtons2"))), resources.GetString("groupControl3.CustomHeaderButtons3"), ((int)(resources.GetObject("groupControl3.CustomHeaderButtons4"))), ((bool)(resources.GetObject("groupControl3.CustomHeaderButtons5"))), ((DevExpress.Utils.SuperToolTip)(resources.GetObject("groupControl3.CustomHeaderButtons6"))), ((bool)(resources.GetObject("groupControl3.CustomHeaderButtons7"))), ((bool)(resources.GetObject("groupControl3.CustomHeaderButtons8"))), ((bool)(resources.GetObject("groupControl3.CustomHeaderButtons9"))), ((object)(resources.GetObject("groupControl3.CustomHeaderButtons10"))), ((int)(resources.GetObject("groupControl3.CustomHeaderButtons11"))))});
-            this.groupControl3.CustomHeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
-            this.groupControl3.FireScrollEventOnMouseWheel = true;
-            this.groupControl3.GroupStyle = DevExpress.Utils.GroupStyle.Card;
-            this.groupControl3.LookAndFeel.SkinName = "Visual Studio 2013 Dark";
-            this.groupControl3.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.groupControl3.Name = "groupControl3";
-            this.SettingsTablePanelRight.SetRow(this.groupControl3, 1);
-            // 
-            // label24
-            // 
-            resources.ApplyResources(this.label24, "label24");
-            this.label24.Name = "label24";
-            // 
-            // label25
-            // 
-            resources.ApplyResources(this.label25, "label25");
-            this.label25.Name = "label25";
+            resources.ApplyResources(this.label4, "label4");
+            this.tablePanel2.SetColumn(this.label4, 0);
+            this.label4.Name = "label4";
+            this.tablePanel2.SetRow(this.label4, 6);
             // 
             // appTopMostSwitch
             // 
             resources.ApplyResources(this.appTopMostSwitch, "appTopMostSwitch");
             this.appTopMostSwitch.BackColor = System.Drawing.Color.Transparent;
+            this.tablePanel2.SetColumn(this.appTopMostSwitch, 1);
             this.appTopMostSwitch.HandleOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.appTopMostSwitch.HandleOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.appTopMostSwitch.Name = "appTopMostSwitch";
             this.appTopMostSwitch.OffColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.appTopMostSwitch.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.tablePanel2.SetRow(this.appTopMostSwitch, 1);
             this.appTopMostSwitch.SwitchState = XanderUI.XUISwitch.State.Off;
             this.appTopMostSwitch.SwitchStyle = XanderUI.XUISwitch.Style.Horizontal;
             this.appTopMostSwitch.SwitchStateChanged += new System.EventHandler(this.isTopMostSwitch_SwitchStateChanged);
             // 
-            // appTransparentSwitch
+            // label25
             // 
-            resources.ApplyResources(this.appTransparentSwitch, "appTransparentSwitch");
-            this.appTransparentSwitch.BackColor = System.Drawing.Color.Transparent;
-            this.appTransparentSwitch.HandleOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.appTransparentSwitch.HandleOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.appTransparentSwitch.Name = "appTransparentSwitch";
-            this.appTransparentSwitch.OffColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.appTransparentSwitch.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.appTransparentSwitch.SwitchState = XanderUI.XUISwitch.State.Off;
-            this.appTransparentSwitch.SwitchStyle = XanderUI.XUISwitch.Style.Horizontal;
-            this.appTransparentSwitch.SwitchStateChanged += new System.EventHandler(this.isTransSwitch_SwitchStateChanged);
+            resources.ApplyResources(this.label25, "label25");
+            this.tablePanel2.SetColumn(this.label25, 0);
+            this.label25.Name = "label25";
+            this.tablePanel2.SetRow(this.label25, 2);
+            // 
+            // label24
+            // 
+            resources.ApplyResources(this.label24, "label24");
+            this.tablePanel2.SetColumn(this.label24, 0);
+            this.label24.Name = "label24";
+            this.tablePanel2.SetRow(this.label24, 1);
+            // 
+            // label23
+            // 
+            resources.ApplyResources(this.label23, "label23");
+            this.tablePanel2.SetColumn(this.label23, 0);
+            this.label23.Name = "label23";
+            this.tablePanel2.SetRow(this.label23, 5);
+            // 
+            // label22
+            // 
+            resources.ApplyResources(this.label22, "label22");
+            this.tablePanel2.SetColumn(this.label22, 0);
+            this.label22.Name = "label22";
+            this.tablePanel2.SetRow(this.label22, 4);
             // 
             // DevicesSplitContainer
             // 
@@ -1239,23 +1389,16 @@
             // 
             // flyoutPanelControl1
             // 
-            this.flyoutPanelControl1.Controls.Add(this.noDevicLabel);
             this.flyoutPanelControl1.Controls.Add(this.WarmupDateFilterType);
             this.flyoutPanelControl1.Controls.Add(this.WarmupDateFilterVal);
             this.flyoutPanelControl1.Controls.Add(this.WarmupDateFilterKind);
             this.flyoutPanelControl1.Controls.Add(this.WarmupKeyword);
             this.flyoutPanelControl1.Controls.Add(this.ScenarioListBox);
             this.flyoutPanelControl1.Controls.Add(this.searchControl1);
+            this.flyoutPanelControl1.Controls.Add(this.noDevicLabel);
             resources.ApplyResources(this.flyoutPanelControl1, "flyoutPanelControl1");
             this.flyoutPanelControl1.FlyoutPanel = this.iFlyoutScenarioPanel;
             this.flyoutPanelControl1.Name = "flyoutPanelControl1";
-            // 
-            // noDevicLabel
-            // 
-            resources.ApplyResources(this.noDevicLabel, "noDevicLabel");
-            this.noDevicLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.noDevicLabel.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.noDevicLabel.Name = "noDevicLabel";
             // 
             // WarmupDateFilterType
             // 
@@ -1387,6 +1530,13 @@
             new DevExpress.XtraEditors.Repository.MRUButton()});
             this.searchControl1.Properties.Client = this.ScenarioListBox;
             this.searchControl1.Properties.ShowMRUButton = true;
+            // 
+            // noDevicLabel
+            // 
+            resources.ApplyResources(this.noDevicLabel, "noDevicLabel");
+            this.noDevicLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.noDevicLabel.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.noDevicLabel.Name = "noDevicLabel";
             // 
             // iStackPanel
             // 
@@ -1748,6 +1898,13 @@
             "DevExpress.XtraBars.TabFormControl",
             "DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl",
             "DevExpress.XtraBars.ToolbarForm.ToolbarFormControl"});
+            // 
+            // autoHideContainer1
+            // 
+            this.autoHideContainer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.autoHideContainer1.Controls.Add(this.outputDockPanel);
+            resources.ApplyResources(this.autoHideContainer1, "autoHideContainer1");
+            this.autoHideContainer1.Name = "autoHideContainer1";
             // 
             // outputDockPanel
             // 
@@ -2128,7 +2285,7 @@
             this.MainTabControl.LookAndFeel.SkinName = "Visual Studio 2013 Dark";
             this.MainTabControl.LookAndFeel.UseDefaultLookAndFeel = false;
             this.MainTabControl.Name = "MainTabControl";
-            this.MainTabControl.SelectedTabPage = this.ActionsXtraTabPage;
+            this.MainTabControl.SelectedTabPage = this.SettingsXtraTabPage;
             this.MainTabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.ProcessXtraTabPage,
             this.SettingsXtraTabPage,
@@ -2217,13 +2374,6 @@
             this.warningLogFSW.SynchronizingObject = this;
             this.warningLogFSW.Changed += new System.IO.FileSystemEventHandler(this.warningLogFSW_Changed);
             // 
-            // autoHideContainer1
-            // 
-            this.autoHideContainer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.autoHideContainer1.Controls.Add(this.outputDockPanel);
-            resources.ApplyResources(this.autoHideContainer1, "autoHideContainer1");
-            this.autoHideContainer1.Name = "autoHideContainer1";
-            // 
             // Main
             // 
             this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
@@ -2251,52 +2401,43 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3)).EndInit();
             this.splitContainerControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ScenarioTablePanel)).EndInit();
+            this.ScenarioTablePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ScenarioKeywordFilter.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iBarManager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMarqueeProgressBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemAppointmentStatus1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.galleryControl1)).EndInit();
             this.galleryControl1.ResumeLayout(false);
             this.galleryControlClient1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ActionSearchControl.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ScenarioDateFilterKind.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.scenarioName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ScenarioDateFilterValue.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ScenarioDateFilterType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.galleryControl2)).EndInit();
             this.galleryControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.settingSplitContainer)).EndInit();
             this.settingSplitContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.SettingsTablePanelLeft)).EndInit();
-            this.SettingsTablePanelLeft.ResumeLayout(false);
-            this.SettingsTablePanelLeft.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pollingNum.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDriverToNum.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.portNum.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.waitNum.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
-            this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
+            this.tablePanel1.ResumeLayout(false);
+            this.tablePanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.failedMAxRetriesNum.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pollingNum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.driverLetterText.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vmsDirectoryText.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SettingsTablePanelRight)).EndInit();
-            this.SettingsTablePanelRight.ResumeLayout(false);
-            this.SettingsTablePanelRight.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
-            this.groupControl4.ResumeLayout(false);
-            this.groupControl4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.waitNum.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDriverToNum.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.portNum.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).EndInit();
+            this.tablePanel2.ResumeLayout(false);
+            this.tablePanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.failedActionsMaxRetriesNum.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.concurrentThreadsNum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.threadsIntervalNum.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
-            this.groupControl3.ResumeLayout(false);
-            this.groupControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.concurrentThreadsNum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DevicesSplitContainer)).EndInit();
             this.DevicesSplitContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iFlyoutScenarioPanel)).EndInit();
@@ -2320,6 +2461,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.toast)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
+            this.autoHideContainer1.ResumeLayout(false);
             this.outputDockPanel.ResumeLayout(false);
             this.dockPanel1_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logsTabControl)).EndInit();
@@ -2344,7 +2486,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPopupMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.warningLogFSW)).EndInit();
-            this.autoHideContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2448,20 +2589,16 @@
         private DevExpress.XtraVerticalGrid.Tab tab4;
         private DevExpress.XtraBars.BarButtonItem FailedTasksRetryButton;
         private DevExpress.XtraEditors.SplitContainerControl settingSplitContainer;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private DevExpress.XtraEditors.GroupControl groupControl2;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private DevExpress.XtraEditors.GroupControl groupControl4;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private DevExpress.XtraEditors.GroupControl groupControl3;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private DevExpress.XtraEditors.SpinEdit failedActionsMaxRetriesNum;
@@ -2473,10 +2610,6 @@
         private DevExpress.Utils.FlyoutPanelControl flyoutPanelControl1;
         private DevExpress.XtraEditors.ListBoxControl ScenarioListBox;
         private DevExpress.XtraEditors.SearchControl searchControl1;
-        private DevExpress.Utils.Layout.TablePanel SettingsTablePanelLeft;
-        private DevExpress.Utils.Layout.TablePanel SettingsTablePanelRight;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
         private System.Windows.Forms.Label label6;
         private DevExpress.XtraEditors.TextEdit WarmupKeyword;
         private DevExpress.XtraEditors.RadioGroup WarmupDateFilterType;
@@ -2500,6 +2633,17 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.Docking.AutoHideContainer autoHideContainer1;
+        private DevExpress.Utils.Layout.TablePanel ScenarioTablePanel;
+        private DevExpress.XtraEditors.TextEdit ScenarioKeywordFilter;
+        private DevExpress.XtraEditors.ComboBoxEdit ScenarioDateFilterKind;
+        private DevExpress.XtraEditors.SpinEdit ScenarioDateFilterValue;
+        private DevExpress.XtraEditors.RadioGroup ScenarioDateFilterType;
+        private DevExpress.Utils.Layout.TablePanel tablePanel1;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.Utils.Layout.TablePanel tablePanel2;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }
 
