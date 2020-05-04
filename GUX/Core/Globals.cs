@@ -30,5 +30,6 @@ namespace GUX.Core
         public static int FAILED_ACTION_MAX_RETRIES { get; set; }
 
         public static Scenario DEFAULT_SCENARIO { get; set; }
+        public static bool WARMUP_AUTORUN { get; set; }
     }
 }

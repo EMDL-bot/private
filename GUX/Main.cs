@@ -390,21 +390,22 @@ namespace GUX
                         {
                             this.BeginInvoke((MethodInvoker)delegate
                             {
-                                this.portNum.Value = Globals.SERVER_PORT = _Config._SERVER_PORT;
-                                this.testDriverToNum.Value = Globals.TEST_DRIVER_TIMEOUT = _Config._TEST_DRIVER_TIMEOUT;
-                                this.waitNum.Value = Globals.DRIVER_WAIT_TIMEOUT = _Config._DRIVER_WAIT_TIMEOUT;
-                                this.pollingNum.Value = Globals.DRIVER_WAIT_POLLING_INTERVAL = _Config._DRIVER_WAIT_POLLING_INTERVAL;
-                                this.driverLetterText.Text = Globals.DRIVE_LETTER = _Config._DRIVE_LETTER;
-                                this.vmsDirectoryText.Text = Globals.VMS_DIRECTORY = _Config._VMS_DIRECTORY;
-                                this.failedAutoRetrySwitch.SwitchState = (Globals.FAILED_AUTO_RETRY = _Config._FAILED_AUTO_RETRY) ? XUISwitch.State.On : XUISwitch.State.Off;
-                                this.failedMAxRetriesNum.Value = Globals.FAILED_MAX_RETRIES = _Config._FAILED_MAX_RETRIES;
-                                this.failedActionsMaxRetriesNum.Value = Globals.FAILED_ACTION_MAX_RETRIES = _Config._FAILED_ACTION_MAX_RETRIES;
-                                this.concurrentThreadsNum.Value = Globals.THREADS_CONCURRENCY = _Config._THREADS_CONCURRENCY;
-                                this.threadsIntervalNum.Value = Globals.THREADS_INTERVAL = _Config._THREADS_INTERVAL;
-                                this.appTopMostSwitch.SwitchState = (Globals.UI_TOP_MOST = _Config._UI_TOP_MOST) ? XUISwitch.State.On : XUISwitch.State.Off;
-                                this.appTransparentSwitch.SwitchState = (Globals.UI_TRANSPARENT = _Config._UI_TRANSPARENT) ? XUISwitch.State.On : XUISwitch.State.Off;
                                 try
                                 {
+                                    this.portNum.Value = Globals.SERVER_PORT = _Config._SERVER_PORT;
+                                    this.testDriverToNum.Value = Globals.TEST_DRIVER_TIMEOUT = _Config._TEST_DRIVER_TIMEOUT;
+                                    this.waitNum.Value = Globals.DRIVER_WAIT_TIMEOUT = _Config._DRIVER_WAIT_TIMEOUT;
+                                    this.pollingNum.Value = Globals.DRIVER_WAIT_POLLING_INTERVAL = _Config._DRIVER_WAIT_POLLING_INTERVAL;
+                                    this.driverLetterText.Text = Globals.DRIVE_LETTER = _Config._DRIVE_LETTER;
+                                    this.vmsDirectoryText.Text = Globals.VMS_DIRECTORY = _Config._VMS_DIRECTORY;
+                                    this.failedAutoRetrySwitch.SwitchState = (Globals.FAILED_AUTO_RETRY = _Config._FAILED_AUTO_RETRY) ? XUISwitch.State.On : XUISwitch.State.Off;
+                                    this.failedMAxRetriesNum.Value = Globals.FAILED_MAX_RETRIES = _Config._FAILED_MAX_RETRIES;
+                                    this.failedActionsMaxRetriesNum.Value = Globals.FAILED_ACTION_MAX_RETRIES = _Config._FAILED_ACTION_MAX_RETRIES;
+                                    this.concurrentThreadsNum.Value = Globals.THREADS_CONCURRENCY = _Config._THREADS_CONCURRENCY;
+                                    this.threadsIntervalNum.Value = Globals.THREADS_INTERVAL = _Config._THREADS_INTERVAL;
+                                    this.appTopMostSwitch.SwitchState = (Globals.UI_TOP_MOST = _Config._UI_TOP_MOST) ? XUISwitch.State.On : XUISwitch.State.Off;
+                                    this.appTransparentSwitch.SwitchState = (Globals.UI_TRANSPARENT = _Config._UI_TRANSPARENT) ? XUISwitch.State.On : XUISwitch.State.Off;
+
                                     Globals.DEFAULT_SCENARIO = _Config._DEFAULT_SCENARIO;
                                     var scenario = new ImageComboBoxItem()
                                     {
@@ -413,6 +414,8 @@ namespace GUX
                                     };
                                     this.defaultScenarioGallery.Properties.Items.Add(scenario);
                                     this.defaultScenarioGallery.SelectedIndex = 0;
+
+                                    this.warmupAutoRunSwitch.SwitchState = (Globals.WARMUP_AUTORUN = _Config._WARMUP_AUTORUN) ? XUISwitch.State.On : XUISwitch.State.Off;
                                 }
                                 catch (Exception c)
                                 {
@@ -2336,7 +2339,8 @@ namespace GUX
                     _FAILED_ACTION_MAX_RETRIES = Globals.FAILED_ACTION_MAX_RETRIES = (Int32)failedActionsMaxRetriesNum.Value,
                     _UI_TOP_MOST = Globals.UI_TOP_MOST = appTopMostSwitch.SwitchState == XUISwitch.State.On,
                     _UI_TRANSPARENT = Globals.UI_TRANSPARENT = appTransparentSwitch.SwitchState == XUISwitch.State.On,
-                    _DEFAULT_SCENARIO = Globals.DEFAULT_SCENARIO = await GetScenario((int)defaultScenarioGallery.EditValue)
+                    _DEFAULT_SCENARIO = Globals.DEFAULT_SCENARIO = await GetScenario((int)defaultScenarioGallery.EditValue),
+                    _WARMUP_AUTORUN = Globals.WARMUP_AUTORUN = warmupAutoRunSwitch.SwitchState == XUISwitch.State.On
                 };
 
                 IFormatter formatter = new BinaryFormatter();
@@ -2560,7 +2564,7 @@ namespace GUX
                         {
                             iAlert.Show(this, dt == 1 ? "Delete scenario successed!" : "Delete scenario failed!", "Scenario");
                         });
-                        
+
                         _psqlHelper.Dispose();
                     }
                     catch (NpgsqlException ex)
@@ -2837,72 +2841,69 @@ namespace GUX
                     });*/
                     break;
                 case "Warmup":
-                    if(Globals.DEFAULT_SCENARIO == null)
+                    if (Globals.DEFAULT_SCENARIO == null)
                     {
                         XtraMessageBox.Show("Please add a default scenario in settings", "Default Scenario");
                     }
                     else
                     {
-
-                    }
-                    await SetFileWatcher();
-                    var wuTasks = new List<Task>();
-                    alreadyExists = false;
-                    var keyword = Globals.DEFAULT_SCENARIO.keyword;
-                    var date = Globals.DEFAULT_SCENARIO.date;
-                    await Task.Factory.StartNew(() =>
-                    {
-                        directoryCLB.BeginInvoke((MethodInvoker)async delegate
+                        await SetFileWatcher();
+                        var wuTasks = new List<Task>();
+                        alreadyExists = false;
+                        var keyword = Globals.DEFAULT_SCENARIO.keyword;
+                        var date = Globals.DEFAULT_SCENARIO.date;
+                        await Task.Factory.StartNew(() =>
                         {
-                            var dirs = directoryCLB.CheckedItems.OfType<CheckedListBoxItem>().Select(c => c.ToString());
-                            progressBar.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInRuntime;
-                            foreach (var dir in dirs)
+                            directoryCLB.BeginInvoke((MethodInvoker)async delegate
                             {
-                                if (alreadyExists)
-                                    break;
-                                currentDirectory = dir;
-                                currentDateFilter = date;
-                                currentKeyword = keyword;
-                                maxRetries = Globals.FAILED_MAX_RETRIES;
-                                var t = StartActionsProcess(dir, keyword, date).ContinueWith((sp) =>
+                                var dirs = directoryCLB.CheckedItems.OfType<CheckedListBoxItem>().Select(c => c.ToString());
+                                progressBar.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInRuntime;
+                                foreach (var dir in dirs)
                                 {
-                                    iStackPanel.BeginInvoke((MethodInvoker)delegate
+                                    if (alreadyExists)
+                                        break;
+                                    currentDirectory = dir;
+                                    currentDateFilter = date;
+                                    currentKeyword = keyword;
+                                    maxRetries = Globals.FAILED_MAX_RETRIES;
+                                    var t = StartActionsProcess(dir, keyword, date).ContinueWith((sp) =>
                                     {
-                                        iStackPanel.Controls.OfType<iLV>().ToList().ForEach((lv) =>
+                                        iStackPanel.BeginInvoke((MethodInvoker)delegate
                                         {
-                                            lv.BeginInvoke((MethodInvoker)delegate
+                                            iStackPanel.Controls.OfType<iLV>().ToList().ForEach((lv) =>
                                             {
-                                                lv.InProgress = (lv.PlainTextTitle == dir);
+                                                lv.BeginInvoke((MethodInvoker)delegate
+                                                {
+                                                    lv.InProgress = (lv.PlainTextTitle == dir);
+                                                });
                                             });
                                         });
+                                        while (!helper)
+                                        {
+                                            //
+                                        }
+                                        Log(dir + " task completed!", "!", "info");
+                                        iStackPanel.BeginInvoke((MethodInvoker)delegate
+                                        {
+                                            var lv = iStackPanel.Controls.OfType<iLV>().Single(l => l.PlainTextTitle == currentDirectory);
+                                            lv.InProgress = false;
+                                        });
                                     });
-                                    while (!helper)
-                                    {
-                                        //
-                                    }
-                                    Log(dir + " task completed!", "!", "info");
-                                    iStackPanel.BeginInvoke((MethodInvoker)delegate
-                                    {
-                                        var lv = iStackPanel.Controls.OfType<iLV>().Single(l => l.PlainTextTitle == currentDirectory);
-                                        lv.InProgress = false;
-                                    });
+                                    await t;
+                                    wuTasks.Add(t);
+                                    await Task.Delay(2000);
+                                }
+                                await Task.WhenAll(wuTasks).ContinueWith((all) =>
+                                {
+                                    if (all.IsCompleted)
+                                        Invoke((MethodInvoker)delegate
+                                        {
+                                            progressBar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                                        });
                                 });
-                                await t;
-                                wuTasks.Add(t);
-                                await Task.Delay(2000);
-                            }
-                            await Task.WhenAll(wuTasks).ContinueWith((all) =>
-                            {
-                                if (all.IsCompleted)
-                                    Invoke((MethodInvoker)delegate
-                                    {
-                                        progressBar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                                    });
                             });
                         });
-                    });
-
-                    iFlyoutScenarioPanel.HidePopup();
+                    }
                     break;
                 case "Check":
                     await SetFileWatcher();
@@ -3004,10 +3005,18 @@ namespace GUX
                             await Task.WhenAll(tsk).ContinueWith((all) =>
                             {
                                 if (all.IsCompleted)
+                                {
                                     Invoke((MethodInvoker)delegate
                                     {
                                         progressBar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                                     });
+
+                                    if (Globals.WARMUP_AUTORUN)
+                                        UIButtonPanel.Invoke((MethodInvoker)delegate
+                                        {
+                                            UIButtonPanel.Buttons.Owner.PerformClick(UIButtonPanel.Buttons["Warmup"]);
+                                        });
+                                }
                             });
                         });
                     });
@@ -3192,20 +3201,6 @@ namespace GUX
             e.Graphics.FillRectangle(background, e.ClipRectangle);
         }
 
-        private async void iFlyoutScenarioPanel_Shown(object sender, FlyoutPanelEventArgs e)
-        {
-            await GetScenarios().ContinueWith((scen) =>
-            {
-                if (scen.IsCompleted)
-                {
-                    ScenarioListBox.BeginInvoke((MethodInvoker)delegate
-                    {
-                        ScenarioListBox.DataSource = scen.Result;
-                    });
-                }
-            });
-        }
-
         private void logsTabControl_CustomHeaderButtonClick(object sender, DevExpress.XtraTab.ViewInfo.CustomHeaderButtonEventArgs e)
         {
             //iPopupMenu.ShowPopup(iBarManager, new Point(MousePosition.X, MousePosition.Y));
@@ -3313,7 +3308,7 @@ namespace GUX
             switch (e.Button.Tag.ToString())
             {
                 case "Apply":
-                    
+
                     break;
             }
         }
