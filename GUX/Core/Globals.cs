@@ -28,5 +28,7 @@ namespace GUX.Core
         public static bool FAILED_AUTO_RETRY { get; set; }
         public static int FAILED_MAX_RETRIES { get; set; }
         public static int FAILED_ACTION_MAX_RETRIES { get; set; }
+
+        public static Scenario DEFAULT_SCENARIO { get; set; }
     }
 }

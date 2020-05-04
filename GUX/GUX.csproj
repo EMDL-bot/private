@@ -208,6 +208,7 @@
     <Compile Include="Core\Globals.cs" />
     <Compile Include="Core\ListViewExtender.cs" />
     <Compile Include="Core\PostgreSqlHelper.cs" />
+    <Compile Include="Core\Scenario.cs" />
     <Compile Include="Core\Scheduler.cs" />
     <Compile Include="Core\ScheduleTask.cs" />
     <Compile Include="Core\_CONFIG.cs" />

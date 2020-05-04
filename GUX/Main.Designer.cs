@@ -50,6 +50,7 @@
             DevExpress.Utils.ContextButton contextButton2 = new DevExpress.Utils.ContextButton();
             DevExpress.Utils.ContextButton contextButton3 = new DevExpress.Utils.ContextButton();
             DevExpress.Utils.ContextButton contextButton4 = new DevExpress.Utils.ContextButton();
+            DevExpress.Utils.Drawing.StubGlyphOptions stubGlyphOptions1 = new DevExpress.Utils.Drawing.StubGlyphOptions();
             DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions1 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
             DevExpress.XtraEditors.TableLayout.ItemTemplateBase itemTemplateBase1 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition1 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
@@ -137,6 +138,10 @@
             this.portNum = new DevExpress.XtraEditors.SpinEdit();
             this.label3 = new System.Windows.Forms.Label();
             this.tablePanel2 = new DevExpress.Utils.Layout.TablePanel();
+            this.defaultScenarioGallery = new DevExpress.XtraEditors.ImageComboBoxEdit();
+            this.label7 = new System.Windows.Forms.Label();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.failedActionsMaxRetriesNum = new DevExpress.XtraEditors.SpinEdit();
@@ -265,6 +270,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.portNum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).BeginInit();
             this.tablePanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.defaultScenarioGallery.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.failedActionsMaxRetriesNum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.threadsIntervalNum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.concurrentThreadsNum.Properties)).BeginInit();
@@ -1016,11 +1022,13 @@
             this.vmsDirectoryText.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("vmsDirectoryText.Properties.Appearance.Font")));
             this.vmsDirectoryText.Properties.Appearance.Options.UseFont = true;
             this.vmsDirectoryText.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
+            this.vmsDirectoryText.Properties.NullText = resources.GetString("vmsDirectoryText.Properties.NullText");
             this.tablePanel1.SetRow(this.vmsDirectoryText, 7);
             // 
             // label18
             // 
             resources.ApplyResources(this.label18, "label18");
+            this.label18.BackColor = System.Drawing.Color.Transparent;
             this.tablePanel1.SetColumn(this.label18, 0);
             this.label18.Name = "label18";
             this.tablePanel1.SetRow(this.label18, 9);
@@ -1028,6 +1036,7 @@
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.tablePanel1.SetColumn(this.label2, 0);
             this.label2.Name = "label2";
             this.tablePanel1.SetRow(this.label2, 1);
@@ -1035,6 +1044,7 @@
             // label19
             // 
             resources.ApplyResources(this.label19, "label19");
+            this.label19.BackColor = System.Drawing.Color.Transparent;
             this.tablePanel1.SetColumn(this.label19, 0);
             this.label19.Name = "label19";
             this.tablePanel1.SetRow(this.label19, 6);
@@ -1042,6 +1052,7 @@
             // label20
             // 
             resources.ApplyResources(this.label20, "label20");
+            this.label20.BackColor = System.Drawing.Color.Transparent;
             this.tablePanel1.SetColumn(this.label20, 0);
             this.label20.Name = "label20";
             this.tablePanel1.SetRow(this.label20, 8);
@@ -1049,6 +1060,7 @@
             // label17
             // 
             resources.ApplyResources(this.label17, "label17");
+            this.label17.BackColor = System.Drawing.Color.Transparent;
             this.tablePanel1.SetColumn(this.label17, 0);
             this.label17.Name = "label17";
             this.tablePanel1.SetRow(this.label17, 4);
@@ -1056,6 +1068,7 @@
             // label16
             // 
             resources.ApplyResources(this.label16, "label16");
+            this.label16.BackColor = System.Drawing.Color.Transparent;
             this.tablePanel1.SetColumn(this.label16, 0);
             this.label16.Name = "label16";
             this.tablePanel1.SetRow(this.label16, 3);
@@ -1063,6 +1076,7 @@
             // label21
             // 
             resources.ApplyResources(this.label21, "label21");
+            this.label21.BackColor = System.Drawing.Color.Transparent;
             this.tablePanel1.SetColumn(this.label21, 0);
             this.label21.Name = "label21";
             this.tablePanel1.SetRow(this.label21, 7);
@@ -1139,6 +1153,7 @@
             // label3
             // 
             resources.ApplyResources(this.label3, "label3");
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.tablePanel1.SetColumn(this.label3, 0);
             this.label3.Name = "label3";
             this.tablePanel1.SetRow(this.label3, 2);
@@ -1149,6 +1164,10 @@
             this.tablePanel2.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 30.92F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 29.08F)});
+            this.tablePanel2.Controls.Add(this.defaultScenarioGallery);
+            this.tablePanel2.Controls.Add(this.label7);
+            this.tablePanel2.Controls.Add(this.labelControl6);
+            this.tablePanel2.Controls.Add(this.labelControl5);
             this.tablePanel2.Controls.Add(this.labelControl2);
             this.tablePanel2.Controls.Add(this.labelControl1);
             this.tablePanel2.Controls.Add(this.failedActionsMaxRetriesNum);
@@ -1170,7 +1189,74 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F)});
+            // 
+            // defaultScenarioGallery
+            // 
+            this.behaviorManager1.SetBehaviors(this.defaultScenarioGallery, new DevExpress.Utils.Behaviors.Behavior[] {
+            ((DevExpress.Utils.Behaviors.Behavior)(DevExpress.Utils.Behaviors.Common.StubGlyphBehavior.Create(typeof(DevExpress.XtraEditors.Behaviors.StubGlyphBehaviorSourceForImageComboBox), stubGlyphOptions1, new System.Drawing.Size(16, 16))))});
+            this.tablePanel2.SetColumn(this.defaultScenarioGallery, 1);
+            resources.ApplyResources(this.defaultScenarioGallery, "defaultScenarioGallery");
+            this.defaultScenarioGallery.MenuManager = this.iBarManager;
+            this.defaultScenarioGallery.Name = "defaultScenarioGallery";
+            this.defaultScenarioGallery.Properties.AllowFocused = false;
+            this.defaultScenarioGallery.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("defaultScenarioGallery.Properties.Appearance.Font")));
+            this.defaultScenarioGallery.Properties.Appearance.Options.UseFont = true;
+            this.defaultScenarioGallery.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("defaultScenarioGallery.Properties.Buttons"))))});
+            this.defaultScenarioGallery.Properties.HighlightedItemStyle = DevExpress.XtraEditors.HighlightStyle.Skinned;
+            this.defaultScenarioGallery.Properties.NullText = resources.GetString("defaultScenarioGallery.Properties.NullText");
+            this.tablePanel2.SetRow(this.defaultScenarioGallery, 8);
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.tablePanel2.SetColumn(this.label7, 0);
+            this.label7.Name = "label7";
+            this.tablePanel2.SetRow(this.label7, 8);
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.labelControl6.Appearance.BackColor2 = ((System.Drawing.Color)(resources.GetObject("labelControl6.Appearance.BackColor2")));
+            this.labelControl6.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl6.Appearance.Font")));
+            this.labelControl6.Appearance.Options.UseBackColor = true;
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Appearance.Options.UseTextOptions = true;
+            this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl6.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.labelControl6.AppearanceHovered.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("labelControl6.AppearanceHovered.GradientMode")));
+            resources.ApplyResources(this.labelControl6, "labelControl6");
+            this.tablePanel2.SetColumn(this.labelControl6, 0);
+            this.tablePanel2.SetColumnSpan(this.labelControl6, 2);
+            this.labelControl6.ImageOptions.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelControl6.ImageOptions.SvgImage = global::GUX.Properties.Resources.scenario_icon;
+            this.labelControl6.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.labelControl6.Name = "labelControl6";
+            this.tablePanel2.SetRow(this.labelControl6, 7);
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.labelControl5.Appearance.BackColor2 = ((System.Drawing.Color)(resources.GetObject("labelControl5.Appearance.BackColor2")));
+            this.labelControl5.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl5.Appearance.Font")));
+            this.labelControl5.Appearance.Options.UseBackColor = true;
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Appearance.Options.UseTextOptions = true;
+            this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl5.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.labelControl5.AppearanceHovered.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("labelControl5.AppearanceHovered.GradientMode")));
+            resources.ApplyResources(this.labelControl5, "labelControl5");
+            this.tablePanel2.SetColumn(this.labelControl5, 0);
+            this.tablePanel2.SetColumnSpan(this.labelControl5, 2);
+            this.labelControl5.ImageOptions.Alignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelControl5.ImageOptions.SvgImage = global::GUX.Properties.Resources.threads_icon;
+            this.labelControl5.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
+            this.labelControl5.Name = "labelControl5";
+            this.tablePanel2.SetRow(this.labelControl5, 3);
             // 
             // labelControl2
             // 
@@ -1299,6 +1385,7 @@
             // label4
             // 
             resources.ApplyResources(this.label4, "label4");
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.tablePanel2.SetColumn(this.label4, 0);
             this.label4.Name = "label4";
             this.tablePanel2.SetRow(this.label4, 6);
@@ -1321,6 +1408,7 @@
             // label25
             // 
             resources.ApplyResources(this.label25, "label25");
+            this.label25.BackColor = System.Drawing.Color.Transparent;
             this.tablePanel2.SetColumn(this.label25, 0);
             this.label25.Name = "label25";
             this.tablePanel2.SetRow(this.label25, 2);
@@ -1328,6 +1416,7 @@
             // label24
             // 
             resources.ApplyResources(this.label24, "label24");
+            this.label24.BackColor = System.Drawing.Color.Transparent;
             this.tablePanel2.SetColumn(this.label24, 0);
             this.label24.Name = "label24";
             this.tablePanel2.SetRow(this.label24, 1);
@@ -1335,6 +1424,7 @@
             // label23
             // 
             resources.ApplyResources(this.label23, "label23");
+            this.label23.BackColor = System.Drawing.Color.Transparent;
             this.tablePanel2.SetColumn(this.label23, 0);
             this.label23.Name = "label23";
             this.tablePanel2.SetRow(this.label23, 5);
@@ -1342,6 +1432,7 @@
             // label22
             // 
             resources.ApplyResources(this.label22, "label22");
+            this.label22.BackColor = System.Drawing.Color.Transparent;
             this.tablePanel2.SetColumn(this.label22, 0);
             this.label22.Name = "label22";
             this.tablePanel2.SetRow(this.label22, 4);
@@ -2282,10 +2373,8 @@
             this.MainTabControl.AppearancePage.PageClient.BorderColor = System.Drawing.Color.Transparent;
             this.MainTabControl.AppearancePage.PageClient.Options.UseBorderColor = true;
             resources.ApplyResources(this.MainTabControl, "MainTabControl");
-            this.MainTabControl.LookAndFeel.SkinName = "Visual Studio 2013 Dark";
-            this.MainTabControl.LookAndFeel.UseDefaultLookAndFeel = false;
             this.MainTabControl.Name = "MainTabControl";
-            this.MainTabControl.SelectedTabPage = this.SettingsXtraTabPage;
+            this.MainTabControl.SelectedTabPage = this.ProcessXtraTabPage;
             this.MainTabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.ProcessXtraTabPage,
             this.SettingsXtraTabPage,
@@ -2435,6 +2524,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).EndInit();
             this.tablePanel2.ResumeLayout(false);
             this.tablePanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.defaultScenarioGallery.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.failedActionsMaxRetriesNum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.threadsIntervalNum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.concurrentThreadsNum.Properties)).EndInit();
@@ -2644,6 +2734,10 @@
         private DevExpress.Utils.Layout.TablePanel tablePanel2;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private System.Windows.Forms.Label label7;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.ImageComboBoxEdit defaultScenarioGallery;
     }
 }
 

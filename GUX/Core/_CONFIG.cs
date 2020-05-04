@@ -28,6 +28,8 @@ namespace GUX.Core
         public int _FAILED_MAX_RETRIES { get; set; }
         public int _FAILED_ACTION_MAX_RETRIES { get; set; }
 
+        public Scenario _DEFAULT_SCENARIO { get; set; }
+
         public _CONFIG()
         {
 
@@ -52,6 +54,7 @@ namespace GUX.Core
                 this._FAILED_AUTO_RETRY = info.GetBoolean("_FAILED_AUTO_RETRY");
                 this._FAILED_MAX_RETRIES = info.GetInt32("_FAILED_MAX_RETRIES");
                 this._FAILED_ACTION_MAX_RETRIES = info.GetInt32("_FAILED_ACTION_MAX_RETRIES");
+                this._DEFAULT_SCENARIO = (Scenario)info.GetValue("_DEFAULT_SCENARIO", typeof(Scenario));
             }
             catch (Exception c)
             {
@@ -61,21 +64,29 @@ namespace GUX.Core
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
-            if(info == null)
-                throw new NotImplementedException();
-            info.AddValue("_SERVER_PORT", this._SERVER_PORT);
-            info.AddValue("_DRIVE_LETTER", this._DRIVE_LETTER.EncodeString());
-            info.AddValue("_TEST_DRIVER_TIMEOUT", this._TEST_DRIVER_TIMEOUT);
-            info.AddValue("_DRIVER_WAIT_TIMEOUT", this._DRIVER_WAIT_TIMEOUT);
-            info.AddValue("_DRIVER_WAIT_POLLING_INTERVAL", this._DRIVER_WAIT_POLLING_INTERVAL);
-            info.AddValue("_UI_TOP_MOST", this._UI_TOP_MOST);
-            info.AddValue("_UI_TRANSPARENT", this._UI_TRANSPARENT);
-            info.AddValue("_THREADS_CONCURRENCY", this._THREADS_CONCURRENCY);
-            info.AddValue("_THREADS_INTERVAL", this._THREADS_INTERVAL);
-            info.AddValue("_VMS_DIRECTORY", this._VMS_DIRECTORY.EncodeString());
-            info.AddValue("_FAILED_AUTO_RETRY", this._FAILED_AUTO_RETRY);
-            info.AddValue("_FAILED_MAX_RETRIES", this._FAILED_MAX_RETRIES);
-            info.AddValue("_FAILED_ACTION_MAX_RETRIES", this._FAILED_ACTION_MAX_RETRIES);
+            try
+            {
+                if (info == null)
+                    throw new NotImplementedException();
+                info.AddValue("_SERVER_PORT", this._SERVER_PORT);
+                info.AddValue("_DRIVE_LETTER", this._DRIVE_LETTER.EncodeString());
+                info.AddValue("_TEST_DRIVER_TIMEOUT", this._TEST_DRIVER_TIMEOUT);
+                info.AddValue("_DRIVER_WAIT_TIMEOUT", this._DRIVER_WAIT_TIMEOUT);
+                info.AddValue("_DRIVER_WAIT_POLLING_INTERVAL", this._DRIVER_WAIT_POLLING_INTERVAL);
+                info.AddValue("_UI_TOP_MOST", this._UI_TOP_MOST);
+                info.AddValue("_UI_TRANSPARENT", this._UI_TRANSPARENT);
+                info.AddValue("_THREADS_CONCURRENCY", this._THREADS_CONCURRENCY);
+                info.AddValue("_THREADS_INTERVAL", this._THREADS_INTERVAL);
+                info.AddValue("_VMS_DIRECTORY", this._VMS_DIRECTORY.EncodeString());
+                info.AddValue("_FAILED_AUTO_RETRY", this._FAILED_AUTO_RETRY);
+                info.AddValue("_FAILED_MAX_RETRIES", this._FAILED_MAX_RETRIES);
+                info.AddValue("_FAILED_ACTION_MAX_RETRIES", this._FAILED_ACTION_MAX_RETRIES);
+                info.AddValue("_DEFAULT_SCENARIO", this._DEFAULT_SCENARIO);
+            }
+            catch (Exception c)
+            {
+                Console.WriteLine(c.Message);
+            }
         }
 
         public void Dispose()

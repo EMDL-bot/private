@@ -30,6 +30,7 @@ using DevExpress.Utils;
 using DevExpress.XtraSplashScreen;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
+using DevExpress.XtraBars.Ribbon;
 
 namespace GUX
 {
@@ -402,6 +403,21 @@ namespace GUX
                                 this.threadsIntervalNum.Value = Globals.THREADS_INTERVAL = _Config._THREADS_INTERVAL;
                                 this.appTopMostSwitch.SwitchState = (Globals.UI_TOP_MOST = _Config._UI_TOP_MOST) ? XUISwitch.State.On : XUISwitch.State.Off;
                                 this.appTransparentSwitch.SwitchState = (Globals.UI_TRANSPARENT = _Config._UI_TRANSPARENT) ? XUISwitch.State.On : XUISwitch.State.Off;
+                                try
+                                {
+                                    Globals.DEFAULT_SCENARIO = _Config._DEFAULT_SCENARIO;
+                                    var scenario = new ImageComboBoxItem()
+                                    {
+                                        Value = Globals.DEFAULT_SCENARIO.ID,
+                                        Description = Globals.DEFAULT_SCENARIO.name
+                                    };
+                                    this.defaultScenarioGallery.Properties.Items.Add(scenario);
+                                    this.defaultScenarioGallery.SelectedIndex = 0;
+                                }
+                                catch (Exception c)
+                                {
+                                    Console.WriteLine(c.Message);
+                                }
                             });
                         }
                     }
@@ -445,7 +461,10 @@ namespace GUX
                     {
                         appiumServerStatus.ImageOptions.SvgImage = global::GUX.Properties.Resources.actions_checkcircled;
                         var img = new Bitmap(global::GUX.Properties.Resources.android_logo, new Size(24, 24));
-                        iAlert.Show(this, "", "Server Running.", img);
+                        BeginInvoke((MethodInvoker)delegate
+                        {
+                            iAlert.Show(this, "", "Server Running.", img);
+                        });
                         await Task.Run(() =>
                         {
                             //toast.ShowNotification("b8c36c4b-00e7-4c8d-ad53-1aefa75929aa");
@@ -2297,7 +2316,7 @@ namespace GUX
             });
         }
 
-        private void saveSettingsButton_Click(object sender, EventArgs e)
+        private async void saveSettingsButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -2316,14 +2335,18 @@ namespace GUX
                     _FAILED_MAX_RETRIES = Globals.FAILED_MAX_RETRIES = (Int32)failedMAxRetriesNum.Value,
                     _FAILED_ACTION_MAX_RETRIES = Globals.FAILED_ACTION_MAX_RETRIES = (Int32)failedActionsMaxRetriesNum.Value,
                     _UI_TOP_MOST = Globals.UI_TOP_MOST = appTopMostSwitch.SwitchState == XUISwitch.State.On,
-                    _UI_TRANSPARENT = Globals.UI_TRANSPARENT = appTransparentSwitch.SwitchState == XUISwitch.State.On
+                    _UI_TRANSPARENT = Globals.UI_TRANSPARENT = appTransparentSwitch.SwitchState == XUISwitch.State.On,
+                    _DEFAULT_SCENARIO = Globals.DEFAULT_SCENARIO = await GetScenario((int)defaultScenarioGallery.EditValue)
                 };
 
                 IFormatter formatter = new BinaryFormatter();
                 using (var stream = new FileStream(Application.StartupPath + "\\" + ctrl.Tag.ToString(), FileMode.Create, FileAccess.Write))
                     formatter.Serialize(stream, conf);
 
-                iAlert.Show(this, "Settings", "Settings saved with success!");
+                BeginInvoke((MethodInvoker)delegate
+                {
+                    iAlert.Show(this, "Settings", "Settings saved with success!");
+                });
             }
             catch (Exception c)
             {
@@ -2437,6 +2460,31 @@ namespace GUX
             });
         }
 
+        private Task<Scenario> GetScenario(int id)
+        {
+            return Task.Factory.StartNew(() =>
+            {
+                try
+                {
+                    var dt = _psqlHelper.DirectQuery($"select * from scenario where id = {id};").Rows[0];
+                    _psqlHelper.Dispose();
+                    return new Scenario()
+                    {
+                        ID = (int)dt["id"],
+                        name = (string)dt["name"],
+                        actions = (string)dt["actions"],
+                        keyword = (string)dt["keyword"],
+                        date = (string)dt["date_filter"]
+                    };
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show(ex.Message);
+                    return null;
+                }
+            });
+        }
+
         private Task ReloadScenarios()
         {
             return Task.Factory.StartNew(() =>
@@ -2475,8 +2523,6 @@ namespace GUX
                         galGroup.CaptionControl = CaptionControl;
                         galGroup.CaptionAlignment = DevExpress.XtraBars.Ribbon.GalleryItemGroupCaptionAlignment.Stretch;
 
-                        
-
                         foreach (var act in actions)
                         {
                             var action = new DevExpress.XtraBars.Ribbon.GalleryItem() { Caption = act };
@@ -2510,7 +2556,11 @@ namespace GUX
                     try
                     {
                         var dt = _psqlHelper.DirectNonQuery($"delete from scenario where id = {id};");
-                        iAlert.Show(this, dt == 1 ? "Delete scenario successed!" : "Delete scenario failed!", "Scenario");
+                        BeginInvoke((MethodInvoker)delegate
+                        {
+                            iAlert.Show(this, dt == 1 ? "Delete scenario successed!" : "Delete scenario failed!", "Scenario");
+                        });
+                        
                         _psqlHelper.Dispose();
                     }
                     catch (NpgsqlException ex)
@@ -2545,7 +2595,10 @@ namespace GUX
                     try
                     {
                         var dt = _psqlHelper.DirectNonQuery($"insert into scenario values (DEFAULT,'{name}','{actions}','{keyword}','{date}');");
-                        iAlert.Show(this, dt == 1 ? "Create scenario successed!" : "Create scenario failed!", "Scenario");
+                        BeginInvoke((MethodInvoker)delegate
+                        {
+                            iAlert.Show(this, dt == 1 ? "Create scenario successed!" : "Create scenario failed!", "Scenario");
+                        });
                         _psqlHelper.Dispose();
                     }
                     catch (NpgsqlException ex)
@@ -2622,9 +2675,30 @@ namespace GUX
             return semiTransparentImage;
         }
 
-        private void accordionSettings_Click(object sender, EventArgs e)
+        private async void accordionSettings_Click(object sender, EventArgs e)
         {
             MainTabControl.SelectedTabPage = SettingsXtraTabPage;
+            SplashScreenManager.ShowDefaultWaitForm(this, true, true, false, 750, "Please Wait", "Fetching...");
+            await GetScenarios().ContinueWith((gs) =>
+            {
+                if (gs.IsCompleted)
+                {
+                    defaultScenarioGallery.BeginInvoke((MethodInvoker)delegate
+                    {
+                        defaultScenarioGallery.Properties.Items.Clear();
+                        foreach (DataRow dt in gs.Result.Rows)
+                        {
+                            var scenario = new ImageComboBoxItem()
+                            {
+                                Value = (int)dt["id"],
+                                Description = dt["name"].ToString()
+                            };
+                            defaultScenarioGallery.Properties.Items.Add(scenario);
+                        }
+                    });
+                    SplashScreenManager.CloseDefaultWaitForm();
+                }
+            });
         }
 
         private Task DirectoryChangedAsync()
@@ -2763,7 +2837,72 @@ namespace GUX
                     });*/
                     break;
                 case "Warmup":
-                    iFlyoutScenarioPanel.ShowPopup();
+                    if(Globals.DEFAULT_SCENARIO == null)
+                    {
+                        XtraMessageBox.Show("Please add a default scenario in settings", "Default Scenario");
+                    }
+                    else
+                    {
+
+                    }
+                    await SetFileWatcher();
+                    var wuTasks = new List<Task>();
+                    alreadyExists = false;
+                    var keyword = Globals.DEFAULT_SCENARIO.keyword;
+                    var date = Globals.DEFAULT_SCENARIO.date;
+                    await Task.Factory.StartNew(() =>
+                    {
+                        directoryCLB.BeginInvoke((MethodInvoker)async delegate
+                        {
+                            var dirs = directoryCLB.CheckedItems.OfType<CheckedListBoxItem>().Select(c => c.ToString());
+                            progressBar.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInRuntime;
+                            foreach (var dir in dirs)
+                            {
+                                if (alreadyExists)
+                                    break;
+                                currentDirectory = dir;
+                                currentDateFilter = date;
+                                currentKeyword = keyword;
+                                maxRetries = Globals.FAILED_MAX_RETRIES;
+                                var t = StartActionsProcess(dir, keyword, date).ContinueWith((sp) =>
+                                {
+                                    iStackPanel.BeginInvoke((MethodInvoker)delegate
+                                    {
+                                        iStackPanel.Controls.OfType<iLV>().ToList().ForEach((lv) =>
+                                        {
+                                            lv.BeginInvoke((MethodInvoker)delegate
+                                            {
+                                                lv.InProgress = (lv.PlainTextTitle == dir);
+                                            });
+                                        });
+                                    });
+                                    while (!helper)
+                                    {
+                                        //
+                                    }
+                                    Log(dir + " task completed!", "!", "info");
+                                    iStackPanel.BeginInvoke((MethodInvoker)delegate
+                                    {
+                                        var lv = iStackPanel.Controls.OfType<iLV>().Single(l => l.PlainTextTitle == currentDirectory);
+                                        lv.InProgress = false;
+                                    });
+                                });
+                                await t;
+                                wuTasks.Add(t);
+                                await Task.Delay(2000);
+                            }
+                            await Task.WhenAll(wuTasks).ContinueWith((all) =>
+                            {
+                                if (all.IsCompleted)
+                                    Invoke((MethodInvoker)delegate
+                                    {
+                                        progressBar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                                    });
+                            });
+                        });
+                    });
+
+                    iFlyoutScenarioPanel.HidePopup();
                     break;
                 case "Check":
                     await SetFileWatcher();
@@ -3157,6 +3296,11 @@ namespace GUX
             }
         }
 
+        private void defaultScenarioGallery_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Console.WriteLine(defaultScenarioGallery.EditValue);
+        }
+
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var lines = fctbActions.FindLines("^((?!warning).)*$", RegexOptions.Multiline);
@@ -3169,69 +3313,7 @@ namespace GUX
             switch (e.Button.Tag.ToString())
             {
                 case "Apply":
-                    Console.WriteLine(ScenarioListBox.SelectedItem);
-
-                    await SetFileWatcher();
-                    var tsk = new List<Task>();
-                    alreadyExists = false;
-                    var keyword = WarmupKeyword.Text.Trim();
-                    var type = (string)WarmupDateFilterType.EditValue;
-                    var val = WarmupDateFilterVal.Value;
-                    var kind = WarmupDateFilterKind.SelectedText[0].ToString().ToLower();
-                    var date = WarmupDateFilterType.EditValue != null ? type + val + kind : "";
-                    await Task.Factory.StartNew(() =>
-                    {
-                        directoryCLB.BeginInvoke((MethodInvoker)async delegate
-                        {
-                            var dirs = directoryCLB.CheckedItems.OfType<CheckedListBoxItem>().Select(c => c.ToString());
-                            progressBar.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInRuntime;
-                            foreach (var dir in dirs)
-                            {
-                                if (alreadyExists)
-                                    break;
-                                currentDirectory = dir;
-                                currentDateFilter = date;
-                                currentKeyword = keyword;
-                                maxRetries = Globals.FAILED_MAX_RETRIES;
-                                var t = StartActionsProcess(dir, keyword, date).ContinueWith((sp) =>
-                                {
-                                    iStackPanel.BeginInvoke((MethodInvoker)delegate
-                                    {
-                                        iStackPanel.Controls.OfType<iLV>().ToList().ForEach((lv) =>
-                                        {
-                                            lv.BeginInvoke((MethodInvoker)delegate
-                                            {
-                                                lv.InProgress = (lv.PlainTextTitle == dir);
-                                            });
-                                        });
-                                    });
-                                    while (!helper)
-                                    {
-                                        //
-                                    }
-                                    Log(dir + " task completed!", "!", "info");
-                                    iStackPanel.BeginInvoke((MethodInvoker)delegate
-                                    {
-                                        var lv = iStackPanel.Controls.OfType<iLV>().Single(l => l.PlainTextTitle == currentDirectory);
-                                        lv.InProgress = false;
-                                    });
-                                });
-                                await t;
-                                tsk.Add(t);
-                                await Task.Delay(2000);
-                            }
-                            await Task.WhenAll(tsk).ContinueWith((all) =>
-                            {
-                                if (all.IsCompleted)
-                                    Invoke((MethodInvoker)delegate
-                                    {
-                                        progressBar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                                    });
-                            });
-                        });
-                    });
-
-                    iFlyoutScenarioPanel.HidePopup();
+                    
                     break;
             }
         }
