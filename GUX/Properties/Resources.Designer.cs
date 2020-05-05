@@ -193,6 +193,16 @@ namespace GUX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage AppiumVector {
+            get {
+                object obj = ResourceManager.GetObject("AppiumVector", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
         internal static DevExpress.Utils.Svg.SvgImage ArchiveAct {
             get {
                 object obj = ResourceManager.GetObject("ArchiveAct", resourceCulture);
@@ -516,6 +526,16 @@ namespace GUX.Properties {
         internal static DevExpress.Utils.Svg.SvgImage gettingstarted {
             get {
                 object obj = ResourceManager.GetObject("gettingstarted", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage GoogleVector {
+            get {
+                object obj = ResourceManager.GetObject("GoogleVector", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
             }
         }

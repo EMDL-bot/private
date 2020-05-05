@@ -89,6 +89,9 @@
             this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.GoogleAccountsCheck = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.DevicesDriverCheck = new DevExpress.XtraBars.BarButtonItem();
             this.repositoryItemHypertextLabel1 = new DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel();
             this.repositoryItemAppointmentStatus1 = new DevExpress.XtraScheduler.UI.RepositoryItemAppointmentStatus();
             this.repositoryItemZoomTrackBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar();
@@ -104,9 +107,17 @@
             this.galleryControlClient2 = new DevExpress.XtraBars.Ribbon.GalleryControlClient();
             this.settingSplitContainer = new DevExpress.XtraEditors.SplitContainerControl();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.failedMAxRetriesNum = new DevExpress.XtraEditors.SpinEdit();
+            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.pollingNum = new DevExpress.XtraEditors.SpinEdit();
             this.failedAutoRetrySwitch = new XanderUI.XUISwitch();
             this.driverLetterText = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -115,8 +126,15 @@
             this.testDriverToNum = new DevExpress.XtraEditors.SpinEdit();
             this.portNum = new DevExpress.XtraEditors.SpinEdit();
             this.tablePanel2 = new DevExpress.Utils.Layout.TablePanel();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.warmupAutoRunSwitch = new XanderUI.XUISwitch();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.defaultScenarioGallery = new DevExpress.XtraEditors.ImageComboBoxEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -200,21 +218,7 @@
             this.iWorkspace = new DevExpress.Utils.WorkspaceManager(this.components);
             this.iPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.warningLogFSW = new System.IO.FileSystemWatcher();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
+            this.checkPopupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3)).BeginInit();
             this.splitContainerControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ScenarioTablePanel)).BeginInit();
@@ -291,6 +295,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPopupMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.warningLogFSW)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkPopupMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // splashManager
@@ -365,8 +370,11 @@
             this.barButtonItem5,
             this.barSubItem2,
             this.barButtonItem6,
-            this.barButtonItem7});
-            this.iBarManager.MaxItemId = 33;
+            this.barButtonItem7,
+            this.GoogleAccountsCheck,
+            this.barButtonItem8,
+            this.DevicesDriverCheck});
+            this.iBarManager.MaxItemId = 36;
             this.iBarManager.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMarqueeProgressBar1,
             this.repositoryItemHypertextLabel1,
@@ -528,6 +536,32 @@
             resources.ApplyResources(this.barButtonItem7, "barButtonItem7");
             this.barButtonItem7.Id = 32;
             this.barButtonItem7.Name = "barButtonItem7";
+            // 
+            // GoogleAccountsCheck
+            // 
+            resources.ApplyResources(this.GoogleAccountsCheck, "GoogleAccountsCheck");
+            this.GoogleAccountsCheck.Id = 33;
+            this.GoogleAccountsCheck.ImageOptions.SvgImage = global::GUX.Properties.Resources.GoogleVector;
+            this.GoogleAccountsCheck.Name = "GoogleAccountsCheck";
+            this.GoogleAccountsCheck.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.GoogleAccountsCheck.VisibleInSearchMenu = false;
+            this.GoogleAccountsCheck.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.GoogleAccountsCheck_ItemClick);
+            // 
+            // barButtonItem8
+            // 
+            resources.ApplyResources(this.barButtonItem8, "barButtonItem8");
+            this.barButtonItem8.Id = 34;
+            this.barButtonItem8.Name = "barButtonItem8";
+            // 
+            // DevicesDriverCheck
+            // 
+            resources.ApplyResources(this.DevicesDriverCheck, "DevicesDriverCheck");
+            this.DevicesDriverCheck.Id = 35;
+            this.DevicesDriverCheck.ImageOptions.SvgImage = global::GUX.Properties.Resources.AppiumVector;
+            this.DevicesDriverCheck.Name = "DevicesDriverCheck";
+            this.DevicesDriverCheck.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.DevicesDriverCheck.VisibleInSearchMenu = false;
+            this.DevicesDriverCheck.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DevicesDriverCheck_ItemClick);
             // 
             // repositoryItemHypertextLabel1
             // 
@@ -842,6 +876,42 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 28F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F)});
             // 
+            // labelControl19
+            // 
+            this.labelControl19.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl19.Appearance.Font")));
+            this.labelControl19.Appearance.Options.UseFont = true;
+            this.tablePanel1.SetColumn(this.labelControl19, 0);
+            resources.ApplyResources(this.labelControl19, "labelControl19");
+            this.labelControl19.Name = "labelControl19";
+            this.tablePanel1.SetRow(this.labelControl19, 3);
+            // 
+            // labelControl20
+            // 
+            this.labelControl20.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl20.Appearance.Font")));
+            this.labelControl20.Appearance.Options.UseFont = true;
+            this.tablePanel1.SetColumn(this.labelControl20, 0);
+            resources.ApplyResources(this.labelControl20, "labelControl20");
+            this.labelControl20.Name = "labelControl20";
+            this.tablePanel1.SetRow(this.labelControl20, 2);
+            // 
+            // labelControl21
+            // 
+            this.labelControl21.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl21.Appearance.Font")));
+            this.labelControl21.Appearance.Options.UseFont = true;
+            this.tablePanel1.SetColumn(this.labelControl21, 0);
+            resources.ApplyResources(this.labelControl21, "labelControl21");
+            this.labelControl21.Name = "labelControl21";
+            this.tablePanel1.SetRow(this.labelControl21, 1);
+            // 
+            // labelControl18
+            // 
+            this.labelControl18.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl18.Appearance.Font")));
+            this.labelControl18.Appearance.Options.UseFont = true;
+            this.tablePanel1.SetColumn(this.labelControl18, 0);
+            resources.ApplyResources(this.labelControl18, "labelControl18");
+            this.labelControl18.Name = "labelControl18";
+            this.tablePanel1.SetRow(this.labelControl18, 4);
+            // 
             // labelControl4
             // 
             this.labelControl4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
@@ -862,6 +932,15 @@
             this.labelControl4.Name = "labelControl4";
             this.tablePanel1.SetRow(this.labelControl4, 5);
             // 
+            // labelControl17
+            // 
+            this.labelControl17.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl17.Appearance.Font")));
+            this.labelControl17.Appearance.Options.UseFont = true;
+            this.tablePanel1.SetColumn(this.labelControl17, 0);
+            resources.ApplyResources(this.labelControl17, "labelControl17");
+            this.labelControl17.Name = "labelControl17";
+            this.tablePanel1.SetRow(this.labelControl17, 6);
+            // 
             // labelControl3
             // 
             this.labelControl3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
@@ -881,6 +960,24 @@
             this.labelControl3.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
             this.labelControl3.Name = "labelControl3";
             this.tablePanel1.SetRow(this.labelControl3, 0);
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl14.Appearance.Font")));
+            this.labelControl14.Appearance.Options.UseFont = true;
+            this.tablePanel1.SetColumn(this.labelControl14, 0);
+            resources.ApplyResources(this.labelControl14, "labelControl14");
+            this.labelControl14.Name = "labelControl14";
+            this.tablePanel1.SetRow(this.labelControl14, 7);
+            // 
+            // labelControl16
+            // 
+            this.labelControl16.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl16.Appearance.Font")));
+            this.labelControl16.Appearance.Options.UseFont = true;
+            this.tablePanel1.SetColumn(this.labelControl16, 0);
+            resources.ApplyResources(this.labelControl16, "labelControl16");
+            this.labelControl16.Name = "labelControl16";
+            this.tablePanel1.SetRow(this.labelControl16, 8);
             // 
             // failedMAxRetriesNum
             // 
@@ -904,6 +1001,15 @@
             0,
             0});
             this.tablePanel1.SetRow(this.failedMAxRetriesNum, 9);
+            // 
+            // labelControl15
+            // 
+            this.labelControl15.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl15.Appearance.Font")));
+            this.labelControl15.Appearance.Options.UseFont = true;
+            this.tablePanel1.SetColumn(this.labelControl15, 0);
+            resources.ApplyResources(this.labelControl15, "labelControl15");
+            this.labelControl15.Name = "labelControl15";
+            this.tablePanel1.SetRow(this.labelControl15, 9);
             // 
             // pollingNum
             // 
@@ -1101,6 +1207,51 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F)});
             // 
+            // labelControl11
+            // 
+            this.labelControl11.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl11.Appearance.Font")));
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.tablePanel2.SetColumn(this.labelControl11, 0);
+            resources.ApplyResources(this.labelControl11, "labelControl11");
+            this.labelControl11.Name = "labelControl11";
+            this.tablePanel2.SetRow(this.labelControl11, 2);
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl12.Appearance.Font")));
+            this.labelControl12.Appearance.Options.UseFont = true;
+            this.tablePanel2.SetColumn(this.labelControl12, 0);
+            resources.ApplyResources(this.labelControl12, "labelControl12");
+            this.labelControl12.Name = "labelControl12";
+            this.tablePanel2.SetRow(this.labelControl12, 1);
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl13.Appearance.Font")));
+            this.labelControl13.Appearance.Options.UseFont = true;
+            this.tablePanel2.SetColumn(this.labelControl13, 0);
+            resources.ApplyResources(this.labelControl13, "labelControl13");
+            this.labelControl13.Name = "labelControl13";
+            this.tablePanel2.SetRow(this.labelControl13, 6);
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl8.Appearance.Font")));
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.tablePanel2.SetColumn(this.labelControl8, 0);
+            resources.ApplyResources(this.labelControl8, "labelControl8");
+            this.labelControl8.Name = "labelControl8";
+            this.tablePanel2.SetRow(this.labelControl8, 8);
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl7.Appearance.Font")));
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.tablePanel2.SetColumn(this.labelControl7, 0);
+            resources.ApplyResources(this.labelControl7, "labelControl7");
+            this.labelControl7.Name = "labelControl7";
+            this.tablePanel2.SetRow(this.labelControl7, 9);
+            // 
             // warmupAutoRunSwitch
             // 
             resources.ApplyResources(this.warmupAutoRunSwitch, "warmupAutoRunSwitch");
@@ -1114,6 +1265,15 @@
             this.tablePanel2.SetRow(this.warmupAutoRunSwitch, 9);
             this.warmupAutoRunSwitch.SwitchState = XanderUI.XUISwitch.State.Off;
             this.warmupAutoRunSwitch.SwitchStyle = XanderUI.XUISwitch.Style.Horizontal;
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl10.Appearance.Font")));
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.tablePanel2.SetColumn(this.labelControl10, 0);
+            resources.ApplyResources(this.labelControl10, "labelControl10");
+            this.labelControl10.Name = "labelControl10";
+            this.tablePanel2.SetRow(this.labelControl10, 5);
             // 
             // defaultScenarioGallery
             // 
@@ -1131,6 +1291,15 @@
             this.defaultScenarioGallery.Properties.HighlightedItemStyle = DevExpress.XtraEditors.HighlightStyle.Skinned;
             this.defaultScenarioGallery.Properties.NullText = resources.GetString("defaultScenarioGallery.Properties.NullText");
             this.tablePanel2.SetRow(this.defaultScenarioGallery, 8);
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl9.Appearance.Font")));
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.tablePanel2.SetColumn(this.labelControl9, 0);
+            resources.ApplyResources(this.labelControl9, "labelControl9");
+            this.labelControl9.Name = "labelControl9";
+            this.tablePanel2.SetRow(this.labelControl9, 4);
             // 
             // labelControl6
             // 
@@ -2170,140 +2339,13 @@
             this.warningLogFSW.SynchronizingObject = this;
             this.warningLogFSW.Changed += new System.IO.FileSystemEventHandler(this.warningLogFSW_Changed);
             // 
-            // labelControl7
+            // checkPopupMenu
             // 
-            this.labelControl7.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl7.Appearance.Font")));
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.tablePanel2.SetColumn(this.labelControl7, 0);
-            resources.ApplyResources(this.labelControl7, "labelControl7");
-            this.labelControl7.Name = "labelControl7";
-            this.tablePanel2.SetRow(this.labelControl7, 9);
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl8.Appearance.Font")));
-            this.labelControl8.Appearance.Options.UseFont = true;
-            this.tablePanel2.SetColumn(this.labelControl8, 0);
-            resources.ApplyResources(this.labelControl8, "labelControl8");
-            this.labelControl8.Name = "labelControl8";
-            this.tablePanel2.SetRow(this.labelControl8, 8);
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl9.Appearance.Font")));
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.tablePanel2.SetColumn(this.labelControl9, 0);
-            resources.ApplyResources(this.labelControl9, "labelControl9");
-            this.labelControl9.Name = "labelControl9";
-            this.tablePanel2.SetRow(this.labelControl9, 4);
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl10.Appearance.Font")));
-            this.labelControl10.Appearance.Options.UseFont = true;
-            this.tablePanel2.SetColumn(this.labelControl10, 0);
-            resources.ApplyResources(this.labelControl10, "labelControl10");
-            this.labelControl10.Name = "labelControl10";
-            this.tablePanel2.SetRow(this.labelControl10, 5);
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl11.Appearance.Font")));
-            this.labelControl11.Appearance.Options.UseFont = true;
-            this.tablePanel2.SetColumn(this.labelControl11, 0);
-            resources.ApplyResources(this.labelControl11, "labelControl11");
-            this.labelControl11.Name = "labelControl11";
-            this.tablePanel2.SetRow(this.labelControl11, 2);
-            // 
-            // labelControl12
-            // 
-            this.labelControl12.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl12.Appearance.Font")));
-            this.labelControl12.Appearance.Options.UseFont = true;
-            this.tablePanel2.SetColumn(this.labelControl12, 0);
-            resources.ApplyResources(this.labelControl12, "labelControl12");
-            this.labelControl12.Name = "labelControl12";
-            this.tablePanel2.SetRow(this.labelControl12, 1);
-            // 
-            // labelControl13
-            // 
-            this.labelControl13.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl13.Appearance.Font")));
-            this.labelControl13.Appearance.Options.UseFont = true;
-            this.tablePanel2.SetColumn(this.labelControl13, 0);
-            resources.ApplyResources(this.labelControl13, "labelControl13");
-            this.labelControl13.Name = "labelControl13";
-            this.tablePanel2.SetRow(this.labelControl13, 6);
-            // 
-            // labelControl14
-            // 
-            this.labelControl14.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl14.Appearance.Font")));
-            this.labelControl14.Appearance.Options.UseFont = true;
-            this.tablePanel1.SetColumn(this.labelControl14, 0);
-            resources.ApplyResources(this.labelControl14, "labelControl14");
-            this.labelControl14.Name = "labelControl14";
-            this.tablePanel1.SetRow(this.labelControl14, 7);
-            // 
-            // labelControl15
-            // 
-            this.labelControl15.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl15.Appearance.Font")));
-            this.labelControl15.Appearance.Options.UseFont = true;
-            this.tablePanel1.SetColumn(this.labelControl15, 0);
-            resources.ApplyResources(this.labelControl15, "labelControl15");
-            this.labelControl15.Name = "labelControl15";
-            this.tablePanel1.SetRow(this.labelControl15, 9);
-            // 
-            // labelControl16
-            // 
-            this.labelControl16.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl16.Appearance.Font")));
-            this.labelControl16.Appearance.Options.UseFont = true;
-            this.tablePanel1.SetColumn(this.labelControl16, 0);
-            resources.ApplyResources(this.labelControl16, "labelControl16");
-            this.labelControl16.Name = "labelControl16";
-            this.tablePanel1.SetRow(this.labelControl16, 8);
-            // 
-            // labelControl17
-            // 
-            this.labelControl17.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl17.Appearance.Font")));
-            this.labelControl17.Appearance.Options.UseFont = true;
-            this.tablePanel1.SetColumn(this.labelControl17, 0);
-            resources.ApplyResources(this.labelControl17, "labelControl17");
-            this.labelControl17.Name = "labelControl17";
-            this.tablePanel1.SetRow(this.labelControl17, 6);
-            // 
-            // labelControl18
-            // 
-            this.labelControl18.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl18.Appearance.Font")));
-            this.labelControl18.Appearance.Options.UseFont = true;
-            this.tablePanel1.SetColumn(this.labelControl18, 0);
-            resources.ApplyResources(this.labelControl18, "labelControl18");
-            this.labelControl18.Name = "labelControl18";
-            this.tablePanel1.SetRow(this.labelControl18, 4);
-            // 
-            // labelControl19
-            // 
-            this.labelControl19.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl19.Appearance.Font")));
-            this.labelControl19.Appearance.Options.UseFont = true;
-            this.tablePanel1.SetColumn(this.labelControl19, 0);
-            resources.ApplyResources(this.labelControl19, "labelControl19");
-            this.labelControl19.Name = "labelControl19";
-            this.tablePanel1.SetRow(this.labelControl19, 3);
-            // 
-            // labelControl20
-            // 
-            this.labelControl20.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl20.Appearance.Font")));
-            this.labelControl20.Appearance.Options.UseFont = true;
-            this.tablePanel1.SetColumn(this.labelControl20, 0);
-            resources.ApplyResources(this.labelControl20, "labelControl20");
-            this.labelControl20.Name = "labelControl20";
-            this.tablePanel1.SetRow(this.labelControl20, 2);
-            // 
-            // labelControl21
-            // 
-            this.labelControl21.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl21.Appearance.Font")));
-            this.labelControl21.Appearance.Options.UseFont = true;
-            this.tablePanel1.SetColumn(this.labelControl21, 0);
-            resources.ApplyResources(this.labelControl21, "labelControl21");
-            this.labelControl21.Name = "labelControl21";
-            this.tablePanel1.SetRow(this.labelControl21, 1);
+            this.checkPopupMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.GoogleAccountsCheck),
+            new DevExpress.XtraBars.LinkPersistInfo(this.DevicesDriverCheck)});
+            this.checkPopupMenu.Manager = this.iBarManager;
+            this.checkPopupMenu.Name = "checkPopupMenu";
             // 
             // Main
             // 
@@ -2408,6 +2450,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPopupMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.warningLogFSW)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkPopupMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2564,6 +2607,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraBars.BarButtonItem GoogleAccountsCheck;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem DevicesDriverCheck;
+        private DevExpress.XtraBars.PopupMenu checkPopupMenu;
     }
 }
 

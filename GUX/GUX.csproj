@@ -342,6 +342,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="android_logo_aGh_icon.ico" />
+    <None Include="Resources\GoogleVector.svg" />
+    <None Include="Resources\AppiumVector.svg" />
     <None Include="Resources\renamequery.svg" />
     <None Include="Resources\editquery.svg" />
     <None Include="Resources\removesheetrows.svg" />

@@ -351,29 +351,43 @@ namespace GmailDemo
                 options.AddAdditionalCapability("platformName", "android");
                 options.AddAdditionalCapability("automationName", "UiAutomator2");
                 options.AddAdditionalCapability("appPackage", "com.android.settings");
-                options.AddAdditionalCapability("appActivity", ".Settings");
+                options.AddAdditionalCapability("appActivity", ".Settings$AccountSettingsActivity");
                 options.AddAdditionalCapability("ignoreUnimportantViews", true);
                 options.AddAdditionalCapability("noReset", true);
 
-                /*KeyValuePair<string, string> keyValuePair = new KeyValuePair<string, string>("--log-level", "error");
-                var args = new OptionCollector().AddArguments(keyValuePair);
-
-                var appium = new AppiumServiceBuilder();
-                //appium.WithLogFile(new FileInfo(appiumLogPath));
-                var service = appium.UsingPort(10102).WithArguments(args).Build(); //new Uri(this.ServerURI)
-
-                service.Start();
-
-                while (!service.IsRunning)
-                {
-                    Console.WriteLine("waiting..");
-                }*/
-
                 driver = new AndroidDriver<AndroidElement>(new Uri(this.ServerURI), options);
-                //driver.IgnoreUnimportantViews(true);
                 var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(this.WaitTO));
                 wait.PollingInterval = TimeSpan.FromMilliseconds(this.WaitPolling);
                 wait.Message = "PROXY WAIT TIMEDOUT!";
+
+                try
+                {
+                    cancelationToken.ThrowIfCancellationRequested();
+                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.PresenceOfAllElementsLocatedBy(By.XPath("//android.widget.TextView[@resource-id='android:id/title']")));
+                    var account = driver.FindElementsByXPath("//android.widget.TextView[@resource-id='android:id/title']");
+                    if (account.Count > 0)
+                    {
+                        if (account[0].Text == "Google")
+                            goto done;
+                    }
+
+                }
+                catch (Exception x)
+                {
+                    if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                    {
+                        this.actionRetries--;
+                        return ProxySetup(host, port);
+                    }
+                    else
+                    {
+                        Log("check google account : " + x.Message, "error");
+                        isFail = true;
+                        goto done;
+                    }
+                }
+
+                driver.StartActivity("com.android.settings", ".Settings");
 
                 try
                 {
@@ -1298,6 +1312,7 @@ namespace GmailDemo
                         if (empty[0].Text != "")
                         {
                             Log("no emails Founds in SPAM folder!", "warning");
+                            isFail = false;
                             goto done;
                         }
                     }
