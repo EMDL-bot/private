@@ -142,7 +142,7 @@
     <value>5, 5, 5, 5</value>
   </data>
   <metadata name="iBarManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>162, 95</value>
+    <value>545, 56</value>
   </metadata>
   <data name="ramLabel.Caption" xml:space="preserve">
     <value>0%</value>
@@ -218,7 +218,7 @@
     <value>Bottom</value>
   </data>
   <data name="barDockControlBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 456</value>
+    <value>0, 457</value>
   </data>
   <data name="barDockControlBottom.Size" type="System.Drawing.Size, System.Drawing">
     <value>806, 28</value>
@@ -242,7 +242,7 @@
     <value>0, 0</value>
   </data>
   <data name="barDockControlLeft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 456</value>
+    <value>0, 457</value>
   </data>
   <data name="&gt;&gt;barDockControlLeft.Name" xml:space="preserve">
     <value>barDockControlLeft</value>
@@ -263,7 +263,7 @@
     <value>806, 0</value>
   </data>
   <data name="barDockControlRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 456</value>
+    <value>0, 457</value>
   </data>
   <data name="&gt;&gt;barDockControlRight.Name" xml:space="preserve">
     <value>barDockControlRight</value>
@@ -290,10 +290,10 @@
     <value>True</value>
   </data>
   <metadata name="behaviorManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>710, 95</value>
+    <value>17, 95</value>
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>806, 484</value>
+    <value>806, 485</value>
   </data>
   <data name="MainTabControl.BorderStyle" type="DevExpress.XtraEditors.Controls.BorderStyles, DevExpress.Utils.v19.2">
     <value>NoBorder</value>
@@ -309,862 +309,6 @@
   </data>
   <data name="MainTabControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
-  </data>
-  <data name="ProcessXtraTabPage.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="DevicesSplitContainer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="DevicesSplitContainer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 53</value>
-  </data>
-  <data name="noDevicLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="noDevicLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="noDevicLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 22</value>
-  </data>
-  <data name="noDevicLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 281</value>
-  </data>
-  <data name="noDevicLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="noDevicLabel.Text" xml:space="preserve">
-    <value>All caught up!
-No available devices.</value>
-  </data>
-  <data name="noDevicLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;noDevicLabel.Name" xml:space="preserve">
-    <value>noDevicLabel</value>
-  </data>
-  <data name="&gt;&gt;noDevicLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;noDevicLabel.Parent" xml:space="preserve">
-    <value>DevicesSplitContainer.Panel1</value>
-  </data>
-  <data name="&gt;&gt;noDevicLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="iStackPanel.Appearance.BackColor2" type="System.Drawing.Color, System.Drawing">
-    <value>28, 28, 28</value>
-  </data>
-  <data name="iStackPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="iStackPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 22</value>
-  </data>
-  <data name="iStackPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="iStackPanel.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="iStackPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>586, 341</value>
-  </data>
-  <data name="iStackPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;iStackPanel.Name" xml:space="preserve">
-    <value>iStackPanel</value>
-  </data>
-  <data name="&gt;&gt;iStackPanel.Type" xml:space="preserve">
-    <value>DevExpress.Utils.Layout.StackPanel, DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;iStackPanel.Parent" xml:space="preserve">
-    <value>DevicesSplitContainer.Panel1</value>
-  </data>
-  <data name="&gt;&gt;iStackPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="selectedLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="selectedLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="selectedLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 4</value>
-  </data>
-  <data name="selectedLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 14</value>
-  </data>
-  <data name="selectedLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="selectedLabel.Text" xml:space="preserve">
-    <value>0 selected</value>
-  </data>
-  <data name="&gt;&gt;selectedLabel.Name" xml:space="preserve">
-    <value>selectedLabel</value>
-  </data>
-  <data name="&gt;&gt;selectedLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;selectedLabel.Parent" xml:space="preserve">
-    <value>DevicesSplitContainer.Panel1</value>
-  </data>
-  <data name="&gt;&gt;selectedLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="selectAllDeviceCb.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 9pt</value>
-  </data>
-  <data name="selectAllDeviceCb.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 4</value>
-  </data>
-  <data name="selectAllDeviceCb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 16</value>
-  </data>
-  <data name="selectAllDeviceCb.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
-  </data>
-  <data name="&gt;&gt;selectAllDeviceCb.Name" xml:space="preserve">
-    <value>selectAllDeviceCb</value>
-  </data>
-  <data name="&gt;&gt;selectAllDeviceCb.Type" xml:space="preserve">
-    <value>MetroSet_UI.Controls.MetroSetCheckBox, MetroSet UI, Version=1.0.5.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;selectAllDeviceCb.Parent" xml:space="preserve">
-    <value>DevicesSplitContainer.Panel1</value>
-  </data>
-  <data name="&gt;&gt;selectAllDeviceCb.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="label5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>586, 22</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>VMs</value>
-  </data>
-  <data name="label5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>DevicesSplitContainer.Panel1</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="DevicesSplitContainer.Panel1.Text" xml:space="preserve">
-    <value>Panel1</value>
-  </data>
-  <data name="directoryCLB.AppearanceSelected.BackColor2" type="System.Drawing.Color, System.Drawing">
-    <value>30, 30, 30</value>
-  </data>
-  <data name="directoryCLB.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <metadata name="ImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>378, 56</value>
-  </metadata>
-  <data name="ImageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
-        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAA4
-        GgAAAk1TRnQBSQFMAwEBAAF4AQkBeAEJATIBAAEgAQAE/wEhAQAI/wFCAU0BNgcAATYDAAEoAwAByAMA
-        ASADAAEBAQABIAYAAWQSAAMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgEN
-        AwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgEN
-        AwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgEN
-        AwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgEN/wD/AFoAAwoBDQM7AWMDOQFfAzoBYQM6
-        AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6
-        AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6
-        AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOQFfAzsBYwMK
-        AQ3/AP8AWgADCgENAzkBXwMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEM
-        AwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEM
-        AwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEM
-        AwkBDAMJAQwDCQEMAwkBDAMJAQwDOQFfAwoBDf8A/wBaAAMKAQ0DOgFhAwkBDAM6AWEDOgFhAzoBYQM6
-        AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6
-        AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6
-        AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAwkBDAM6AWEDCgEN/wD/AFoA
-        AwoBDQM6AWEDCQEMAzoBYQM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM6AWEDCQEMAzoBYQMKAQ3/AP8AWgADCgENAzoBYQMJAQwDOgFhAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzoBYQMJAQwDOgFhAwoBDf8A/wBaAAMKAQ0DOgFh
-        AwkBDAM6AWEDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOgFh
-        AwkBDAM6AWEDCgEN/wD/AFoAAwoBDQM6AWEDCQEMAzoBYQM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM6AWEDCQEMAzoBYQMKAQ3/AP8AWgADCgENAzoBYQMJAQwDOgFh
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzoBYQMJAQwDOgFh
-        AwoBDf8A/wBaAAMKAQ0DOgFhAwkBDAM6AWEDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOgFhAwkBDAM6AWEDCgEN/wD/AFoAAwoBDQM6AWEDCQEMAzoBYQM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM6AWEDCQEMAzoBYQMKAQ3/AP8A
-        WgADCgENAzoBYQMJAQwDOgFhAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzoBYQMJAQwDOgFhAwoBDf8A/wBaAAMKAQ0DOgFhAwkBDAM6AWEDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOgFhAwkBDAM6AWEDCgEN/wD/AFoAAwoBDQM6
-        AWEDCQEMAzoBYQM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM6
-        AWEDCQEMAzoBYQMKAQ3/AP8AWgADCgENAzoBYQMJAQwDOgFhAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzoBYQMJAQwDOgFhAwoBDf8A/wBaAAMKAQ0DOgFhAwkBDAM6
-        AWEDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOgFhAwkBDAM6
-        AWEDCgEN/wD/AFoAAwoBDQM6AWEDCQEMAzoBYQM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM6AWEDCQEMAzoBYQMKAQ3/AP8AWgADCgENAzoBYQMJAQwDOgFhAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzoBYQMJAQwDOgFhAwoBDf8A
-        /wBaAAMKAQ0DOgFhAwkBDAM6AWEDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOgFhAwkBDAM6AWEDCgEN/wD/AFoAAwoBDQM6AWEDCQEMAzoBYQM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM6AWEDCQEMAzoBYQMKAQ3/AP8AWgADCgEN
-        AzoBYQMJAQwDOgFhAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzoBYQMJAQwDOgFhAwoBDf8A/wBaAAMKAQ0DOgFhAwkBDAM6AWEDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOgFhAwkBDAM6AWEDCgEN/wD/AFoAAwoBDQM6AWEDCQEM
-        AzoBYQM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM6AWEDCQEM
-        AzoBYQMKAQ3/AP8AWgADCgENAzoBYQMJAQwDOgFhAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzoBYQMJAQwDOgFhAwoBDf8A/wBaAAMKAQ0DOgFhAwkBDAM6AWEDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOgFhAwkBDAM6AWEDCgEN
-        /wD/AFoAAwoBDQM6AWEDCQEMAzoBYQM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM6AWEDCQEMAzoBYQMKAQ3/AP8AWgADCgENAzoBYQMJAQwDOgFhAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
-        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzoBYQMJAQwDOgFhAwoBDf8A/wBaAAMK
-        AQ0DOgFhAwkBDAM6AWEDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
-        AWMDOgFhAwkBDAM6AWEDCgEN/wD/AFoAAwoBDQM6AWEDCQEMAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFh
-        AzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFh
-        AzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFh
-        AzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDCQEMAzoBYQMKAQ3/AP8AWgADCgENAzkBXwMJ
-        AQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJ
-        AQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJ
-        AQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJ
-        AQwDOQFfAwoBDf8A/wBaAAMKAQ0DOwFjAzkBXwM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFh
-        AzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFh
-        AzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFh
-        AzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzkBXwM7AWMDCgEN/wD/AFoAAwoBDQMKAQ0DCgENAwoBDQMK
-        AQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMK
-        AQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMK
-        AQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMK
-        AQ3/AP8AWgABQgFNAT4HAAE+AwABKAMAAcgDAAEgAwABAQEAAQEFAAGAAQMWAAP//wD/AP8AhAAL
-</value>
-  </data>
-  <data name="directoryCLB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 46</value>
-  </data>
-  <data name="directoryCLB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 317</value>
-  </data>
-  <data name="directoryCLB.TabIndex" type="System.Int32, mscorlib">
-    <value>110</value>
-  </data>
-  <data name="&gt;&gt;directoryCLB.Name" xml:space="preserve">
-    <value>directoryCLB</value>
-  </data>
-  <data name="&gt;&gt;directoryCLB.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.CheckedListBoxControl, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;directoryCLB.Parent" xml:space="preserve">
-    <value>DevicesSplitContainer.Panel2</value>
-  </data>
-  <data name="&gt;&gt;directoryCLB.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="searchControl2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="searchControl2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 22</value>
-  </data>
-  <data name="searchControl2.Properties.NullValuePrompt" xml:space="preserve">
-    <value>Search directory</value>
-  </data>
-  <data name="searchControl2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 24</value>
-  </data>
-  <data name="searchControl2.TabIndex" type="System.Int32, mscorlib">
-    <value>111</value>
-  </data>
-  <data name="&gt;&gt;searchControl2.Name" xml:space="preserve">
-    <value>searchControl2</value>
-  </data>
-  <data name="&gt;&gt;searchControl2.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.SearchControl, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;searchControl2.Parent" xml:space="preserve">
-    <value>DevicesSplitContainer.Panel2</value>
-  </data>
-  <data name="&gt;&gt;searchControl2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 22</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Directories</value>
-  </data>
-  <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>DevicesSplitContainer.Panel2</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="DevicesSplitContainer.Panel2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 5, 0</value>
-  </data>
-  <data name="DevicesSplitContainer.Panel2.Text" xml:space="preserve">
-    <value>Panel2</value>
-  </data>
-  <data name="DevicesSplitContainer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 363</value>
-  </data>
-  <data name="DevicesSplitContainer.TabIndex" type="System.Int32, mscorlib">
-    <value>127</value>
-  </data>
-  <data name="&gt;&gt;DevicesSplitContainer.Name" xml:space="preserve">
-    <value>DevicesSplitContainer</value>
-  </data>
-  <data name="&gt;&gt;DevicesSplitContainer.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.SplitContainerControl, DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;DevicesSplitContainer.Parent" xml:space="preserve">
-    <value>ProcessXtraTabPage</value>
-  </data>
-  <data name="&gt;&gt;DevicesSplitContainer.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 52</value>
-  </data>
-  <data name="label6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 1</value>
-  </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>ProcessXtraTabPage</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="UIButtonPanel.AppearanceButton.Normal.BackColor2" type="System.Drawing.Color, System.Drawing">
-    <value>128, 255, 255</value>
-  </data>
-  <data name="UIButtonPanel.Buttons" xml:space="preserve">
-    <value>Reload</value>
-  </data>
-  <data name="UIButtonPanel.Buttons1" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons2" type="DevExpress.XtraBars.Docking2010.ButtonStyle, DevExpress.Utils.v19.2">
-    <value>PushButton</value>
-  </data>
-  <data name="UIButtonPanel.Buttons3" xml:space="preserve">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons4" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="UIButtonPanel.Buttons5" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons6" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons7" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons8" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons9" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons10" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons11" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="UIButtonPanel.Buttons12" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons13" xml:space="preserve">
-    <value>Start</value>
-  </data>
-  <data name="UIButtonPanel.Buttons14" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons15" type="DevExpress.XtraBars.Docking2010.ButtonStyle, DevExpress.Utils.v19.2">
-    <value>PushButton</value>
-  </data>
-  <data name="UIButtonPanel.Buttons16" xml:space="preserve">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons17" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="UIButtonPanel.Buttons18" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons19" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons20" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons21" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons22" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons23" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons24" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="UIButtonPanel.Buttons25" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons26" xml:space="preserve">
-    <value>Setup</value>
-  </data>
-  <data name="UIButtonPanel.Buttons27" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons28" type="DevExpress.XtraBars.Docking2010.ButtonStyle, DevExpress.Utils.v19.2">
-    <value>PushButton</value>
-  </data>
-  <data name="UIButtonPanel.Buttons29" xml:space="preserve">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons30" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="UIButtonPanel.Buttons31" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons32" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons33" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons34" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons35" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons36" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons37" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="UIButtonPanel.Buttons38" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons39" xml:space="preserve">
-    <value>Check</value>
-  </data>
-  <data name="UIButtonPanel.Buttons40" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons41" type="DevExpress.XtraBars.Docking2010.ButtonStyle, DevExpress.Utils.v19.2">
-    <value>PushButton</value>
-  </data>
-  <data name="UIButtonPanel.Buttons42" xml:space="preserve">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons43" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="UIButtonPanel.Buttons44" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons45" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons46" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons47" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons48" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons49" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons50" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="UIButtonPanel.Buttons51" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons52" xml:space="preserve">
-    <value>Warmup</value>
-  </data>
-  <data name="UIButtonPanel.Buttons53" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons54" type="DevExpress.XtraBars.Docking2010.ButtonStyle, DevExpress.Utils.v19.2">
-    <value>PushButton</value>
-  </data>
-  <data name="UIButtonPanel.Buttons55" xml:space="preserve">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons56" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="UIButtonPanel.Buttons57" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons58" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons59" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons60" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons61" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons62" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons63" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="UIButtonPanel.Buttons64" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons65" xml:space="preserve">
-    <value>Install</value>
-  </data>
-  <data name="UIButtonPanel.Buttons66" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons67" type="DevExpress.XtraBars.Docking2010.ButtonStyle, DevExpress.Utils.v19.2">
-    <value>PushButton</value>
-  </data>
-  <data name="UIButtonPanel.Buttons68" xml:space="preserve">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons69" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="UIButtonPanel.Buttons70" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons71" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons72" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons73" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons74" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons75" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons76" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="UIButtonPanel.Buttons77" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons78" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons79" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons80" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="UIButtonPanel.Buttons81" xml:space="preserve">
-    <value>Sort</value>
-  </data>
-  <data name="UIButtonPanel.Buttons82" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons83" type="DevExpress.XtraBars.Docking2010.ButtonStyle, DevExpress.Utils.v19.2">
-    <value>PushButton</value>
-  </data>
-  <data name="UIButtonPanel.Buttons84" xml:space="preserve">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons85" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="UIButtonPanel.Buttons86" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons87" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons88" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons89" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons90" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons91" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons92" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="UIButtonPanel.Buttons93" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons94" xml:space="preserve">
-    <value>Close</value>
-  </data>
-  <data name="UIButtonPanel.Buttons95" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons96" type="DevExpress.XtraBars.Docking2010.ButtonStyle, DevExpress.Utils.v19.2">
-    <value>PushButton</value>
-  </data>
-  <data name="UIButtonPanel.Buttons97" xml:space="preserve">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons98" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="UIButtonPanel.Buttons99" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons100" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons101" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons102" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons103" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons104" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons105" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="UIButtonPanel.Buttons106" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons107" xml:space="preserve">
-    <value>Stop</value>
-  </data>
-  <data name="UIButtonPanel.Buttons108" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons109" type="DevExpress.XtraBars.Docking2010.ButtonStyle, DevExpress.Utils.v19.2">
-    <value>PushButton</value>
-  </data>
-  <data name="UIButtonPanel.Buttons110" xml:space="preserve">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons111" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="UIButtonPanel.Buttons112" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons113" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons114" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="UIButtonPanel.Buttons115" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons116" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Buttons117" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="UIButtonPanel.Buttons118" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="UIButtonPanel.Buttons119" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="UIButtonPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="UIButtonPanel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 9pt</value>
-  </data>
-  <data name="UIButtonPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 2</value>
-  </data>
-  <data name="UIButtonPanel.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>10, 10, 10, 17</value>
-  </data>
-  <data name="UIButtonPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 50</value>
-  </data>
-  <data name="UIButtonPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>125</value>
-  </data>
-  <data name="UIButtonPanel.Text" xml:space="preserve">
-    <value>windowsUIButtonPanel2</value>
-  </data>
-  <data name="&gt;&gt;UIButtonPanel.Name" xml:space="preserve">
-    <value>UIButtonPanel</value>
-  </data>
-  <data name="&gt;&gt;UIButtonPanel.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel, DevExpress.XtraBars.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;UIButtonPanel.Parent" xml:space="preserve">
-    <value>ProcessXtraTabPage</value>
-  </data>
-  <data name="&gt;&gt;UIButtonPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="ProcessXtraTabPage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="ProcessXtraTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="ProcessXtraTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>764, 418</value>
-  </data>
-  <data name="ProcessXtraTabPage.Text" xml:space="preserve">
-    <value>Actions</value>
-  </data>
-  <data name="&gt;&gt;ProcessXtraTabPage.Name" xml:space="preserve">
-    <value>ProcessXtraTabPage</value>
-  </data>
-  <data name="&gt;&gt;ProcessXtraTabPage.Type" xml:space="preserve">
-    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;ProcessXtraTabPage.Parent" xml:space="preserve">
-    <value>MainTabControl</value>
-  </data>
-  <data name="&gt;&gt;ProcessXtraTabPage.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <assembly alias="DevExpress.Data.v19.2" name="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-  <data name="MainTabControl.ShowTabHeader" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v19.2">
-    <value>False</value>
-  </data>
-  <data name="MainTabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>766, 420</value>
-  </data>
-  <data name="MainTabControl.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
   </data>
   <data name="settingSplitContainer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1893,11 +1037,100 @@ No available devices.</value>
   <data name="tablePanel2.Appearance.GradientMode" type="System.Drawing.Drawing2D.LinearGradientMode, System.Drawing">
     <value>ForwardDiagonal</value>
   </data>
+  <data name="warmupInboxFolderSwitch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="warmupInboxFolderSwitch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>187, 397</value>
+  </data>
+  <data name="warmupInboxFolderSwitch.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>30, 22</value>
+  </data>
+  <data name="warmupInboxFolderSwitch.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>30, 22</value>
+  </data>
+  <data name="warmupInboxFolderSwitch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 22</value>
+  </data>
+  <data name="warmupInboxFolderSwitch.TabIndex" type="System.Int32, mscorlib">
+    <value>118</value>
+  </data>
+  <data name="warmupInboxFolderSwitch.Text" xml:space="preserve">
+    <value>xuiSwitch2</value>
+  </data>
+  <data name="&gt;&gt;warmupInboxFolderSwitch.Name" xml:space="preserve">
+    <value>warmupInboxFolderSwitch</value>
+  </data>
+  <data name="&gt;&gt;warmupInboxFolderSwitch.Type" xml:space="preserve">
+    <value>XanderUI.XUISwitch, XanderUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;warmupInboxFolderSwitch.Parent" xml:space="preserve">
+    <value>tablePanel2</value>
+  </data>
+  <data name="&gt;&gt;warmupInboxFolderSwitch.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="labelControl22.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 10pt</value>
+  </data>
+  <data name="labelControl22.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 400</value>
+  </data>
+  <data name="labelControl22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 15</value>
+  </data>
+  <data name="labelControl22.SuperTip" type="DevExpress.Utils.SuperToolTip, DevExpress.Utils.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFpEZXZFeHByZXNzLlV0aWxzLnYxOS4yLCBWZXJzaW9uPTE5LjIu
+        NS4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI4OGQxNzU0ZDcwMGU0OWEMAwAAAFlE
+        ZXZFeHByZXNzLkRhdGEudjE5LjIsIFZlcnNpb249MTkuMi41LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVi
+        bGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURldkV4cHJlc3MuVXRpbHMuU3VwZXJUb29s
+        VGlwBQAAAA1BbGxvd0h0bWxUZXh0EUZpeGVkVG9vbFRpcFdpZHRoCkl0ZW1zQ291bnQJaXRlbVR5cGUw
+        BWl0ZW0wBAAABAQfRGV2RXhwcmVzcy5VdGlscy5EZWZhdWx0Qm9vbGVhbgMAAAABCCVEZXZFeHByZXNz
+        LlV0aWxzLlN1cGVyVG9vbFRpcEl0ZW1UeXBlAgAAABxEZXZFeHByZXNzLlV0aWxzLlRvb2xUaXBJdGVt
+        AgAAAAIAAAAF/P///x9EZXZFeHByZXNzLlV0aWxzLkRlZmF1bHRCb29sZWFuAQAAAAd2YWx1ZV9fAAgD
+        AAAAAAAAAAABAAAABfv///8lRGV2RXhwcmVzcy5VdGlscy5TdXBlclRvb2xUaXBJdGVtVHlwZQEAAAAH
+        dmFsdWVfXwAIAgAAAAAAAAAJBgAAAAwHAAAAUVN5c3RlbS5EcmF3aW5nLCBWZXJzaW9uPTQuMC4wLjAs
+        IEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49YjAzZjVmN2YxMWQ1MGEzYQUGAAAAHERldkV4
+        cHJlc3MuVXRpbHMuVG9vbFRpcEl0ZW0HAAAADUFsbG93SHRtbFRleHQESWNvbgxJbWFnZU9wdGlvbnMK
+        TGVmdEluZGVudAhNYXhXaWR0aBJPd25lckFsbG93SHRtbFRleHQEVGV4dAQEBAAAAAEfRGV2RXhwcmVz
+        cy5VdGlscy5EZWZhdWx0Qm9vbGVhbgMAAAATU3lzdGVtLkRyYXdpbmcuSWNvbgcAAAAoRGV2RXhwcmVz
+        cy5VdGlscy5Ub29sVGlwSXRlbUltYWdlT3B0aW9ucwIAAAAICAECAAAAAfj////8////AgAAAAoJCQAA
+        AAAAAAA8AQAAAQYKAAAARndhcm0tdXAgcHJvY2VzcyBzdGFydGluZyA8Yj5hdXRvPC9iPiA8YnI+YWZ0
+        ZXIgc2V0dXAgcHJvY2VzcyBmaW5pc2hlZC4FCQAAAChEZXZFeHByZXNzLlV0aWxzLlRvb2xUaXBJdGVt
+        SW1hZ2VPcHRpb25zBQAAAAhJbWFnZVVyaQxTdmdJbWFnZVNpemUJQWxpZ25tZW50CkltYWdlSW5kZXgT
+        SW1hZ2VUb1RleHREaXN0YW5jZQEEBAAAE1N5c3RlbS5EcmF3aW5nLlNpemUHAAAAJkRldkV4cHJlc3Mu
+        VXRpbHMuVG9vbFRpcEltYWdlQWxpZ25tZW50AgAAAAgIAgAAAAYLAAAAAAX0////E1N5c3RlbS5EcmF3
+        aW5nLlNpemUCAAAABXdpZHRoBmhlaWdodAAACAgHAAAAAAAAAAAAAAAF8////yZEZXZFeHByZXNzLlV0
+        aWxzLlRvb2xUaXBJbWFnZUFsaWdubWVudAEAAAAHdmFsdWVfXwAIAgAAAAAAAAD/////DgAAAAs=
+</value>
+  </data>
+  <data name="labelControl22.TabIndex" type="System.Int32, mscorlib">
+    <value>118</value>
+  </data>
+  <data name="labelControl22.Text" xml:space="preserve">
+    <value>Proceed Inbox Folder :</value>
+  </data>
+  <data name="labelControl22.ToolTipTitle" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="&gt;&gt;labelControl22.Name" xml:space="preserve">
+    <value>labelControl22</value>
+  </data>
+  <data name="&gt;&gt;labelControl22.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;labelControl22.Parent" xml:space="preserve">
+    <value>tablePanel2</value>
+  </data>
+  <data name="&gt;&gt;labelControl22.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="labelControl11.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
   </data>
   <data name="labelControl11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 85</value>
+    <value>3, 90</value>
   </data>
   <data name="labelControl11.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 15</value>
@@ -1918,13 +1151,13 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;labelControl11.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="labelControl12.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
   </data>
   <data name="labelControl12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 48</value>
+    <value>3, 51</value>
   </data>
   <data name="labelControl12.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 15</value>
@@ -1945,13 +1178,13 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;labelControl12.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="labelControl13.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
   </data>
   <data name="labelControl13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 233</value>
+    <value>3, 246</value>
   </data>
   <data name="labelControl13.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 15</value>
@@ -1972,13 +1205,13 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;labelControl13.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="labelControl8.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
   </data>
   <data name="labelControl8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 307</value>
+    <value>3, 324</value>
   </data>
   <data name="labelControl8.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 15</value>
@@ -1999,13 +1232,13 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;labelControl8.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="labelControl7.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
   </data>
   <data name="labelControl7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 346</value>
+    <value>3, 363</value>
   </data>
   <data name="labelControl7.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 15</value>
@@ -2058,13 +1291,13 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;labelControl7.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="warmupAutoRunSwitch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
   </data>
   <data name="warmupAutoRunSwitch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 342</value>
+    <value>187, 359</value>
   </data>
   <data name="warmupAutoRunSwitch.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>30, 22</value>
@@ -2091,13 +1324,13 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;warmupAutoRunSwitch.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="labelControl10.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
   </data>
   <data name="labelControl10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 196</value>
+    <value>3, 207</value>
   </data>
   <data name="labelControl10.Size" type="System.Drawing.Size, System.Drawing">
     <value>113, 15</value>
@@ -2118,10 +1351,10 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;labelControl10.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="defaultScenarioGallery.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 303</value>
+    <value>187, 320</value>
   </data>
   <data name="defaultScenarioGallery.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
@@ -2133,7 +1366,7 @@ No available devices.</value>
     <value>select scenario</value>
   </data>
   <data name="defaultScenarioGallery.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 22</value>
+    <value>167, 22</value>
   </data>
   <data name="defaultScenarioGallery.TabIndex" type="System.Int32, mscorlib">
     <value>116</value>
@@ -2148,13 +1381,13 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;defaultScenarioGallery.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="labelControl9.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
   </data>
   <data name="labelControl9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 159</value>
+    <value>3, 168</value>
   </data>
   <data name="labelControl9.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 15</value>
@@ -2175,7 +1408,7 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;labelControl9.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="labelControl6.Appearance.BackColor2" type="System.Drawing.Color, System.Drawing">
     <value>45, 45, 48</value>
@@ -2190,13 +1423,13 @@ No available devices.</value>
     <value>None</value>
   </data>
   <data name="labelControl6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 265</value>
+    <value>3, 280</value>
   </data>
   <data name="labelControl6.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="labelControl6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 24</value>
+    <value>351, 24</value>
   </data>
   <data name="labelControl6.TabIndex" type="System.Int32, mscorlib">
     <value>117</value>
@@ -2214,7 +1447,7 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;labelControl6.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="labelControl5.Appearance.BackColor2" type="System.Drawing.Color, System.Drawing">
     <value>45, 45, 48</value>
@@ -2229,13 +1462,13 @@ No available devices.</value>
     <value>None</value>
   </data>
   <data name="labelControl5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 117</value>
+    <value>3, 124</value>
   </data>
   <data name="labelControl5.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="labelControl5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 24</value>
+    <value>351, 24</value>
   </data>
   <data name="labelControl5.TabIndex" type="System.Int32, mscorlib">
     <value>117</value>
@@ -2253,7 +1486,7 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;labelControl5.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="labelControl2.Appearance.BackColor2" type="System.Drawing.Color, System.Drawing">
     <value>45, 45, 48</value>
@@ -2268,13 +1501,13 @@ No available devices.</value>
     <value>None</value>
   </data>
   <data name="labelControl2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 116</value>
+    <value>3, 123</value>
   </data>
   <data name="labelControl2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="labelControl2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 26</value>
+    <value>351, 26</value>
   </data>
   <data name="labelControl2.TabIndex" type="System.Int32, mscorlib">
     <value>116</value>
@@ -2292,7 +1525,7 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;labelControl2.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="labelControl1.Appearance.BackColor2" type="System.Drawing.Color, System.Drawing">
     <value>45, 45, 48</value>
@@ -2307,13 +1540,13 @@ No available devices.</value>
     <value>None</value>
   </data>
   <data name="labelControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 5</value>
+    <value>3, 6</value>
   </data>
   <data name="labelControl1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="labelControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 26</value>
+    <value>351, 26</value>
   </data>
   <data name="labelControl1.TabIndex" type="System.Int32, mscorlib">
     <value>105</value>
@@ -2331,7 +1564,7 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;labelControl1.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="failedActionsMaxRetriesNum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -2340,7 +1573,7 @@ No available devices.</value>
     <value>3</value>
   </data>
   <data name="failedActionsMaxRetriesNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 229</value>
+    <value>187, 242</value>
   </data>
   <data name="failedActionsMaxRetriesNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
@@ -2352,7 +1585,7 @@ No available devices.</value>
     <value>N00</value>
   </data>
   <data name="failedActionsMaxRetriesNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 22</value>
+    <value>167, 22</value>
   </data>
   <data name="failedActionsMaxRetriesNum.TabIndex" type="System.Int32, mscorlib">
     <value>104</value>
@@ -2367,13 +1600,13 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;failedActionsMaxRetriesNum.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="appTransparentSwitch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
   </data>
   <data name="appTransparentSwitch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 81</value>
+    <value>187, 86</value>
   </data>
   <data name="appTransparentSwitch.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>30, 22</value>
@@ -2400,7 +1633,7 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;appTransparentSwitch.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>16</value>
   </data>
   <data name="threadsIntervalNum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -2409,7 +1642,7 @@ No available devices.</value>
     <value>10</value>
   </data>
   <data name="threadsIntervalNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 192</value>
+    <value>187, 203</value>
   </data>
   <data name="threadsIntervalNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
@@ -2421,7 +1654,7 @@ No available devices.</value>
     <value>N00</value>
   </data>
   <data name="threadsIntervalNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 22</value>
+    <value>167, 22</value>
   </data>
   <data name="threadsIntervalNum.TabIndex" type="System.Int32, mscorlib">
     <value>91</value>
@@ -2436,7 +1669,7 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;threadsIntervalNum.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>17</value>
   </data>
   <data name="concurrentThreadsNum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -2445,7 +1678,7 @@ No available devices.</value>
     <value>5</value>
   </data>
   <data name="concurrentThreadsNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 155</value>
+    <value>187, 164</value>
   </data>
   <data name="concurrentThreadsNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
@@ -2457,7 +1690,7 @@ No available devices.</value>
     <value>N00</value>
   </data>
   <data name="concurrentThreadsNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 22</value>
+    <value>167, 22</value>
   </data>
   <data name="concurrentThreadsNum.TabIndex" type="System.Int32, mscorlib">
     <value>90</value>
@@ -2472,13 +1705,13 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;concurrentThreadsNum.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>18</value>
   </data>
   <data name="appTopMostSwitch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
   </data>
   <data name="appTopMostSwitch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 44</value>
+    <value>187, 47</value>
   </data>
   <data name="appTopMostSwitch.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>30, 22</value>
@@ -2505,7 +1738,7 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;appTopMostSwitch.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>19</value>
   </data>
   <data name="tablePanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -2514,7 +1747,7 @@ No available devices.</value>
     <value>0, 0</value>
   </data>
   <data name="tablePanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>374, 374</value>
+    <value>357, 426</value>
   </data>
   <data name="tablePanel2.TabIndex" type="System.Int32, mscorlib">
     <value>115</value>
@@ -2535,7 +1768,7 @@ No available devices.</value>
     <value>Panel2</value>
   </data>
   <data name="settingSplitContainer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 380</value>
+    <value>760, 381</value>
   </data>
   <data name="settingSplitContainer.TabIndex" type="System.Int32, mscorlib">
     <value>115</value>
@@ -2583,7 +1816,7 @@ No available devices.</value>
     <value>Bottom</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 382</value>
+    <value>2, 383</value>
   </data>
   <data name="panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
@@ -2613,7 +1846,7 @@ No available devices.</value>
     <value>2, 2, 2, 2</value>
   </data>
   <data name="SettingsXtraTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>764, 418</value>
+    <value>764, 419</value>
   </data>
   <data name="SettingsXtraTabPage.Text" xml:space="preserve">
     <value>Errors</value>
@@ -2629,6 +1862,862 @@ No available devices.</value>
   </data>
   <data name="&gt;&gt;SettingsXtraTabPage.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <assembly alias="DevExpress.Data.v19.2" name="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="MainTabControl.ShowTabHeader" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v19.2">
+    <value>False</value>
+  </data>
+  <data name="MainTabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>766, 421</value>
+  </data>
+  <data name="MainTabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="ProcessXtraTabPage.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="DevicesSplitContainer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="DevicesSplitContainer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 53</value>
+  </data>
+  <data name="noDevicLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="noDevicLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="noDevicLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 22</value>
+  </data>
+  <data name="noDevicLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>311, 336</value>
+  </data>
+  <data name="noDevicLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="noDevicLabel.Text" xml:space="preserve">
+    <value>All caught up!
+No available devices.</value>
+  </data>
+  <data name="noDevicLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;noDevicLabel.Name" xml:space="preserve">
+    <value>noDevicLabel</value>
+  </data>
+  <data name="&gt;&gt;noDevicLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;noDevicLabel.Parent" xml:space="preserve">
+    <value>DevicesSplitContainer.Panel1</value>
+  </data>
+  <data name="&gt;&gt;noDevicLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="iStackPanel.Appearance.BackColor2" type="System.Drawing.Color, System.Drawing">
+    <value>28, 28, 28</value>
+  </data>
+  <data name="iStackPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="iStackPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 22</value>
+  </data>
+  <data name="iStackPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="iStackPanel.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="iStackPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>586, 396</value>
+  </data>
+  <data name="iStackPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;iStackPanel.Name" xml:space="preserve">
+    <value>iStackPanel</value>
+  </data>
+  <data name="&gt;&gt;iStackPanel.Type" xml:space="preserve">
+    <value>DevExpress.Utils.Layout.StackPanel, DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;iStackPanel.Parent" xml:space="preserve">
+    <value>DevicesSplitContainer.Panel1</value>
+  </data>
+  <data name="&gt;&gt;iStackPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="selectedLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="selectedLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="selectedLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 4</value>
+  </data>
+  <data name="selectedLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 14</value>
+  </data>
+  <data name="selectedLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="selectedLabel.Text" xml:space="preserve">
+    <value>0 selected</value>
+  </data>
+  <data name="&gt;&gt;selectedLabel.Name" xml:space="preserve">
+    <value>selectedLabel</value>
+  </data>
+  <data name="&gt;&gt;selectedLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;selectedLabel.Parent" xml:space="preserve">
+    <value>DevicesSplitContainer.Panel1</value>
+  </data>
+  <data name="&gt;&gt;selectedLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="selectAllDeviceCb.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 9pt</value>
+  </data>
+  <data name="selectAllDeviceCb.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 4</value>
+  </data>
+  <data name="selectAllDeviceCb.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 16</value>
+  </data>
+  <data name="selectAllDeviceCb.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="&gt;&gt;selectAllDeviceCb.Name" xml:space="preserve">
+    <value>selectAllDeviceCb</value>
+  </data>
+  <data name="&gt;&gt;selectAllDeviceCb.Type" xml:space="preserve">
+    <value>MetroSet_UI.Controls.MetroSetCheckBox, MetroSet UI, Version=1.0.5.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;selectAllDeviceCb.Parent" xml:space="preserve">
+    <value>DevicesSplitContainer.Panel1</value>
+  </data>
+  <data name="&gt;&gt;selectAllDeviceCb.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>586, 22</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>VMs</value>
+  </data>
+  <data name="label5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>DevicesSplitContainer.Panel1</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="DevicesSplitContainer.Panel1.Text" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="directoryCLB.AppearanceSelected.BackColor2" type="System.Drawing.Color, System.Drawing">
+    <value>30, 30, 30</value>
+  </data>
+  <data name="directoryCLB.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <metadata name="ImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <data name="ImageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAA4
+        GgAAAk1TRnQBSQFMAwEBAAEYAQoBGAEKATIBAAEgAQAE/wEhAQAI/wFCAU0BNgcAATYDAAEoAwAByAMA
+        ASADAAEBAQABIAYAAWQSAAMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgEN
+        AwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgEN
+        AwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgEN
+        AwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgEN/wD/AFoAAwoBDQM7AWMDOQFfAzoBYQM6
+        AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6
+        AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6
+        AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOQFfAzsBYwMK
+        AQ3/AP8AWgADCgENAzkBXwMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEM
+        AwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEM
+        AwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEM
+        AwkBDAMJAQwDCQEMAwkBDAMJAQwDOQFfAwoBDf8A/wBaAAMKAQ0DOgFhAwkBDAM6AWEDOgFhAzoBYQM6
+        AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6
+        AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6
+        AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAwkBDAM6AWEDCgEN/wD/AFoA
+        AwoBDQM6AWEDCQEMAzoBYQM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM6AWEDCQEMAzoBYQMKAQ3/AP8AWgADCgENAzoBYQMJAQwDOgFhAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzoBYQMJAQwDOgFhAwoBDf8A/wBaAAMKAQ0DOgFh
+        AwkBDAM6AWEDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOgFh
+        AwkBDAM6AWEDCgEN/wD/AFoAAwoBDQM6AWEDCQEMAzoBYQM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM6AWEDCQEMAzoBYQMKAQ3/AP8AWgADCgENAzoBYQMJAQwDOgFh
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzoBYQMJAQwDOgFh
+        AwoBDf8A/wBaAAMKAQ0DOgFhAwkBDAM6AWEDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOgFhAwkBDAM6AWEDCgEN/wD/AFoAAwoBDQM6AWEDCQEMAzoBYQM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM6AWEDCQEMAzoBYQMKAQ3/AP8A
+        WgADCgENAzoBYQMJAQwDOgFhAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzoBYQMJAQwDOgFhAwoBDf8A/wBaAAMKAQ0DOgFhAwkBDAM6AWEDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOgFhAwkBDAM6AWEDCgEN/wD/AFoAAwoBDQM6
+        AWEDCQEMAzoBYQM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM6
+        AWEDCQEMAzoBYQMKAQ3/AP8AWgADCgENAzoBYQMJAQwDOgFhAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzoBYQMJAQwDOgFhAwoBDf8A/wBaAAMKAQ0DOgFhAwkBDAM6
+        AWEDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOgFhAwkBDAM6
+        AWEDCgEN/wD/AFoAAwoBDQM6AWEDCQEMAzoBYQM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM6AWEDCQEMAzoBYQMKAQ3/AP8AWgADCgENAzoBYQMJAQwDOgFhAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzoBYQMJAQwDOgFhAwoBDf8A
+        /wBaAAMKAQ0DOgFhAwkBDAM6AWEDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOgFhAwkBDAM6AWEDCgEN/wD/AFoAAwoBDQM6AWEDCQEMAzoBYQM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM6AWEDCQEMAzoBYQMKAQ3/AP8AWgADCgEN
+        AzoBYQMJAQwDOgFhAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzoBYQMJAQwDOgFhAwoBDf8A/wBaAAMKAQ0DOgFhAwkBDAM6AWEDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOgFhAwkBDAM6AWEDCgEN/wD/AFoAAwoBDQM6AWEDCQEM
+        AzoBYQM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM6AWEDCQEM
+        AzoBYQMKAQ3/AP8AWgADCgENAzoBYQMJAQwDOgFhAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzoBYQMJAQwDOgFhAwoBDf8A/wBaAAMKAQ0DOgFhAwkBDAM6AWEDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOgFhAwkBDAM6AWEDCgEN
+        /wD/AFoAAwoBDQM6AWEDCQEMAzoBYQM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM6AWEDCQEMAzoBYQMKAQ3/AP8AWgADCgENAzoBYQMJAQwDOgFhAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFj
+        AzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzoBYQMJAQwDOgFhAwoBDf8A/wBaAAMK
+        AQ0DOgFhAwkBDAM6AWEDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7AWMDOwFjAzsBYwM7
+        AWMDOgFhAwkBDAM6AWEDCgEN/wD/AFoAAwoBDQM6AWEDCQEMAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFh
+        AzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFh
+        AzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFh
+        AzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDCQEMAzoBYQMKAQ3/AP8AWgADCgENAzkBXwMJ
+        AQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJ
+        AQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJ
+        AQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJAQwDCQEMAwkBDAMJ
+        AQwDOQFfAwoBDf8A/wBaAAMKAQ0DOwFjAzkBXwM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFh
+        AzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFh
+        AzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFh
+        AzoBYQM6AWEDOgFhAzoBYQM6AWEDOgFhAzkBXwM7AWMDCgEN/wD/AFoAAwoBDQMKAQ0DCgENAwoBDQMK
+        AQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMK
+        AQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMK
+        AQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMK
+        AQ3/AP8AWgABQgFNAT4HAAE+AwABKAMAAcgDAAEgAwABAQEAAQEFAAGAAQMWAAP//wD/AP8AhAAL
+</value>
+  </data>
+  <data name="directoryCLB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 46</value>
+  </data>
+  <data name="directoryCLB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 372</value>
+  </data>
+  <data name="directoryCLB.TabIndex" type="System.Int32, mscorlib">
+    <value>110</value>
+  </data>
+  <data name="&gt;&gt;directoryCLB.Name" xml:space="preserve">
+    <value>directoryCLB</value>
+  </data>
+  <data name="&gt;&gt;directoryCLB.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.CheckedListBoxControl, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;directoryCLB.Parent" xml:space="preserve">
+    <value>DevicesSplitContainer.Panel2</value>
+  </data>
+  <data name="&gt;&gt;directoryCLB.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="searchControl2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="searchControl2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 22</value>
+  </data>
+  <data name="searchControl2.Properties.NullValuePrompt" xml:space="preserve">
+    <value>Search directory</value>
+  </data>
+  <data name="searchControl2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 24</value>
+  </data>
+  <data name="searchControl2.TabIndex" type="System.Int32, mscorlib">
+    <value>111</value>
+  </data>
+  <data name="&gt;&gt;searchControl2.Name" xml:space="preserve">
+    <value>searchControl2</value>
+  </data>
+  <data name="&gt;&gt;searchControl2.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SearchControl, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;searchControl2.Parent" xml:space="preserve">
+    <value>DevicesSplitContainer.Panel2</value>
+  </data>
+  <data name="&gt;&gt;searchControl2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 22</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Directories</value>
+  </data>
+  <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>DevicesSplitContainer.Panel2</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="DevicesSplitContainer.Panel2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 5, 0</value>
+  </data>
+  <data name="DevicesSplitContainer.Panel2.Text" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="DevicesSplitContainer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>760, 418</value>
+  </data>
+  <data name="DevicesSplitContainer.TabIndex" type="System.Int32, mscorlib">
+    <value>127</value>
+  </data>
+  <data name="&gt;&gt;DevicesSplitContainer.Name" xml:space="preserve">
+    <value>DevicesSplitContainer</value>
+  </data>
+  <data name="&gt;&gt;DevicesSplitContainer.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SplitContainerControl, DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;DevicesSplitContainer.Parent" xml:space="preserve">
+    <value>ProcessXtraTabPage</value>
+  </data>
+  <data name="&gt;&gt;DevicesSplitContainer.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 52</value>
+  </data>
+  <data name="label6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>760, 1</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>ProcessXtraTabPage</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="UIButtonPanel.AppearanceButton.Normal.BackColor2" type="System.Drawing.Color, System.Drawing">
+    <value>128, 255, 255</value>
+  </data>
+  <data name="UIButtonPanel.Buttons" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="UIButtonPanel.Buttons1" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons2" type="DevExpress.XtraBars.Docking2010.ButtonStyle, DevExpress.Utils.v19.2">
+    <value>PushButton</value>
+  </data>
+  <data name="UIButtonPanel.Buttons3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons4" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="UIButtonPanel.Buttons5" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons6" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons7" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons8" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons9" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons10" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons11" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="UIButtonPanel.Buttons12" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons13" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="UIButtonPanel.Buttons14" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons15" type="DevExpress.XtraBars.Docking2010.ButtonStyle, DevExpress.Utils.v19.2">
+    <value>PushButton</value>
+  </data>
+  <data name="UIButtonPanel.Buttons16" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons17" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="UIButtonPanel.Buttons18" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons19" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons20" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons21" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons22" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons23" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons24" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="UIButtonPanel.Buttons25" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons26" xml:space="preserve">
+    <value>Setup</value>
+  </data>
+  <data name="UIButtonPanel.Buttons27" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons28" type="DevExpress.XtraBars.Docking2010.ButtonStyle, DevExpress.Utils.v19.2">
+    <value>PushButton</value>
+  </data>
+  <data name="UIButtonPanel.Buttons29" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons30" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="UIButtonPanel.Buttons31" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons32" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons33" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons34" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons35" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons36" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons37" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="UIButtonPanel.Buttons38" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons39" xml:space="preserve">
+    <value>Check</value>
+  </data>
+  <data name="UIButtonPanel.Buttons40" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons41" type="DevExpress.XtraBars.Docking2010.ButtonStyle, DevExpress.Utils.v19.2">
+    <value>PushButton</value>
+  </data>
+  <data name="UIButtonPanel.Buttons42" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons43" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="UIButtonPanel.Buttons44" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons45" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons46" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons47" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons48" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons49" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons50" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="UIButtonPanel.Buttons51" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons52" xml:space="preserve">
+    <value>Warmup</value>
+  </data>
+  <data name="UIButtonPanel.Buttons53" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons54" type="DevExpress.XtraBars.Docking2010.ButtonStyle, DevExpress.Utils.v19.2">
+    <value>PushButton</value>
+  </data>
+  <data name="UIButtonPanel.Buttons55" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons56" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="UIButtonPanel.Buttons57" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons58" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons59" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons60" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons61" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons62" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons63" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="UIButtonPanel.Buttons64" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons65" xml:space="preserve">
+    <value>Install</value>
+  </data>
+  <data name="UIButtonPanel.Buttons66" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons67" type="DevExpress.XtraBars.Docking2010.ButtonStyle, DevExpress.Utils.v19.2">
+    <value>PushButton</value>
+  </data>
+  <data name="UIButtonPanel.Buttons68" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons69" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="UIButtonPanel.Buttons70" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons71" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons72" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons73" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons74" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons75" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons76" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="UIButtonPanel.Buttons77" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons78" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons79" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons80" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="UIButtonPanel.Buttons81" xml:space="preserve">
+    <value>Sort</value>
+  </data>
+  <data name="UIButtonPanel.Buttons82" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons83" type="DevExpress.XtraBars.Docking2010.ButtonStyle, DevExpress.Utils.v19.2">
+    <value>PushButton</value>
+  </data>
+  <data name="UIButtonPanel.Buttons84" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons85" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="UIButtonPanel.Buttons86" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons87" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons88" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons89" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons90" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons91" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons92" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="UIButtonPanel.Buttons93" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons94" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="UIButtonPanel.Buttons95" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons96" type="DevExpress.XtraBars.Docking2010.ButtonStyle, DevExpress.Utils.v19.2">
+    <value>PushButton</value>
+  </data>
+  <data name="UIButtonPanel.Buttons97" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons98" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="UIButtonPanel.Buttons99" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons100" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons101" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons102" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons103" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons104" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons105" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="UIButtonPanel.Buttons106" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons107" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="UIButtonPanel.Buttons108" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons109" type="DevExpress.XtraBars.Docking2010.ButtonStyle, DevExpress.Utils.v19.2">
+    <value>PushButton</value>
+  </data>
+  <data name="UIButtonPanel.Buttons110" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons111" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="UIButtonPanel.Buttons112" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons113" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons114" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UIButtonPanel.Buttons115" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons116" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Buttons117" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="UIButtonPanel.Buttons118" type="System.Int32, mscorlib">
+    <value>-1</value>
+  </data>
+  <data name="UIButtonPanel.Buttons119" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="UIButtonPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="UIButtonPanel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 9pt</value>
+  </data>
+  <data name="UIButtonPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="UIButtonPanel.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 10, 10, 17</value>
+  </data>
+  <data name="UIButtonPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>760, 50</value>
+  </data>
+  <data name="UIButtonPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <data name="UIButtonPanel.Text" xml:space="preserve">
+    <value>windowsUIButtonPanel2</value>
+  </data>
+  <data name="&gt;&gt;UIButtonPanel.Name" xml:space="preserve">
+    <value>UIButtonPanel</value>
+  </data>
+  <data name="&gt;&gt;UIButtonPanel.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel, DevExpress.XtraBars.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;UIButtonPanel.Parent" xml:space="preserve">
+    <value>ProcessXtraTabPage</value>
+  </data>
+  <data name="&gt;&gt;UIButtonPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ProcessXtraTabPage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="ProcessXtraTabPage.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="ProcessXtraTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>764, 473</value>
+  </data>
+  <data name="ProcessXtraTabPage.Text" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="&gt;&gt;ProcessXtraTabPage.Name" xml:space="preserve">
+    <value>ProcessXtraTabPage</value>
+  </data>
+  <data name="&gt;&gt;ProcessXtraTabPage.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;ProcessXtraTabPage.Parent" xml:space="preserve">
+    <value>MainTabControl</value>
+  </data>
+  <data name="&gt;&gt;ProcessXtraTabPage.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="scenarioReloadButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2709,7 +2798,7 @@ No available devices.</value>
     <value>Bottom</value>
   </data>
   <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 383</value>
+    <value>2, 438</value>
   </data>
   <data name="panel3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
@@ -2739,7 +2828,7 @@ No available devices.</value>
     <value>2, 2, 2, 2</value>
   </data>
   <data name="ActionsXtraTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>764, 418</value>
+    <value>764, 473</value>
   </data>
   <data name="ActionsXtraTabPage.Text" xml:space="preserve">
     <value>Blocked</value>
@@ -2755,6 +2844,264 @@ No available devices.</value>
   </data>
   <data name="&gt;&gt;ActionsXtraTabPage.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="simpleButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>345, 147</value>
+  </data>
+  <data name="simpleButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="simpleButton1.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="simpleButton1.Text" xml:space="preserve">
+    <value>Generate</value>
+  </data>
+  <data name="&gt;&gt;simpleButton1.Name" xml:space="preserve">
+    <value>simpleButton1</value>
+  </data>
+  <data name="&gt;&gt;simpleButton1.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;simpleButton1.Parent" xml:space="preserve">
+    <value>xtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;simpleButton1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="iY.EditValue" xml:space="preserve">
+    <value>67</value>
+  </data>
+  <data name="iY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>560, 108</value>
+  </data>
+  <data name="iY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 20</value>
+  </data>
+  <data name="iY.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;iY.Name" xml:space="preserve">
+    <value>iY</value>
+  </data>
+  <data name="&gt;&gt;iY.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;iY.Parent" xml:space="preserve">
+    <value>xtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;iY.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="iX.EditValue" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="iX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>496, 108</value>
+  </data>
+  <data name="iX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 20</value>
+  </data>
+  <data name="iX.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;iX.Name" xml:space="preserve">
+    <value>iX</value>
+  </data>
+  <data name="&gt;&gt;iX.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;iX.Parent" xml:space="preserve">
+    <value>xtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;iX.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="iDY.EditValue" type="System.Decimal, mscorlib">
+    <value>10.5</value>
+  </data>
+  <data name="iDY.Location" type="System.Drawing.Point, System.Drawing">
+    <value>432, 108</value>
+  </data>
+  <data name="iDY.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
+    <value>Glyph</value>
+  </data>
+  <data name="iDY.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 20</value>
+  </data>
+  <data name="iDY.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;iDY.Name" xml:space="preserve">
+    <value>iDY</value>
+  </data>
+  <data name="&gt;&gt;iDY.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;iDY.Parent" xml:space="preserve">
+    <value>xtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;iDY.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="iF.EditValue" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="iF.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 108</value>
+  </data>
+  <data name="iF.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 20</value>
+  </data>
+  <data name="iF.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;iF.Name" xml:space="preserve">
+    <value>iF</value>
+  </data>
+  <data name="&gt;&gt;iF.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;iF.Parent" xml:space="preserve">
+    <value>xtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;iF.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="iH.EditValue" xml:space="preserve">
+    <value>500</value>
+  </data>
+  <data name="iH.Location" type="System.Drawing.Point, System.Drawing">
+    <value>304, 108</value>
+  </data>
+  <data name="iH.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 20</value>
+  </data>
+  <data name="iH.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;iH.Name" xml:space="preserve">
+    <value>iH</value>
+  </data>
+  <data name="&gt;&gt;iH.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;iH.Parent" xml:space="preserve">
+    <value>xtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;iH.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="iW.EditValue" xml:space="preserve">
+    <value>500</value>
+  </data>
+  <data name="iW.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 108</value>
+  </data>
+  <data name="iW.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 20</value>
+  </data>
+  <data name="iW.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;iW.Name" xml:space="preserve">
+    <value>iW</value>
+  </data>
+  <data name="&gt;&gt;iW.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;iW.Parent" xml:space="preserve">
+    <value>xtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;iW.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="iL.EditValue" xml:space="preserve">
+    <value>G</value>
+  </data>
+  <data name="iL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>146, 108</value>
+  </data>
+  <data name="iL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 20</value>
+  </data>
+  <data name="iL.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;iL.Name" xml:space="preserve">
+    <value>iL</value>
+  </data>
+  <data name="&gt;&gt;iL.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;iL.Parent" xml:space="preserve">
+    <value>xtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;iL.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="picBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>385, 191</value>
+  </data>
+  <data name="picBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 120</value>
+  </data>
+  <data name="picBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;picBox.Name" xml:space="preserve">
+    <value>picBox</value>
+  </data>
+  <data name="&gt;&gt;picBox.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.PictureEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;picBox.Parent" xml:space="preserve">
+    <value>xtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;picBox.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="svgBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 191</value>
+  </data>
+  <data name="svgBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 120</value>
+  </data>
+  <data name="svgBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="svgBox.Text" xml:space="preserve">
+    <value>svgImageBox1</value>
+  </data>
+  <data name="&gt;&gt;svgBox.Name" xml:space="preserve">
+    <value>svgBox</value>
+  </data>
+  <data name="&gt;&gt;svgBox.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SvgImageBox, DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;svgBox.Parent" xml:space="preserve">
+    <value>xtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;svgBox.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="xtraTabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>764, 473</value>
+  </data>
+  <data name="xtraTabPage1.Text" xml:space="preserve">
+    <value>xtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage1.Name" xml:space="preserve">
+    <value>xtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage1.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage1.Parent" xml:space="preserve">
+    <value>MainTabControl</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPage1.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;MainTabControl.Name" xml:space="preserve">
     <value>MainTabControl</value>
@@ -2784,7 +3131,7 @@ No available devices.</value>
     <value>0, 0</value>
   </data>
   <data name="accordionControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 420</value>
+    <value>40, 421</value>
   </data>
   <data name="accordionControl1.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -3219,7 +3566,7 @@ No available devices.</value>
     <value>Bottom</value>
   </data>
   <data name="autoHideContainer1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 420</value>
+    <value>0, 421</value>
   </data>
   <data name="autoHideContainer1.Size" type="System.Drawing.Size, System.Drawing">
     <value>806, 36</value>
@@ -3999,10 +4346,10 @@ No available devices.</value>
     <value>True</value>
   </data>
   <data name="galleryControlClient2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 1</value>
+    <value>0, 0</value>
   </data>
   <data name="galleryControlClient2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>432, 379</value>
+    <value>0, 0</value>
   </data>
   <data name="&gt;&gt;galleryControlClient2.Name" xml:space="preserve">
     <value>galleryControlClient2</value>
@@ -4038,7 +4385,7 @@ No available devices.</value>
     <value>0, 0, 0, 0</value>
   </data>
   <data name="galleryControl2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 381</value>
+    <value>434, 436</value>
   </data>
   <data name="galleryControl2.TabIndex" type="System.Int32, mscorlib">
     <value>122</value>
@@ -4062,7 +4409,7 @@ No available devices.</value>
     <value>Panel2</value>
   </data>
   <data name="splitContainerControl3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 381</value>
+    <value>760, 436</value>
   </data>
   <data name="splitContainerControl3.TabIndex" type="System.Int32, mscorlib">
     <value>112</value>
@@ -4086,28 +4433,28 @@ No available devices.</value>
     <value>666, 17</value>
   </metadata>
   <metadata name="tooltip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>148, 56</value>
+    <value>999, 17</value>
   </metadata>
   <metadata name="errorLogFSW.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>482, 56</value>
+    <value>121, 56</value>
   </metadata>
   <metadata name="proc.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>605, 56</value>
+    <value>244, 56</value>
   </metadata>
   <metadata name="bgsleeper.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>283, 95</value>
+    <value>666, 56</value>
   </metadata>
   <metadata name="faded.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>388, 95</value>
+    <value>771, 56</value>
   </metadata>
   <metadata name="SM.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>471, 95</value>
+    <value>854, 56</value>
   </metadata>
   <metadata name="lvTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>540, 95</value>
+    <value>923, 56</value>
   </metadata>
   <metadata name="toast.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>631, 95</value>
+    <value>1014, 56</value>
   </metadata>
   <data name="toast.Notifications" xml:space="preserve">
     <value>b8c36c4b-00e7-4c8d-ad53-1aefa75929aa</value>
@@ -4132,13 +4479,13 @@ No available devices.</value>
     <value>ImageAndText01</value>
   </data>
   <metadata name="iFormAssistant.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>868, 17</value>
   </metadata>
   <metadata name="iTaskBarAssistant.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 95</value>
+    <value>400, 56</value>
   </metadata>
   <metadata name="iAlert.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>681, 56</value>
+    <value>320, 56</value>
   </metadata>
   <data name="iAlert.AppearanceCaption.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt, style=Bold</value>
@@ -4147,7 +4494,7 @@ No available devices.</value>
     <value>Calibri, 10pt</value>
   </data>
   <metadata name="dockManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 134</value>
+    <value>171, 95</value>
   </metadata>
   <data name="hideContainerBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -4195,7 +4542,7 @@ No available devices.</value>
     <value>266, 17</value>
   </metadata>
   <metadata name="disabledLogFSW.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>236, 56</value>
+    <value>1087, 17</value>
   </metadata>
   <metadata name="iWorkspace.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>151, 17</value>
@@ -4204,9 +4551,9 @@ No available devices.</value>
     <value>746, 17</value>
   </metadata>
   <metadata name="warningLogFSW.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>150, 134</value>
+    <value>304, 95</value>
   </metadata>
   <metadata name="checkPopupMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>290, 134</value>
+    <value>444, 95</value>
   </metadata>
 </root>

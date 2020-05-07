@@ -31,5 +31,6 @@ namespace GUX.Core
 
         public static Scenario DEFAULT_SCENARIO { get; set; }
         public static bool WARMUP_AUTORUN { get; set; }
+        public static bool WARMUP_PROCEED_INBOX_FOLDER { get; set; }
     }
 }

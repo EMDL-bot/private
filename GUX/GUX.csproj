@@ -213,6 +213,12 @@
     <Compile Include="Core\ScheduleTask.cs" />
     <Compile Include="Core\_CONFIG.cs" />
     <Compile Include="Core\_DB.cs" />
+    <Compile Include="DevicesContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevicesContainer.Designer.cs">
+      <DependentUpon>DevicesContainer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Extensions\ControlExtensions.cs" />
     <Compile Include="Extensions\MainExtensions.cs" />
     <Compile Include="Main.cs">
@@ -280,6 +286,9 @@
     <Compile Include="UC\iTools.Designer.cs">
       <DependentUpon>iTools.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DevicesContainer.resx">
+      <DependentUpon>DevicesContainer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>

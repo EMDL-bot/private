@@ -2,8 +2,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
-using OpenQA.Selenium.Remote;
-using OpenQA.Selenium.Appium.Enums;
 using OpenQA.Selenium;
 using System.Threading.Tasks;
 using System.Collections.Generic;
@@ -12,16 +10,9 @@ using System.Threading;
 using OpenQA.Selenium.Interactions;
 using System.Diagnostics;
 using System.IO;
-using OpenQA.Selenium.Appium.Service;
-using OpenQA.Selenium.Appium.Service.Options;
-using System.Collections;
 using System.Linq;
-using System.Timers;
 using System.Collections.ObjectModel;
-using System.Text.RegularExpressions;
 using OpenQA.Selenium.Appium.MultiTouch;
-using System.Drawing;
-using OpenQA.Selenium.Appium.Interfaces;
 
 namespace GmailDemo
 {
@@ -43,6 +34,7 @@ namespace GmailDemo
         public int actionRetries { get; set; }
         public bool Disposed { get; private set; }
         public string scenario { get; set; }
+        public List<string> actions = new List<string>();
 
         private string ServerURI;
         public int ServerPort { get { return ServerPort; } set { this.ServerURI = "http://127.0.0.1:" + value + "/wd/hub"; } }
@@ -297,8 +289,6 @@ namespace GmailDemo
                 options.AddAdditionalCapability("systemPort", new Random().Next(30000, 40000));
                 options.AddAdditionalCapability("platformName", "android");
                 options.AddAdditionalCapability("automationName", "UiAutomator2");
-                ////options.AddAdditionalCapability("uiautomator2ServerInstallTimeout", 60000);
-                ////options.AddAdditionalCapability("uiautomator2ServerLaunchTimeout", 60000);
                 options.AddAdditionalCapability("noReset", true);
 
                 while (true)
@@ -309,12 +299,27 @@ namespace GmailDemo
                     {
                         try
                         {
+                            cancelationToken.ThrowIfCancellationRequested();
                             driver = new AndroidDriver<AndroidElement>(new Uri(this.ServerURI), options);
                             result = driver.SessionDetails.Count > 0;
                             Console.WriteLine(index + " : SessionDetails = " + driver.SessionDetails.Count);
+
+                            cancelationToken.Register(() =>
+                            {
+                                Log("Operation Canceled!", "warning");
+                                driver.Quit();
+                                this.Dispose();
+                            }, true);
                         }
                         catch (Exception c)
                         {
+                            if (c.GetType() == typeof(TaskCanceledException) || c.GetType() == typeof(OperationCanceledException))
+                            {
+                                Log("Operation Canceled!", "warning");
+                                this.Dispose();
+                                result = true;
+                                break;
+                            }
                             Console.WriteLine(index + " : " + c.Message);
                             result = false;
                         }
@@ -337,11 +342,10 @@ namespace GmailDemo
                 return "max actions retries reached!";
             }
 
-            cancelationToken.ThrowIfCancellationRequested();
+            bool isFail = false;
+
             try
             {
-                bool isFail = false;
-                cancelationToken.ThrowIfCancellationRequested();
                 AppiumOptions options = new AppiumOptions();
                 options.PlatformName = "Android";
                 options.AddAdditionalCapability("deviceName", this.device);
@@ -356,284 +360,307 @@ namespace GmailDemo
                 options.AddAdditionalCapability("noReset", true);
 
                 driver = new AndroidDriver<AndroidElement>(new Uri(this.ServerURI), options);
-                var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(this.WaitTO));
-                wait.PollingInterval = TimeSpan.FromMilliseconds(this.WaitPolling);
-                wait.Message = "PROXY WAIT TIMEDOUT!";
 
-                try
-                {
-                    cancelationToken.ThrowIfCancellationRequested();
-                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.PresenceOfAllElementsLocatedBy(By.XPath("//android.widget.TextView[@resource-id='android:id/title']")));
-                    var account = driver.FindElementsByXPath("//android.widget.TextView[@resource-id='android:id/title']");
-                    if (account.Count > 0)
-                    {
-                        if (account[0].Text == "Google")
-                            goto done;
-                    }
-
-                }
-                catch (Exception x)
-                {
-                    if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
-                    {
-                        this.actionRetries--;
-                        return ProxySetup(host, port);
-                    }
-                    else
-                    {
-                        Log("check google account : " + x.Message, "error");
-                        isFail = true;
-                        goto done;
-                    }
-                }
-
-                driver.StartActivity("com.android.settings", ".Settings");
-
-                try
-                {
-                    cancelationToken.ThrowIfCancellationRequested();
-                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//android.widget.LinearLayout[@resource-id='com.android.settings:id/dashboard_tile']")));
-                    //Thread.Sleep(3000);
-                    var net = driver.FindElementsByXPath("//android.widget.LinearLayout[@resource-id='com.android.settings:id/dashboard_tile']");
-                    net[0].Click();
-                    Log("click networks button", "info");
-                }
-                catch (Exception x)
-                {
-                    if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
-                    {
-                        this.actionRetries--;
-                        ProxySetup(host, port);
-                    }
-                    else
-                    {
-                        Log("network button : " + x.Message, "error");
-                        isFail = true;
-                        goto done;
-                    }
-                }
-
-                try
-                {
-                    cancelationToken.ThrowIfCancellationRequested();
-                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//android.widget.LinearLayout[contains(@content-desc,'Connected')]")));
-                    //Thread.Sleep(3000);
-                    var wifi = driver.FindElementsByXPath("//android.widget.LinearLayout[contains(@content-desc,'Connected')]");
-                    new Actions(driver).ClickAndHold(wifi[0]).Perform();
-                    Log("long press wifi button", "info");
-                }
-                catch (Exception x)
-                {
-                    if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
-                    {
-                        this.actionRetries--;
-                        ProxySetup(host, port);
-                    }
-                    else
-                    {
-                        Log("wifi button : " + x.Message, "error");
-                        isFail = true;
-                        goto done;
-                    }
-                }
-
-                try
-                {
-                    cancelationToken.ThrowIfCancellationRequested();
-                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//android.widget.TextView[@resource-id='android:id/title'][@text='Modify network']")));
-                    //Thread.Sleep(3000);
-                    var edit = driver.FindElementsByXPath("//android.widget.TextView[@resource-id='android:id/title'][@text='Modify network']");
-                    edit[0].Click();
-                    Log("click modify network button", "info");
-                }
-                catch (Exception x)
-                {
-                    if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
-                    {
-                        this.actionRetries--;
-                        ProxySetup(host, port);
-                    }
-                    else
-                    {
-                        Log("modify network button : " + x.Message, "error");
-                        isFail = true;
-                        goto done;
-                    }
-                }
-
-                bool allReadySet = false;
-
-                if (!allReadySet)
-                {
-                    try
-                    {
-                        cancelationToken.ThrowIfCancellationRequested();
-                        var adv = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("com.android.settings:id/wifi_advanced_togglebox")));
-                        //Thread.Sleep(3000);
-                        //ad.
-                        //var adv = driver.FindElementById("com.android.settings:id/wifi_advanced_togglebox");
-                        if (adv.GetAttribute("checked") == "false")
-                        {
-                            adv.Click();
-                            Log("click toggle options box", "info");
-                        }
-                        else
-                        {
-                            goto entry;
-                        }
-                    }
-                    catch (Exception x)
-                    {
-                        if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
-                        {
-                            this.actionRetries--;
-                            ProxySetup(host, port);
-                        }
-                        else
-                        {
-                            Log("toggle options box : " + x.Message, "error");
-                            isFail = true;
-                            goto done;
-                        }
-                    }
-                }
-
-                if (!allReadySet)
-                {
-                    try
-                    {
-                        cancelationToken.ThrowIfCancellationRequested();
-                        wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("com.android.settings:id/proxy_settings")));
-                        //Thread.Sleep(3000);
-                        var proxy = driver.FindElementById("com.android.settings:id/proxy_settings");
-                        proxy.Click();
-                        Log("click proxy settings button", "info");
-                    }
-                    catch (Exception x)
-                    {
-                        if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
-                        {
-                            this.actionRetries--;
-                            ProxySetup(host, port);
-                        }
-                        else
-                        {
-                            Log("proxy settings button : " + x.Message, "error");
-                            isFail = true;
-                            goto done;
-                        }
-                    }
-                }
-
-                if (!allReadySet)
-                {
-                    try
-                    {
-                        cancelationToken.ThrowIfCancellationRequested();
-                        wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//android.widget.CheckedTextView[@resource-id='android:id/text1'][@text='Manual']")));
-                        //Thread.Sleep(3000);
-                        var type = driver.FindElementsByXPath("//android.widget.CheckedTextView[@resource-id='android:id/text1'][@text='Manual']");
-                        type[0].Click();
-                        Log("click manual option button", "info");
-                    }
-                    catch (Exception x)
-                    {
-                        if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
-                        {
-                            this.actionRetries--;
-                            ProxySetup(host, port);
-                        }
-                        else
-                        {
-                            Log("manual option button : " + x.Message, "error");
-                            isFail = true;
-                            goto done;
-                        }
-                    }
-                }
-                entry:
-                try
-                {
-                    cancelationToken.ThrowIfCancellationRequested();
-                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("com.android.settings:id/proxy_hostname")));
-                    //Thread.Sleep(3000);
-                    var proxyHost = driver.FindElementById("com.android.settings:id/proxy_hostname");
-                    proxyHost.SendKeys(host);
-                    Log("sendkeys proxy hostname : " + host, "info");
-                }
-                catch (Exception x)
-                {
-                    if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
-                    {
-                        this.actionRetries--;
-                        ProxySetup(host, port);
-                    }
-                    else
-                    {
-                        Log("sendkeys proxy hostname : " + x.Message, "error");
-                        isFail = true;
-                        goto done;
-                    }
-                }
-
-                try
-                {
-                    cancelationToken.ThrowIfCancellationRequested();
-                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("com.android.settings:id/proxy_port")));
-                    //Thread.Sleep(3000);
-                    var proxyPort = driver.FindElementById("com.android.settings:id/proxy_port");
-                    proxyPort.SendKeys(port.ToString());
-                    Log("sendkeys proxy port : " + port, "info");
-                }
-                catch (Exception x)
-                {
-                    if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
-                    {
-                        this.actionRetries--;
-                        ProxySetup(host, port);
-                    }
-                    else
-                    {
-                        Log("sendkeys proxy port : " + x.Message, "error");
-                        isFail = true;
-                        goto done;
-                    }
-                }
-
-                try
-                {
-                    cancelationToken.ThrowIfCancellationRequested();
-                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("android:id/button1")));
-                    //Thread.Sleep(3000);
-                    var save = driver.FindElementById("android:id/button1");
-                    save.Click();
-                    Log("click save button", "info");
-                }
-                catch (Exception x)
-                {
-                    if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
-                    {
-                        this.actionRetries--;
-                        ProxySetup(host, port);
-                    }
-                    else
-                    {
-                        Log("save button : " + x.Message, "error");
-                        isFail = true;
-                        goto done;
-                    }
-                }
-
-                done:
-                driver.Quit();
-                return isFail ? "setup proxy failed!" : "setup proxy successed!";
+                cancelationToken.ThrowIfCancellationRequested();
             }
-            catch (Exception e)
+            catch (Exception x)
             {
-                driver.Quit();
-                Log(e.Message, "error");
-                return e.Message;
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+                else
+                    Console.WriteLine("driver error, " + x.Message);
             }
+
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(this.WaitTO));
+            wait.PollingInterval = TimeSpan.FromMilliseconds(this.WaitPolling);
+            wait.Message = "PROXY WAIT TIMEDOUT!";
+
+            try
+            {
+                cancelationToken.ThrowIfCancellationRequested();
+                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.PresenceOfAllElementsLocatedBy(By.XPath("//android.widget.TextView[@resource-id='android:id/title']")));
+                var account = driver.FindElementsByXPath("//android.widget.TextView[@resource-id='android:id/title']");
+                if (account.Count > 0)
+                {
+                    if (account[0].Text == "Google")
+                        goto done;
+                }
+
+            }
+            catch (Exception x)
+            {
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+
+                if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                {
+                    this.actionRetries--;
+                    return ProxySetup(host, port);
+                }
+                else
+                {
+                    Log("check google account : " + x.Message, "error");
+                    isFail = true;
+                    goto done;
+                }
+            }
+
+            if (driver != null) driver.StartActivity("com.android.settings", ".Settings");
+
+            try
+            {
+                cancelationToken.ThrowIfCancellationRequested();
+                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//android.widget.LinearLayout[@resource-id='com.android.settings:id/dashboard_tile']")));
+                var net = driver.FindElementsByXPath("//android.widget.LinearLayout[@resource-id='com.android.settings:id/dashboard_tile']");
+                net[0].Click();
+                Log("click networks button", "info");
+            }
+            catch (Exception x)
+            {
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+
+                if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                {
+                    this.actionRetries--;
+                    ProxySetup(host, port);
+                }
+                else
+                {
+                    Log("network button : " + x.Message, "error");
+                    isFail = true;
+                    goto done;
+                }
+            }
+
+            try
+            {
+                cancelationToken.ThrowIfCancellationRequested();
+                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//android.widget.LinearLayout[contains(@content-desc,'Connected')]")));
+                var wifi = driver.FindElementsByXPath("//android.widget.LinearLayout[contains(@content-desc,'Connected')]");
+                new Actions(driver).ClickAndHold(wifi[0]).Perform();
+                Log("long press wifi button", "info");
+            }
+            catch (Exception x)
+            {
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+
+                if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                {
+                    this.actionRetries--;
+                    ProxySetup(host, port);
+                }
+                else
+                {
+                    Log("wifi button : " + x.Message, "error");
+                    isFail = true;
+                    goto done;
+                }
+            }
+
+            try
+            {
+                cancelationToken.ThrowIfCancellationRequested();
+                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//android.widget.TextView[@resource-id='android:id/title'][@text='Modify network']")));
+                var edit = driver.FindElementsByXPath("//android.widget.TextView[@resource-id='android:id/title'][@text='Modify network']");
+                edit[0].Click();
+                Log("click modify network button", "info");
+            }
+            catch (Exception x)
+            {
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+
+                if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                {
+                    this.actionRetries--;
+                    ProxySetup(host, port);
+                }
+                else
+                {
+                    Log("modify network button : " + x.Message, "error");
+                    isFail = true;
+                    goto done;
+                }
+            }
+
+            bool allReadySet = false;
+
+            if (!allReadySet)
+            {
+                try
+                {
+                    cancelationToken.ThrowIfCancellationRequested();
+                    var adv = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("com.android.settings:id/wifi_advanced_togglebox")));
+                    if (adv.GetAttribute("checked") == "false")
+                    {
+                        adv.Click();
+                        Log("click toggle options box", "info");
+                    }
+                    else
+                    {
+                        goto entry;
+                    }
+                }
+                catch (Exception x)
+                {
+                    if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                        goto done;
+
+                    if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                    {
+                        this.actionRetries--;
+                        ProxySetup(host, port);
+                    }
+                    else
+                    {
+                        Log("toggle options box : " + x.Message, "error");
+                        isFail = true;
+                        goto done;
+                    }
+                }
+            }
+
+            if (!allReadySet)
+            {
+                try
+                {
+                    cancelationToken.ThrowIfCancellationRequested();
+                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("com.android.settings:id/proxy_settings")));
+                    var proxy = driver.FindElementById("com.android.settings:id/proxy_settings");
+                    proxy.Click();
+                    Log("click proxy settings button", "info");
+                }
+                catch (Exception x)
+                {
+                    if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                        goto done;
+
+                    if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                    {
+                        this.actionRetries--;
+                        ProxySetup(host, port);
+                    }
+                    else
+                    {
+                        Log("proxy settings button : " + x.Message, "error");
+                        isFail = true;
+                        goto done;
+                    }
+                }
+            }
+
+            if (!allReadySet)
+            {
+                try
+                {
+                    cancelationToken.ThrowIfCancellationRequested();
+                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//android.widget.CheckedTextView[@resource-id='android:id/text1'][@text='Manual']")));
+                    var type = driver.FindElementsByXPath("//android.widget.CheckedTextView[@resource-id='android:id/text1'][@text='Manual']");
+                    type[0].Click();
+                    Log("click manual option button", "info");
+                }
+                catch (Exception x)
+                {
+                    if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                        goto done;
+
+                    if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                    {
+                        this.actionRetries--;
+                        ProxySetup(host, port);
+                    }
+                    else
+                    {
+                        Log("manual option button : " + x.Message, "error");
+                        isFail = true;
+                        goto done;
+                    }
+                }
+            }
+            entry:
+            try
+            {
+                cancelationToken.ThrowIfCancellationRequested();
+                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("com.android.settings:id/proxy_hostname")));
+                var proxyHost = driver.FindElementById("com.android.settings:id/proxy_hostname");
+                proxyHost.SendKeys(host);
+                Log("sendkeys proxy hostname : " + host, "info");
+            }
+            catch (Exception x)
+            {
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+
+                if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                {
+                    this.actionRetries--;
+                    ProxySetup(host, port);
+                }
+                else
+                {
+                    Log("sendkeys proxy hostname : " + x.Message, "error");
+                    isFail = true;
+                    goto done;
+                }
+            }
+
+            try
+            {
+                cancelationToken.ThrowIfCancellationRequested();
+                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("com.android.settings:id/proxy_port")));
+                var proxyPort = driver.FindElementById("com.android.settings:id/proxy_port");
+                proxyPort.SendKeys(port.ToString());
+                Log("sendkeys proxy port : " + port, "info");
+            }
+            catch (Exception x)
+            {
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+
+                if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                {
+                    this.actionRetries--;
+                    ProxySetup(host, port);
+                }
+                else
+                {
+                    Log("sendkeys proxy port : " + x.Message, "error");
+                    isFail = true;
+                    goto done;
+                }
+            }
+
+            try
+            {
+                cancelationToken.ThrowIfCancellationRequested();
+                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("android:id/button1")));
+                var save = driver.FindElementById("android:id/button1");
+                save.Click();
+                Log("click save button", "info");
+            }
+            catch (Exception x)
+            {
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+
+                if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                {
+                    this.actionRetries--;
+                    ProxySetup(host, port);
+                }
+                else
+                {
+                    Log("save button : " + x.Message, "error");
+                    isFail = true;
+                    goto done;
+                }
+            }
+
+            done:
+            if (driver != null) driver.Quit();
+            return isFail ? "setup proxy failed!" : "setup proxy successed!";
         }
 
         public string GmailLogin(string[] creds)
@@ -648,7 +675,6 @@ namespace GmailDemo
             bool isFail = false;
             try
             {
-                cancelationToken.ThrowIfCancellationRequested();
                 AppiumOptions options = new AppiumOptions();
                 options.PlatformName = "Android";
                 options.AddAdditionalCapability("deviceName", this.device);
@@ -663,17 +689,20 @@ namespace GmailDemo
                 options.AddAdditionalCapability("noReset", true);
 
                 driver = new AndroidDriver<AndroidElement>(new Uri(this.ServerURI), options);
+
+                cancelationToken.ThrowIfCancellationRequested();
             }
             catch (Exception x)
             {
-                return "driver error, " + x.Message;
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+                else
+                    Console.WriteLine("driver error, " + x.Message);
             }
 
-            //driver.IgnoreUnimportantViews(true);
-            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(this.WaitTO)); //new WebDriverWait(driver, TimeSpan.FromSeconds(this.WaitTO));
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(this.WaitTO));
             wait.PollingInterval = TimeSpan.FromMilliseconds(this.WaitPolling);
             wait.Message = "SIGN-IN WAIT TIMEDOUT!";
-
 
             try
             {
@@ -694,6 +723,9 @@ namespace GmailDemo
             }
             catch (Exception x)
             {
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+
                 if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
@@ -721,6 +753,9 @@ namespace GmailDemo
             }
             catch (Exception x)
             {
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+
                 if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
@@ -744,6 +779,9 @@ namespace GmailDemo
             }
             catch (Exception x)
             {
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+
                 if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
@@ -767,6 +805,9 @@ namespace GmailDemo
             }
             catch (Exception x)
             {
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+
                 if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
@@ -790,6 +831,9 @@ namespace GmailDemo
             }
             catch (Exception x)
             {
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+
                 if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
@@ -813,6 +857,9 @@ namespace GmailDemo
             }
             catch (Exception x)
             {
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+
                 if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
@@ -864,10 +911,13 @@ namespace GmailDemo
             }
             catch (Exception x)
             {
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+
                 Console.WriteLine(x.Message);
             }
 
-            if (recoveryRequired)
+            if (recoveryRequired && driver != null)
             {
                 var subWait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
                 try
@@ -880,6 +930,9 @@ namespace GmailDemo
                 }
                 catch (Exception x)
                 {
+                    if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                        goto done;
+
                     if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                     {
                         this.actionRetries--;
@@ -903,6 +956,9 @@ namespace GmailDemo
                 }
                 catch (Exception x)
                 {
+                    if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                        goto done;
+
                     if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                     {
                         this.actionRetries--;
@@ -926,6 +982,9 @@ namespace GmailDemo
                 }
                 catch (Exception x)
                 {
+                    if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                        goto done;
+
                     if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                     {
                         this.actionRetries--;
@@ -974,6 +1033,9 @@ namespace GmailDemo
             }
             catch (Exception x)
             {
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+
                 Console.WriteLine(x.Message);
             }
 
@@ -988,9 +1050,12 @@ namespace GmailDemo
                 BlockedLog(creds[0] + " - Phone Verification Required!");
                 goto done;
             }
-            catch (Exception e)
+            catch (Exception x)
             {
-                Console.WriteLine("Phone verification : " + e.Message);
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+
+                Console.WriteLine("Phone verification : " + x.Message);
             }
 
             try
@@ -1003,6 +1068,9 @@ namespace GmailDemo
             }
             catch (Exception x)
             {
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+
                 if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
@@ -1016,7 +1084,7 @@ namespace GmailDemo
                 }
             }
 
-            var scroll = new TouchAction(driver);
+
 
             try
             {
@@ -1027,6 +1095,10 @@ namespace GmailDemo
                 {
                     try
                     {
+                        cancelationToken.ThrowIfCancellationRequested();
+
+                        var scroll = new TouchAction(driver);
+
                         var size = driver.Manage().Window.Size;
 
                         int anchor = (int)(size.Width * 0.5);
@@ -1040,9 +1112,12 @@ namespace GmailDemo
                         scroll.Cancel();
                         Console.WriteLine("end scrolling..");
                     }
-                    catch (Exception c)
+                    catch (Exception x)
                     {
-                        Console.WriteLine("scroll : " + c.Message);
+                        if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                            goto done;
+
+                        Console.WriteLine("scroll : " + x.Message);
                     }
 
                     subwait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//android.widget.Button[@resource-id='signinconsentNext']")));
@@ -1076,10 +1151,11 @@ namespace GmailDemo
             }
             catch (Exception x)
             {
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+
                 Console.WriteLine("new account features : " + x.Message);
             }
-
-            scroll.Cancel();
 
             try
             {
@@ -1091,6 +1167,9 @@ namespace GmailDemo
             }
             catch (Exception x)
             {
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+
                 Console.WriteLine("More button : " + x.Message);
             }
 
@@ -1104,6 +1183,9 @@ namespace GmailDemo
             }
             catch (Exception x)
             {
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+
                 if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
@@ -1118,17 +1200,18 @@ namespace GmailDemo
             }
 
 
-            scroll.Cancel();
             tour:
-            Task.Delay(1000).Wait();
-            driver.CloseApp();
-            driver.ActivateApp("com.google.android.gm");
-
-            var _wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            if (driver != null)
+            {
+                Task.Delay(1000).Wait();
+                driver.CloseApp();
+                driver.ActivateApp("com.google.android.gm");
+            }
 
             try
             {
                 cancelationToken.ThrowIfCancellationRequested();
+                var _wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
                 _wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.PresenceOfAllElementsLocatedBy(By.Id("com.google.android.gm:id/conversation_list_folder_header")));
                 var header = driver.FindElementById("com.google.android.gm:id/conversation_list_folder_header");
                 if (header != null)
@@ -1138,6 +1221,9 @@ namespace GmailDemo
             }
             catch (Exception x)
             {
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+
                 Console.WriteLine("check gmail is open : " + x.Message);
             }
 
@@ -1151,6 +1237,9 @@ namespace GmailDemo
             }
             catch (Exception x)
             {
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+
                 if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
@@ -1174,6 +1263,9 @@ namespace GmailDemo
             }
             catch (Exception x)
             {
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+
                 if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
@@ -1188,7 +1280,7 @@ namespace GmailDemo
             }
 
             done:
-            driver.Quit();
+            if (driver != null) driver.Quit();
             return isFail ? "sign-in failed!" : "signin successed!";
 
         }
@@ -1210,9 +1302,15 @@ namespace GmailDemo
             }
 
             bool isFail = false;
+
+            if (this.scenario == "")
+            {
+                Log("no actions found on the default scenario, try again!", "warning");
+                return "no actions found on the default scenario, try again!";
+            }
+
             try
             {
-                cancelationToken.ThrowIfCancellationRequested();
                 AppiumOptions options = new AppiumOptions();
                 options.PlatformName = "Android";
                 options.AddAdditionalCapability("deviceName", this.device);
@@ -1227,10 +1325,15 @@ namespace GmailDemo
                 options.AddAdditionalCapability("noReset", true);
 
                 driver = new AndroidDriver<AndroidElement>(new Uri(this.ServerURI), options);
+
+                cancelationToken.ThrowIfCancellationRequested();
             }
             catch (Exception x)
             {
-                return "driver error, " + x.Message;
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+                else
+                    Console.WriteLine("driver error, " + x.Message);
             }
 
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(this.WaitTO));
@@ -1240,6 +1343,8 @@ namespace GmailDemo
 
             if (driver != null)
             {
+                actions = scenario.Split(',').ToList();
+
                 var i = 1;
                 process:
                 //var now = date != "" ? DateTime.Parse(date).ToString("yyyy/MM/dd") : DateTime.UtcNow.ToString("yyyy/MM/dd");
@@ -1257,6 +1362,8 @@ namespace GmailDemo
                 }
                 catch (Exception x)
                 {
+                    if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                        goto done;
                     if (x.Message.Contains("SPAM ACTIONS WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                     {
                         this.actionRetries--;
@@ -1288,6 +1395,9 @@ namespace GmailDemo
                 }
                 catch (Exception x)
                 {
+                    if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                        goto done;
+
                     if (x.Message.Contains("SPAM ACTIONS WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                     {
                         this.actionRetries--;
@@ -1317,8 +1427,367 @@ namespace GmailDemo
                         }
                     }
                 }
+                catch (Exception x)
+                {
+                    if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                        goto done;
+
+                    Console.Write("Empty text : " + x.Message);
+                }
+
+                //OPEN EMAIL
+                ReadOnlyCollection<AndroidElement> emails = null;
+                try
+                {
+                    cancelationToken.ThrowIfCancellationRequested();
+                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.PresenceOfAllElementsLocatedBy(By.Id("com.google.android.gm:id/viewified_conversation_item_view")));
+                    emails = driver.FindElementsById("com.google.android.gm:id/viewified_conversation_item_view");
+                }
+                catch (Exception x)
+                {
+                    if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                        goto done;
+
+                    Console.WriteLine("Conversation list : " + x.Message);
+                }
+
+                if (emails != null && emails.Count > 0)
+                {
+                    var emailsCount = emails.Count;
+                    Log("Displayed Emails: " + emailsCount, "info");
+
+
+                    while (!isFail)
+                    {
+                        ReadOnlyCollection<AndroidElement> emailTime = null;
+
+                        try
+                        {
+                            cancelationToken.ThrowIfCancellationRequested();
+                            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//android.view.ViewGroup[@resource-id='com.google.android.gm:id/viewified_conversation_item_view']/android.widget.TextView[@resource-id='com.google.android.gm:id/date']")));
+                            emailTime = driver.FindElementsByXPath("//android.view.ViewGroup[@resource-id='com.google.android.gm:id/viewified_conversation_item_view']/android.widget.TextView[@resource-id='com.google.android.gm:id/date']");
+                        }
+                        catch (Exception x)
+                        {
+                            if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                                goto done;
+                            Console.WriteLine("Email Time : " + x.Message);
+                        }
+
+                        if (emailTime != null && emailTime.Count > 0)
+                        {
+                            Log("Working on Email No: " + i, "info");
+                            //READ EMAIL AND SCROLL
+
+                            try
+                            {
+                                cancelationToken.ThrowIfCancellationRequested();
+                                var subWait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+                                var webView = subWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//android.view.View[contains(@resource-id, 'm#msg-f:')]")));
+
+                                if (webView.Displayed)
+                                {
+
+                                    //var coord = webView.Location;
+                                    //var dim = webView.Size;
+                                    //var REC = new Rectangle(coord, dim);
+                                    //
+                                    //var scrollDOWN = new TouchAction(driver)
+                                    //                   .Press(REC.X, REC.Y)
+                                    //                   .Wait(1500)
+                                    //                   .MoveTo(REC.X, 0)
+                                    //                   .Release();
+                                    //
+                                    //scrollDOWN.Perform();
+                                    //Console.WriteLine("end scroll down.");
+                                    //var scrollUP = new TouchAction(driver)
+                                    //                   .Press(REC.X, 0)
+                                    //                   .Wait(1500)
+                                    //                   .MoveTo(REC.X, REC.Y)
+                                    //                   .Release();
+                                    //
+                                    //scrollUP.Perform();
+                                    //Console.WriteLine("end up down.");
+                                    //scroll.Press(anchor, startPoint).Wait(1500)
+                                    //.MoveTo(anchor, endPoint).Release().Perform();
+                                    //
+                                    //scroll.Press(anchor, startPoint).Wait(150)
+                                    //.MoveTo(anchor, endPoint).Release().Perform();
+                                    //
+                                    //Console.WriteLine("end scrolling..");
+                                    //scroll.Cancel();
+
+                                }
+                            }
+                            catch (Exception x)
+                            {
+                                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                                    goto done;
+
+                                Log("Scrolling : " + x.Message, "warning");
+                            }
+
+                            //GET CURRENT SUBJECT
+                            AndroidElement senderName = null;
+
+                            try
+                            {
+                                cancelationToken.ThrowIfCancellationRequested();
+                                var subWait = new WebDriverWait(driver, TimeSpan.FromSeconds(7));
+                                subWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("com.google.android.gm:id/sender_name")));
+                                senderName = driver.FindElementById("com.google.android.gm:id/sender_name");
+                            }
+                            catch (Exception x)
+                            {
+                                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                                    goto done;
+
+                                Log("Sender Name : " + x.Message, "error");
+                            }
+
+                            try
+                            {
+                                if (senderName != null)
+                                {
+                                    var sender = senderName.Text.ToLower();
+                                    Log("Sender Name: " + sender, "info");
+                                    if (sender.Contains(keyword.ToLower()))
+                                    {
+                                        //MARK AS NOT SPAM
+                                        ReadOnlyCollection<AndroidElement> notJunkButton = null;
+
+                                        try
+                                        {
+                                            cancelationToken.ThrowIfCancellationRequested();
+                                            //var subWait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                                            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//android.widget.Button[@resource-id = 'com.google.android.gm:id/warning_banner_primary_button'][@text = 'Report not spam']")));
+                                            notJunkButton = driver.FindElementsByXPath("//android.widget.Button[@resource-id = 'com.google.android.gm:id/warning_banner_primary_button'][@text = 'Report not spam']");
+                                            Log("not junk count : " + notJunkButton.Count, "");
+                                        }
+                                        catch (Exception x)
+                                        {
+                                            if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                                                goto done;
+
+                                            Console.WriteLine("Not junk Button : " + x.Message);
+                                        }
+
+                                        try
+                                        {
+                                            cancelationToken.ThrowIfCancellationRequested();
+                                            if (notJunkButton == null)
+                                            {
+                                                senderName.Click();
+                                                notJunkButton = driver.FindElementsByXPath("//android.widget.Button[@resource-id = 'com.google.android.gm:id/warning_banner_primary_button'][@text = 'Report not spam']");
+                                            }
+                                            notJunkButton[0].Click();
+                                            Log("Email marked as not junk", "info");
+                                        }
+                                        catch (Exception x)
+                                        {
+                                            if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                                                goto done;
+
+                                            Log("mark as not junk : " + x.Message, "error");
+                                            isFail = true;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        try
+                                        {
+                                            cancelationToken.ThrowIfCancellationRequested();
+                                            var subWait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                                            subWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("(//*[@content-desc='Delete'])[1]")));
+
+                                            var deleteButton = driver.FindElementsByXPath("(//*[@content-desc='Delete'])[1]");
+                                            deleteButton[0].Click();
+                                            Log("Email Deleted!", "info");
+                                        }
+                                        catch (Exception x)
+                                        {
+                                            if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                                                goto done;
+
+                                            Console.WriteLine("Delete Button : " + x.Message);
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    Log("sender name has NULL", "warning");
+                                }
+                            }
+                            catch (Exception c)
+                            {
+                                if (c.GetType() == typeof(OperationCanceledException) || c.GetType() == typeof(TaskCanceledException))
+                                    goto done;
+
+                                Log(c.Message, "error");
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            Log("No Emails Found!", "info");
+                            break;
+                        }
+                        i++;
+
+                        try
+                        {
+                            cancelationToken.ThrowIfCancellationRequested();
+                            driver.PressKeyCode(AndroidKeyCode.Back);
+                        }
+                        catch (Exception x)
+                        {
+                            if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                                goto done;
+
+                            Console.WriteLine("error, Navigate back : " + x.Message);
+                        }
+
+                        goto process;
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("Error while initializing driver!");
+            }
+
+            done:
+            if (driver != null) driver.Quit();
+            return isFail ? "spam actions failed!" : "spam actions successed!";
+        }
+
+        public string InboxActions(string keyword, string date)
+        {
+            if (this.actionRetries == 0)
+            {
+                Log("max inbox actions retries reached!", "error");
+                BlockedLog("max inbox actions retries reached!");
+                return "max inbox actions retries reached!";
+            }
+
+            bool isFail = false;
+            try
+            {
+                AppiumOptions options = new AppiumOptions();
+                options.PlatformName = "Android";
+                options.AddAdditionalCapability("deviceName", this.device);
+                options.AddAdditionalCapability("udid", this.device);
+                var systemPort = Convert.ToInt32(this.device.Split(':')[1]);
+                options.AddAdditionalCapability("systemPort", new Random().Next(30000, 40000));
+                options.AddAdditionalCapability("platformName", "android");
+                options.AddAdditionalCapability("automationName", "UiAutomator2");
+                options.AddAdditionalCapability("appPackage", "com.google.android.gm");
+                options.AddAdditionalCapability("appActivity", ".ConversationListActivityGmail");
+                options.AddAdditionalCapability("ignoreUnimportantViews", true);
+                options.AddAdditionalCapability("noReset", true);
+
+                driver = new AndroidDriver<AndroidElement>(new Uri(this.ServerURI), options);
+
+                cancelationToken.ThrowIfCancellationRequested();
+            }
+            catch (Exception x)
+            {
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+                else
+                    Console.WriteLine("driver error, " + x.Message);
+            }
+
+
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(this.WaitTO));
+            wait.PollingInterval = TimeSpan.FromMilliseconds(this.WaitPolling);
+            wait.Message = "INBOX ACTIONS WAIT TIMEDOUT!";
+            keyword = keyword.Replace("\"", "");
+
+            if (driver != null)
+            {
+                var i = 1;
+                process:
+                try
+                {
+                    cancelationToken.ThrowIfCancellationRequested();
+                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.PresenceOfAllElementsLocatedBy(By.Id("com.google.android.gm:id/conversation_list_folder_header")));
+                    var header = driver.FindElementById("com.google.android.gm:id/conversation_list_folder_header");
+                    if (header != null)
+                    {
+                        header.Click();
+                        Log("click search header", "info");
+                    }
+                }
+                catch (Exception x)
+                {
+                    if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                        goto done;
+                    if (x.Message.Contains("INBOX ACTIONS WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                    {
+                        this.actionRetries--;
+                        return InboxActions(keyword, date);
+                    }
+                    else
+                    {
+                        Log("click search header : " + x.Message, "error");
+                        isFail = true;
+                        goto done;
+                    }
+                }
+
+                try
+                {
+                    cancelationToken.ThrowIfCancellationRequested();
+                    wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.PresenceOfAllElementsLocatedBy(By.Id("com.google.android.gm:id/open_search_view_edit_text")));
+                    var searchArea = driver.FindElementById("com.google.android.gm:id/open_search_view_edit_text");
+                    if (searchArea != null)
+                    {
+                        var keys = $"is:inbox label:inbox from:{keyword.ToLower()}" + (date != "" ? " " + date : "");
+                        searchArea.ClearCache();
+                        searchArea.SendKeys(keys);
+                        searchArea.ClearCache();
+                        searchArea.Click();
+                        new Actions(driver).SendKeys(Keys.Enter).Perform();
+                        Log("send keys : " + keys, "info");
+                    }
+                }
+                catch (Exception x)
+                {
+                    if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                        goto done;
+                    if (x.Message.Contains("INBOX ACTIONS WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                    {
+                        this.actionRetries--;
+                        return InboxActions(keyword, date);
+                    }
+                    else
+                    {
+                        Log("search area : " + x.Message, "error");
+                        isFail = true;
+                        goto done;
+                    }
+                }
+
+                try
+                {
+                    var subWait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+                    cancelationToken.ThrowIfCancellationRequested();
+                    var empty = subWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.PresenceOfAllElementsLocatedBy(By.Id("com.google.android.gm:id/empty_text")));
+                    if (empty.Count > 0)
+                    {
+                        if (empty[0].Text != "")
+                        {
+                            Log("no emails Founds in INBOX folder!", "warning");
+                            isFail = false;
+                            goto done;
+                        }
+                    }
+                }
                 catch (Exception e)
                 {
+                    if (e.GetType() == typeof(OperationCanceledException) || e.GetType() == typeof(TaskCanceledException))
+                        goto done;
                     Console.Write("Empty text : " + e.Message);
                 }
 
@@ -1332,6 +1801,8 @@ namespace GmailDemo
                 }
                 catch (Exception e)
                 {
+                    if (e.GetType() == typeof(OperationCanceledException) || e.GetType() == typeof(TaskCanceledException))
+                        goto done;
                     Console.WriteLine("Conversation list : " + e.Message);
                 }
 
@@ -1352,6 +1823,8 @@ namespace GmailDemo
                         }
                         catch (Exception e)
                         {
+                            if (e.GetType() == typeof(OperationCanceledException) || e.GetType() == typeof(TaskCanceledException))
+                                goto done;
                             Console.WriteLine("Email Time : " + e.Message);
                         }
 
@@ -1402,6 +1875,8 @@ namespace GmailDemo
                             }
                             catch (Exception c)
                             {
+                                if (c.GetType() == typeof(OperationCanceledException) || c.GetType() == typeof(TaskCanceledException))
+                                    goto done;
                                 Log("Scrolling : " + c.Message, "warning");
                             }
 
@@ -1417,65 +1892,30 @@ namespace GmailDemo
                             }
                             catch (Exception e)
                             {
+                                if (e.GetType() == typeof(OperationCanceledException) || e.GetType() == typeof(TaskCanceledException))
+                                    goto done;
                                 Log("Sender Name : " + e.Message, "error");
                             }
 
                             try
                             {
+                                cancelationToken.ThrowIfCancellationRequested();
                                 if (senderName != null)
                                 {
                                     var sender = senderName.Text.ToLower();
                                     Log("Sender Name: " + sender, "info");
                                     if (sender.Contains(keyword.ToLower()))
                                     {
-                                        //MARK AS NOT SPAM
-                                        ReadOnlyCollection<AndroidElement> notJunkButton = null;
-
-                                        try
-                                        {
-                                            cancelationToken.ThrowIfCancellationRequested();
-                                            //var subWait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-                                            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//android.widget.Button[@resource-id = 'com.google.android.gm:id/warning_banner_primary_button'][@text = 'Report not spam']")));
-                                            notJunkButton = driver.FindElementsByXPath("//android.widget.Button[@resource-id = 'com.google.android.gm:id/warning_banner_primary_button'][@text = 'Report not spam']");
-                                            Log("not junk count : " + notJunkButton.Count, "");
-                                        }
-                                        catch (Exception c)
-                                        {
-                                            Console.WriteLine("Not junk Button : " + c.Message);
-                                        }
-
-                                        try
-                                        {
-                                            if (notJunkButton == null)
-                                            {
-                                                senderName.Click();
-                                                notJunkButton = driver.FindElementsByXPath("//android.widget.Button[@resource-id = 'com.google.android.gm:id/warning_banner_primary_button'][@text = 'Report not spam']");
-                                            }
-                                            notJunkButton[0].Click();
-                                            Log("Email marked as not junk", "info");
-                                        }
-                                        catch (Exception c)
-                                        {
-                                            Log("mark as not junk : " + c.Message, "error");
-                                            isFail = true;
-                                        }
+                                        var act = new Random().Next(1, 5);
+                                        emailTime[0].Click();
+                                        isFail = doAction(act, wait);
+                                        //isFail = Archive(wait);
                                     }
                                     else
                                     {
-                                        try
-                                        {
-                                            cancelationToken.ThrowIfCancellationRequested();
-                                            var subWait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-                                            subWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("(//*[@content-desc='Delete'])[1]")));
-
-                                            var deleteButton = driver.FindElementsByXPath("(//*[@content-desc='Delete'])[1]");
-                                            deleteButton[0].Click();
-                                            Log("Email Deleted!", "info");
-                                        }
-                                        catch (Exception c)
-                                        {
-                                            Console.WriteLine("Delete Button : " + c.Message);
-                                        }
+                                        emailTime[0].Click();
+                                        isFail = Archive(wait);
+                                        Log("Email Archived!", "info");
                                     }
                                 }
                                 else
@@ -1485,6 +1925,8 @@ namespace GmailDemo
                             }
                             catch (Exception e)
                             {
+                                if (e.GetType() == typeof(OperationCanceledException) || e.GetType() == typeof(TaskCanceledException))
+                                    goto done;
                                 Log(e.Message, "error");
                                 break;
                             }
@@ -1502,6 +1944,8 @@ namespace GmailDemo
                         }
                         catch (Exception c)
                         {
+                            if (c.GetType() == typeof(OperationCanceledException) || c.GetType() == typeof(TaskCanceledException))
+                                goto done;
                             Console.WriteLine("error, Navigate back : " + c.Message);
                         }
 
@@ -1515,11 +1959,11 @@ namespace GmailDemo
             }
 
             done:
-            driver.Quit();
-            return isFail ? "spam actions failed!" : "spam actions successed!";
+            if (driver != null) driver.Quit();
+            return isFail ? "inbox actions failed!" : "inbox actions successed!";
         }
 
-        public string InboxActions(string keyword, string date)
+        public string _InboxActions(string keyword, string date)
         {
             bool isFail = false;
             try
@@ -1717,7 +2161,7 @@ namespace GmailDemo
                                         Log("Sender Name: " + sender, "info");
                                         if (sender.Contains(keyword))
                                         {
-                                            var act = new Random().Next((5 - 1) + 1) + 1;
+                                            var act = new Random().Next(1, 5);
                                             emailTime[0].Click();
                                             isFail = doAction(act, wait);
                                             //isFail = Archive(wait);
@@ -1826,7 +2270,7 @@ namespace GmailDemo
                             {
                                 sendButton.Click();
                                 Log("send reply", "info");
-                                isFailed = false;
+                                isFailed = Archive(wait);
                             }
                             else
                             {
@@ -1840,8 +2284,6 @@ namespace GmailDemo
                         Log("reply action : " + x.Message, "error");
                         isFailed = true;
                     }
-
-                    isFailed = Archive(wait);
                     break;
                 case 2:
                     isFailed = Archive(wait);
@@ -1856,7 +2298,7 @@ namespace GmailDemo
                         {
                             starAction[0].Click();
                             Log("perform star action", "info");
-                            isFailed = false;
+                            isFailed = Archive(wait);
                         }
                         else
                         {
@@ -1869,7 +2311,6 @@ namespace GmailDemo
                         Log("Star action : " + x.Message, "error");
                         isFailed = true;
                     }
-                    isFailed = Archive(wait);
                     break;
                 case 4:
                     try
@@ -1898,7 +2339,7 @@ namespace GmailDemo
                                 {
                                     moreOptions[0].Click();
                                 }
-                                isFailed = false;
+                                isFailed = Archive(wait);
                             }
                         }
                     }
@@ -1907,7 +2348,6 @@ namespace GmailDemo
                         Log("mark important action : " + x.Message, "error");
                         isFailed = true;
                     }
-                    isFailed = Archive(wait);
                     break;
                 case 5:
                     try
@@ -1929,17 +2369,18 @@ namespace GmailDemo
 
                             }
                         }
-                        catch (Exception e)
+                        catch (Exception)
                         {
                             driver.PressKeyCode(AndroidKeyCode.Back);
                             Log("back to Gmail app", "info");
+                            isFailed = Archive(wait);
                         }
                     }
                     catch (Exception x)
                     {
                         Log("click link : " + x.Message, "error");
+                        isFailed = true;
                     }
-                    isFailed = Archive(wait);
                     break;
             }
 
@@ -2037,10 +2478,16 @@ namespace GmailDemo
 
         public string CheckAccounts()
         {
+            if (this.actionRetries == 0)
+            {
+                Log("max check accounts retries reached!", "error");
+                BlockedLog("max check accounts retries reached!");
+                return "max check accounts retries reached!";
+            }
+
             bool isFail = false;
             try
             {
-                cancelationToken.ThrowIfCancellationRequested();
                 AppiumOptions options = new AppiumOptions();
                 options.PlatformName = "Android";
                 options.AddAdditionalCapability("deviceName", this.device);
@@ -2049,20 +2496,20 @@ namespace GmailDemo
                 options.AddAdditionalCapability("systemPort", new Random().Next(30000, 40000));
                 options.AddAdditionalCapability("platformName", "android");
                 options.AddAdditionalCapability("automationName", "UiAutomator2");
-
-                //options.AddAdditionalCapability("uiautomator2ServerInstallTimeout", 60000);
-                //options.AddAdditionalCapability("uiautomator2ServerLaunchTimeout", 60000);
-
                 options.AddAdditionalCapability("appPackage", "com.google.android.gm");
                 options.AddAdditionalCapability("appActivity", ".ConversationListActivityGmail");
                 options.AddAdditionalCapability("noReset", true);
-                options.AddAdditionalCapability("printPageSourceOnFindFailure", false);
 
                 driver = new AndroidDriver<AndroidElement>(new Uri(this.ServerURI), options);
+
+                cancelationToken.ThrowIfCancellationRequested();
             }
             catch (Exception x)
             {
-                return "driver error, " + x.Message;
+                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                    goto done;
+                else
+                    Console.WriteLine("driver error, " + x.Message);
             }
 
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(this.WaitTO));
@@ -2081,8 +2528,10 @@ namespace GmailDemo
                         Log("gmail account found", "info");
                     }
                 }
-                catch (Exception)
+                catch (Exception x)
                 {
+                    if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
+                        goto done;
                     Log("gmail account not found", "warning");
                     BlockedLog("gmail account not found");
                 }
@@ -2093,7 +2542,8 @@ namespace GmailDemo
                 isFail = true;
             }
 
-            driver.Quit();
+            done:
+            if (driver != null) driver.Quit();
             return isFail ? "check account failed!" : "check account successed!";
         }
 
@@ -2206,78 +2656,36 @@ namespace GmailDemo
         [TestMethod]
         public Task<string> InboxProcess(string keyword, string date)
         {
-            error = new List<string>();
             return Task<string>.Factory.StartNew(() =>
             {
-                try
-                {
-                    if (cancelationToken.IsCancellationRequested)
-                    {
-                        Log("Operation Canceled!", "warning");
-                        return "Operation Canceled!";
-                    }
-                    var doInbox = InboxActions(keyword, date);
-                    Log(doInbox, doInbox.Contains("failed") ? "error" : "success");
-                    return doInbox;
-                }
-                catch (OperationCanceledException e)
-                {
-                    Log("Operation Canceled!", "warning");
-                    driver.Quit();
-                    return "Operation Canceled!";
-                }
+                Log("warmup 'inbox' process started", "info");
+                var doInbox = InboxActions(keyword, date);
+                Log(doInbox, doInbox.Contains("failed") ? "error" : "success");
+                return doInbox;
             }, cancelationToken);
         }
 
         [TestMethod]
         public Task<string> SpamProcess(string keyword, string date)
         {
-            error = new List<string>();
             return Task<string>.Factory.StartNew(() =>
             {
-                try
-                {
-                    if (cancelationToken.IsCancellationRequested)
-                    {
-                        Log("Operation Canceled!", "warning");
-                        return "Operation Canceled!";
-                    }
-                    var doSpam = SpamActions(keyword, date);
-                    Log(doSpam, doSpam.Contains("failed") ? "error" : "success");
-                    return doSpam;
-                }
-                catch (OperationCanceledException e)
-                {
-                    Log("Operation Canceled!", "warning");
-                    driver.Quit();
-                    return "Operation Canceled!";
-                }
+                Log("warmup 'spam' process started", "info");
+                var doSpam = SpamActions(keyword, date);
+                Log(doSpam, doSpam.Contains("failed") ? "error" : "success");
+                return doSpam;
             }, cancelationToken);
         }
 
         [TestMethod]
         public Task<string> CheckProcess()
         {
-            error = new List<string>();
             return Task<string>.Factory.StartNew(() =>
             {
-                try
-                {
-                    if (cancelationToken.IsCancellationRequested)
-                    {
-                        Log("Operation Canceled!", "warning");
-                        return "Operation Canceled!";
-                    }
-                    var doCheck = CheckAccounts();
-                    Log(doCheck, doCheck.Contains("failed") ? "error" : "success");
-                    return doCheck;
-                }
-                catch (OperationCanceledException e)
-                {
-                    Log("Operation Canceled!", "warning");
-                    driver.Quit();
-                    return "Operation Canceled!";
-                }
+                Log("check google accounts process started", "info");
+                var doCheck = CheckAccounts();
+                Log(doCheck, doCheck.Contains("failed") ? "error" : "success");
+                return doCheck;
             }, cancelationToken);
         }
 
@@ -2297,7 +2705,7 @@ namespace GmailDemo
                     InitDriver(60, true);
                     driver.PressKeyCode(AndroidKeyCode.Back);
                 }
-                catch (OperationCanceledException e)
+                catch (OperationCanceledException)
                 {
                     Log("Operation Canceled!", "warning");
                     driver.Quit();
@@ -2308,53 +2716,24 @@ namespace GmailDemo
         [TestMethod]
         public Task<string> SetupProxy(string host, int port = 92)
         {
-            error = new List<string>();
             return Task<string>.Factory.StartNew(() =>
             {
-                try
-                {
-                    if (cancelationToken.IsCancellationRequested)
-                    {
-                        Log("Operation Canceled!", "warning");
-                        return "Operation Canceled!";
-                    }
-                    var updateProxyResponse = ProxySetup(host, port);
-                    Log(updateProxyResponse, updateProxyResponse.Contains("failed") ? "error" : "success");
-                    return updateProxyResponse;
-                }
-                catch (OperationCanceledException e)
-                {
-                    Log("Operation Canceled!", "warning");
-                    driver.Quit();
-                    return "Operation Canceled!";
-                }
+                Log("setup-proxy process started", "info");
+                var updateProxyResponse = ProxySetup(host, port);
+                Log(updateProxyResponse, updateProxyResponse.Contains("failed") ? "error" : "success");
+                return updateProxyResponse;
             }, cancelationToken);
         }
 
         [TestMethod]
         public Task<string> SignIn(string[] creds)
         {
-            error = new List<string>();
             return Task.Factory.StartNew(() =>
             {
-                try
-                {
-                    if (cancelationToken.IsCancellationRequested)
-                    {
-                        Log("Operation Canceled!", "warning");
-                        return "Operation Canceled!";
-                    }
-                    cancelationToken.ThrowIfCancellationRequested();
-                    var signInResponse = GmailLogin(creds);
-                    Log(signInResponse, signInResponse.Contains("failed") ? "error" : "success");
-                    return signInResponse;
-                }
-                catch (OperationCanceledException e)
-                {
-                    Log("Operation Canceled!", "warning");
-                    driver.Quit();
-                    return "Operation Canceled!";
-                }
+                Log("sign-in process started", "info");
+                var signInResponse = GmailLogin(creds);
+                Log(signInResponse, signInResponse.Contains("failed") ? "error" : "success");
+                return signInResponse;
             }, cancelationToken);
         }
 
@@ -2443,6 +2822,8 @@ namespace GmailDemo
         {
             if (!Disposed)
             {
+                cancelationToken.WaitHandle.Dispose();
+                cancelationToken = CancellationToken.None;
                 Disposed = true;
                 GC.SuppressFinalize(this);
             }

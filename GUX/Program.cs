@@ -18,7 +18,7 @@ namespace GUX
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Main());
+                Application.Run(new DevicesContainer());
             }
             catch (Exception e)
             {

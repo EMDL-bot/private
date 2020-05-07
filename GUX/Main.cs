@@ -30,7 +30,9 @@ using DevExpress.Utils;
 using DevExpress.XtraSplashScreen;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
-using DevExpress.XtraBars.Ribbon;
+using System.Text;
+using System.Xml;
+using DevExpress.Utils.Svg;
 
 namespace GUX
 {
@@ -47,10 +49,10 @@ namespace GUX
         private Scheduler _Scheduler;
         private _CONFIG _Config;
         private string actionsLogFile = "",
-                       errorsLogFile = "",
-                       blockedLogFile = "",
-                       disabledLogFile = "",
-                       warningLogFile = "";
+         errorsLogFile = "",
+         blockedLogFile = "",
+         disabledLogFile = "",
+         warningLogFile = "";
         private PerformanceCounter ram = new PerformanceCounter("Memory", "% Committed Bytes In Use", String.Empty, Environment.MachineName);
         private PerformanceCounter cpu = new PerformanceCounter("Processor", "% Processor Time", "_Total", Environment.MachineName);
         private CancellationTokenSource _CancellationTokenSource;
@@ -416,6 +418,7 @@ namespace GUX
                                     this.defaultScenarioGallery.SelectedIndex = 0;
 
                                     this.warmupAutoRunSwitch.SwitchState = (Globals.WARMUP_AUTORUN = _Config._WARMUP_AUTORUN) ? XUISwitch.State.On : XUISwitch.State.Off;
+                                    this.warmupInboxFolderSwitch.SwitchState = (Globals.WARMUP_PROCEED_INBOX_FOLDER = _Config._WARMUP_PROCEED_INBOX_FOLDER) ? XUISwitch.State.On : XUISwitch.State.Off;
                                 }
                                 catch (Exception c)
                                 {
@@ -495,7 +498,7 @@ namespace GUX
             e.ChangedRange.SetStyle(WarnStyle, @"\bwarning\b|\bdisabled\b|\bblocked\b", RegexOptions.Multiline);
         }
 
-        #region:CallAPI
+        #region: CallAPI
         /*
          try
             {
@@ -527,7 +530,7 @@ namespace GUX
                         }
                     }
                 });
-                
+
             }
             catch (Exception ex)
             {
@@ -943,55 +946,99 @@ namespace GUX
                                                             {
                                                                 if (td.IsCompleted)
                                                                 {
+                                                                    if (td.Status == TaskStatus.Canceled)
+                                                                        return;
                                                                     SortWin();
                                                                     Log("Test Driver : " + td.Result, index, "info");
                                                                     if (td.Result)
                                                                     {
-                                                                        var timer = SetInterval(new Action<System.Timers.Timer>((tt) => { CheckOfflineDevice(_gunit, _device, tt, st).Wait(); }), 3000);
-                                                                        var ptk = _gunit.SpamProcess(keyword, date).ContinueWith((pt) =>
+                                                                        var timer = SetInterval(new Action<System.Timers.Timer>((tt) =>
                                                                         {
-                                                                            pt.Wait();
-                                                                            SortWin();
-                                                                            if (pt.IsCompleted)
+                                                                            try
                                                                             {
-                                                                                if (pt.Result.ToString() == "spam actions successed!")
+                                                                                CheckOfflineDevice(_gunit, _device, tt, st).Wait();
+                                                                            }
+                                                                            catch (Exception x)
+                                                                            {
+                                                                                Console.WriteLine(x.Message);
+                                                                                if (tt != null) tt.Dispose();
+                                                                            }
+                                                                        }), 3000);
+                                                                        var spm = _gunit.SpamProcess(Globals.DEFAULT_SCENARIO.keyword, Globals.DEFAULT_SCENARIO.date).ContinueWith((sp) =>
+                                                                        {
+                                                                            //sp.Wait();
+                                                                            SortWin();
+                                                                            if (sp.IsCompleted)
+                                                                            {
+                                                                                if (sp.Status == TaskStatus.Canceled)
+                                                                                    return;
+                                                                                if (sp.Result.ToString() == "spam actions successed!")
                                                                                 {
                                                                                     SortWin();
-
-                                                                                    if (timer != null)
+                                                                                    if (Globals.WARMUP_PROCEED_INBOX_FOLDER)
                                                                                     {
-                                                                                        timer.Dispose();
-                                                                                    }
+                                                                                        _gunit.actionRetries = Globals.FAILED_ACTION_MAX_RETRIES;
+                                                                                        var inbx = _gunit.InboxProcess(Globals.DEFAULT_SCENARIO.keyword, Globals.DEFAULT_SCENARIO.date).ContinueWith((inb) =>
+                                                                                        {
+                                                                                            //inb.Wait();
+                                                                                            if (inb.IsCompleted)
+                                                                                            {
+                                                                                                if (inb.Status == TaskStatus.Canceled)
+                                                                                                    return;
+                                                                                                if (inb.Result.ToString() != "inbox actions successed!")
+                                                                                                {
+                                                                                                    if (timer != null)
+                                                                                                    {
+                                                                                                        timer.Dispose();
+                                                                                                    }
 
-                                                                                    //_gunit.actionRetries = Globals.FAILED_ACTION_MAX_RETRIES;
-                                                                                    //var sitk = _gunit.InboxProcess(keyword, date).ContinueWith((sit) =>
-                                                                                    //{
-                                                                                    //    if (sit.IsCompleted)
-                                                                                    //    {
-                                                                                    //        if (sit.Result.ToString() != "inbox actions successed!")
-                                                                                    //        {
-                                                                                    //            if (timer != null)
-                                                                                    //            {
-                                                                                    //                timer.Dispose();
-                                                                                    //            }
-                                                                                    //            Log("inbox actions failed!", index, "error");
-                                                                                    //            SortWin();
-                                                                                    //            return;
-                                                                                    //        }
-                                                                                    //        else
-                                                                                    //        {
-                                                                                    //            var stp = stopWatch.Elapsed;
-                                                                                    //            Log(string.Format("done! [{0:D2}:{1:D2}:{2:D3}]", stp.Minutes, stp.Seconds, stp.Milliseconds), index, "info");
-                                                                                    //            stopWatch.Stop();
-                                                                                    //            if (timer != null)
-                                                                                    //            {
-                                                                                    //                timer.Dispose();
-                                                                                    //            }
-                                                                                    //            SortWin();
-                                                                                    //        }
-                                                                                    //    }
-                                                                                    //});
-                                                                                    //sitk.Wait();
+                                                                                                    if (_gunit != null)
+                                                                                                    {
+                                                                                                        _gunit.Dispose();
+                                                                                                    }
+
+                                                                                                    SortWin();
+
+                                                                                                    Log("inbox actions failed!", index, "error");
+                                                                                                    SortWin();
+                                                                                                    return;
+                                                                                                }
+                                                                                                else
+                                                                                                {
+                                                                                                    var wstp = stopWatch.Elapsed;
+                                                                                                    Log(string.Format("warmup done! [{0:D2}:{1:D2}:{2:D3}]", wstp.Minutes, wstp.Seconds, wstp.Milliseconds), index, "info");
+                                                                                                    stopWatch.Stop();
+                                                                                                    stopWatch.Reset();
+
+                                                                                                    if (timer != null)
+                                                                                                    {
+                                                                                                        timer.Dispose();
+                                                                                                    }
+
+                                                                                                    if (_gunit != null)
+                                                                                                    {
+                                                                                                        _gunit.Dispose();
+                                                                                                    }
+
+                                                                                                    SortWin();
+                                                                                                }
+                                                                                            }
+                                                                                        });
+                                                                                        if (inbx != null && (inbx.Status == TaskStatus.RanToCompletion || inbx.Status != TaskStatus.Running)) inbx.Wait();
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                        if (timer != null)
+                                                                                        {
+                                                                                            timer.Dispose();
+                                                                                        }
+
+                                                                                        if (_gunit != null)
+                                                                                        {
+                                                                                            _gunit.Dispose();
+                                                                                        }
+                                                                                        SortWin();
+                                                                                    }
                                                                                 }
                                                                                 else
                                                                                 {
@@ -999,24 +1046,41 @@ namespace GUX
                                                                                     {
                                                                                         timer.Dispose();
                                                                                     }
+
+                                                                                    if (_gunit != null)
+                                                                                    {
+                                                                                        _gunit.Dispose();
+                                                                                    }
+
                                                                                     Log("spam actions failed!", index, "error");
                                                                                     SortWin();
                                                                                     return;
                                                                                 }
                                                                             }
                                                                         });
-                                                                        ptk.Wait();
+                                                                        if (spm != null && (spm.Status == TaskStatus.RanToCompletion || spm.Status != TaskStatus.Running)) spm.Wait();
                                                                     }
                                                                     else
                                                                     {
                                                                         Log("driver timedout!", index, "error");
                                                                         stopWatch.Stop();
+
+                                                                        if (timer != null)
+                                                                        {
+                                                                            timer.Dispose();
+                                                                        }
+
+                                                                        if (_gunit != null)
+                                                                        {
+                                                                            _gunit.Dispose();
+                                                                        }
                                                                         SortWin();
+
                                                                         return;
                                                                     }
                                                                 }
                                                             });
-                                                            tdk.Wait();
+                                                            if (tdk != null && (tdk.Status == TaskStatus.RanToCompletion || tdk.Status != TaskStatus.Running)) tdk.Wait();
                                                         }
                                                     }
                                                 }
@@ -1028,6 +1092,15 @@ namespace GUX
                                                 if (tt.IsCompleted)
                                                 {
                                                     _gunit.KillDriver();
+                                                    if (timer != null)
+                                                    {
+                                                        timer.Dispose();
+                                                    }
+
+                                                    if (_gunit != null)
+                                                    {
+                                                        _gunit.Dispose();
+                                                    }
                                                     var svm = StopVM(index);
                                                     svm.Wait();
                                                 }
@@ -1037,6 +1110,15 @@ namespace GUX
                                         }
                                         catch (Exception c)
                                         {
+                                            if (timer != null)
+                                            {
+                                                timer.Dispose();
+                                            }
+
+                                            if (_gunit != null)
+                                            {
+                                                _gunit.Dispose();
+                                            }
                                             Console.WriteLine(c.Message);
                                             return;
                                         }
@@ -1296,117 +1378,175 @@ namespace GUX
                                                             {
                                                                 if (td.IsCompleted)
                                                                 {
+                                                                    if (td.Status == TaskStatus.Canceled)
+                                                                        return;
                                                                     SortWin();
                                                                     Log("Test Driver : " + td.Result, index, "info");
                                                                     if (td.Result)
                                                                     {
-                                                                        var timer = SetInterval(new Action<System.Timers.Timer>((tt) => { CheckOfflineDevice(_gunit, _device, tt, st).Wait(); }), 3000);
-                                                                        Log("setup proxy started", index, "info");
+                                                                        var timer = SetInterval(new Action<System.Timers.Timer>((tt) =>
+                                                                        {
+                                                                            try
+                                                                            {
+                                                                                CheckOfflineDevice(_gunit, _device, tt, st).Wait();
+                                                                            }
+                                                                            catch (Exception x)
+                                                                            {
+                                                                                Console.WriteLine(x.Message);
+                                                                                if (tt != null) tt.Dispose();
+                                                                            }
+                                                                        }), 3000);
                                                                         var ptk = _gunit.SetupProxy(proxy[0], proxy.Count() > 1 ? Convert.ToInt16(proxy[1]) : 92).ContinueWith((pt) =>
                                                                         {
-                                                                            pt.Wait();
+                                                                            //pt.Wait();
                                                                             SortWin();
                                                                             if (pt.IsCompleted)
                                                                             {
+                                                                                if (pt.Status == TaskStatus.Canceled)
+                                                                                    return;
                                                                                 if (pt.Result.ToString() == "setup proxy successed!")
                                                                                 {
                                                                                     SortWin();
                                                                                     _gunit.actionRetries = Globals.FAILED_ACTION_MAX_RETRIES;
-                                                                                    Log("signin started", index, "info");
                                                                                     var sitk = _gunit.SignIn(new string[] { seeds["email"].ToString(), seeds["password"].ToString(), seeds["recovery"].ToString() }).ContinueWith((sit) =>
-                                                                                    {
-                                                                                        if (sit.IsCompleted)
-                                                                                        {
-                                                                                            if (sit.Result.ToString() != "signin successed!")
-                                                                                            {
-                                                                                                if (timer != null)
-                                                                                                {
-                                                                                                    timer.Dispose();
-                                                                                                }
-                                                                                                Log("signin failed!", index, "error");
-                                                                                                SortWin();
-                                                                                                return;
-                                                                                            }
-                                                                                            else
-                                                                                            {
-                                                                                                var stp = stopWatch.Elapsed;
-                                                                                                Log(string.Format("done! [{0:D2}:{1:D2}:{2:D3}]", stp.Minutes, stp.Seconds, stp.Milliseconds), index, "info");
-                                                                                                stopWatch.Stop();
-                                                                                                SortWin();
-                                                                                                if (Globals.WARMUP_AUTORUN)
-                                                                                                {
-                                                                                                    _gunit.actionRetries = Globals.FAILED_ACTION_MAX_RETRIES;
-                                                                                                    Log("spam process started", index, "info");
-                                                                                                    var spm = _gunit.SpamProcess(Globals.DEFAULT_SCENARIO.keyword, Globals.DEFAULT_SCENARIO.date).ContinueWith((sp) =>
-                                                                                                    {
-                                                                                                        sp.Wait();
-                                                                                                        SortWin();
-                                                                                                        if (sp.IsCompleted)
-                                                                                                        {
-                                                                                                            if (sp.Result.ToString() == "spam actions successed!")
-                                                                                                            {
-                                                                                                                SortWin();
+                      {
+                          if (sit.IsCompleted)
+                          {
+                              if (sit.Status == TaskStatus.Canceled)
+                                  return;
+                              if (sit.Result.ToString() != "signin successed!")
+                              {
+                                  if (timer != null)
+                                  {
+                                      timer.Dispose();
+                                  }
 
-                                                                                                                if (timer != null)
-                                                                                                                {
-                                                                                                                    timer.Dispose();
-                                                                                                                }
+                                  if (_gunit != null)
+                                  {
+                                      _gunit.Dispose();
+                                  }
 
-                                                                                                                //_gunit.actionRetries = Globals.FAILED_ACTION_MAX_RETRIES;
-                                                                                                                //var sitk = _gunit.InboxProcess(keyword, date).ContinueWith((sit) =>
-                                                                                                                //{
-                                                                                                                //    if (sit.IsCompleted)
-                                                                                                                //    {
-                                                                                                                //        if (sit.Result.ToString() != "inbox actions successed!")
-                                                                                                                //        {
-                                                                                                                //            if (timer != null)
-                                                                                                                //            {
-                                                                                                                //                timer.Dispose();
-                                                                                                                //            }
-                                                                                                                //            Log("inbox actions failed!", index, "error");
-                                                                                                                //            SortWin();
-                                                                                                                //            return;
-                                                                                                                //        }
-                                                                                                                //        else
-                                                                                                                //        {
-                                                                                                                //            var stp = stopWatch.Elapsed;
-                                                                                                                //            Log(string.Format("done! [{0:D2}:{1:D2}:{2:D3}]", stp.Minutes, stp.Seconds, stp.Milliseconds), index, "info");
-                                                                                                                //            stopWatch.Stop();
-                                                                                                                //            if (timer != null)
-                                                                                                                //            {
-                                                                                                                //                timer.Dispose();
-                                                                                                                //            }
-                                                                                                                //            SortWin();
-                                                                                                                //        }
-                                                                                                                //    }
-                                                                                                                //});
-                                                                                                                //sitk.Wait();
-                                                                                                            }
-                                                                                                            else
-                                                                                                            {
-                                                                                                                if (timer != null)
-                                                                                                                {
-                                                                                                                    timer.Dispose();
-                                                                                                                }
-                                                                                                                Log("spam actions failed!", index, "error");
-                                                                                                                SortWin();
-                                                                                                                return;
-                                                                                                            }
-                                                                                                        }
-                                                                                                    });
-                                                                                                    spm.Wait();
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    if (timer != null)
-                                                                                                    {
-                                                                                                        timer.Dispose();
-                                                                                                    }
-                                                                                                }
-                                                                                            }
-                                                                                        }
-                                                                                    });
-                                                                                    sitk.Wait();
+                                  Log("signin failed!", index, "error");
+                                  SortWin();
+                                  return;
+                              }
+                              else
+                              {
+                                  var stp = stopWatch.Elapsed;
+                                  Log(string.Format("setup done! [{0:D2}:{1:D2}:{2:D3}]", stp.Minutes, stp.Seconds, stp.Milliseconds), index, "info");
+                                  stopWatch.Stop();
+                                  stopWatch.Reset();
+                                  SortWin();
+                                  if (Globals.WARMUP_AUTORUN)
+                                  {
+                                      _gunit.actionRetries = Globals.FAILED_ACTION_MAX_RETRIES;
+                                      stopWatch.Start();
+                                      var spm = _gunit.SpamProcess(Globals.DEFAULT_SCENARIO.keyword, Globals.DEFAULT_SCENARIO.date).ContinueWith((sp) =>
+                                      {
+                                          //sp.Wait();
+                                          SortWin();
+                                          if (sp.IsCompleted)
+                                          {
+                                              if (sp.Status == TaskStatus.Canceled)
+                                                  return;
+                                              if (sp.Result.ToString() == "spam actions successed!")
+                                              {
+                                                  SortWin();
+                                                  if (Globals.WARMUP_PROCEED_INBOX_FOLDER)
+                                                  {
+                                                      _gunit.actionRetries = Globals.FAILED_ACTION_MAX_RETRIES;
+                                                      var inbx = _gunit.InboxProcess(Globals.DEFAULT_SCENARIO.keyword, Globals.DEFAULT_SCENARIO.date).ContinueWith((inb) =>
+                                                  {
+                                                      //inb.Wait();
+                                                      if (inb.IsCompleted)
+                                                      {
+                                                          if (inb.Status == TaskStatus.Canceled)
+                                                              return;
+                                                          if (inb.Result.ToString() != "inbox actions successed!")
+                                                          {
+                                                              if (timer != null)
+                                                              {
+                                                                  timer.Dispose();
+                                                              }
+                                                              if (_gunit != null)
+                                                              {
+                                                                  _gunit.Dispose();
+                                                              }
+                                                              Log("inbox actions failed!", index, "error");
+                                                              SortWin();
+                                                              return;
+                                                          }
+                                                          else
+                                                          {
+                                                              var wstp = stopWatch.Elapsed;
+                                                              Log(string.Format("warmup done! [{0:D2}:{1:D2}:{2:D3}]", wstp.Minutes, wstp.Seconds, wstp.Milliseconds), index, "info");
+                                                              stopWatch.Stop();
+                                                              stopWatch.Reset();
+                                                              if (timer != null)
+                                                              {
+                                                                  timer.Dispose();
+                                                              }
+
+                                                              if (_gunit != null)
+                                                              {
+                                                                  _gunit.Dispose();
+                                                              }
+                                                              SortWin();
+                                                          }
+                                                      }
+                                                  });
+                                                      if (inbx != null && (inbx.Status == TaskStatus.RanToCompletion || inbx.Status != TaskStatus.Running)) inbx.Wait();
+                                                  }
+                                                  else
+                                                  {
+                                                      if (timer != null)
+                                                      {
+                                                          timer.Dispose();
+                                                      }
+
+                                                      if (_gunit != null)
+                                                      {
+                                                          _gunit.Dispose();
+                                                      }
+                                                      SortWin();
+                                                  }
+                                              }
+                                              else
+                                              {
+                                                  Log("spam actions failed!", index, "error");
+                                                  if (timer != null)
+                                                  {
+                                                      timer.Dispose();
+                                                  }
+
+                                                  if (_gunit != null)
+                                                  {
+                                                      _gunit.Dispose();
+                                                  }
+                                                  SortWin();
+                                                  return;
+                                              }
+                                          }
+                                      });
+                                      if (spm != null && (spm.Status == TaskStatus.RanToCompletion || spm.Status != TaskStatus.Running)) spm.Wait();
+                                  }
+                                  else
+                                  {
+                                      if (timer != null)
+                                      {
+                                          timer.Dispose();
+                                      }
+
+                                      if (_gunit != null)
+                                      {
+                                          _gunit.Dispose();
+                                      }
+                                      SortWin();
+                                  }
+                              }
+                          }
+                      });
+                                                                                    if (sitk != null && (sitk.Status == TaskStatus.RanToCompletion || sitk.Status != TaskStatus.Running)) sitk.Wait();
                                                                                 }
                                                                                 else
                                                                                 {
@@ -1414,24 +1554,37 @@ namespace GUX
                                                                                     {
                                                                                         timer.Dispose();
                                                                                     }
-                                                                                    Log("proxy setup failed!", index, "error");
+
+                                                                                    if (_gunit != null)
+                                                                                    {
+                                                                                        _gunit.Dispose();
+                                                                                    }
                                                                                     SortWin();
+                                                                                    Log("proxy setup failed!", index, "error");
                                                                                     return;
                                                                                 }
                                                                             }
                                                                         });
-                                                                        ptk.Wait();
+                                                                        if (ptk != null && (ptk.Status == TaskStatus.RanToCompletion || ptk.Status != TaskStatus.Running)) ptk.Wait();
                                                                     }
                                                                     else
                                                                     {
                                                                         Log("driver timedout!", index, "error");
                                                                         stopWatch.Stop();
-                                                                        SortWin();
-                                                                        return;
+                                                                        if (timer != null)
+                                                                        {
+                                                                            timer.Dispose();
+                                                                        }
+
+                                                                        if (_gunit != null)
+                                                                        {
+                                                                            _gunit.Dispose();
+                                                                        }
+                                                                        SortWin(); return;
                                                                     }
                                                                 }
                                                             });
-                                                            tdk.Wait();
+                                                            if (tdk != null && (tdk.Status == TaskStatus.RanToCompletion || tdk.Status != TaskStatus.Running)) tdk.Wait();
                                                         }
                                                     }
                                                 }
@@ -1442,6 +1595,15 @@ namespace GUX
                                                 if (tt.IsCompleted)
                                                 {
                                                     _gunit.KillDriver();
+                                                    if (timer != null)
+                                                    {
+                                                        timer.Dispose();
+                                                    }
+
+                                                    if (_gunit != null)
+                                                    {
+                                                        _gunit.Dispose();
+                                                    }
                                                     var svm = StopVM(index);
                                                     svm.Wait();
                                                 }
@@ -1451,6 +1613,15 @@ namespace GUX
                                         }
                                         catch (Exception c)
                                         {
+                                            if (timer != null)
+                                            {
+                                                timer.Dispose();
+                                            }
+
+                                            if (_gunit != null)
+                                            {
+                                                _gunit.Dispose();
+                                            }
                                             Console.WriteLine(c.Message);
                                             return;
                                         }
@@ -1466,6 +1637,7 @@ namespace GUX
                                         try
                                         {
                                             Log("DONE", "!", "info");
+
                                             fctbErrors.BeginInvoke((MethodInvoker)delegate
                                             {
                                                 StopFileWatcher();
@@ -1670,6 +1842,8 @@ namespace GUX
                                                 st.Wait();
                                                 if (st.IsCompleted)
                                                 {
+                                                    if (st.Status == TaskStatus.Canceled)
+                                                        return;
                                                     if (st.Result)
                                                     {
                                                         stopWatch.Start();
@@ -1708,37 +1882,67 @@ namespace GUX
                                                             {
                                                                 if (td.IsCompleted)
                                                                 {
+                                                                    if (td.Status == TaskStatus.Canceled)
+                                                                        return;
+
                                                                     SortWin();
                                                                     Log("Test Driver : " + td.Result, index, "info");
                                                                     if (td.Result)
                                                                     {
-                                                                        var timer = SetInterval(new Action<System.Timers.Timer>((tt) => { CheckOfflineDevice(_gunit, _device, tt, st).Wait(); }), 3000);
+                                                                        var timer = SetInterval(new Action<System.Timers.Timer>((tt) =>
+                                                                        {
+                                                                            try
+                                                                            {
+                                                                                CheckOfflineDevice(_gunit, _device, tt, st).Wait();
+                                                                            }
+                                                                            catch (Exception x)
+                                                                            {
+                                                                                Console.WriteLine(x.Message);
+                                                                                if (tt != null) tt.Dispose();
+                                                                            }
+                                                                        }), 3000);
                                                                         var ptk = _gunit.CheckProcess().ContinueWith((pt) =>
                                                                         {
-                                                                            pt.Wait();
+                                                                            //pt.Wait();
                                                                             SortWin();
                                                                             if (pt.IsCompleted)
                                                                             {
+                                                                                if (pt.Status == TaskStatus.Canceled)
+                                                                                    return;
                                                                                 if (timer != null)
                                                                                 {
                                                                                     timer.Dispose();
+                                                                                }
+
+                                                                                if (_gunit != null)
+                                                                                {
+                                                                                    _gunit.Dispose();
                                                                                 }
                                                                                 SortWin();
                                                                                 return;
                                                                             }
                                                                         });
-                                                                        ptk.Wait();
+                                                                        if (ptk != null && (ptk.Status == TaskStatus.RanToCompletion || ptk.Status != TaskStatus.Running)) ptk.Wait();
                                                                     }
                                                                     else
                                                                     {
                                                                         Log("driver timedout!", index, "error");
                                                                         stopWatch.Stop();
+                                                                        if (timer != null)
+                                                                        {
+                                                                            timer.Dispose();
+                                                                        }
+
+                                                                        if (_gunit != null)
+                                                                        {
+                                                                            _gunit.Dispose();
+                                                                        }
                                                                         SortWin();
                                                                         return;
                                                                     }
                                                                 }
                                                             });
-                                                            tdk.Wait();
+                                                            if (tdk != null && (tdk.Status == TaskStatus.RanToCompletion || tdk.Status != TaskStatus.Running)) tdk.Wait();
                                                         }
                                                     }
                                                 }
@@ -1749,6 +1953,15 @@ namespace GUX
                                                 if (tt.IsCompleted)
                                                 {
                                                     _gunit.KillDriver();
+                                                    if (timer != null)
+                                                    {
+                                                        timer.Dispose();
+                                                    }
+
+                                                    if (_gunit != null)
+                                                    {
+                                                        _gunit.Dispose();
+                                                    }
                                                     var svm = StopVM(index);
                                                     svm.Wait();
                                                 }
@@ -1758,6 +1971,15 @@ namespace GUX
                                         }
                                         catch (Exception c)
                                         {
+                                            if (timer != null)
+                                            {
+                                                timer.Dispose();
+                                            }
+
+                                            if (_gunit != null)
+                                            {
+                                                _gunit.Dispose();
+                                            }
                                             Console.WriteLine(c.Message);
                                             return;
                                         }
@@ -1773,6 +1995,7 @@ namespace GUX
                                         try
                                         {
                                             Log("DONE", "!", "info");
+
                                             fctbErrors.BeginInvoke((MethodInvoker)delegate
                                             {
                                                 StopFileWatcher();
@@ -2016,12 +2239,30 @@ namespace GUX
                                                             {
                                                                 if (td.IsCompleted)
                                                                 {
+                                                                    if (timer != null)
+                                                                    {
+                                                                        timer.Dispose();
+                                                                    }
+
+                                                                    if (_gunit != null)
+                                                                    {
+                                                                        _gunit.Dispose();
+                                                                    }
                                                                     SortWin();
                                                                     Log("Test Driver : " + td.Result, index, "info");
                                                                     if (!td.Result)
                                                                     {
                                                                         Log("driver timedout!", index, "error", true);
                                                                         stopWatch.Stop();
+                                                                        if (timer != null)
+                                                                        {
+                                                                            timer.Dispose();
+                                                                        }
+
+                                                                        if (_gunit != null)
+                                                                        {
+                                                                            _gunit.Dispose();
+                                                                        }
                                                                         SortWin();
                                                                         return;
                                                                     }
@@ -2038,6 +2279,15 @@ namespace GUX
                                                 if (tt.IsCompleted)
                                                 {
                                                     _gunit.KillDriver();
+                                                    if (timer != null)
+                                                    {
+                                                        timer.Dispose();
+                                                    }
+
+                                                    if (_gunit != null)
+                                                    {
+                                                        _gunit.Dispose();
+                                                    }
                                                     var svm = StopVM(index);
                                                     svm.Wait();
                                                 }
@@ -2047,6 +2297,15 @@ namespace GUX
                                         }
                                         catch (Exception c)
                                         {
+                                            if (timer != null)
+                                            {
+                                                timer.Dispose();
+                                            }
+
+                                            if (_gunit != null)
+                                            {
+                                                _gunit.Dispose();
+                                            }
                                             Console.WriteLine(c.Message);
                                             return;
                                         }
@@ -2680,7 +2939,8 @@ namespace GUX
                     _UI_TOP_MOST = Globals.UI_TOP_MOST = appTopMostSwitch.SwitchState == XUISwitch.State.On,
                     _UI_TRANSPARENT = Globals.UI_TRANSPARENT = appTransparentSwitch.SwitchState == XUISwitch.State.On,
                     _DEFAULT_SCENARIO = Globals.DEFAULT_SCENARIO = await GetScenario((int)defaultScenarioGallery.EditValue),
-                    _WARMUP_AUTORUN = Globals.WARMUP_AUTORUN = warmupAutoRunSwitch.SwitchState == XUISwitch.State.On
+                    _WARMUP_AUTORUN = Globals.WARMUP_AUTORUN = warmupAutoRunSwitch.SwitchState == XUISwitch.State.On,
+                    _WARMUP_PROCEED_INBOX_FOLDER = Globals.WARMUP_PROCEED_INBOX_FOLDER = warmupInboxFolderSwitch.SwitchState == XUISwitch.State.On
                 };
 
                 IFormatter formatter = new BinaryFormatter();
@@ -2861,7 +3121,10 @@ namespace GUX
                         CaptionControl.ButtonClick += CaptionControl_ButtonClick;
                         CaptionControl.ToolTip = stt;
 
-                        var galGroup = new DevExpress.XtraBars.Ribbon.GalleryItemGroup() { Caption = name };
+                        var galGroup = new DevExpress.XtraBars.Ribbon.GalleryItemGroup()
+                        {
+                            Caption = name
+                        };
                         galGroup.CaptionAlignment = DevExpress.XtraBars.Ribbon.GalleryItemGroupCaptionAlignment.Center;
                         galGroup.Tag = (int)item.First()["id"];
                         galGroup.CaptionControl = CaptionControl;
@@ -2869,7 +3132,10 @@ namespace GUX
 
                         foreach (var act in actions)
                         {
-                            var action = new DevExpress.XtraBars.Ribbon.GalleryItem() { Caption = act };
+                            var action = new DevExpress.XtraBars.Ribbon.GalleryItem()
+                            {
+                                Caption = act
+                            };
                             action.ImageOptions.SvgImage = GetResource(act.ToLower());
                             galGroup.Items.Add(action);
                         }
@@ -3019,21 +3285,40 @@ namespace GUX
             return semiTransparentImage;
         }
 
-        private /*DevExpress.Utils.Svg.SvgImage*/Task<Image> Placeholder(string keyword, string color, string background, int height = 500, int width = 500)
+        private /*DevExpress.Utils.Svg.SvgImage*/ Task Placeholder(string keyword, string color, string background, int height = 500, int width = 500, double fontsize = 290, double DY = 10.5, int X = 50, int Y = 50)
         {
             return Task.Factory.StartNew(() =>
             {
-                System.Text.ASCIIEncoding myEncoder = new System.Text.ASCIIEncoding();
-                byte[] bytes = myEncoder.GetBytes($"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"{width}\" height=\"{height}\" viewBox=\"0 0 {height} {width}\"><rect fill=\"#ddd\" width=\"{width}\" height=\"{height}\"/><text fill=\"rgba(0,0,0,0.5)\" font-family=\"sans-serif\" font-size=\"290\" dy=\"10.5\" font-weight=\"bold\" x=\"50%\" y=\"67%\" text-anchor=\"middle\">{keyword}</text></svg>");
+                var backgrounds = new string[] {
+     "#21E7FF",
+     "#B9EBE6",
+     "#C7FFEF",
+     "#B5EBD1",
+     "#5DFF91",
+     "#BFFCFF",
+     "#B9EBE5",
+     "#C7FFEF",
+     "#94F0C6",
+     "#5CFF9A"
+    };
+                var backcolor = backgrounds[new Random().Next(0, backgrounds.Count() - 1)];
+                byte[] bytes = new ASCIIEncoding().GetBytes($"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"{width}\" height=\"{height}\"><rect width=\"{width}\" height=\"{height}\" fill=\"{backcolor}\"/><text fill=\"rgba(0,0,0,0.7)\" font-family=\"sans-serif\" font-weight=\"bold\" x=\"{width / 2}\" y=\"{(height / 2) + (height / 6)}\" font-size=\"{width / 2}\" text-anchor=\"middle\">{keyword}</text></svg>");
                 using (MemoryStream ms = new MemoryStream(bytes))
                 {
-                    var xmlReader = System.Xml.XmlReader.Create(ms);
-                    var svgImage = DevExpress.Utils.Svg.SvgLoader.ParseDocument(xmlReader);
-                    //new ImageConverter().ConvertFrom(svgImage)
-                    var img = DevExpress.Utils.Svg.SvgBitmap.Create(svgImage);
-                    img.DrawingOffset = new PointF(svgImage.GetViewBoxTransform().OffsetX, svgImage.GetViewBoxTransform().OffsetY);
-                    return img.Render(null, 1.0D);
-                    //return svgImage;
+                    using (var xmlReader = XmlReader.Create(ms))
+                    {
+                        var svgImage = SvgLoader.ParseDocument(xmlReader);
+                        svgBox.Invoke((MethodInvoker)delegate
+                        {
+                            svgBox.SvgImage = svgImage;
+                        });
+
+                        var img = SvgBitmap.Create(svgImage);
+                        picBox.Invoke((MethodInvoker)delegate
+                        {
+                            picBox.Image = img.Render(null, 1.0D);
+                        });
+                    }
                 }
             });
         }
@@ -3125,87 +3410,10 @@ namespace GUX
                     await DirectoryChangedAsync();
                     break;
                 case "Start":
-                    //_Thread = new Thread(new ThreadStart(() =>
-                    //{
-                    //    new iLV().Invoke((MethodInvoker)async delegate
-                    //    {
-                    //        var bulkhead = Policy.BulkheadAsync((int)threadsCon, Int32.MaxValue);
-                    //        var tasks = new List<Task>();
-                    //        foreach (ListViewItem item in targets)
-                    //        {
-                    //            var device = _Devices.Rows[item.Index];
-                    //            var t = bulkhead.ExecuteAsync(async () =>
-                    //            {
-                    //                await StartDevice(device["index"].ToString()).ContinueWith(async (sd) =>
-                    //                {
-                    //                    if (sd.IsCompleted)
-                    //                        await SortWin();
-                    //                });
-                    //            });
-                    //            tasks.Add(t);
-                    //            await Task.Delay(inter);
-                    //        }
-                    //        await Task.WhenAll(tasks);
-                    //    });
-                    //}));
-                    //_Thread.IsBackground = true;
-                    //_Thread.Priority = ThreadPriority.Highest;
-                    //_Thread.Start();
+
                     break;
                 case "Install":
                     iPopupMenu.ShowPopup(iBarManager, new Point(MousePosition.X, MousePosition.Y));
-                    /*await SetFileWatcher();
-                    var clnTasks = new List<Task>();
-                    alreadyExists = false;
-                    await Task.Factory.StartNew(() =>
-                    {
-                        directoryCLB.BeginInvoke((MethodInvoker)async delegate
-                        {
-                            var dirs = directoryCLB.CheckedItems.OfType<CheckedListBoxItem>().Select(c => c.ToString());
-                            progressBar.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInRuntime;
-                            foreach (var dir in dirs)
-                            {
-                                if (alreadyExists)
-                                    break;
-                                currentDirectory = dir;
-                                maxRetries = Globals.FAILED_MAX_RETRIES;
-                                var t = StartCloneProcess(dir).ContinueWith((sp) =>
-                                {
-                                    iStackPanel.BeginInvoke((MethodInvoker)delegate
-                                    {
-                                        iStackPanel.Controls.OfType<iLV>().ToList().ForEach((lv) =>
-                                        {
-                                            lv.BeginInvoke((MethodInvoker)delegate
-                                            {
-                                                lv.InProgress = (lv.PlainTextTitle == dir);
-                                            });
-                                        });
-                                    });
-                                    while (!helper)
-                                    {
-                                        //
-                                    }
-                                    Log(dir + " clone task completed!", "!", "info");
-                                    iStackPanel.BeginInvoke((MethodInvoker)delegate
-                                    {
-                                        var lv = iStackPanel.Controls.OfType<iLV>().Single(l => l.PlainTextTitle == currentDirectory);
-                                        lv.InProgress = false;
-                                    });
-                                });
-                                await t;
-                                clnTasks.Add(t);
-                                await Task.Delay(2000);
-                            }
-                            await Task.WhenAll(clnTasks).ContinueWith((all) =>
-                            {
-                                if (all.IsCompleted)
-                                    Invoke((MethodInvoker)delegate
-                                    {
-                                        progressBar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                                    });
-                            });
-                        });
-                    });*/
                     break;
                 case "Warmup":
                     if (Globals.DEFAULT_SCENARIO == null)
@@ -3263,10 +3471,18 @@ namespace GUX
                                 await Task.WhenAll(wuTasks).ContinueWith((all) =>
                                 {
                                     if (all.IsCompleted)
+                                    {
                                         Invoke((MethodInvoker)delegate
                                         {
                                             progressBar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                                         });
+
+                                        iStackPanel.BeginInvoke((MethodInvoker)delegate
+                                        {
+                                            var lv = iStackPanel.Controls.OfType<iLV>().Single(l => l.PlainTextTitle == currentDirectory);
+                                            lv.InProgress = false;
+                                        });
+                                    }
                                 });
                             });
                         });
@@ -3327,12 +3543,18 @@ namespace GUX
                                         progressBar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                                     });
 
-                                    //if (Globals.WARMUP_AUTORUN)
-                                    //    UIButtonPanel.Invoke((MethodInvoker)delegate
-                                    //    {
-                                    //        UIButtonPanel.Buttons.Owner.PerformClick(UIButtonPanel.Buttons["Warmup"]);
-                                    //    });
+                                    iStackPanel.BeginInvoke((MethodInvoker)delegate
+                                    {
+                                        var lv = iStackPanel.Controls.OfType<iLV>().Single(l => l.PlainTextTitle == currentDirectory);
+                                        lv.InProgress = false;
+                                    });
                                 }
+
+                                //if (Globals.WARMUP_AUTORUN)
+                                //    UIButtonPanel.Invoke((MethodInvoker)delegate
+                                //    {
+                                //        UIButtonPanel.Buttons.Owner.PerformClick(UIButtonPanel.Buttons["Warmup"]);
+                                //    });
                             });
                         });
                     });
@@ -3358,13 +3580,14 @@ namespace GUX
                         Globals.scheduleTasks.Clear();
                         Globals.SchServices.Dispose();
 
+                        await StopAll(false);
+
                         await StopServer().ContinueWith((ss) =>
                         {
                             if (ss.IsCompleted)
                             {
                                 BeginInvoke((MethodInvoker)delegate
                                 {
-                                    //appiumHint.ForeColor = Color.FromArgb(37, 37, 38);
                                     appiumServerStatus.ImageOptions.SvgImage = global::GUX.Properties.Resources.actions_deletecircled;
                                 });
                             }
@@ -3659,13 +3882,39 @@ namespace GUX
                     await Task.WhenAll(tskss).ContinueWith((all) =>
                     {
                         if (all.IsCompleted)
+                        {
                             Invoke((MethodInvoker)delegate
                             {
                                 progressBar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                             });
+
+                            iStackPanel.BeginInvoke((MethodInvoker)delegate
+                            {
+                                var lv = iStackPanel.Controls.OfType<iLV>().Single(l => l.PlainTextTitle == currentDirectory);
+                                lv.InProgress = false;
+                            });
+                        }
                     });
                 });
             });
+        }
+
+        private async void simpleButton1_Click(object sender, EventArgs e)
+        {
+            var k = iL.Text.Trim();
+            var w = Convert.ToInt32(iW.Text);
+            var h = Convert.ToInt32(iH.Text);
+            var f = Convert.ToInt32(iF.Text);
+            var dy = (double)iDY.Value;
+            var x = Convert.ToInt32(iX.Text);
+            var y = Convert.ToInt32(iY.Text);
+            await Placeholder(k, "", "", h, w, f, dy, x, y);
+        }
+
+        private void warmupAutoRunSwitch_SwitchStateChanged(object sender, EventArgs e)
+        {
+            if (defaultScenarioGallery.SelectedIndex < 0)
+                warmupAutoRunSwitch.SwitchState = XUISwitch.State.Off;
         }
 
         private async void GoogleAccountsCheck_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -3715,10 +3964,18 @@ namespace GUX
                     await Task.WhenAll(tskss).ContinueWith((all) =>
                     {
                         if (all.IsCompleted)
+                        {
                             Invoke((MethodInvoker)delegate
                             {
                                 progressBar.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                             });
+
+                            iStackPanel.BeginInvoke((MethodInvoker)delegate
+                            {
+                                var lv = iStackPanel.Controls.OfType<iLV>().Single(l => l.PlainTextTitle == currentDirectory);
+                                lv.InProgress = false;
+                            });
+                        }
                     });
                 });
             });

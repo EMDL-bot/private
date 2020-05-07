@@ -126,6 +126,8 @@
             this.testDriverToNum = new DevExpress.XtraEditors.SpinEdit();
             this.portNum = new DevExpress.XtraEditors.SpinEdit();
             this.tablePanel2 = new DevExpress.Utils.Layout.TablePanel();
+            this.warmupInboxFolderSwitch = new XanderUI.XUISwitch();
+            this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
@@ -208,6 +210,17 @@
             this.MainTabControl = new DevExpress.XtraTab.XtraTabControl();
             this.SettingsXtraTabPage = new DevExpress.XtraTab.XtraTabPage();
             this.ActionsXtraTabPage = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.iY = new DevExpress.XtraEditors.TextEdit();
+            this.iX = new DevExpress.XtraEditors.TextEdit();
+            this.iDY = new DevExpress.XtraEditors.SpinEdit();
+            this.iF = new DevExpress.XtraEditors.TextEdit();
+            this.iH = new DevExpress.XtraEditors.TextEdit();
+            this.iW = new DevExpress.XtraEditors.TextEdit();
+            this.iL = new DevExpress.XtraEditors.TextEdit();
+            this.picBox = new DevExpress.XtraEditors.PictureEdit();
+            this.svgBox = new DevExpress.XtraEditors.SvgImageBox();
             this.simpleSeparator1 = new DevExpress.XtraLayout.SimpleSeparator();
             this.tab1 = new DevExpress.XtraVerticalGrid.Tab();
             this.tab2 = new DevExpress.XtraVerticalGrid.Tab();
@@ -292,6 +305,16 @@
             this.MainTabControl.SuspendLayout();
             this.SettingsXtraTabPage.SuspendLayout();
             this.ActionsXtraTabPage.SuspendLayout();
+            this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iY.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iX.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iDY.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iF.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iH.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iW.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iL.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPopupMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.warningLogFSW)).BeginInit();
@@ -820,7 +843,7 @@
             // 
             // settingSplitContainer
             // 
-            this.settingSplitContainer.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.settingSplitContainer.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.settingSplitContainer.Appearance.Options.UseBackColor = true;
             this.behaviorManager1.SetBehaviors(this.settingSplitContainer, new DevExpress.Utils.Behaviors.Behavior[] {
             ((DevExpress.Utils.Behaviors.Behavior)(DevExpress.Utils.Behaviors.Common.PersistenceBehavior.Create(typeof(DevExpress.Utils.BehaviorSource.PersistenceBehaviorSourceForControl), null, DevExpress.Utils.Behaviors.Common.Storage.Registry, DevExpress.Utils.DefaultBoolean.True)))});
@@ -840,7 +863,9 @@
             // 
             // tablePanel1
             // 
+            this.tablePanel1.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.tablePanel1.Appearance.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("tablePanel1.Appearance.GradientMode")));
+            this.tablePanel1.Appearance.Options.UseBackColor = true;
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 33.24F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26.76F)});
@@ -880,6 +905,9 @@
             // 
             this.labelControl19.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl19.Appearance.Font")));
             this.labelControl19.Appearance.Options.UseFont = true;
+            this.labelControl19.Appearance.Options.UseTextOptions = true;
+            this.labelControl19.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl19.AutoEllipsis = true;
             this.tablePanel1.SetColumn(this.labelControl19, 0);
             resources.ApplyResources(this.labelControl19, "labelControl19");
             this.labelControl19.Name = "labelControl19";
@@ -889,6 +917,9 @@
             // 
             this.labelControl20.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl20.Appearance.Font")));
             this.labelControl20.Appearance.Options.UseFont = true;
+            this.labelControl20.Appearance.Options.UseTextOptions = true;
+            this.labelControl20.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl20.AutoEllipsis = true;
             this.tablePanel1.SetColumn(this.labelControl20, 0);
             resources.ApplyResources(this.labelControl20, "labelControl20");
             this.labelControl20.Name = "labelControl20";
@@ -898,6 +929,9 @@
             // 
             this.labelControl21.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl21.Appearance.Font")));
             this.labelControl21.Appearance.Options.UseFont = true;
+            this.labelControl21.Appearance.Options.UseTextOptions = true;
+            this.labelControl21.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl21.AutoEllipsis = true;
             this.tablePanel1.SetColumn(this.labelControl21, 0);
             resources.ApplyResources(this.labelControl21, "labelControl21");
             this.labelControl21.Name = "labelControl21";
@@ -907,6 +941,9 @@
             // 
             this.labelControl18.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl18.Appearance.Font")));
             this.labelControl18.Appearance.Options.UseFont = true;
+            this.labelControl18.Appearance.Options.UseTextOptions = true;
+            this.labelControl18.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl18.AutoEllipsis = true;
             this.tablePanel1.SetColumn(this.labelControl18, 0);
             resources.ApplyResources(this.labelControl18, "labelControl18");
             this.labelControl18.Name = "labelControl18";
@@ -922,6 +959,7 @@
             this.labelControl4.Appearance.Options.UseTextOptions = true;
             this.labelControl4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl4.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.labelControl4.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl4.AppearanceHovered.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("labelControl4.AppearanceHovered.GradientMode")));
             resources.ApplyResources(this.labelControl4, "labelControl4");
             this.tablePanel1.SetColumn(this.labelControl4, 0);
@@ -936,6 +974,9 @@
             // 
             this.labelControl17.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl17.Appearance.Font")));
             this.labelControl17.Appearance.Options.UseFont = true;
+            this.labelControl17.Appearance.Options.UseTextOptions = true;
+            this.labelControl17.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl17.AutoEllipsis = true;
             this.tablePanel1.SetColumn(this.labelControl17, 0);
             resources.ApplyResources(this.labelControl17, "labelControl17");
             this.labelControl17.Name = "labelControl17";
@@ -951,6 +992,7 @@
             this.labelControl3.Appearance.Options.UseTextOptions = true;
             this.labelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl3.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.labelControl3.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl3.AppearanceHovered.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("labelControl3.AppearanceHovered.GradientMode")));
             resources.ApplyResources(this.labelControl3, "labelControl3");
             this.tablePanel1.SetColumn(this.labelControl3, 0);
@@ -965,6 +1007,9 @@
             // 
             this.labelControl14.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl14.Appearance.Font")));
             this.labelControl14.Appearance.Options.UseFont = true;
+            this.labelControl14.Appearance.Options.UseTextOptions = true;
+            this.labelControl14.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl14.AutoEllipsis = true;
             this.tablePanel1.SetColumn(this.labelControl14, 0);
             resources.ApplyResources(this.labelControl14, "labelControl14");
             this.labelControl14.Name = "labelControl14";
@@ -974,6 +1019,9 @@
             // 
             this.labelControl16.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl16.Appearance.Font")));
             this.labelControl16.Appearance.Options.UseFont = true;
+            this.labelControl16.Appearance.Options.UseTextOptions = true;
+            this.labelControl16.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl16.AutoEllipsis = true;
             this.tablePanel1.SetColumn(this.labelControl16, 0);
             resources.ApplyResources(this.labelControl16, "labelControl16");
             this.labelControl16.Name = "labelControl16";
@@ -1006,6 +1054,9 @@
             // 
             this.labelControl15.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl15.Appearance.Font")));
             this.labelControl15.Appearance.Options.UseFont = true;
+            this.labelControl15.Appearance.Options.UseTextOptions = true;
+            this.labelControl15.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl15.AutoEllipsis = true;
             this.tablePanel1.SetColumn(this.labelControl15, 0);
             resources.ApplyResources(this.labelControl15, "labelControl15");
             this.labelControl15.Name = "labelControl15";
@@ -1171,10 +1222,14 @@
             // 
             // tablePanel2
             // 
+            this.tablePanel2.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.tablePanel2.Appearance.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("tablePanel2.Appearance.GradientMode")));
+            this.tablePanel2.Appearance.Options.UseBackColor = true;
             this.tablePanel2.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 30.92F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 29.08F)});
+            this.tablePanel2.Controls.Add(this.warmupInboxFolderSwitch);
+            this.tablePanel2.Controls.Add(this.labelControl22);
             this.tablePanel2.Controls.Add(this.labelControl11);
             this.tablePanel2.Controls.Add(this.labelControl12);
             this.tablePanel2.Controls.Add(this.labelControl13);
@@ -1205,12 +1260,42 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F)});
+            // 
+            // warmupInboxFolderSwitch
+            // 
+            resources.ApplyResources(this.warmupInboxFolderSwitch, "warmupInboxFolderSwitch");
+            this.warmupInboxFolderSwitch.BackColor = System.Drawing.Color.Transparent;
+            this.tablePanel2.SetColumn(this.warmupInboxFolderSwitch, 1);
+            this.warmupInboxFolderSwitch.HandleOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.warmupInboxFolderSwitch.HandleOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.warmupInboxFolderSwitch.Name = "warmupInboxFolderSwitch";
+            this.warmupInboxFolderSwitch.OffColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.warmupInboxFolderSwitch.OnColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.tablePanel2.SetRow(this.warmupInboxFolderSwitch, 10);
+            this.warmupInboxFolderSwitch.SwitchState = XanderUI.XUISwitch.State.Off;
+            this.warmupInboxFolderSwitch.SwitchStyle = XanderUI.XUISwitch.Style.Horizontal;
+            // 
+            // labelControl22
+            // 
+            this.labelControl22.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl22.Appearance.Font")));
+            this.labelControl22.Appearance.Options.UseFont = true;
+            this.labelControl22.Appearance.Options.UseTextOptions = true;
+            this.labelControl22.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl22.AutoEllipsis = true;
+            this.tablePanel2.SetColumn(this.labelControl22, 0);
+            resources.ApplyResources(this.labelControl22, "labelControl22");
+            this.labelControl22.Name = "labelControl22";
+            this.tablePanel2.SetRow(this.labelControl22, 10);
             // 
             // labelControl11
             // 
             this.labelControl11.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl11.Appearance.Font")));
             this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Appearance.Options.UseTextOptions = true;
+            this.labelControl11.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl11.AutoEllipsis = true;
             this.tablePanel2.SetColumn(this.labelControl11, 0);
             resources.ApplyResources(this.labelControl11, "labelControl11");
             this.labelControl11.Name = "labelControl11";
@@ -1220,6 +1305,9 @@
             // 
             this.labelControl12.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl12.Appearance.Font")));
             this.labelControl12.Appearance.Options.UseFont = true;
+            this.labelControl12.Appearance.Options.UseTextOptions = true;
+            this.labelControl12.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl12.AutoEllipsis = true;
             this.tablePanel2.SetColumn(this.labelControl12, 0);
             resources.ApplyResources(this.labelControl12, "labelControl12");
             this.labelControl12.Name = "labelControl12";
@@ -1229,6 +1317,9 @@
             // 
             this.labelControl13.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl13.Appearance.Font")));
             this.labelControl13.Appearance.Options.UseFont = true;
+            this.labelControl13.Appearance.Options.UseTextOptions = true;
+            this.labelControl13.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl13.AutoEllipsis = true;
             this.tablePanel2.SetColumn(this.labelControl13, 0);
             resources.ApplyResources(this.labelControl13, "labelControl13");
             this.labelControl13.Name = "labelControl13";
@@ -1238,6 +1329,9 @@
             // 
             this.labelControl8.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl8.Appearance.Font")));
             this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Appearance.Options.UseTextOptions = true;
+            this.labelControl8.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl8.AutoEllipsis = true;
             this.tablePanel2.SetColumn(this.labelControl8, 0);
             resources.ApplyResources(this.labelControl8, "labelControl8");
             this.labelControl8.Name = "labelControl8";
@@ -1247,6 +1341,9 @@
             // 
             this.labelControl7.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl7.Appearance.Font")));
             this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Appearance.Options.UseTextOptions = true;
+            this.labelControl7.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl7.AutoEllipsis = true;
             this.tablePanel2.SetColumn(this.labelControl7, 0);
             resources.ApplyResources(this.labelControl7, "labelControl7");
             this.labelControl7.Name = "labelControl7";
@@ -1265,11 +1362,15 @@
             this.tablePanel2.SetRow(this.warmupAutoRunSwitch, 9);
             this.warmupAutoRunSwitch.SwitchState = XanderUI.XUISwitch.State.Off;
             this.warmupAutoRunSwitch.SwitchStyle = XanderUI.XUISwitch.Style.Horizontal;
+            this.warmupAutoRunSwitch.SwitchStateChanged += new System.EventHandler(this.warmupAutoRunSwitch_SwitchStateChanged);
             // 
             // labelControl10
             // 
             this.labelControl10.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl10.Appearance.Font")));
             this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Appearance.Options.UseTextOptions = true;
+            this.labelControl10.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl10.AutoEllipsis = true;
             this.tablePanel2.SetColumn(this.labelControl10, 0);
             resources.ApplyResources(this.labelControl10, "labelControl10");
             this.labelControl10.Name = "labelControl10";
@@ -1296,6 +1397,9 @@
             // 
             this.labelControl9.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl9.Appearance.Font")));
             this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Appearance.Options.UseTextOptions = true;
+            this.labelControl9.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl9.AutoEllipsis = true;
             this.tablePanel2.SetColumn(this.labelControl9, 0);
             resources.ApplyResources(this.labelControl9, "labelControl9");
             this.labelControl9.Name = "labelControl9";
@@ -1311,6 +1415,7 @@
             this.labelControl6.Appearance.Options.UseTextOptions = true;
             this.labelControl6.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl6.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.labelControl6.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl6.AppearanceHovered.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("labelControl6.AppearanceHovered.GradientMode")));
             resources.ApplyResources(this.labelControl6, "labelControl6");
             this.tablePanel2.SetColumn(this.labelControl6, 0);
@@ -1331,6 +1436,7 @@
             this.labelControl5.Appearance.Options.UseTextOptions = true;
             this.labelControl5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl5.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.labelControl5.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl5.AppearanceHovered.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("labelControl5.AppearanceHovered.GradientMode")));
             resources.ApplyResources(this.labelControl5, "labelControl5");
             this.tablePanel2.SetColumn(this.labelControl5, 0);
@@ -1371,6 +1477,7 @@
             this.labelControl1.Appearance.Options.UseTextOptions = true;
             this.labelControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl1.AppearanceHovered.GradientMode = ((System.Drawing.Drawing2D.LinearGradientMode)(resources.GetObject("labelControl1.AppearanceHovered.GradientMode")));
             resources.ApplyResources(this.labelControl1, "labelControl1");
             this.tablePanel2.SetColumn(this.labelControl1, 0);
@@ -2250,11 +2357,12 @@
             this.MainTabControl.AppearancePage.PageClient.Options.UseBorderColor = true;
             resources.ApplyResources(this.MainTabControl, "MainTabControl");
             this.MainTabControl.Name = "MainTabControl";
-            this.MainTabControl.SelectedTabPage = this.ProcessXtraTabPage;
+            this.MainTabControl.SelectedTabPage = this.SettingsXtraTabPage;
             this.MainTabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.ProcessXtraTabPage,
             this.SettingsXtraTabPage,
-            this.ActionsXtraTabPage});
+            this.ActionsXtraTabPage,
+            this.xtraTabPage1});
             this.MainTabControl.Transition.AllowTransition = DevExpress.Utils.DefaultBoolean.True;
             coverTransition1.Parameters.EffectOptions = DevExpress.Utils.Animation.CoverEffectOptions.FromTop;
             this.MainTabControl.Transition.TransitionType = coverTransition1;
@@ -2278,6 +2386,85 @@
             this.ActionsXtraTabPage.ImageOptions.SvgImageSize = new System.Drawing.Size(16, 16);
             resources.ApplyResources(this.ActionsXtraTabPage, "ActionsXtraTabPage");
             this.ActionsXtraTabPage.Name = "ActionsXtraTabPage";
+            // 
+            // xtraTabPage1
+            // 
+            this.xtraTabPage1.Controls.Add(this.simpleButton1);
+            this.xtraTabPage1.Controls.Add(this.iY);
+            this.xtraTabPage1.Controls.Add(this.iX);
+            this.xtraTabPage1.Controls.Add(this.iDY);
+            this.xtraTabPage1.Controls.Add(this.iF);
+            this.xtraTabPage1.Controls.Add(this.iH);
+            this.xtraTabPage1.Controls.Add(this.iW);
+            this.xtraTabPage1.Controls.Add(this.iL);
+            this.xtraTabPage1.Controls.Add(this.picBox);
+            this.xtraTabPage1.Controls.Add(this.svgBox);
+            this.xtraTabPage1.Name = "xtraTabPage1";
+            resources.ApplyResources(this.xtraTabPage1, "xtraTabPage1");
+            // 
+            // simpleButton1
+            // 
+            resources.ApplyResources(this.simpleButton1, "simpleButton1");
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // iY
+            // 
+            resources.ApplyResources(this.iY, "iY");
+            this.iY.MenuManager = this.iBarManager;
+            this.iY.Name = "iY";
+            // 
+            // iX
+            // 
+            resources.ApplyResources(this.iX, "iX");
+            this.iX.MenuManager = this.iBarManager;
+            this.iX.Name = "iX";
+            // 
+            // iDY
+            // 
+            resources.ApplyResources(this.iDY, "iDY");
+            this.iDY.MenuManager = this.iBarManager;
+            this.iDY.Name = "iDY";
+            this.iDY.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("iDY.Properties.Buttons"))))});
+            // 
+            // iF
+            // 
+            resources.ApplyResources(this.iF, "iF");
+            this.iF.MenuManager = this.iBarManager;
+            this.iF.Name = "iF";
+            // 
+            // iH
+            // 
+            resources.ApplyResources(this.iH, "iH");
+            this.iH.MenuManager = this.iBarManager;
+            this.iH.Name = "iH";
+            // 
+            // iW
+            // 
+            resources.ApplyResources(this.iW, "iW");
+            this.iW.MenuManager = this.iBarManager;
+            this.iW.Name = "iW";
+            // 
+            // iL
+            // 
+            resources.ApplyResources(this.iL, "iL");
+            this.iL.MenuManager = this.iBarManager;
+            this.iL.Name = "iL";
+            // 
+            // picBox
+            // 
+            resources.ApplyResources(this.picBox, "picBox");
+            this.picBox.MenuManager = this.iBarManager;
+            this.picBox.Name = "picBox";
+            this.picBox.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.picBox.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            // 
+            // svgBox
+            // 
+            resources.ApplyResources(this.svgBox, "svgBox");
+            this.svgBox.Name = "svgBox";
+            this.svgBox.SizeMode = DevExpress.XtraEditors.SvgImageSizeMode.Squeeze;
             // 
             // simpleSeparator1
             // 
@@ -2447,6 +2634,16 @@
             this.MainTabControl.ResumeLayout(false);
             this.SettingsXtraTabPage.ResumeLayout(false);
             this.ActionsXtraTabPage.ResumeLayout(false);
+            this.xtraTabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.iY.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iX.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iDY.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iF.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iH.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iW.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iL.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iPopupMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.warningLogFSW)).EndInit();
@@ -2611,6 +2808,19 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem DevicesDriverCheck;
         private DevExpress.XtraBars.PopupMenu checkPopupMenu;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraEditors.PictureEdit picBox;
+        private DevExpress.XtraEditors.SvgImageBox svgBox;
+        private DevExpress.XtraEditors.TextEdit iL;
+        private DevExpress.XtraEditors.TextEdit iY;
+        private DevExpress.XtraEditors.TextEdit iX;
+        private DevExpress.XtraEditors.SpinEdit iDY;
+        private DevExpress.XtraEditors.TextEdit iF;
+        private DevExpress.XtraEditors.TextEdit iH;
+        private DevExpress.XtraEditors.TextEdit iW;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private XanderUI.XUISwitch warmupInboxFolderSwitch;
+        private DevExpress.XtraEditors.LabelControl labelControl22;
     }
 }
 

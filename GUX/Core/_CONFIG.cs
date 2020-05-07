@@ -30,6 +30,7 @@ namespace GUX.Core
 
         public Scenario _DEFAULT_SCENARIO { get; set; }
         public bool _WARMUP_AUTORUN { get; set; }
+        public bool _WARMUP_PROCEED_INBOX_FOLDER { get; set; }
 
         public _CONFIG()
         {
@@ -57,6 +58,7 @@ namespace GUX.Core
                 this._FAILED_ACTION_MAX_RETRIES = info.GetInt32("_FAILED_ACTION_MAX_RETRIES");
                 this._DEFAULT_SCENARIO = (Scenario)info.GetValue("_DEFAULT_SCENARIO", typeof(Scenario));
                 this._WARMUP_AUTORUN = info.GetBoolean("_WARMUP_AUTORUN");
+                this._WARMUP_PROCEED_INBOX_FOLDER = info.GetBoolean("_WARMUP_PROCEED_INBOX_FOLDER");
             }
             catch (Exception c)
             {
@@ -85,6 +87,7 @@ namespace GUX.Core
                 info.AddValue("_FAILED_ACTION_MAX_RETRIES", this._FAILED_ACTION_MAX_RETRIES);
                 info.AddValue("_DEFAULT_SCENARIO", this._DEFAULT_SCENARIO, typeof(Scenario));
                 info.AddValue("_WARMUP_AUTORUN", this._WARMUP_AUTORUN);
+                info.AddValue("_WARMUP_PROCEED_INBOX_FOLDER", this._WARMUP_PROCEED_INBOX_FOLDER);
             }
             catch (Exception c)
             {
