@@ -37,6 +37,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -208,6 +209,7 @@
     <Compile Include="Core\Globals.cs" />
     <Compile Include="Core\ListViewExtender.cs" />
     <Compile Include="Core\PostgreSqlHelper.cs" />
+    <Compile Include="Core\Responsive.cs" />
     <Compile Include="Core\Scenario.cs" />
     <Compile Include="Core\Scheduler.cs" />
     <Compile Include="Core\ScheduleTask.cs" />
@@ -351,6 +353,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="android_logo_aGh_icon.ico" />
+    <None Include="Resources\squeeze.svg" />
+    <None Include="Resources\fitboundstotext.svg" />
+    <None Include="Resources\actions_forbid.svg" />
+    <None Include="Resources\electronics_phoneandroid2.svg" />
     <None Include="Resources\GoogleVector.svg" />
     <None Include="Resources\AppiumVector.svg" />
     <None Include="Resources\renamequery.svg" />

@@ -103,6 +103,16 @@ namespace GUX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage actions_forbid {
+            get {
+                object obj = ResourceManager.GetObject("actions_forbid", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
         internal static DevExpress.Utils.Svg.SvgImage actions_log {
             get {
                 object obj = ResourceManager.GetObject("actions-log", resourceCulture);
@@ -453,6 +463,16 @@ namespace GUX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
         /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage electronics_phoneandroid2 {
+            get {
+                object obj = ResourceManager.GetObject("electronics_phoneandroid2", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
         internal static DevExpress.Utils.Svg.SvgImage errorLogs {
             get {
                 object obj = ResourceManager.GetObject("errorLogs", resourceCulture);
@@ -466,6 +486,16 @@ namespace GUX.Properties {
         internal static DevExpress.Utils.Svg.SvgImage errors_logs {
             get {
                 object obj = ResourceManager.GetObject("errors-logs", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage fitboundstotext {
+            get {
+                object obj = ResourceManager.GetObject("fitboundstotext", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
             }
         }
@@ -896,6 +926,16 @@ namespace GUX.Properties {
         internal static DevExpress.Utils.Svg.SvgImage sort_icon {
             get {
                 object obj = ResourceManager.GetObject("sort-icon", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type DevExpress.Utils.Svg.SvgImage.
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage squeeze {
+            get {
+                object obj = ResourceManager.GetObject("squeeze", resourceCulture);
                 return ((DevExpress.Utils.Svg.SvgImage)(obj));
             }
         }

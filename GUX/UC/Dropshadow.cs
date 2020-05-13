@@ -33,7 +33,7 @@ namespace GUX.UC
                 // bind event
                 Owner.Resize += (sender, eventArgs) => RefreshShadow();
                 Owner.LocationChanged += UpdateLocation;
-                Owner.FormClosing += (sender, eventArgs) => Close();
+                //Owner.FormClosing += (sender, eventArgs) => Close();
                 Owner.VisibleChanged += (sender, eventArgs) =>
                 {
                     if (Owner != null)

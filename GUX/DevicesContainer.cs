@@ -1,16 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
-using System.Linq;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.IO;
 using System.Runtime.InteropServices;
+using GUX.Core;
+using DevExpress.XtraLayout;
+using System.Collections.Generic;
+using System.Management;
 
 namespace GUX
 {
@@ -22,15 +22,75 @@ namespace GUX
         [DllImport("user32.dll", SetLastError = true)]
         public static extern bool MoveWindow(IntPtr hWnd, int X, int Y, int nWidth, int nHeight, bool bRepaint);
 
-        [DllImport("user32.dll")]
-        public static extern IntPtr SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int x, int Y, int cx, int cy, int wFlags);
+        public string actionsLogFile { get; set; }
+        public string errorsLogFile { get; set; }
+        public string blockedLogFile { get; set; }
+        public string currentDirectory { get; set; }
+        public CancellationToken token { get; set; }
 
-        public static void ReDock(IntPtr handle, int x, int y, int width, int height)
+    private System.Timers.Timer _interval = null;
+
+        private async void Log(string message, string index, string loglevel, bool blocked = false)
         {
-            IntPtr HWND_TOPMOST = new IntPtr(-1);
-            const short SWP_NOACTIVATE = 0x0010;
+            try
+            {
+                var logtype = loglevel == "info" ? "ok" : loglevel.ToLower();
+                using (FileStream fs = new FileStream(Application.StartupPath + "\\Actions Logs\\" + actionsLogFile, FileMode.Append, FileAccess.Write, FileShare.ReadWrite))
+                {
+                    using (var sw = new StreamWriter(fs))
+                    {
+                        await sw.WriteLineAsync($"{DateTime.UtcNow.ToLongTimeString()}: [{index}] - ({logtype}) | {message.ToLower()}");
+                    }
+                }
+                if (blocked)
+                {
+                    BlockedLog(message, index);
+                    return;
+                }
+                if (logtype == "error")
+                    ErrorLog(message, index);
 
-            SetWindowPos(handle, HWND_TOPMOST, x, y, width, height, SWP_NOACTIVATE);
+            }
+            catch (Exception c)
+            {
+                Console.WriteLine(c.Message);
+            }
+        }
+
+        private async void BlockedLog(string message, string index)
+        {
+            try
+            {
+                using (FileStream fs = new FileStream(Application.StartupPath + "\\Blocked Logs\\" + blockedLogFile, FileMode.Append, FileAccess.Write, FileShare.ReadWrite))
+                {
+                    using (var sw = new StreamWriter(fs))
+                    {
+                        await sw.WriteLineAsync($"{DateTime.UtcNow.ToLongTimeString()}: [{currentDirectory}/{index}] | {message.ToLower()}");
+                    }
+                }
+            }
+            catch (Exception c)
+            {
+                Console.WriteLine(c.Message);
+            }
+        }
+
+        private async void ErrorLog(string message, string index)
+        {
+            try
+            {
+                using (FileStream fs = new FileStream(Application.StartupPath + "\\Error Logs\\" + errorsLogFile, FileMode.Append, FileAccess.Write, FileShare.ReadWrite))
+                {
+                    using (var sw = new StreamWriter(fs))
+                    {
+                        await sw.WriteLineAsync($"{DateTime.UtcNow.ToLongTimeString()}: [{index}] | {message.ToLower()}");
+                    }
+                }
+            }
+            catch (Exception c)
+            {
+                Console.WriteLine(c.Message);
+            }
         }
 
         private Task Exec(string cmd)
@@ -52,6 +112,11 @@ namespace GUX
                     };
 
                     process.Start();
+                    while (!process.StandardOutput.EndOfStream)
+                    {
+                        var line = process.StandardOutput.ReadLine();
+                        Console.WriteLine($"EXEC Output : {line}");
+                    }
                     process.WaitForExit();
                 });
             }
@@ -62,46 +127,73 @@ namespace GUX
             }
         }
 
-        private Task AttachDevice(int index)
+        private PanelControl DevicePanel(string name, IntPtr tag)
+        {
+            var panel = new PanelControl();
+            panel.Name = name;
+            var bounds = Screen.PrimaryScreen.Bounds;
+            var size = new Size(bounds.Width / 5, bounds.Height / 5);
+            panel.Size = size;
+            panel.MinimumSize = size;
+            panel.MaximumSize = size;
+            panel.Tag = tag;
+            return panel;
+        }
+
+        private LayoutControlItem LCI(PanelControl panel, string name, string text, int tag)
+        {
+            LayoutControlItem item = new LayoutControlItem(DevicesLayoutControl, panel);
+            item.Name = name;
+            item.TextAlignMode = TextAlignModeItem.AutoSize;
+            item.TextLocation = DevExpress.Utils.Locations.Top;
+            item.ContentVertAlignment = DevExpress.Utils.VertAlignment.Center;
+            item.ContentHorzAlignment = DevExpress.Utils.HorzAlignment.Center;
+            item.TextVisible = true;
+            item.AllowHtmlStringInCaption = true;
+            item.Text = text;
+            item.Tag = tag;
+            return item;
+        }
+
+        public Task<bool> AttachDevice(string index)
         {
             return Task.Factory.StartNew(() =>
             {
-                Process proc = new Process();
-                proc.StartInfo.FileName = $"\"{@"C:\Program Files\Microvirt\MEmu\MEmu.exe"}\"";
-                proc.StartInfo.Arguments = "MEmu_" + index;
-                proc.Start();
-
-                proc.WaitForInputIdle();
-
-                while (proc.MainWindowHandle == IntPtr.Zero)
+                try
                 {
-                    Thread.Sleep(100);
-                    proc.Refresh();
-                }
+                    token.ThrowIfCancellationRequested();
+                    Process proc = new Process();
+                    proc.StartInfo.FileName = $"\"{@"C:\Program Files\Microvirt\MEmu\MEmu.exe"}\"";
+                    proc.StartInfo.Arguments = "MEmu_" + index;
+                    proc.Start();
 
-                Invoke((MethodInvoker)delegate
-                {
-                    var panel = new PanelControl();
-                    panel.Size = new Size(350, 250);
-                    panel.MinimumSize = new Size(350, 250);
-                    panel.MaximumSize = new Size(350, 250);
-                    panel.AutoSize = true;
-                    panel.Dock = DockStyle.Left;
+                    proc.WaitForInputIdle();
 
-                    panel.Tag = proc.MainWindowHandle;
-                    flowLayoutPanel1.Controls.Add(panel);
-                    SetParent(proc.MainWindowHandle, panel.Handle);
-
-                    SetInterval((action) =>
+                    while (proc.MainWindowHandle == IntPtr.Zero)
                     {
-                        panel.Invoke((MethodInvoker)delegate
-                        {
-                            Rectangle r = panel.RectangleToScreen(panel.ClientRectangle);
-                            ReDock((IntPtr)panel.Tag, r.X, r.Y, r.Width, r.Height);
-                            MoveWindow((IntPtr)panel.Tag, 0, 0, r.Width, r.Height, true);
-                        });
-                    }, 1000);
-                });
+                        Thread.Sleep(Globals.DRIVER_WAIT_POLLING_INTERVAL);
+                        proc.Refresh();
+                    }
+
+                    Invoke((MethodInvoker) delegate
+                    {
+                        var panel = DevicePanel($"Panel_{proc.Id}_{index}", proc.MainWindowHandle);
+                        var item = LCI(panel, $"LCI_{proc.Id}_{index}", $"<b>{currentDirectory}</b>/{index}", proc.Id);
+                        
+                        DevicesGroupLayout.AddItem(item);
+                        SetParent(proc.MainWindowHandle, panel.Handle);
+                    });
+
+                    Thread.Sleep(5000);
+                    Log("attach device completed!", index, "info");
+                    return true;
+                }
+                catch (Exception x)
+                {
+                    Console.WriteLine(x.Message);
+                    //Log("attach device failed!", index, "error");
+                    return false;
+                }
             });
         }
 
@@ -118,7 +210,7 @@ namespace GUX
 
         private void Panel_SizeChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         public DevicesContainer()
@@ -126,35 +218,202 @@ namespace GUX
             InitializeComponent();
         }
 
-        private async void DevicesContainer_Load(object sender, EventArgs e)
+        private Task KillProcessAndChildren(int pid)
         {
-            await Exec("TASKKILL /T /F /IM MEmuConsole.exe /IM MEmu.exe /IM MEmuSVC.exe /IM MEmuHeadless.exe");
-            await AttachDevice(8).ContinueWith(async (ad) =>
+            return Task.Factory.StartNew(() =>
             {
-                if (ad.IsCompleted)
+                if (pid == 0)
+                    return;
+
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher
+                        ("Select * From Win32_Process Where ParentProcessID=" + pid);
+                ManagementObjectCollection moc = searcher.Get();
+                foreach (ManagementObject mo in moc)
                 {
-                    await AttachDevice(1).ContinueWith(async (ad2) =>
+                    KillProcessAndChildren(Convert.ToInt32(mo["ProcessID"]));
+                }
+                try
+                {
+                    Process proc = Process.GetProcessById(pid);
+                    proc.Kill();
+                }
+                catch (ArgumentException)
+                {
+                    // Process already exited.
+                }
+            }); 
+        }
+
+        private Task StopDevices()
+        {
+            return Task.Factory.StartNew(() =>
+            {
+                DevicesLayoutControl.Invoke((MethodInvoker)async delegate
+                {
+                    try
                     {
-                        if (ad2.IsCompleted)
+                        if (_interval != null) _interval.Close();
+                        if (_interval != null) _interval.Dispose();
+                        DevicesGroupLayout.Items.ConvertToTypedList().ForEach((item) =>
                         {
-                            await AttachDevice(3).ContinueWith(async (ad3) =>
+                            var pid = (int)item.Tag;
+                            //await KillProcessAndChildren(pid);
+                            Process.GetProcessById(pid)?.Kill();
+                        });
+                        DevicesGroupLayout.Clear(true);
+                        await Final();
+                        Log("stop devices completed!", "-", "info");
+                    }
+                    catch (Exception x)
+                    {
+                        Console.WriteLine(x.Message);
+                    }
+                });
+            });
+        }
+
+        private Task StopDevice(string index)
+        {
+            return Task.Factory.StartNew(() =>
+            {
+                DevicesLayoutControl.Invoke((MethodInvoker)delegate
+                {
+                    try
+                    {
+                        _interval?.Close();
+                        _interval?.Dispose();
+                        var item = (LayoutControlItem)DevicesGroupLayout.Items.ConvertToTypedList().Find(i => i.Name.EndsWith($"_{index}"));
+                        if(item != null)
+                        {
+                            var pid = (int)item.Tag;
+                            //await KillProcessAndChildren(pid);
+
+                            item.Control?.Dispose();
+                            DevicesGroupLayout.Remove(item);
+                            item?.Dispose();
+
+                            Process.GetProcessById(pid)?.Kill();
+
+                            if (autoFitDevicesButton.Down)
+                                _interval = SetInterval(async (timer) => {
+                                    await FitDevices();
+                                }, 3000);
+
+                            Log("stop device completed!", index, "info");
+                        }
+                    }
+                    catch (Exception x)
+                    {
+                        Console.WriteLine(x.Message);
+                    }
+                });
+            });
+        }
+
+        private Task FitDevices()
+        {
+            return Task.Factory.StartNew(() =>
+            {
+                try
+                {
+                    DevicesLayoutControl.Invoke((MethodInvoker)delegate
+                    {
+                        try
+                        {
+                            DevicesGroupLayout.Items.ConvertToTypedList().ForEach((item) =>
                             {
-                                if (ad3.IsCompleted)
-                                {
-                                    await AttachDevice(6);
-                                }
+                                var control = ((LayoutControlItem)item).Control;
+                                if (control != null)
+                                    control.Invoke((MethodInvoker)delegate
+                                    {
+                                        Rectangle r = control.RectangleToScreen(control.ClientRectangle);
+                                        MoveWindow((IntPtr)control.Tag, 0, 0, r.Width, r.Height, true);
+                                    });
                             });
                         }
+                        catch (Exception x)
+                        {
+                            Console.WriteLine(x.Message);
+                        }
                     });
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine(e.Message);
                 }
             });
         }
 
+        private async void DevicesContainer_Load(object sender, EventArgs e)
+        {
+            autoFitDevicesButton.Down = true;
+            await Final();
+        }
+
         private async void DevicesContainer_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;
-            await Exec("TASKKILL /T /F /IM MEmuConsole.exe /IM MEmu.exe /IM MEmuSVC.exe /IM MEmuHeadless.exe");
-            Application.ExitThread();
+            await Final();
+            this.Close();
+        }
+
+        private async void stopDevicesButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            await StopDevices();
+        }
+
+        public Task Stop()
+        {
+            return StopDevices();
+        }
+
+        public Task Stop(string index)
+        {
+            return StopDevice(index);
+        }
+
+        public Task Fit()
+        {
+            return FitDevices();
+        }
+
+        public Task Final()
+        {
+            return Exec("TASKKILL /T /F /IM MEmuConsole.exe /IM MEmu.exe /IM MEmuSVC.exe /IM MEmuHeadless.exe /IM adb.exe");/*.ContinueWith((kk) => {
+                if (kk.IsCompleted)
+                {
+                    DevicesLayoutControl.Invoke((MethodInvoker)delegate
+                    {
+                        try
+                        {
+                            DevicesGroupLayout.Clear(true);
+                        }
+                        catch (Exception x)
+                        {
+                            Console.WriteLine(x.Message);
+                        }
+                    });
+                }
+            });*/
+        }
+
+        private void DevicesLayoutControlItemsChanged(object sender, EventArgs e)
+        {
+            DevicesCountLabel.Caption = $"{DevicesGroupLayout.Items.Count}";
+        }
+
+        private async void fitDevicesButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            await FitDevices();
+        }
+
+        private void autoFitDevicesButton_DownChanged(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            _interval?.Close();
+            _interval?.Dispose();
+            if (autoFitDevicesButton.Down)
+                _interval = SetInterval(async (timer) => {
+                    await FitDevices();
+                }, 3000);
         }
     }
 }

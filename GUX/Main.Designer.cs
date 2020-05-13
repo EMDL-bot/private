@@ -59,7 +59,6 @@
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions7 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions8 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions9 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.Utils.Animation.SlideFadeTransition slideFadeTransition1 = new DevExpress.Utils.Animation.SlideFadeTransition();
             DevExpress.Utils.Animation.Transition transition1 = new DevExpress.Utils.Animation.Transition();
             DevExpress.Utils.Animation.FadeTransition fadeTransition1 = new DevExpress.Utils.Animation.FadeTransition();
@@ -859,7 +858,7 @@
             resources.ApplyResources(this.settingSplitContainer.Panel2, "settingSplitContainer.Panel2");
             this.settingSplitContainer.Panel2.Controls.Add(this.tablePanel2);
             this.settingSplitContainer.ShowSplitGlyph = DevExpress.Utils.DefaultBoolean.True;
-            this.settingSplitContainer.SplitterPosition = 368;
+            this.settingSplitContainer.SplitterPosition = 369;
             // 
             // tablePanel1
             // 
@@ -1745,14 +1744,11 @@
             windowsUIButtonImageOptions6.SvgImage = global::GUX.Properties.Resources.other_icon;
             windowsUIButtonImageOptions6.SvgImageSize = new System.Drawing.Size(20, 20);
             windowsUIButtonImageOptions7.EnableTransparency = true;
-            windowsUIButtonImageOptions7.SvgImage = global::GUX.Properties.Resources.sort_icon;
+            windowsUIButtonImageOptions7.SvgImage = global::GUX.Properties.Resources.close_icon;
             windowsUIButtonImageOptions7.SvgImageSize = new System.Drawing.Size(20, 20);
             windowsUIButtonImageOptions8.EnableTransparency = true;
-            windowsUIButtonImageOptions8.SvgImage = global::GUX.Properties.Resources.close_icon;
-            windowsUIButtonImageOptions8.SvgImageSize = new System.Drawing.Size(20, 20);
-            windowsUIButtonImageOptions9.EnableTransparency = true;
-            windowsUIButtonImageOptions9.SvgImage = global::GUX.Properties.Resources.stop_icon;
-            windowsUIButtonImageOptions9.SvgImageSize = new System.Drawing.Size(16, 16);
+            windowsUIButtonImageOptions8.SvgImage = global::GUX.Properties.Resources.stop_icon;
+            windowsUIButtonImageOptions8.SvgImageSize = new System.Drawing.Size(16, 16);
             this.UIButtonPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraBars.Docking2010.WindowsUIButton(resources.GetString("UIButtonPanel.Buttons"), ((bool)(resources.GetObject("UIButtonPanel.Buttons1"))), windowsUIButtonImageOptions1, ((DevExpress.XtraBars.Docking2010.ButtonStyle)(resources.GetObject("UIButtonPanel.Buttons2"))), resources.GetString("UIButtonPanel.Buttons3"), ((int)(resources.GetObject("UIButtonPanel.Buttons4"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons5"))), ((DevExpress.Utils.SuperToolTip)(resources.GetObject("UIButtonPanel.Buttons6"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons7"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons8"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons9"))), ((object)(resources.GetObject("UIButtonPanel.Buttons10"))), ((int)(resources.GetObject("UIButtonPanel.Buttons11"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons12")))),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton(resources.GetString("UIButtonPanel.Buttons13"), ((bool)(resources.GetObject("UIButtonPanel.Buttons14"))), windowsUIButtonImageOptions2, ((DevExpress.XtraBars.Docking2010.ButtonStyle)(resources.GetObject("UIButtonPanel.Buttons15"))), resources.GetString("UIButtonPanel.Buttons16"), ((int)(resources.GetObject("UIButtonPanel.Buttons17"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons18"))), ((DevExpress.Utils.SuperToolTip)(resources.GetObject("UIButtonPanel.Buttons19"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons20"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons21"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons22"))), ((object)(resources.GetObject("UIButtonPanel.Buttons23"))), ((int)(resources.GetObject("UIButtonPanel.Buttons24"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons25")))),
@@ -1762,8 +1758,7 @@
             new DevExpress.XtraBars.Docking2010.WindowsUIButton(resources.GetString("UIButtonPanel.Buttons65"), ((bool)(resources.GetObject("UIButtonPanel.Buttons66"))), windowsUIButtonImageOptions6, ((DevExpress.XtraBars.Docking2010.ButtonStyle)(resources.GetObject("UIButtonPanel.Buttons67"))), resources.GetString("UIButtonPanel.Buttons68"), ((int)(resources.GetObject("UIButtonPanel.Buttons69"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons70"))), ((DevExpress.Utils.SuperToolTip)(resources.GetObject("UIButtonPanel.Buttons71"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons72"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons73"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons74"))), ((object)(resources.GetObject("UIButtonPanel.Buttons75"))), ((int)(resources.GetObject("UIButtonPanel.Buttons76"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons77")))),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(((System.Drawing.Image)(resources.GetObject("UIButtonPanel.Buttons78"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons79"))), ((int)(resources.GetObject("UIButtonPanel.Buttons80")))),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton(resources.GetString("UIButtonPanel.Buttons81"), ((bool)(resources.GetObject("UIButtonPanel.Buttons82"))), windowsUIButtonImageOptions7, ((DevExpress.XtraBars.Docking2010.ButtonStyle)(resources.GetObject("UIButtonPanel.Buttons83"))), resources.GetString("UIButtonPanel.Buttons84"), ((int)(resources.GetObject("UIButtonPanel.Buttons85"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons86"))), ((DevExpress.Utils.SuperToolTip)(resources.GetObject("UIButtonPanel.Buttons87"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons88"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons89"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons90"))), ((object)(resources.GetObject("UIButtonPanel.Buttons91"))), ((int)(resources.GetObject("UIButtonPanel.Buttons92"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons93")))),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton(resources.GetString("UIButtonPanel.Buttons94"), ((bool)(resources.GetObject("UIButtonPanel.Buttons95"))), windowsUIButtonImageOptions8, ((DevExpress.XtraBars.Docking2010.ButtonStyle)(resources.GetObject("UIButtonPanel.Buttons96"))), resources.GetString("UIButtonPanel.Buttons97"), ((int)(resources.GetObject("UIButtonPanel.Buttons98"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons99"))), ((DevExpress.Utils.SuperToolTip)(resources.GetObject("UIButtonPanel.Buttons100"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons101"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons102"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons103"))), ((object)(resources.GetObject("UIButtonPanel.Buttons104"))), ((int)(resources.GetObject("UIButtonPanel.Buttons105"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons106")))),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton(resources.GetString("UIButtonPanel.Buttons107"), ((bool)(resources.GetObject("UIButtonPanel.Buttons108"))), windowsUIButtonImageOptions9, ((DevExpress.XtraBars.Docking2010.ButtonStyle)(resources.GetObject("UIButtonPanel.Buttons109"))), resources.GetString("UIButtonPanel.Buttons110"), ((int)(resources.GetObject("UIButtonPanel.Buttons111"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons112"))), ((DevExpress.Utils.SuperToolTip)(resources.GetObject("UIButtonPanel.Buttons113"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons114"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons115"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons116"))), ((object)(resources.GetObject("UIButtonPanel.Buttons117"))), ((int)(resources.GetObject("UIButtonPanel.Buttons118"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons119"))))});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton(resources.GetString("UIButtonPanel.Buttons94"), ((bool)(resources.GetObject("UIButtonPanel.Buttons95"))), windowsUIButtonImageOptions8, ((DevExpress.XtraBars.Docking2010.ButtonStyle)(resources.GetObject("UIButtonPanel.Buttons96"))), resources.GetString("UIButtonPanel.Buttons97"), ((int)(resources.GetObject("UIButtonPanel.Buttons98"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons99"))), ((DevExpress.Utils.SuperToolTip)(resources.GetObject("UIButtonPanel.Buttons100"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons101"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons102"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons103"))), ((object)(resources.GetObject("UIButtonPanel.Buttons104"))), ((int)(resources.GetObject("UIButtonPanel.Buttons105"))), ((bool)(resources.GetObject("UIButtonPanel.Buttons106"))))});
             resources.ApplyResources(this.UIButtonPanel, "UIButtonPanel");
             this.UIButtonPanel.EnableImageTransparency = true;
             this.UIButtonPanel.Name = "UIButtonPanel";
@@ -2357,7 +2352,7 @@
             this.MainTabControl.AppearancePage.PageClient.Options.UseBorderColor = true;
             resources.ApplyResources(this.MainTabControl, "MainTabControl");
             this.MainTabControl.Name = "MainTabControl";
-            this.MainTabControl.SelectedTabPage = this.SettingsXtraTabPage;
+            this.MainTabControl.SelectedTabPage = this.ProcessXtraTabPage;
             this.MainTabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.ProcessXtraTabPage,
             this.SettingsXtraTabPage,

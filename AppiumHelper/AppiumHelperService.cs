@@ -49,5 +49,11 @@ namespace AppiumHelper
                 service.Dispose();
             }
         }
+
+        [TestMethod]
+        public bool IsRunning()
+        {
+            return service.IsRunning;
+        }
     }
 }

@@ -42,6 +42,8 @@ namespace GmailDemo
         public int WaitTO { get; set; }
         public int WaitPolling { get; set; }
 
+        private Dictionary<int, string> iActions = new Dictionary<int, string>();
+
 
         private string InstallGmailApp(string path)
         {
@@ -392,7 +394,7 @@ namespace GmailDemo
                 if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                     goto done;
 
-                if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
                     return ProxySetup(host, port);
@@ -420,7 +422,7 @@ namespace GmailDemo
                 if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                     goto done;
 
-                if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
                     ProxySetup(host, port);
@@ -446,7 +448,7 @@ namespace GmailDemo
                 if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                     goto done;
 
-                if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
                     ProxySetup(host, port);
@@ -472,7 +474,7 @@ namespace GmailDemo
                 if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                     goto done;
 
-                if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
                     ProxySetup(host, port);
@@ -508,7 +510,7 @@ namespace GmailDemo
                     if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                         goto done;
 
-                    if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                    if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                     {
                         this.actionRetries--;
                         ProxySetup(host, port);
@@ -537,7 +539,7 @@ namespace GmailDemo
                     if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                         goto done;
 
-                    if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                    if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                     {
                         this.actionRetries--;
                         ProxySetup(host, port);
@@ -566,7 +568,7 @@ namespace GmailDemo
                     if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                         goto done;
 
-                    if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                    if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                     {
                         this.actionRetries--;
                         ProxySetup(host, port);
@@ -593,7 +595,7 @@ namespace GmailDemo
                 if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                     goto done;
 
-                if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
                     ProxySetup(host, port);
@@ -619,7 +621,7 @@ namespace GmailDemo
                 if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                     goto done;
 
-                if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
                     ProxySetup(host, port);
@@ -645,7 +647,7 @@ namespace GmailDemo
                 if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                     goto done;
 
-                if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                if (x.Message.Contains("PROXY WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
                     ProxySetup(host, port);
@@ -726,7 +728,7 @@ namespace GmailDemo
                 if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                     goto done;
 
-                if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
                     return GmailLogin(creds);
@@ -756,7 +758,7 @@ namespace GmailDemo
                 if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                     goto done;
 
-                if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
                     return GmailLogin(creds);
@@ -782,7 +784,7 @@ namespace GmailDemo
                 if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                     goto done;
 
-                if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
                     return GmailLogin(creds);
@@ -808,7 +810,7 @@ namespace GmailDemo
                 if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                     goto done;
 
-                if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
                     return GmailLogin(creds);
@@ -834,7 +836,7 @@ namespace GmailDemo
                 if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                     goto done;
 
-                if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
                     return GmailLogin(creds);
@@ -860,7 +862,7 @@ namespace GmailDemo
                 if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                     goto done;
 
-                if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
                     return GmailLogin(creds);
@@ -933,7 +935,7 @@ namespace GmailDemo
                     if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                         goto done;
 
-                    if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                    if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                     {
                         this.actionRetries--;
                         return GmailLogin(creds);
@@ -959,7 +961,7 @@ namespace GmailDemo
                     if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                         goto done;
 
-                    if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                    if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                     {
                         this.actionRetries--;
                         return GmailLogin(creds);
@@ -985,7 +987,7 @@ namespace GmailDemo
                     if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                         goto done;
 
-                    if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                    if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                     {
                         this.actionRetries--;
                         return GmailLogin(creds);
@@ -1071,7 +1073,7 @@ namespace GmailDemo
                 if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                     goto done;
 
-                if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
                     return GmailLogin(creds);
@@ -1186,7 +1188,7 @@ namespace GmailDemo
                 if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                     goto done;
 
-                if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
                     return GmailLogin(creds);
@@ -1240,7 +1242,7 @@ namespace GmailDemo
                 if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                     goto done;
 
-                if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
                     return GmailLogin(creds);
@@ -1266,7 +1268,7 @@ namespace GmailDemo
                 if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                     goto done;
 
-                if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                if (x.Message.Contains("SIGN-IN WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                 {
                     this.actionRetries--;
                     return GmailLogin(creds);
@@ -1303,11 +1305,11 @@ namespace GmailDemo
 
             bool isFail = false;
 
-            if (this.scenario == "")
-            {
-                Log("no actions found on the default scenario, try again!", "warning");
-                return "no actions found on the default scenario, try again!";
-            }
+            //if (this.scenario == "")
+            //{
+            //    Log("no actions found on the default scenario, try again!", "warning");
+            //    return "no actions found on the default scenario, try again!";
+            //}
 
             try
             {
@@ -1343,7 +1345,7 @@ namespace GmailDemo
 
             if (driver != null)
             {
-                actions = scenario.Split(',').ToList();
+                //actions = scenario.Split(',').ToList();
 
                 var i = 1;
                 process:
@@ -1364,7 +1366,7 @@ namespace GmailDemo
                 {
                     if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                         goto done;
-                    if (x.Message.Contains("SPAM ACTIONS WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                    if (x.Message.Contains("SPAM ACTIONS WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                     {
                         this.actionRetries--;
                         return SpamActions(keyword, date);
@@ -1398,7 +1400,7 @@ namespace GmailDemo
                     if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                         goto done;
 
-                    if (x.Message.Contains("SPAM ACTIONS WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                    if (x.Message.Contains("SPAM ACTIONS WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                     {
                         this.actionRetries--;
                         return SpamActions(keyword, date);
@@ -1533,7 +1535,7 @@ namespace GmailDemo
                             try
                             {
                                 cancelationToken.ThrowIfCancellationRequested();
-                                var subWait = new WebDriverWait(driver, TimeSpan.FromSeconds(7));
+                                var subWait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
                                 subWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("com.google.android.gm:id/sender_name")));
                                 senderName = driver.FindElementById("com.google.android.gm:id/sender_name");
                             }
@@ -1542,7 +1544,17 @@ namespace GmailDemo
                                 if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                                     goto done;
 
-                                Log("Sender Name : " + x.Message, "error");
+                                if (x.Message.Contains("SPAM ACTIONS WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                                {
+                                    this.actionRetries--;
+                                    return SpamActions(keyword, date);
+                                }
+                                else
+                                {
+                                    Log("Sender Name : " + x.Message, "error");
+                                    isFail = true;
+                                    goto done;
+                                }
                             }
 
                             try
@@ -1569,7 +1581,17 @@ namespace GmailDemo
                                             if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                                                 goto done;
 
-                                            Console.WriteLine("Not junk Button : " + x.Message);
+                                            if (x.Message.Contains("SPAM ACTIONS WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                                            {
+                                                this.actionRetries--;
+                                                return SpamActions(keyword, date);
+                                            }
+                                            else
+                                            {
+                                                Log("not junk button : " + x.Message, "error");
+                                                isFail = true;
+                                                goto done;
+                                            }
                                         }
 
                                         try
@@ -1588,8 +1610,17 @@ namespace GmailDemo
                                             if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                                                 goto done;
 
-                                            Log("mark as not junk : " + x.Message, "error");
-                                            isFail = true;
+                                            if (x.Message.Contains("SPAM ACTIONS WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                                            {
+                                                this.actionRetries--;
+                                                return SpamActions(keyword, date);
+                                            }
+                                            else
+                                            {
+                                                Log("mark as not junk : " + x.Message, "error");
+                                                isFail = true;
+                                                goto done;
+                                            }
                                         }
                                     }
                                     else
@@ -1704,6 +1735,8 @@ namespace GmailDemo
             wait.Message = "INBOX ACTIONS WAIT TIMEDOUT!";
             keyword = keyword.Replace("\"", "");
 
+            var scenarioActions = new string[] { "Reply", "Archive", "Star", "Important", "Click" };
+
             if (driver != null)
             {
                 var i = 1;
@@ -1723,7 +1756,7 @@ namespace GmailDemo
                 {
                     if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                         goto done;
-                    if (x.Message.Contains("INBOX ACTIONS WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                    if (x.Message.Contains("INBOX ACTIONS WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                     {
                         this.actionRetries--;
                         return InboxActions(keyword, date);
@@ -1756,7 +1789,7 @@ namespace GmailDemo
                 {
                     if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                         goto done;
-                    if (x.Message.Contains("INBOX ACTIONS WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                    if (x.Message.Contains("INBOX ACTIONS WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                     {
                         this.actionRetries--;
                         return InboxActions(keyword, date);
@@ -1886,15 +1919,25 @@ namespace GmailDemo
                             try
                             {
                                 cancelationToken.ThrowIfCancellationRequested();
-                                var subWait = new WebDriverWait(driver, TimeSpan.FromSeconds(7));
+                                var subWait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
                                 subWait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("com.google.android.gm:id/sender_name")));
                                 senderName = driver.FindElementById("com.google.android.gm:id/sender_name");
                             }
-                            catch (Exception e)
+                            catch (Exception x)
                             {
-                                if (e.GetType() == typeof(OperationCanceledException) || e.GetType() == typeof(TaskCanceledException))
+                                if (x.GetType() == typeof(OperationCanceledException) || x.GetType() == typeof(TaskCanceledException))
                                     goto done;
-                                Log("Sender Name : " + e.Message, "error");
+                                if (x.Message.Contains("INBOX ACTIONS WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                                {
+                                    this.actionRetries--;
+                                    return InboxActions(keyword, date);
+                                }
+                                else
+                                {
+                                    Log("Sender Name : " + x.Message, "error");
+                                    isFail = true;
+                                    goto done;
+                                }
                             }
 
                             try
@@ -2016,7 +2059,7 @@ namespace GmailDemo
                 }
                 catch (Exception x)
                 {
-                    if (x.Message.Contains("INBOX ACTIONS WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                    if (x.Message.Contains("INBOX ACTIONS WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                         return InboxActions(keyword, date);
                     else
                     {
@@ -2041,7 +2084,7 @@ namespace GmailDemo
                 }
                 catch (Exception x)
                 {
-                    if (x.Message.Contains("INBOX ACTIONS WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
+                    if (x.Message.Contains("INBOX ACTIONS WAIT TIMEDOUT!") || x.Message.Contains("element not found") || x.Message.Contains("timed out after") || x.Message.Contains("could not be located on the page") || x.Message.Contains("socket hang up") || x.Message.Contains("'normalizeTagNames'") || x.Message.Contains("Index was out of range") || x.Message.Contains("error occurred while processing the command") || x.Message.Contains("StaleObjectException") || x.Message.Contains("session is either terminated or not started"))
                         return InboxActions(keyword, date);
                     else
                     {
@@ -2251,10 +2294,12 @@ namespace GmailDemo
             bool isFailed = false;
             switch (action)
             {
-                case 1:
+                case 0:
                     try
                     {
                         cancelationToken.ThrowIfCancellationRequested();
+                        var replies = new string[] { "Thank you for understanding.", "so nice to see you again.", "Please let me know if that's okay.", "hope you had a good time.", "Please let me know if you need to reschedule.", "Thanks again for bringing this matter to my attention.", "Best regards.", "Sorry it’s been so long since I was last in touch.", "Thanks again for the info.", "hope we have the chance.", "Sorry to write again so quickly.", "i will get that item asap! thanks.", "Sorry it took me so long to get back to you.", "All the best.", "Please let me know if that is acceptable with you.", "I was wondering if you could send me more details about that, thanks.", "Thank you for finding the time to talk to me.", "Thanks again for all your help.", "Please let me know if you can help.", "Best wishes.", "Please let me know if you need an extension.", "Have a good day.", "Speak to you soon.", "Sorry not to reply sooner.", "Cheers.", "Thanks for getting back to me so quickly.", "good product thank you!", "Best wishes.", "Please let me know if you can.", "my great pleasure to meet you last week.", "Please let me know if that sounds okay." };
+                        var reply = replies[new Random().Next(0, 30)];
                         wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//android.widget.ImageView[@content-desc=\"Reply\"]")));
                         var replyButton = driver.FindElementByXPath("//android.widget.ImageView[@content-desc=\"Reply\"]");
                         if (replyButton != null)
@@ -2262,7 +2307,7 @@ namespace GmailDemo
                             replyButton.Click();
                             Log("click reply button", "info");
 
-                            new Actions(driver).SendKeys("Thank you so much!").Perform();
+                            new Actions(driver).SendKeys(reply).Perform();
 
                             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("com.google.android.gm:id/send")));
                             var sendButton = driver.FindElementById("com.google.android.gm:id/send");
@@ -2285,10 +2330,10 @@ namespace GmailDemo
                         isFailed = true;
                     }
                     break;
-                case 2:
+                case 1:
                     isFailed = Archive(wait);
                     break;
-                case 3:
+                case 2:
                     try
                     {
                         cancelationToken.ThrowIfCancellationRequested();
@@ -2312,7 +2357,7 @@ namespace GmailDemo
                         isFailed = true;
                     }
                     break;
-                case 4:
+                case 3:
                     try
                     {
                         //MORE OPTIONS BUTTON:
@@ -2349,7 +2394,7 @@ namespace GmailDemo
                         isFailed = true;
                     }
                     break;
-                case 5:
+                case 4:
                     try
                     {
                         cancelationToken.ThrowIfCancellationRequested();

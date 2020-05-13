@@ -48,6 +48,7 @@ namespace GUX
         private AppiumHelperService _Service;
         private Scheduler _Scheduler;
         private _CONFIG _Config;
+        private DevicesContainer iDevices = null;
         private string actionsLogFile = "",
          errorsLogFile = "",
          blockedLogFile = "",
@@ -75,12 +76,11 @@ namespace GUX
         public Main()
         {
             InitializeComponent();
-            //faded.ShowAsyc(this);
             Devices = new List<string>();
             _Service = new AppiumHelperService();
             _Scheduler = new Scheduler();
             this.DoubleBuffered = true;
-            this.SetStyle(ControlStyles.ResizeRedraw, true);
+            //this.SetStyle(ControlStyles.ResizeRedraw, true);
             directoryCLB.DoubleBuffer();
             iStackPanel.AutoScroll = true;
             ((WindowsUISeparator)UIButtonPanel.Buttons[6]).Appearance.ForeColor = Color.FromArgb(37, 37, 38);
@@ -92,7 +92,7 @@ namespace GUX
             images.AddImage(fakeImage);
             UIButtonPanel.ButtonBackgroundImages = images;
             Globals.SchServices = new SchedulerService();
-
+            iDevices = new DevicesContainer();
             try
             {
                 var element = GetItemCheckedElement();
@@ -123,71 +123,6 @@ namespace GUX
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-            }
-        }
-
-        private Task SortWin()
-        {
-            try
-            {
-                return Task.Factory.StartNew(() =>
-                {
-                    var process = new Process
-                    {
-                        StartInfo = new ProcessStartInfo
-                        {
-                            FileName = "cmd.exe",
-                            Arguments = "/c memuc sortwin",
-                            UseShellExecute = false,
-                            RedirectStandardOutput = true,
-                            CreateNoWindow = true
-                        }
-                    };
-
-                    process.Start();
-                    process.WaitForExit();
-                });
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return null;
-            }
-        }
-
-        private Task<bool> CloneDevice()
-        {
-            try
-            {
-                return Task.Factory.StartNew(() =>
-                {
-                    var line = "";
-                    var process = new Process
-                    {
-                        StartInfo = new ProcessStartInfo
-                        {
-                            FileName = "cmd.exe",
-                            Arguments = "/c memuc clone -i 0",
-                            UseShellExecute = false,
-                            RedirectStandardOutput = true,
-                            CreateNoWindow = true
-                        }
-                    };
-
-                    process.Start();
-
-                    while (!process.StandardOutput.EndOfStream)
-                        line = process.StandardOutput.ReadLine();
-
-                    process.WaitForExit();
-
-                    return line.Contains("SUCCESS");
-                });
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return null;
             }
         }
 
@@ -456,6 +391,8 @@ namespace GUX
             ApplyDropShadow();
 
             _psqlHelper = new PostgreSqlHelper(_conString);
+
+            iDevices.Show();
 
             await LoadLocations();
 
@@ -755,6 +692,41 @@ namespace GUX
             return timer;
         }
 
+        private Task RenameFolder()
+        {
+            var drive = Globals.DRIVE_LETTER + @":\My Drive\";
+            var old_dir = drive + Globals.VMS_DIRECTORY;
+            var new_dir = currentDirectory;
+            return Task.Factory.StartNew(() =>
+            {
+                string temp = "";
+                RE:
+                try
+                {
+                    iDevices.Final().Wait();
+                    temp = drive + new_dir + DateTime.Now.ToBinary().ToString();
+                    Directory.Move(old_dir, temp);
+                }
+                catch (Exception x)
+                {
+                    Console.WriteLine(x.Message);
+                    if (x.Message.ToLower().Contains("denied"))
+                    {
+                        iDevices.Final().Wait();
+                        goto RE;
+                    }
+                }
+                return temp;
+            }).ContinueWith((md) =>
+            {
+                if (md.IsCompleted)
+                {
+                    Log(old_dir + " => " + md.Result + " successed!", "!", "info");
+                    helper = true;
+                }
+            });
+        }
+
         private Task StartActionsProcess(string folder, string keyword, string date, bool isRetry = false)
         {
             helper = false;
@@ -830,7 +802,15 @@ namespace GUX
                             directoryTask.Wait();
                             Thread.Sleep(5000);
                             //Task.Delay(10000).Wait();
-                            //Exec("TASKKILL /IM MEmuConsole.exe && Start MEmuSVC.exe").Wait();
+                            Exec("TASKKILL /T /F /IM MEmuConsole.exe /IM MEmu.exe /IM MEmuSVC.exe /IM MEmuHeadless.exe").Wait();
+
+                            iDevices.Invoke((MethodInvoker)delegate
+                            {
+                                iDevices.currentDirectory = folder;
+                                iDevices.actionsLogFile = actionsLogFile;
+                                iDevices.errorsLogFile = errorsLogFile;
+                                iDevices.blockedLogFile = blockedLogFile;
+                            });
                         }
                         catch (Exception x)
                         {
@@ -844,6 +824,7 @@ namespace GUX
                 if (!alreadyExists)
                 {
                     _CancellationTokenSource = new CancellationTokenSource();
+                    iDevices.token = _CancellationTokenSource.Token;
                     LV.Invoke((MethodInvoker)async delegate
                     {
                         try
@@ -903,7 +884,7 @@ namespace GUX
                                         try
                                         {
                                             await Task.Delay(inter);
-                                            await StartDevice(index).ContinueWith((st) =>
+                                            await iDevices.AttachDevice(index).ContinueWith((st) =>
                                             {
                                                 st.Wait();
                                                 if (st.IsCompleted)
@@ -911,7 +892,7 @@ namespace GUX
                                                     if (st.Result)
                                                     {
                                                         stopWatch.Start();
-                                                        SortWin();
+                                                        //iDevices.Fit();
                                                         var deviceStopWatch = new Stopwatch();
                                                         deviceStopWatch.Start();
 
@@ -948,7 +929,7 @@ namespace GUX
                                                                 {
                                                                     if (td.Status == TaskStatus.Canceled)
                                                                         return;
-                                                                    SortWin();
+                                                                    //iDevices.Fit();
                                                                     Log("Test Driver : " + td.Result, index, "info");
                                                                     if (td.Result)
                                                                     {
@@ -967,14 +948,14 @@ namespace GUX
                                                                         var spm = _gunit.SpamProcess(Globals.DEFAULT_SCENARIO.keyword, Globals.DEFAULT_SCENARIO.date).ContinueWith((sp) =>
                                                                         {
                                                                             //sp.Wait();
-                                                                            SortWin();
+                                                                            //iDevices.Fit();
                                                                             if (sp.IsCompleted)
                                                                             {
                                                                                 if (sp.Status == TaskStatus.Canceled)
                                                                                     return;
                                                                                 if (sp.Result.ToString() == "spam actions successed!")
                                                                                 {
-                                                                                    SortWin();
+                                                                                    //iDevices.Fit();
                                                                                     if (Globals.WARMUP_PROCEED_INBOX_FOLDER)
                                                                                     {
                                                                                         _gunit.actionRetries = Globals.FAILED_ACTION_MAX_RETRIES;
@@ -997,10 +978,10 @@ namespace GUX
                                                                                                         _gunit.Dispose();
                                                                                                     }
 
-                                                                                                    SortWin();
+                                                                                                    //iDevices.Fit();
 
                                                                                                     Log("inbox actions failed!", index, "error");
-                                                                                                    SortWin();
+                                                                                                    //iDevices.Fit();
                                                                                                     return;
                                                                                                 }
                                                                                                 else
@@ -1020,7 +1001,7 @@ namespace GUX
                                                                                                         _gunit.Dispose();
                                                                                                     }
 
-                                                                                                    SortWin();
+                                                                                                    //iDevices.Fit();
                                                                                                 }
                                                                                             }
                                                                                         });
@@ -1037,7 +1018,7 @@ namespace GUX
                                                                                         {
                                                                                             _gunit.Dispose();
                                                                                         }
-                                                                                        SortWin();
+                                                                                        //iDevices.Fit();
                                                                                     }
                                                                                 }
                                                                                 else
@@ -1053,7 +1034,7 @@ namespace GUX
                                                                                     }
 
                                                                                     Log("spam actions failed!", index, "error");
-                                                                                    SortWin();
+                                                                                    //iDevices.Fit();
                                                                                     return;
                                                                                 }
                                                                             }
@@ -1074,7 +1055,7 @@ namespace GUX
                                                                         {
                                                                             _gunit.Dispose();
                                                                         }
-                                                                        SortWin();
+                                                                        //iDevices.Fit();
 
                                                                         return;
                                                                     }
@@ -1134,36 +1115,31 @@ namespace GUX
                                         try
                                         {
                                             Log("DONE", "!", "info");
-                                            fctbErrors.BeginInvoke((MethodInvoker)delegate
-                                            {
-                                                StopFileWatcher();
-                                                if (fctbErrors.Text.Length > 0)
+                                            if (Globals.FAILED_AUTO_RETRY)
+                                                fctbErrors.BeginInvoke((MethodInvoker)delegate
                                                 {
-                                                    helper = false;
-                                                    BeginInvoke((MethodInvoker)delegate
+                                                    StopFileWatcher();
+                                                    if (fctbErrors.Text.Length > 0)
                                                     {
-                                                        FailedWarmupTasksRetryButton.Tag = folder;
-                                                        FailedWarmupTasksRetryButton.PerformClick();
-                                                        maxRetries--;
-                                                    });
-                                                }
-                                                else
-                                                {
-                                                    var directoryTask = Task.Factory.StartNew(() =>
-                                                    {
-                                                        temp = drive + directory + DateTime.Now.ToBinary().ToString();
-                                                        Directory.Move(_directory, temp);
-                                                    }).ContinueWith((md) =>
-                                                    {
-                                                        if (md.IsCompleted)
+                                                        helper = false;
+                                                        BeginInvoke((MethodInvoker)delegate
                                                         {
-                                                            Log(_directory + " => " + temp + " successed!", "!", "info");
-                                                            helper = true;
-                                                        }
-                                                    });
-                                                    directoryTask.Wait();
-                                                }
-                                            });
+                                                            FailedWarmupTasksRetryButton.Tag = folder;
+                                                            FailedWarmupTasksRetryButton.PerformClick();
+                                                            maxRetries--;
+                                                        });
+                                                    }
+                                                    else
+                                                    {
+                                                        helper = true;
+                                                        return;
+                                                    }
+                                                });
+                                            else
+                                            {
+                                                helper = true;
+                                                return;
+                                            }
                                         }
                                         catch (Exception x)
                                         {
@@ -1263,7 +1239,15 @@ namespace GUX
                             directoryTask.Wait();
                             Thread.Sleep(5000);
                             //Task.Delay(10000).Wait();
-                            //Exec("TASKKILL /IM MEmuConsole.exe && Start MEmuSVC.exe").Wait();
+                            Exec("TASKKILL /T /F /IM MEmuConsole.exe /IM MEmu.exe /IM MEmuSVC.exe /IM MEmuHeadless.exe").Wait();
+
+                            iDevices.Invoke((MethodInvoker)delegate
+                            {
+                                iDevices.currentDirectory = folder;
+                                iDevices.actionsLogFile = actionsLogFile;
+                                iDevices.errorsLogFile = errorsLogFile;
+                                iDevices.blockedLogFile = blockedLogFile;
+                            });
                         }
                         catch (Exception x)
                         {
@@ -1277,6 +1261,7 @@ namespace GUX
                 if (!alreadyExists)
                 {
                     _CancellationTokenSource = new CancellationTokenSource();
+                    iDevices.token = _CancellationTokenSource.Token;
                     LV.Invoke((MethodInvoker)async delegate
                     {
                         try
@@ -1335,7 +1320,7 @@ namespace GUX
                                         try
                                         {
                                             await Task.Delay(inter);
-                                            await StartDevice(index).ContinueWith((st) =>
+                                            await iDevices.AttachDevice(index).ContinueWith((st) =>
                                             {
                                                 st.Wait();
                                                 if (st.IsCompleted)
@@ -1343,7 +1328,7 @@ namespace GUX
                                                     if (st.Result)
                                                     {
                                                         stopWatch.Start();
-                                                        SortWin();
+                                                        //iDevices.Fit();
                                                         var deviceStopWatch = new Stopwatch();
                                                         deviceStopWatch.Start();
 
@@ -1380,7 +1365,7 @@ namespace GUX
                                                                 {
                                                                     if (td.Status == TaskStatus.Canceled)
                                                                         return;
-                                                                    SortWin();
+                                                                    //iDevices.Fit();
                                                                     Log("Test Driver : " + td.Result, index, "info");
                                                                     if (td.Result)
                                                                     {
@@ -1399,14 +1384,14 @@ namespace GUX
                                                                         var ptk = _gunit.SetupProxy(proxy[0], proxy.Count() > 1 ? Convert.ToInt16(proxy[1]) : 92).ContinueWith((pt) =>
                                                                         {
                                                                             //pt.Wait();
-                                                                            SortWin();
+                                                                            //iDevices.Fit();
                                                                             if (pt.IsCompleted)
                                                                             {
                                                                                 if (pt.Status == TaskStatus.Canceled)
                                                                                     return;
                                                                                 if (pt.Result.ToString() == "setup proxy successed!")
                                                                                 {
-                                                                                    SortWin();
+                                                                                    //iDevices.Fit();
                                                                                     _gunit.actionRetries = Globals.FAILED_ACTION_MAX_RETRIES;
                                                                                     var sitk = _gunit.SignIn(new string[] { seeds["email"].ToString(), seeds["password"].ToString(), seeds["recovery"].ToString() }).ContinueWith((sit) =>
                       {
@@ -1427,7 +1412,7 @@ namespace GUX
                                   }
 
                                   Log("signin failed!", index, "error");
-                                  SortWin();
+                                  //iDevices.Fit();
                                   return;
                               }
                               else
@@ -1436,7 +1421,7 @@ namespace GUX
                                   Log(string.Format("setup done! [{0:D2}:{1:D2}:{2:D3}]", stp.Minutes, stp.Seconds, stp.Milliseconds), index, "info");
                                   stopWatch.Stop();
                                   stopWatch.Reset();
-                                  SortWin();
+                                  //iDevices.Fit();
                                   if (Globals.WARMUP_AUTORUN)
                                   {
                                       _gunit.actionRetries = Globals.FAILED_ACTION_MAX_RETRIES;
@@ -1444,14 +1429,14 @@ namespace GUX
                                       var spm = _gunit.SpamProcess(Globals.DEFAULT_SCENARIO.keyword, Globals.DEFAULT_SCENARIO.date).ContinueWith((sp) =>
                                       {
                                           //sp.Wait();
-                                          SortWin();
+                                          //iDevices.Fit();
                                           if (sp.IsCompleted)
                                           {
                                               if (sp.Status == TaskStatus.Canceled)
                                                   return;
                                               if (sp.Result.ToString() == "spam actions successed!")
                                               {
-                                                  SortWin();
+                                                  //iDevices.Fit();
                                                   if (Globals.WARMUP_PROCEED_INBOX_FOLDER)
                                                   {
                                                       _gunit.actionRetries = Globals.FAILED_ACTION_MAX_RETRIES;
@@ -1464,16 +1449,10 @@ namespace GUX
                                                               return;
                                                           if (inb.Result.ToString() != "inbox actions successed!")
                                                           {
-                                                              if (timer != null)
-                                                              {
-                                                                  timer.Dispose();
-                                                              }
-                                                              if (_gunit != null)
-                                                              {
-                                                                  _gunit.Dispose();
-                                                              }
+                                                              timer?.Dispose();
+                                                              _gunit?.Dispose();
                                                               Log("inbox actions failed!", index, "error");
-                                                              SortWin();
+                                                              //iDevices.Fit();
                                                               return;
                                                           }
                                                           else
@@ -1482,16 +1461,9 @@ namespace GUX
                                                               Log(string.Format("warmup done! [{0:D2}:{1:D2}:{2:D3}]", wstp.Minutes, wstp.Seconds, wstp.Milliseconds), index, "info");
                                                               stopWatch.Stop();
                                                               stopWatch.Reset();
-                                                              if (timer != null)
-                                                              {
-                                                                  timer.Dispose();
-                                                              }
-
-                                                              if (_gunit != null)
-                                                              {
-                                                                  _gunit.Dispose();
-                                                              }
-                                                              SortWin();
+                                                              timer?.Dispose();
+                                                              _gunit?.Dispose();
+                                                              //iDevices.Fit();
                                                           }
                                                       }
                                                   });
@@ -1499,31 +1471,17 @@ namespace GUX
                                                   }
                                                   else
                                                   {
-                                                      if (timer != null)
-                                                      {
-                                                          timer.Dispose();
-                                                      }
-
-                                                      if (_gunit != null)
-                                                      {
-                                                          _gunit.Dispose();
-                                                      }
-                                                      SortWin();
+                                                      timer?.Dispose();
+                                                      _gunit?.Dispose();
+                                                      //iDevices.Fit();
                                                   }
                                               }
                                               else
                                               {
                                                   Log("spam actions failed!", index, "error");
-                                                  if (timer != null)
-                                                  {
-                                                      timer.Dispose();
-                                                  }
-
-                                                  if (_gunit != null)
-                                                  {
-                                                      _gunit.Dispose();
-                                                  }
-                                                  SortWin();
+                                                  timer?.Dispose();
+                                                  _gunit?.Dispose();
+                                                  //iDevices.Fit();
                                                   return;
                                               }
                                           }
@@ -1532,34 +1490,21 @@ namespace GUX
                                   }
                                   else
                                   {
-                                      if (timer != null)
-                                      {
-                                          timer.Dispose();
-                                      }
-
-                                      if (_gunit != null)
-                                      {
-                                          _gunit.Dispose();
-                                      }
-                                      SortWin();
+                                      timer?.Dispose();
+                                      _gunit?.Dispose();
+                                      //iDevices.Fit();
                                   }
                               }
                           }
                       });
-                                                                                    if (sitk != null && (sitk.Status == TaskStatus.RanToCompletion || sitk.Status != TaskStatus.Running)) sitk.Wait();
+                                                                                    if (sitk != null && (sitk.Status == TaskStatus.RanToCompletion || sitk.Status != TaskStatus.Running))
+                                                                                        sitk.Wait();
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    if (timer != null)
-                                                                                    {
-                                                                                        timer.Dispose();
-                                                                                    }
-
-                                                                                    if (_gunit != null)
-                                                                                    {
-                                                                                        _gunit.Dispose();
-                                                                                    }
-                                                                                    SortWin();
+                                                                                    timer?.Dispose();
+                                                                                    _gunit?.Dispose();
+                                                                                    //iDevices.Fit();
                                                                                     Log("proxy setup failed!", index, "error");
                                                                                     return;
                                                                                 }
@@ -1571,16 +1516,9 @@ namespace GUX
                                                                     {
                                                                         Log("driver timedout!", index, "error");
                                                                         stopWatch.Stop();
-                                                                        if (timer != null)
-                                                                        {
-                                                                            timer.Dispose();
-                                                                        }
-
-                                                                        if (_gunit != null)
-                                                                        {
-                                                                            _gunit.Dispose();
-                                                                        }
-                                                                        SortWin(); return;
+                                                                        timer?.Dispose();
+                                                                        _gunit?.Dispose();
+                                                                        //iDevices.Fit(); return;
                                                                     }
                                                                 }
                                                             });
@@ -1595,15 +1533,8 @@ namespace GUX
                                                 if (tt.IsCompleted)
                                                 {
                                                     _gunit.KillDriver();
-                                                    if (timer != null)
-                                                    {
-                                                        timer.Dispose();
-                                                    }
-
-                                                    if (_gunit != null)
-                                                    {
-                                                        _gunit.Dispose();
-                                                    }
+                                                    timer?.Dispose();
+                                                    _gunit?.Dispose();
                                                     var svm = StopVM(index);
                                                     svm.Wait();
                                                 }
@@ -1613,15 +1544,8 @@ namespace GUX
                                         }
                                         catch (Exception c)
                                         {
-                                            if (timer != null)
-                                            {
-                                                timer.Dispose();
-                                            }
-
-                                            if (_gunit != null)
-                                            {
-                                                _gunit.Dispose();
-                                            }
+                                            timer?.Dispose();
+                                            _gunit?.Dispose();
                                             Console.WriteLine(c.Message);
                                             return;
                                         }
@@ -1637,37 +1561,31 @@ namespace GUX
                                         try
                                         {
                                             Log("DONE", "!", "info");
-
-                                            fctbErrors.BeginInvoke((MethodInvoker)delegate
-                                            {
-                                                StopFileWatcher();
-                                                if (fctbErrors.Text.Length > 0)
+                                            if (Globals.FAILED_AUTO_RETRY)
+                                                fctbErrors.BeginInvoke((MethodInvoker)delegate
                                                 {
-                                                    helper = false;
-                                                    BeginInvoke((MethodInvoker)delegate
+                                                    StopFileWatcher();
+                                                    if (fctbErrors.Text.Length > 0)
                                                     {
-                                                        FailedTasksRetryButton.Tag = folder;
-                                                        FailedTasksRetryButton.PerformClick();
-                                                        maxRetries--;
-                                                    });
-                                                }
-                                                else
-                                                {
-                                                    var directoryTask = Task.Factory.StartNew(() =>
-                                                    {
-                                                        temp = drive + directory + DateTime.Now.ToBinary().ToString();
-                                                        Directory.Move(_directory, temp);
-                                                    }).ContinueWith((md) =>
-                                                    {
-                                                        if (md.IsCompleted)
+                                                        helper = false;
+                                                        BeginInvoke((MethodInvoker)delegate
                                                         {
-                                                            Log(_directory + " => " + temp + " successed!", "!", "info");
-                                                            helper = true;
-                                                        }
-                                                    });
-                                                    directoryTask.Wait();
-                                                }
-                                            });
+                                                            FailedTasksRetryButton.Tag = folder;
+                                                            FailedTasksRetryButton.PerformClick();
+                                                            maxRetries--;
+                                                        });
+                                                    }
+                                                    else
+                                                    {
+                                                        helper = true;
+                                                        return;
+                                                    }
+                                                });
+                                            else
+                                            {
+                                                helper = true;
+                                                return;
+                                            }
                                         }
                                         catch (Exception x)
                                         {
@@ -1767,7 +1685,15 @@ namespace GUX
                             directoryTask.Wait();
                             Thread.Sleep(5000);
                             //Task.Delay(10000).Wait();
-                            //Exec("TASKKILL /IM MEmuConsole.exe && Start MEmuSVC.exe").Wait();
+                            Exec("TASKKILL /T /F /IM MEmuConsole.exe /IM MEmu.exe /IM MEmuSVC.exe /IM MEmuHeadless.exe").Wait();
+
+                            iDevices.Invoke((MethodInvoker)delegate
+                            {
+                                iDevices.currentDirectory = folder;
+                                iDevices.actionsLogFile = actionsLogFile;
+                                iDevices.errorsLogFile = errorsLogFile;
+                                iDevices.blockedLogFile = blockedLogFile;
+                            });
                         }
                         catch (Exception x)
                         {
@@ -1781,6 +1707,7 @@ namespace GUX
                 if (!alreadyExists)
                 {
                     _CancellationTokenSource = new CancellationTokenSource();
+                    iDevices.token = _CancellationTokenSource.Token;
                     LV.Invoke((MethodInvoker)async delegate
                     {
                         try
@@ -1837,7 +1764,7 @@ namespace GUX
                                         try
                                         {
                                             await Task.Delay(inter);
-                                            await StartDevice(index).ContinueWith((st) =>
+                                            await iDevices.AttachDevice(index).ContinueWith((st) =>
                                             {
                                                 st.Wait();
                                                 if (st.IsCompleted)
@@ -1847,7 +1774,7 @@ namespace GUX
                                                     if (st.Result)
                                                     {
                                                         stopWatch.Start();
-                                                        SortWin();
+                                                        //iDevices.Fit();
                                                         var deviceStopWatch = new Stopwatch();
                                                         deviceStopWatch.Start();
 
@@ -1885,7 +1812,7 @@ namespace GUX
                                                                     if (td.Status == TaskStatus.Canceled)
                                                                         return;
 
-                                                                    SortWin();
+                                                                    //iDevices.Fit();
                                                                     Log("Test Driver : " + td.Result, index, "info");
                                                                     if (td.Result)
                                                                     {
@@ -1904,21 +1831,14 @@ namespace GUX
                                                                         var ptk = _gunit.CheckProcess().ContinueWith((pt) =>
                                                                         {
                                                                             //pt.Wait();
-                                                                            SortWin();
+                                                                            //iDevices.Fit();
                                                                             if (pt.IsCompleted)
                                                                             {
                                                                                 if (pt.Status == TaskStatus.Canceled)
                                                                                     return;
-                                                                                if (timer != null)
-                                                                                {
-                                                                                    timer.Dispose();
-                                                                                }
-
-                                                                                if (_gunit != null)
-                                                                                {
-                                                                                    _gunit.Dispose();
-                                                                                }
-                                                                                SortWin();
+                                                                                timer?.Dispose();
+                                                                                _gunit?.Dispose();
+                                                                                //iDevices.Fit();
                                                                                 return;
                                                                             }
                                                                         });
@@ -1928,16 +1848,9 @@ namespace GUX
                                                                     {
                                                                         Log("driver timedout!", index, "error");
                                                                         stopWatch.Stop();
-                                                                        if (timer != null)
-                                                                        {
-                                                                            timer.Dispose();
-                                                                        }
-
-                                                                        if (_gunit != null)
-                                                                        {
-                                                                            _gunit.Dispose();
-                                                                        }
-                                                                        SortWin();
+                                                                        timer?.Dispose();
+                                                                        _gunit?.Dispose();
+                                                                        //iDevices.Fit();
                                                                         return;
                                                                     }
                                                                 }
@@ -1946,22 +1859,15 @@ namespace GUX
                                                         }
                                                     }
                                                 }
-                                            });
+                                            }, _CancellationTokenSource.Token);
                                             await Task.Delay(1500).ContinueWith((tt) =>
                                             {
                                                 tt.Wait();
                                                 if (tt.IsCompleted)
                                                 {
                                                     _gunit.KillDriver();
-                                                    if (timer != null)
-                                                    {
-                                                        timer.Dispose();
-                                                    }
-
-                                                    if (_gunit != null)
-                                                    {
-                                                        _gunit.Dispose();
-                                                    }
+                                                    timer?.Dispose();
+                                                    _gunit?.Dispose();
                                                     var svm = StopVM(index);
                                                     svm.Wait();
                                                 }
@@ -1971,15 +1877,8 @@ namespace GUX
                                         }
                                         catch (Exception c)
                                         {
-                                            if (timer != null)
-                                            {
-                                                timer.Dispose();
-                                            }
-
-                                            if (_gunit != null)
-                                            {
-                                                _gunit.Dispose();
-                                            }
+                                            timer?.Dispose();
+                                            _gunit?.Dispose();
                                             Console.WriteLine(c.Message);
                                             return;
                                         }
@@ -1995,37 +1894,31 @@ namespace GUX
                                         try
                                         {
                                             Log("DONE", "!", "info");
-
-                                            fctbErrors.BeginInvoke((MethodInvoker)delegate
-                                            {
-                                                StopFileWatcher();
-                                                if (fctbErrors.Text.Length > 0)
+                                            if (Globals.FAILED_AUTO_RETRY)
+                                                fctbErrors.BeginInvoke((MethodInvoker)delegate
                                                 {
-                                                    helper = false;
-                                                    BeginInvoke((MethodInvoker)delegate
+                                                    StopFileWatcher();
+                                                    if (fctbErrors.Text.Length > 0)
                                                     {
-                                                        FailedCheckTasksRetryButton.Tag = folder;
-                                                        FailedCheckTasksRetryButton.PerformClick();
-                                                        maxRetries--;
-                                                    });
-                                                }
-                                                else
-                                                {
-                                                    var directoryTask = Task.Factory.StartNew(() =>
-                                                    {
-                                                        temp = drive + directory + DateTime.Now.ToBinary().ToString();
-                                                        Directory.Move(_directory, temp);
-                                                    }).ContinueWith((md) =>
-                                                    {
-                                                        if (md.IsCompleted)
+                                                        helper = false;
+                                                        BeginInvoke((MethodInvoker)delegate
                                                         {
-                                                            Log(_directory + " => " + temp + " successed!", "!", "info");
-                                                            helper = true;
-                                                        }
-                                                    });
-                                                    directoryTask.Wait();
-                                                }
-                                            });
+                                                            FailedCheckTasksRetryButton.Tag = folder;
+                                                            FailedCheckTasksRetryButton.PerformClick();
+                                                            maxRetries--;
+                                                        });
+                                                    }
+                                                    else
+                                                    {
+                                                        helper = true;
+                                                        return;
+                                                    }
+                                                });
+                                            else
+                                            {
+                                                helper = true;
+                                                return;
+                                            }
                                         }
                                         catch (Exception x)
                                         {
@@ -2125,7 +2018,15 @@ namespace GUX
                             directoryTask.Wait();
                             Thread.Sleep(5000);
                             //Task.Delay(10000).Wait();
-                            //Exec("TASKKILL /IM MEmuConsole.exe && Start MEmuSVC.exe").Wait();
+                            Exec("TASKKILL /T /F /IM MEmuConsole.exe /IM MEmu.exe /IM MEmuSVC.exe /IM MEmuHeadless.exe").Wait();
+
+                            iDevices.Invoke((MethodInvoker)delegate
+                            {
+                                iDevices.currentDirectory = folder;
+                                iDevices.actionsLogFile = actionsLogFile;
+                                iDevices.errorsLogFile = errorsLogFile;
+                                iDevices.blockedLogFile = blockedLogFile;
+                            });
                         }
                         catch (Exception x)
                         {
@@ -2139,6 +2040,7 @@ namespace GUX
                 if (!alreadyExists)
                 {
                     _CancellationTokenSource = new CancellationTokenSource();
+                    iDevices.token = _CancellationTokenSource.Token;
                     LV.Invoke((MethodInvoker)async delegate
                     {
                         try
@@ -2195,7 +2097,7 @@ namespace GUX
                                         try
                                         {
                                             await Task.Delay(inter);
-                                            await StartDevice(index).ContinueWith((st) =>
+                                            await iDevices.AttachDevice(index).ContinueWith((st) =>
                                             {
                                                 st.Wait();
                                                 if (st.IsCompleted)
@@ -2203,7 +2105,7 @@ namespace GUX
                                                     if (st.Result)
                                                     {
                                                         stopWatch.Start();
-                                                        SortWin();
+                                                        //iDevices.Fit();
                                                         var deviceStopWatch = new Stopwatch();
                                                         deviceStopWatch.Start();
 
@@ -2239,31 +2141,17 @@ namespace GUX
                                                             {
                                                                 if (td.IsCompleted)
                                                                 {
-                                                                    if (timer != null)
-                                                                    {
-                                                                        timer.Dispose();
-                                                                    }
-
-                                                                    if (_gunit != null)
-                                                                    {
-                                                                        _gunit.Dispose();
-                                                                    }
-                                                                    SortWin();
+                                                                    timer?.Dispose();
+                                                                    _gunit?.Dispose();
+                                                                    //iDevices.Fit();
                                                                     Log("Test Driver : " + td.Result, index, "info");
                                                                     if (!td.Result)
                                                                     {
                                                                         Log("driver timedout!", index, "error", true);
                                                                         stopWatch.Stop();
-                                                                        if (timer != null)
-                                                                        {
-                                                                            timer.Dispose();
-                                                                        }
-
-                                                                        if (_gunit != null)
-                                                                        {
-                                                                            _gunit.Dispose();
-                                                                        }
-                                                                        SortWin();
+                                                                        timer?.Dispose();
+                                                                        _gunit?.Dispose();
+                                                                        //iDevices.Fit();
                                                                         return;
                                                                     }
                                                                 }
@@ -2272,22 +2160,16 @@ namespace GUX
                                                         }
                                                     }
                                                 }
-                                            });
+                                            }, _CancellationTokenSource.Token);
+
                                             await Task.Delay(1500).ContinueWith((tt) =>
                                             {
                                                 tt.Wait();
                                                 if (tt.IsCompleted)
                                                 {
                                                     _gunit.KillDriver();
-                                                    if (timer != null)
-                                                    {
-                                                        timer.Dispose();
-                                                    }
-
-                                                    if (_gunit != null)
-                                                    {
-                                                        _gunit.Dispose();
-                                                    }
+                                                    timer?.Dispose();
+                                                    _gunit?.Dispose();
                                                     var svm = StopVM(index);
                                                     svm.Wait();
                                                 }
@@ -2297,15 +2179,8 @@ namespace GUX
                                         }
                                         catch (Exception c)
                                         {
-                                            if (timer != null)
-                                            {
-                                                timer.Dispose();
-                                            }
-
-                                            if (_gunit != null)
-                                            {
-                                                _gunit.Dispose();
-                                            }
+                                            timer?.Dispose();
+                                            _gunit?.Dispose();
                                             Console.WriteLine(c.Message);
                                             return;
                                         }
@@ -2321,238 +2196,8 @@ namespace GUX
                                         try
                                         {
                                             Log("DONE", "!", "info");
-                                            var directoryTask = Task.Factory.StartNew(() =>
-                                            {
-                                                temp = drive + directory + DateTime.Now.ToBinary().ToString();
-                                                Directory.Move(_directory, temp);
-                                            }).ContinueWith((md) =>
-                                            {
-                                                if (md.IsCompleted)
-                                                {
-                                                    Log(_directory + " => " + temp + " successed!", "!", "info");
-                                                    helper = true;
-                                                }
-                                            });
-                                            directoryTask.Wait();
-                                        }
-                                        catch (Exception x)
-                                        {
-                                            Log(x.Message, "?", "error");
                                             helper = true;
                                             return;
-                                        }
-                                    }
-                                });
-                            }
-                        }
-                        catch (Exception x)
-                        {
-                            Console.WriteLine(x.Message);
-                            helper = true;
-                            return;
-                        }
-                    });
-                }
-                end:
-                Console.WriteLine("End Process");
-            });
-        }
-
-        private Task StartCloneProcess(string folder, bool isRetry = false)
-        {
-            helper = false;
-            var exceptions = new List<string>();
-
-            var LV = iStackPanel.Controls.OfType<iLV>().Single(l => l.Tag.ToString() == folder);
-
-            var targets = LV.CheckedIndices;
-            var actionPath = Application.StartupPath + "\\Actions Logs\\" + actionsLogFile;
-            var errorPath = Application.StartupPath + "\\Error Logs\\" + errorsLogFile;
-            var disabledPath = Application.StartupPath + "\\Disabled Logs\\" + disabledLogFile;
-            var blockedPath = Application.StartupPath + "\\Blocked Logs\\" + blockedLogFile;
-            var threadsCon = Globals.THREADS_CONCURRENCY;
-            var inter = Globals.THREADS_INTERVAL * 1000;
-
-            var drive = Globals.DRIVE_LETTER + @":\My Drive\";
-            var directory = folder;
-            var _directory = drive + Globals.VMS_DIRECTORY;
-            var temp = "";
-
-            return Task.Factory.StartNew(() =>
-            {
-                if (!isRetry)
-                {
-                    if (!Directory.Exists(drive))
-                    {
-                        Log("Directory " + drive + " not found!", "!!", "error");
-                        helper = true;
-                        goto end;
-                    }
-                    var folders = Directory.GetDirectories(drive).Where(d => d.Contains(directory));
-                    if (folders.Count() == 0)
-                    {
-                        Log("Directory " + directory + " not found!", "!!", "error");
-                        helper = true;
-                        goto end;
-                    }
-                    else
-                    {
-                        try
-                        {
-                            temp = folders.First();
-
-                            var directoryTask = Task.Factory.StartNew(() =>
-                            {
-                                if (!Directory.Exists(_directory))
-                                {
-                                    Directory.Move(temp, _directory);
-                                    Log(temp + " => " + _directory + " successed!", "!", "info");
-                                }
-                                else
-                                {
-                                    alreadyExists = true;
-                                    Log("Directory " + _directory + " already exists!", "!", "error");
-                                    helper = true;
-                                }
-                            }).ContinueWith((md) =>
-                            {
-                                if (md.IsCompleted)
-                                {
-                                    if (!alreadyExists)
-                                    {
-                                        var exec = Exec("TASKKILL /T /F /IM MEmuConsole.exe /IM MEmuSVC.exe /IM MEmuHeadless.exe & START /MIN MEmuConsole.exe");
-                                        exec.Wait();
-                                        if (exec.IsCompleted)
-                                        {
-                                            Task.Delay(3000).Wait();
-                                        }
-                                    }
-                                }
-                            });
-
-                            directoryTask.Wait();
-                            Thread.Sleep(5000);
-                            //Task.Delay(10000).Wait();
-                            //Exec("TASKKILL /IM MEmuConsole.exe && Start MEmuSVC.exe").Wait();
-                        }
-                        catch (Exception x)
-                        {
-                            Log(x.Message, "?", "error");
-                            helper = true;
-                            goto end;
-                        }
-                    }
-                }
-
-                if (!alreadyExists)
-                {
-                    _CancellationTokenSource = new CancellationTokenSource();
-                    LV.Invoke((MethodInvoker)async delegate
-                    {
-                        try
-                        {
-                            if (maxRetries == 0)
-                            {
-                                var directoryTask = Task.Factory.StartNew(() =>
-                                {
-                                    temp = drive + directory + DateTime.Now.ToBinary().ToString();
-                                    Directory.Move(_directory, temp);
-                                }).ContinueWith((md) =>
-                                {
-                                    if (md.IsCompleted)
-                                    {
-                                        Log(_directory + " => " + temp + " successed!", "!", "info");
-                                        helper = true;
-                                    }
-                                });
-                                directoryTask.Wait();
-                                return;
-                            }
-                            else
-                            {
-                                _AsyncBulkheadPolicy = Policy.BulkheadAsync(1, Int32.MaxValue);
-                                TasksList = new List<Task>();
-                                var ui = TaskScheduler.FromCurrentSynchronizationContext();
-                                foreach (var item in targets)
-                                {
-                                    var t = _AsyncBulkheadPolicy.ExecuteAsync(async () =>
-                                    {
-                                        try
-                                        {
-                                            //await Task.Delay(inter);
-                                            await CloneDevice().ContinueWith((cd) =>
-                                            {
-                                                cd.Wait();
-                                                if (cd.IsCompleted)
-                                                {
-                                                    if (cd.Result)
-                                                        Log("device build successed!", "+", "info");
-                                                    else
-                                                        Log("device build failed!", "!", "error");
-                                                }
-                                            });
-                                            return;
-                                        }
-                                        catch (Exception c)
-                                        {
-                                            Console.WriteLine(c.Message);
-                                            return;
-                                        }
-                                    });
-                                    TasksList.Add(t);
-                                    await Task.Delay(inter);
-                                }
-                                var _tasks = Task.WhenAll(TasksList);
-                                await _tasks.ContinueWith((_t) =>
-                                {
-                                    if (_t.IsCompleted)
-                                    {
-                                        try
-                                        {
-                                            Log("DONE", "!", "info");
-                                            var directoryTask = Task.Factory.StartNew(() =>
-                                            {
-                                                temp = drive + directory + DateTime.Now.ToBinary().ToString();
-                                                Directory.Move(_directory, temp);
-                                            }).ContinueWith((md) =>
-                                            {
-                                                if (md.IsCompleted)
-                                                {
-                                                    Log(_directory + " => " + temp + " successed!", "!", "info");
-                                                    helper = true;
-                                                }
-                                            });
-                                            directoryTask.Wait();
-                                            /*fctbErrors.BeginInvoke((MethodInvoker)delegate
-                                            {
-                                                StopFileWatcher();
-                                                if (fctbErrors.Text.Length > 0)
-                                                {
-                                                    helper = false;
-                                                    BeginInvoke((MethodInvoker)delegate
-                                                    {
-                                                        FailedTasksRetryButton.Tag = folder;
-                                                        FailedTasksRetryButton.PerformClick();
-                                                        maxRetries--;
-                                                    });
-                                                }
-                                                else
-                                                {
-                                                    var directoryTask = Task.Factory.StartNew(() =>
-                                                    {
-                                                        temp = drive + directory + DateTime.Now.ToBinary().ToString();
-                                                        Directory.Move(_directory, temp);
-                                                    }).ContinueWith((md) =>
-                                                    {
-                                                        if (md.IsCompleted)
-                                                        {
-                                                            Log(_directory + " => " + temp + " successed!", "!", "info");
-                                                            helper = true;
-                                                        }
-                                                    });
-                                                    directoryTask.Wait();
-                                                }
-                                            });*/
                                         }
                                         catch (Exception x)
                                         {
@@ -2671,147 +2316,9 @@ namespace GUX
             });
         }
 
-        private Task<bool> StartDevice(string index)
-        {
-            return Task.Factory.StartNew(() =>
-            {
-                try
-                {
-                    var output = new List<string>();
-                    //var sw = new Stopwatch();
-                    var process = new Process
-                    {
-                        StartInfo = new ProcessStartInfo
-                        {
-                            FileName = "cmd.exe",
-                            Arguments = "/c memuc start -i " + index + " && memuc isvmrunning -i " + index + " && memuc adb -i " + index + " \"remount\"",
-                            UseShellExecute = false,
-                            RedirectStandardOutput = true,
-                            CreateNoWindow = true,
-                            RedirectStandardError = true
-                        }
-                    };
-
-                    process.Start();
-
-                    while (!process.StandardOutput.EndOfStream)
-                    {
-                        var line = process.StandardOutput.ReadLine();
-                        output.Add(line);
-                    }
-
-                    process.WaitForExit();
-                    if (output.Where(o => o.Trim() == "Running").Count() > 0)
-                    {
-                        Log("start device successed!", index, "info");
-                        return true;
-                    }
-                    else
-                    {
-                        Log("start device failed!", index, "error");
-                        return false;
-                    }
-                }
-                catch (Exception c)
-                {
-                    Console.WriteLine(c.Message);
-                    Log("start device failed!", index, "error");
-                    return false;
-                }
-            });
-        }
-
-        private Task RestartDevice(string index, string device)
-        {
-            return Task.Factory.StartNew(() =>
-            {
-                try
-                {
-                    var process = new Process
-                    {
-                        StartInfo = new ProcessStartInfo
-                        {
-                            FileName = "cmd.exe",
-                            Arguments = "/c adb disconnect " + device + " & memuc adb -i " + index + " \"remount\"",
-                            UseShellExecute = false,
-                            RedirectStandardOutput = true,
-                            CreateNoWindow = true
-                        }
-                    };
-
-                    process.Start();
-                    process.WaitForExit();
-                    Log("start device successed!", index, "info");
-                }
-                catch (Exception c)
-                {
-                    Console.WriteLine(c.Message);
-                    Log("start device failed!", index, "error");
-                }
-            });
-        }
-
-        private Task StopAll(bool log = true)
-        {
-            //currentIndex = Convert.ToInt16(index);
-            return Task.Factory.StartNew(() =>
-            {
-                try
-                {
-                    var process = new Process
-                    {
-                        StartInfo = new ProcessStartInfo
-                        {
-                            FileName = "cmd.exe",
-                            Arguments = "/c memuc stopall && TASKKILL /F /IM MEmuHeadless.exe",
-                            UseShellExecute = false,
-                            RedirectStandardOutput = true,
-                            CreateNoWindow = true
-                        }
-                    };
-
-                    process.Start();
-                    process.WaitForExit();
-                    if (log)
-                        Log("stop devices successed!", "!", "info");
-                }
-                catch (Exception c)
-                {
-                    Console.WriteLine(c.Message);
-                    if (log)
-                        Log("stop devices failed!", "!", "error");
-                }
-            });
-        }
-
         private Task StopVM(string index)
         {
-            return Task.Factory.StartNew(() =>
-            {
-                try
-                {
-                    var process = new Process
-                    {
-                        StartInfo = new ProcessStartInfo
-                        {
-                            FileName = "cmd.exe",
-                            Arguments = "/c memuc stop -i " + index,
-                            UseShellExecute = false,
-                            RedirectStandardOutput = true,
-                            CreateNoWindow = true
-                        }
-                    };
-
-                    process.Start();
-                    process.WaitForExit();
-                    Log("stop device completed!", index, "info");
-                }
-                catch (Exception c)
-                {
-                    Console.WriteLine(c.Message);
-                    Log("stop device failed!", index, "warning");
-                }
-            });
+            return iDevices.Stop(index);
         }
 
         private Task<List<string>> TakeLastLines(string text, int count)
@@ -2968,30 +2475,26 @@ namespace GUX
             try
             {
                 e.Cancel = true;
-                if (_CancellationTokenSource != null)
-                    _CancellationTokenSource.Cancel();
-                if (_AsyncBulkheadPolicy != null)
-                    _AsyncBulkheadPolicy.Dispose();
+                _CancellationTokenSource?.Cancel();
+                _AsyncBulkheadPolicy?.Dispose();
+
                 if (TasksList != null)
                 {
                     TasksList.Clear();
                     TasksList = null;
                 }
-                if (_Thread != null)
-                    if (_Thread.ThreadState == System.Threading.ThreadState.Running)
-                        _Thread.Abort();
 
-                if (_Service != null)
-                    _Service.StopAppium();
+                _Service?.StopAppium();
 
-                StopServer(false).Wait(500);
-                StopAll(false).Wait(1000);
-
+                StopServer(false).ConfigureAwait(false);
+                iDevices?.Stop().ConfigureAwait(false);
+                RenameFolder().ConfigureAwait(false);
                 Application.ExitThread();
             }
             catch (Exception c)
             {
                 Console.WriteLine(c.Message);
+                Application.ExitThread();
             }
         }
 
@@ -3410,7 +2913,37 @@ namespace GUX
                     await DirectoryChangedAsync();
                     break;
                 case "Start":
+                    if (!_Service.IsRunning())
+                    {
+                        var handle = SplashScreenManager.ShowOverlayForm(this, new DevExpress.XtraSplashScreen.OverlayWindowOptions()
+                        {
+                            SkinName = "Visual Studio 2013 Dark",
+                            FadeIn = true,
+                            FadeOut = true,
+                            Image = global::GUX.Properties.Resources.loader
+                        });
 
+                        await _Service.StartAppium().ContinueWith((sa) =>
+                        {
+                            if (sa.IsCompleted)
+                            {
+                                BeginInvoke((MethodInvoker)async delegate
+                                {
+                                    appiumServerStatus.ImageOptions.SvgImage = global::GUX.Properties.Resources.actions_checkcircled;
+                                    var img = new Bitmap(global::GUX.Properties.Resources.android_logo, new Size(24, 24));
+                                    BeginInvoke((MethodInvoker)delegate
+                                    {
+                                        iAlert.Show(this, "", "Server Running.", img);
+                                    });
+                                    await Task.Run(() =>
+                                    {
+                                        //toast.ShowNotification("b8c36c4b-00e7-4c8d-ad53-1aefa75929aa");
+                                        SplashScreenManager.CloseOverlayForm(handle);
+                                    });
+                                });
+                            }
+                        });
+                    }
                     break;
                 case "Install":
                     iPopupMenu.ShowPopup(iBarManager, new Point(MousePosition.X, MousePosition.Y));
@@ -3441,7 +2974,7 @@ namespace GUX
                                     currentDateFilter = date;
                                     currentKeyword = keyword;
                                     maxRetries = Globals.FAILED_MAX_RETRIES;
-                                    var t = StartActionsProcess(dir, keyword, date).ContinueWith((sp) =>
+                                    var t = StartActionsProcess(dir, keyword, date).ContinueWith(async (sp) =>
                                     {
                                         iStackPanel.BeginInvoke((MethodInvoker)delegate
                                         {
@@ -3458,6 +2991,7 @@ namespace GUX
                                             //
                                         }
                                         Log(dir + " task completed!", "!", "info");
+                                        await RenameFolder();
                                         iStackPanel.BeginInvoke((MethodInvoker)delegate
                                         {
                                             var lv = iStackPanel.Controls.OfType<iLV>().Single(l => l.PlainTextTitle == currentDirectory);
@@ -3507,7 +3041,7 @@ namespace GUX
                                     break;
                                 currentDirectory = dir;
                                 maxRetries = Globals.FAILED_MAX_RETRIES;
-                                var t = StartProcess(dir).ContinueWith((sp) =>
+                                var t = StartProcess(dir).ContinueWith(async (sp) =>
                                 {
                                     iStackPanel.BeginInvoke((MethodInvoker)delegate
                                     {
@@ -3524,6 +3058,7 @@ namespace GUX
                                         //
                                     }
                                     Log(dir + " task completed!", "!", "info");
+                                    await RenameFolder();
                                     iStackPanel.BeginInvoke((MethodInvoker)delegate
                                     {
                                         var lv = iStackPanel.Controls.OfType<iLV>().Single(l => l.PlainTextTitle == currentDirectory);
@@ -3562,11 +3097,9 @@ namespace GUX
                 case "Stop":
                     try
                     {
-                        if (_CancellationTokenSource != null)
-                            _CancellationTokenSource.Cancel();
+                        _CancellationTokenSource?.Cancel();
 
-                        if (_AsyncBulkheadPolicy != null)
-                            _AsyncBulkheadPolicy.Dispose();
+                        _AsyncBulkheadPolicy?.Dispose();
 
                         if (TasksList != null)
                         {
@@ -3574,13 +3107,18 @@ namespace GUX
                             TasksList = null;
                         }
 
-                        if (_Service != null)
-                            _Service.StopAppium();
+                        _Service?.StopAppium();
 
                         Globals.scheduleTasks.Clear();
                         Globals.SchServices.Dispose();
 
-                        await StopAll(false);
+                        //await StopAll(false);
+
+                        await iDevices?.Stop().ContinueWith(async (st) =>
+                        {
+                            if (st.IsCompleted)
+                                await RenameFolder();
+                        });
 
                         await StopServer().ContinueWith((ss) =>
                         {
@@ -3592,17 +3130,23 @@ namespace GUX
                                 });
                             }
                         });
+
+
                     }
                     catch (Exception c)
                     {
                         Console.WriteLine(c.Message);
                     }
                     break;
-                case "Sort":
-                    await SortWin();
+                case "Fit":
+                    await iDevices?.Fit();
                     break;
                 case "Close":
-                    await StopAll();
+                    await iDevices?.Stop().ContinueWith(async (st) =>
+                    {
+                        if (st.IsCompleted)
+                            await RenameFolder();
+                    });
                     break;
             }
         }
@@ -3852,7 +3396,7 @@ namespace GUX
                             break;
                         currentDirectory = dir;
                         maxRetries = Globals.FAILED_MAX_RETRIES;
-                        var t = StartCheckDriverProcess(dir).ContinueWith((sp) =>
+                        var t = StartCheckDriverProcess(dir).ContinueWith(async (sp) =>
                         {
                             iStackPanel.BeginInvoke((MethodInvoker)delegate
                             {
@@ -3869,6 +3413,7 @@ namespace GUX
                                 //
                             }
                             Log(dir + " task completed!", "!", "info");
+                            await RenameFolder();
                             iStackPanel.BeginInvoke((MethodInvoker)delegate
                             {
                                 var lv = iStackPanel.Controls.OfType<iLV>().Single(l => l.PlainTextTitle == currentDirectory);
@@ -3934,7 +3479,7 @@ namespace GUX
                             break;
                         currentDirectory = dir;
                         maxRetries = Globals.FAILED_MAX_RETRIES;
-                        var t = StartCheckProcess(dir).ContinueWith((sp) =>
+                        var t = StartCheckProcess(dir).ContinueWith(async (sp) =>
                         {
                             iStackPanel.BeginInvoke((MethodInvoker)delegate
                             {
@@ -3951,6 +3496,7 @@ namespace GUX
                                 //
                             }
                             Log(dir + " task completed!", "!", "info");
+                            await RenameFolder();
                             iStackPanel.BeginInvoke((MethodInvoker)delegate
                             {
                                 var lv = iStackPanel.Controls.OfType<iLV>().Single(l => l.PlainTextTitle == currentDirectory);
