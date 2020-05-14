@@ -125,6 +125,8 @@
             this.testDriverToNum = new DevExpress.XtraEditors.SpinEdit();
             this.portNum = new DevExpress.XtraEditors.SpinEdit();
             this.tablePanel2 = new DevExpress.Utils.Layout.TablePanel();
+            this.treatedInboxEmailsMaxNum = new DevExpress.XtraEditors.SpinEdit();
+            this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
             this.warmupInboxFolderSwitch = new XanderUI.XUISwitch();
             this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
@@ -265,6 +267,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.portNum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).BeginInit();
             this.tablePanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.treatedInboxEmailsMaxNum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.defaultScenarioGallery.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.failedActionsMaxRetriesNum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.threadsIntervalNum.Properties)).BeginInit();
@@ -1227,6 +1230,8 @@
             this.tablePanel2.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 30.92F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 29.08F)});
+            this.tablePanel2.Controls.Add(this.treatedInboxEmailsMaxNum);
+            this.tablePanel2.Controls.Add(this.labelControl23);
             this.tablePanel2.Controls.Add(this.warmupInboxFolderSwitch);
             this.tablePanel2.Controls.Add(this.labelControl22);
             this.tablePanel2.Controls.Add(this.labelControl11);
@@ -1260,7 +1265,43 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26F)});
+            // 
+            // treatedInboxEmailsMaxNum
+            // 
+            resources.ApplyResources(this.treatedInboxEmailsMaxNum, "treatedInboxEmailsMaxNum");
+            this.tablePanel2.SetColumn(this.treatedInboxEmailsMaxNum, 1);
+            this.treatedInboxEmailsMaxNum.Name = "treatedInboxEmailsMaxNum";
+            this.treatedInboxEmailsMaxNum.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("treatedInboxEmailsMaxNum.Properties.Appearance.Font")));
+            this.treatedInboxEmailsMaxNum.Properties.Appearance.Options.UseFont = true;
+            this.treatedInboxEmailsMaxNum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("treatedInboxEmailsMaxNum.Properties.Buttons"))))});
+            this.treatedInboxEmailsMaxNum.Properties.IsFloatValue = false;
+            this.treatedInboxEmailsMaxNum.Properties.Mask.EditMask = resources.GetString("treatedInboxEmailsMaxNum.Properties.Mask.EditMask");
+            this.treatedInboxEmailsMaxNum.Properties.MaxValue = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.treatedInboxEmailsMaxNum.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.tablePanel2.SetRow(this.treatedInboxEmailsMaxNum, 11);
+            // 
+            // labelControl23
+            // 
+            this.labelControl23.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl23.Appearance.Font")));
+            this.labelControl23.Appearance.Options.UseFont = true;
+            this.labelControl23.Appearance.Options.UseTextOptions = true;
+            this.labelControl23.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.labelControl23.AutoEllipsis = true;
+            this.tablePanel2.SetColumn(this.labelControl23, 0);
+            resources.ApplyResources(this.labelControl23, "labelControl23");
+            this.labelControl23.Name = "labelControl23";
+            this.tablePanel2.SetRow(this.labelControl23, 11);
             // 
             // warmupInboxFolderSwitch
             // 
@@ -2590,6 +2631,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).EndInit();
             this.tablePanel2.ResumeLayout(false);
             this.tablePanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.treatedInboxEmailsMaxNum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.defaultScenarioGallery.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.failedActionsMaxRetriesNum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.threadsIntervalNum.Properties)).EndInit();
@@ -2816,6 +2858,8 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private XanderUI.XUISwitch warmupInboxFolderSwitch;
         private DevExpress.XtraEditors.LabelControl labelControl22;
+        private DevExpress.XtraEditors.SpinEdit treatedInboxEmailsMaxNum;
+        private DevExpress.XtraEditors.LabelControl labelControl23;
     }
 }
 

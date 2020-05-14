@@ -873,7 +873,7 @@ namespace GUX
                                         blockedLogPath = blockedPath,
                                         actionRetries = Globals.FAILED_ACTION_MAX_RETRIES,
                                         cancelationToken = _CancellationTokenSource.Token,
-                                        scenario = ""
+                                        scenario = Globals.DEFAULT_SCENARIO.actions
                                     };
 
                                     var account = device["account"].ToString();
@@ -959,6 +959,7 @@ namespace GUX
                                                                                     if (Globals.WARMUP_PROCEED_INBOX_FOLDER)
                                                                                     {
                                                                                         _gunit.actionRetries = Globals.FAILED_ACTION_MAX_RETRIES;
+                                                                                        _gunit.maxTreatedInboxEmails = Globals.WARMUP_MAX_TREATED_INBOX_EMAILS;
                                                                                         var inbx = _gunit.InboxProcess(Globals.DEFAULT_SCENARIO.keyword, Globals.DEFAULT_SCENARIO.date).ContinueWith((inb) =>
                                                                                         {
                                                                                             //inb.Wait();
@@ -968,15 +969,8 @@ namespace GUX
                                                                                                     return;
                                                                                                 if (inb.Result.ToString() != "inbox actions successed!")
                                                                                                 {
-                                                                                                    if (timer != null)
-                                                                                                    {
-                                                                                                        timer.Dispose();
-                                                                                                    }
-
-                                                                                                    if (_gunit != null)
-                                                                                                    {
-                                                                                                        _gunit.Dispose();
-                                                                                                    }
+                                                                                                    timer?.Dispose();
+                                                                                                    _gunit?.Dispose();
 
                                                                                                     //iDevices.Fit();
 
@@ -991,15 +985,8 @@ namespace GUX
                                                                                                     stopWatch.Stop();
                                                                                                     stopWatch.Reset();
 
-                                                                                                    if (timer != null)
-                                                                                                    {
-                                                                                                        timer.Dispose();
-                                                                                                    }
-
-                                                                                                    if (_gunit != null)
-                                                                                                    {
-                                                                                                        _gunit.Dispose();
-                                                                                                    }
+                                                                                                    timer?.Dispose();
+                                                                                                    _gunit?.Dispose();
 
                                                                                                     //iDevices.Fit();
                                                                                                 }
@@ -1009,29 +996,15 @@ namespace GUX
                                                                                     }
                                                                                     else
                                                                                     {
-                                                                                        if (timer != null)
-                                                                                        {
-                                                                                            timer.Dispose();
-                                                                                        }
-
-                                                                                        if (_gunit != null)
-                                                                                        {
-                                                                                            _gunit.Dispose();
-                                                                                        }
+                                                                                        timer?.Dispose();
+                                                                                        _gunit?.Dispose();
                                                                                         //iDevices.Fit();
                                                                                     }
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    if (timer != null)
-                                                                                    {
-                                                                                        timer.Dispose();
-                                                                                    }
-
-                                                                                    if (_gunit != null)
-                                                                                    {
-                                                                                        _gunit.Dispose();
-                                                                                    }
+                                                                                    timer?.Dispose();
+                                                                                    _gunit?.Dispose();
 
                                                                                     Log("spam actions failed!", index, "error");
                                                                                     //iDevices.Fit();
@@ -1046,15 +1019,8 @@ namespace GUX
                                                                         Log("driver timedout!", index, "error");
                                                                         stopWatch.Stop();
 
-                                                                        if (timer != null)
-                                                                        {
-                                                                            timer.Dispose();
-                                                                        }
-
-                                                                        if (_gunit != null)
-                                                                        {
-                                                                            _gunit.Dispose();
-                                                                        }
+                                                                        timer?.Dispose();
+                                                                        _gunit?.Dispose();
                                                                         //iDevices.Fit();
 
                                                                         return;
@@ -1073,15 +1039,8 @@ namespace GUX
                                                 if (tt.IsCompleted)
                                                 {
                                                     _gunit.KillDriver();
-                                                    if (timer != null)
-                                                    {
-                                                        timer.Dispose();
-                                                    }
-
-                                                    if (_gunit != null)
-                                                    {
-                                                        _gunit.Dispose();
-                                                    }
+                                                    timer?.Dispose();
+                                                    _gunit?.Dispose();
                                                     var svm = StopVM(index);
                                                     svm.Wait();
                                                 }
@@ -1091,15 +1050,8 @@ namespace GUX
                                         }
                                         catch (Exception c)
                                         {
-                                            if (timer != null)
-                                            {
-                                                timer.Dispose();
-                                            }
-
-                                            if (_gunit != null)
-                                            {
-                                                _gunit.Dispose();
-                                            }
+                                            timer?.Dispose();
+                                            _gunit?.Dispose();
                                             Console.WriteLine(c.Message);
                                             return;
                                         }
@@ -1401,15 +1353,8 @@ namespace GUX
                                   return;
                               if (sit.Result.ToString() != "signin successed!")
                               {
-                                  if (timer != null)
-                                  {
-                                      timer.Dispose();
-                                  }
-
-                                  if (_gunit != null)
-                                  {
-                                      _gunit.Dispose();
-                                  }
+                                  timer?.Dispose();
+                                  _gunit?.Dispose();
 
                                   Log("signin failed!", index, "error");
                                   //iDevices.Fit();
@@ -1425,6 +1370,7 @@ namespace GUX
                                   if (Globals.WARMUP_AUTORUN)
                                   {
                                       _gunit.actionRetries = Globals.FAILED_ACTION_MAX_RETRIES;
+                                      _gunit.scenario = Globals.DEFAULT_SCENARIO.actions;
                                       stopWatch.Start();
                                       var spm = _gunit.SpamProcess(Globals.DEFAULT_SCENARIO.keyword, Globals.DEFAULT_SCENARIO.date).ContinueWith((sp) =>
                                       {
@@ -2447,7 +2393,8 @@ namespace GUX
                     _UI_TRANSPARENT = Globals.UI_TRANSPARENT = appTransparentSwitch.SwitchState == XUISwitch.State.On,
                     _DEFAULT_SCENARIO = Globals.DEFAULT_SCENARIO = await GetScenario((int)defaultScenarioGallery.EditValue),
                     _WARMUP_AUTORUN = Globals.WARMUP_AUTORUN = warmupAutoRunSwitch.SwitchState == XUISwitch.State.On,
-                    _WARMUP_PROCEED_INBOX_FOLDER = Globals.WARMUP_PROCEED_INBOX_FOLDER = warmupInboxFolderSwitch.SwitchState == XUISwitch.State.On
+                    _WARMUP_PROCEED_INBOX_FOLDER = Globals.WARMUP_PROCEED_INBOX_FOLDER = warmupInboxFolderSwitch.SwitchState == XUISwitch.State.On,
+                    _WARMUP_MAX_TREATED_INBOX_EMAILS = Globals.WARMUP_MAX_TREATED_INBOX_EMAILS = (Int32)treatedInboxEmailsMaxNum.Value
                 };
 
                 IFormatter formatter = new BinaryFormatter();

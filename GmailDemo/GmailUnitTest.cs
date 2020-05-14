@@ -42,6 +42,8 @@ namespace GmailDemo
         public int WaitTO { get; set; }
         public int WaitPolling { get; set; }
 
+        public int maxTreatedInboxEmails { get; set; }
+
         private Dictionary<int, string> iActions = new Dictionary<int, string>();
 
 
@@ -1735,12 +1737,21 @@ namespace GmailDemo
             wait.Message = "INBOX ACTIONS WAIT TIMEDOUT!";
             keyword = keyword.Replace("\"", "");
 
-            var scenarioActions = new string[] { "Reply", "Archive", "Star", "Important", "Click" };
+
 
             if (driver != null)
             {
+                var scenarioActions = new string[] { "Reply", "Archive", "Add Star", "Important", "Click Link" };
+                var actions = scenario.Split(',');
+                if(actions.Count() == 0)
+                {
+                    Log("no actions found for this scenario!", "warning");
+                    goto done;
+                }
                 var i = 1;
                 process:
+                if (maxTreatedInboxEmails == 0)
+                    goto done;
                 try
                 {
                     cancelationToken.ThrowIfCancellationRequested();
@@ -1949,10 +1960,15 @@ namespace GmailDemo
                                     Log("Sender Name: " + sender, "info");
                                     if (sender.Contains(keyword.ToLower()))
                                     {
-                                        var act = new Random().Next(1, 5);
+                                        var act = new Random().Next(0, 4);
                                         emailTime[0].Click();
-                                        isFail = doAction(act, wait);
-                                        //isFail = Archive(wait);
+                                        var tempAction = scenarioActions[act];
+                                        if (actions.Contains(tempAction))
+                                        {
+                                            isFail = doAction(act, wait);
+                                        }
+                                        else
+                                            isFail = Archive(wait);
                                     }
                                     else
                                     {
@@ -1980,7 +1996,6 @@ namespace GmailDemo
                             break;
                         }
                         i++;
-
                         try
                         {
                             driver.PressKeyCode(AndroidKeyCode.Back);

@@ -31,6 +31,7 @@ namespace GUX.Core
         public Scenario _DEFAULT_SCENARIO { get; set; }
         public bool _WARMUP_AUTORUN { get; set; }
         public bool _WARMUP_PROCEED_INBOX_FOLDER { get; set; }
+        public int _WARMUP_MAX_TREATED_INBOX_EMAILS { get; set; }
 
         public _CONFIG()
         {
@@ -59,6 +60,7 @@ namespace GUX.Core
                 this._DEFAULT_SCENARIO = (Scenario)info.GetValue("_DEFAULT_SCENARIO", typeof(Scenario));
                 this._WARMUP_AUTORUN = info.GetBoolean("_WARMUP_AUTORUN");
                 this._WARMUP_PROCEED_INBOX_FOLDER = info.GetBoolean("_WARMUP_PROCEED_INBOX_FOLDER");
+                this._WARMUP_MAX_TREATED_INBOX_EMAILS = info.GetInt32("_WARMUP_MAX_TREATED_INBOX_EMAILS");
             }
             catch (Exception c)
             {
@@ -88,6 +90,7 @@ namespace GUX.Core
                 info.AddValue("_DEFAULT_SCENARIO", this._DEFAULT_SCENARIO, typeof(Scenario));
                 info.AddValue("_WARMUP_AUTORUN", this._WARMUP_AUTORUN);
                 info.AddValue("_WARMUP_PROCEED_INBOX_FOLDER", this._WARMUP_PROCEED_INBOX_FOLDER);
+                info.AddValue("_WARMUP_MAX_TREATED_INBOX_EMAILS", this._WARMUP_MAX_TREATED_INBOX_EMAILS);
             }
             catch (Exception c)
             {

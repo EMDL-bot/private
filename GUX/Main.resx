@@ -218,7 +218,7 @@
     <value>Bottom</value>
   </data>
   <data name="barDockControlBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 457</value>
+    <value>0, 416</value>
   </data>
   <data name="barDockControlBottom.Size" type="System.Drawing.Size, System.Drawing">
     <value>806, 28</value>
@@ -242,7 +242,7 @@
     <value>0, 0</value>
   </data>
   <data name="barDockControlLeft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 457</value>
+    <value>0, 416</value>
   </data>
   <data name="&gt;&gt;barDockControlLeft.Name" xml:space="preserve">
     <value>barDockControlLeft</value>
@@ -263,7 +263,7 @@
     <value>806, 0</value>
   </data>
   <data name="barDockControlRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 457</value>
+    <value>0, 416</value>
   </data>
   <data name="&gt;&gt;barDockControlRight.Name" xml:space="preserve">
     <value>barDockControlRight</value>
@@ -293,7 +293,7 @@
     <value>17, 95</value>
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>806, 485</value>
+    <value>806, 444</value>
   </data>
   <data name="MainTabControl.BorderStyle" type="DevExpress.XtraEditors.Controls.BorderStyles, DevExpress.Utils.v19.2">
     <value>NoBorder</value>
@@ -329,7 +329,7 @@
     <value>138, 22</value>
   </data>
   <data name="noDevicLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 282</value>
+    <value>311, 241</value>
   </data>
   <data name="noDevicLabel.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -369,7 +369,7 @@ No available devices.</value>
     <value>5, 5, 5, 5</value>
   </data>
   <data name="iStackPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>586, 342</value>
+    <value>586, 301</value>
   </data>
   <data name="iStackPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -490,7 +490,7 @@ No available devices.</value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAA4
-        GgAAAk1TRnQBSQFMAwEBAAFYAQoBWAEKATIBAAEgAQAE/wEhAQAI/wFCAU0BNgcAATYDAAEoAwAByAMA
+        GgAAAk1TRnQBSQFMAwEBAAFoAQoBaAEKATIBAAEgAQAE/wEhAQAI/wFCAU0BNgcAATYDAAEoAwAByAMA
         ASADAAEBAQABIAYAAWQSAAMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgEN
         AwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgEN
         AwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgEN
@@ -608,7 +608,7 @@ No available devices.</value>
     <value>0, 46</value>
   </data>
   <data name="directoryCLB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 318</value>
+    <value>157, 277</value>
   </data>
   <data name="directoryCLB.TabIndex" type="System.Int32, mscorlib">
     <value>110</value>
@@ -692,7 +692,7 @@ No available devices.</value>
     <value>Panel2</value>
   </data>
   <data name="DevicesSplitContainer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 364</value>
+    <value>760, 323</value>
   </data>
   <data name="DevicesSplitContainer.TabIndex" type="System.Int32, mscorlib">
     <value>127</value>
@@ -1100,7 +1100,7 @@ No available devices.</value>
     <value>2, 2, 2, 2</value>
   </data>
   <data name="ProcessXtraTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>764, 419</value>
+    <value>764, 378</value>
   </data>
   <data name="ProcessXtraTabPage.Text" xml:space="preserve">
     <value>Actions</value>
@@ -1122,7 +1122,7 @@ No available devices.</value>
     <value>False</value>
   </data>
   <data name="MainTabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>766, 421</value>
+    <value>766, 380</value>
   </data>
   <data name="MainTabControl.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -1297,7 +1297,7 @@ No available devices.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="labelControl4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>363, 26</value>
+    <value>346, 26</value>
   </data>
   <data name="labelControl4.TabIndex" type="System.Int32, mscorlib">
     <value>117</value>
@@ -1363,7 +1363,7 @@ No available devices.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="labelControl3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>363, 26</value>
+    <value>346, 26</value>
   </data>
   <data name="labelControl3.TabIndex" type="System.Int32, mscorlib">
     <value>116</value>
@@ -1417,13 +1417,13 @@ No available devices.</value>
     <value>3, 309</value>
   </data>
   <data name="labelControl16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 15</value>
+    <value>145, 15</value>
   </data>
   <data name="labelControl16.TabIndex" type="System.Int32, mscorlib">
     <value>120</value>
   </data>
   <data name="labelControl16.Text" xml:space="preserve">
-    <value>Failed Auto Retry :</value>
+    <value>Failed Process Auto Retry :</value>
   </data>
   <data name="&gt;&gt;labelControl16.Name" xml:space="preserve">
     <value>labelControl16</value>
@@ -1444,7 +1444,7 @@ No available devices.</value>
     <value>3</value>
   </data>
   <data name="failedMAxRetriesNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 344</value>
+    <value>198, 344</value>
   </data>
   <data name="failedMAxRetriesNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
@@ -1456,7 +1456,7 @@ No available devices.</value>
     <value>N00</value>
   </data>
   <data name="failedMAxRetriesNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>151, 22</value>
   </data>
   <data name="failedMAxRetriesNum.TabIndex" type="System.Int32, mscorlib">
     <value>102</value>
@@ -1480,13 +1480,13 @@ No available devices.</value>
     <value>3, 348</value>
   </data>
   <data name="labelControl15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 15</value>
+    <value>154, 15</value>
   </data>
   <data name="labelControl15.TabIndex" type="System.Int32, mscorlib">
     <value>119</value>
   </data>
   <data name="labelControl15.Text" xml:space="preserve">
-    <value>Failed Max Retries :</value>
+    <value>Max Failed Process Retries :</value>
   </data>
   <data name="&gt;&gt;labelControl15.Name" xml:space="preserve">
     <value>labelControl15</value>
@@ -1507,7 +1507,7 @@ No available devices.</value>
     <value>150</value>
   </data>
   <data name="pollingNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 156</value>
+    <value>198, 156</value>
   </data>
   <data name="pollingNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
@@ -1519,7 +1519,7 @@ No available devices.</value>
     <value>N00</value>
   </data>
   <data name="pollingNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>151, 22</value>
   </data>
   <data name="pollingNum.TabIndex" type="System.Int32, mscorlib">
     <value>89</value>
@@ -1540,7 +1540,7 @@ No available devices.</value>
     <value>Top</value>
   </data>
   <data name="failedAutoRetrySwitch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 306</value>
+    <value>198, 306</value>
   </data>
   <data name="failedAutoRetrySwitch.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>30, 22</value>
@@ -1576,7 +1576,7 @@ No available devices.</value>
     <value>D</value>
   </data>
   <data name="driverLetterText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 230</value>
+    <value>198, 230</value>
   </data>
   <data name="driverLetterText.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
@@ -1663,7 +1663,7 @@ No available devices.</value>
     <value>Z</value>
   </data>
   <data name="driverLetterText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>151, 22</value>
   </data>
   <data name="driverLetterText.TabIndex" type="System.Int32, mscorlib">
     <value>100</value>
@@ -1687,7 +1687,7 @@ No available devices.</value>
     <value />
   </data>
   <data name="vmsDirectoryText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 267</value>
+    <value>198, 267</value>
   </data>
   <data name="vmsDirectoryText.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
@@ -1696,7 +1696,7 @@ No available devices.</value>
     <value>type a directory</value>
   </data>
   <data name="vmsDirectoryText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>151, 22</value>
   </data>
   <data name="vmsDirectoryText.TabIndex" type="System.Int32, mscorlib">
     <value>101</value>
@@ -1720,7 +1720,7 @@ No available devices.</value>
     <value>60</value>
   </data>
   <data name="waitNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 119</value>
+    <value>198, 119</value>
   </data>
   <data name="waitNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
@@ -1732,7 +1732,7 @@ No available devices.</value>
     <value>N00</value>
   </data>
   <data name="waitNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>151, 22</value>
   </data>
   <data name="waitNum.TabIndex" type="System.Int32, mscorlib">
     <value>88</value>
@@ -1756,7 +1756,7 @@ No available devices.</value>
     <value>60</value>
   </data>
   <data name="testDriverToNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 82</value>
+    <value>198, 82</value>
   </data>
   <data name="testDriverToNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
@@ -1768,7 +1768,7 @@ No available devices.</value>
     <value>N00</value>
   </data>
   <data name="testDriverToNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>151, 22</value>
   </data>
   <data name="testDriverToNum.TabIndex" type="System.Int32, mscorlib">
     <value>87</value>
@@ -1792,7 +1792,7 @@ No available devices.</value>
     <value>10102</value>
   </data>
   <data name="portNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 44</value>
+    <value>198, 44</value>
   </data>
   <data name="portNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
@@ -1804,7 +1804,7 @@ No available devices.</value>
     <value>N00</value>
   </data>
   <data name="portNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 22</value>
+    <value>151, 22</value>
   </data>
   <data name="portNum.TabIndex" type="System.Int32, mscorlib">
     <value>86</value>
@@ -1828,7 +1828,7 @@ No available devices.</value>
     <value>0, 0</value>
   </data>
   <data name="tablePanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 374</value>
+    <value>352, 374</value>
   </data>
   <data name="tablePanel1.TabIndex" type="System.Int32, mscorlib">
     <value>114</value>
@@ -1854,11 +1854,103 @@ No available devices.</value>
   <data name="tablePanel2.Appearance.GradientMode" type="System.Drawing.Drawing2D.LinearGradientMode, System.Drawing">
     <value>ForwardDiagonal</value>
   </data>
+  <data name="treatedInboxEmailsMaxNum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="treatedInboxEmailsMaxNum.EditValue" type="System.Decimal, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="treatedInboxEmailsMaxNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>186, 416</value>
+  </data>
+  <data name="treatedInboxEmailsMaxNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 10pt</value>
+  </data>
+  <data name="treatedInboxEmailsMaxNum.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v19.2">
+    <value>Combo</value>
+  </data>
+  <data name="treatedInboxEmailsMaxNum.Properties.Mask.EditMask" xml:space="preserve">
+    <value>N00</value>
+  </data>
+  <data name="treatedInboxEmailsMaxNum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 22</value>
+  </data>
+  <data name="treatedInboxEmailsMaxNum.TabIndex" type="System.Int32, mscorlib">
+    <value>116</value>
+  </data>
+  <data name="&gt;&gt;treatedInboxEmailsMaxNum.Name" xml:space="preserve">
+    <value>treatedInboxEmailsMaxNum</value>
+  </data>
+  <data name="&gt;&gt;treatedInboxEmailsMaxNum.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;treatedInboxEmailsMaxNum.Parent" xml:space="preserve">
+    <value>tablePanel2</value>
+  </data>
+  <data name="&gt;&gt;treatedInboxEmailsMaxNum.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="labelControl23.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 10pt</value>
+  </data>
+  <data name="labelControl23.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 420</value>
+  </data>
+  <data name="labelControl23.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 15</value>
+  </data>
+  <data name="labelControl23.SuperTip" type="DevExpress.Utils.SuperToolTip, DevExpress.Utils.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFpEZXZFeHByZXNzLlV0aWxzLnYxOS4yLCBWZXJzaW9uPTE5LjIu
+        NS4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI4OGQxNzU0ZDcwMGU0OWEMAwAAAFlE
+        ZXZFeHByZXNzLkRhdGEudjE5LjIsIFZlcnNpb249MTkuMi41LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVi
+        bGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURldkV4cHJlc3MuVXRpbHMuU3VwZXJUb29s
+        VGlwBQAAAA1BbGxvd0h0bWxUZXh0EUZpeGVkVG9vbFRpcFdpZHRoCkl0ZW1zQ291bnQJaXRlbVR5cGUw
+        BWl0ZW0wBAAABAQfRGV2RXhwcmVzcy5VdGlscy5EZWZhdWx0Qm9vbGVhbgMAAAABCCVEZXZFeHByZXNz
+        LlV0aWxzLlN1cGVyVG9vbFRpcEl0ZW1UeXBlAgAAABxEZXZFeHByZXNzLlV0aWxzLlRvb2xUaXBJdGVt
+        AgAAAAIAAAAF/P///x9EZXZFeHByZXNzLlV0aWxzLkRlZmF1bHRCb29sZWFuAQAAAAd2YWx1ZV9fAAgD
+        AAAAAAAAAAABAAAABfv///8lRGV2RXhwcmVzcy5VdGlscy5TdXBlclRvb2xUaXBJdGVtVHlwZQEAAAAH
+        dmFsdWVfXwAIAgAAAAAAAAAJBgAAAAwHAAAAUVN5c3RlbS5EcmF3aW5nLCBWZXJzaW9uPTQuMC4wLjAs
+        IEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49YjAzZjVmN2YxMWQ1MGEzYQUGAAAAHERldkV4
+        cHJlc3MuVXRpbHMuVG9vbFRpcEl0ZW0HAAAADUFsbG93SHRtbFRleHQESWNvbgxJbWFnZU9wdGlvbnMK
+        TGVmdEluZGVudAhNYXhXaWR0aBJPd25lckFsbG93SHRtbFRleHQEVGV4dAQEBAAAAAEfRGV2RXhwcmVz
+        cy5VdGlscy5EZWZhdWx0Qm9vbGVhbgMAAAATU3lzdGVtLkRyYXdpbmcuSWNvbgcAAAAoRGV2RXhwcmVz
+        cy5VdGlscy5Ub29sVGlwSXRlbUltYWdlT3B0aW9ucwIAAAAICAECAAAAAfj////8////AgAAAAoJCQAA
+        AAAAAAA8AQAAAQYKAAAARndhcm0tdXAgcHJvY2VzcyBzdGFydGluZyA8Yj5hdXRvPC9iPiA8YnI+YWZ0
+        ZXIgc2V0dXAgcHJvY2VzcyBmaW5pc2hlZC4FCQAAAChEZXZFeHByZXNzLlV0aWxzLlRvb2xUaXBJdGVt
+        SW1hZ2VPcHRpb25zBQAAAAhJbWFnZVVyaQxTdmdJbWFnZVNpemUJQWxpZ25tZW50CkltYWdlSW5kZXgT
+        SW1hZ2VUb1RleHREaXN0YW5jZQEEBAAAE1N5c3RlbS5EcmF3aW5nLlNpemUHAAAAJkRldkV4cHJlc3Mu
+        VXRpbHMuVG9vbFRpcEltYWdlQWxpZ25tZW50AgAAAAgIAgAAAAYLAAAAAAX0////E1N5c3RlbS5EcmF3
+        aW5nLlNpemUCAAAABXdpZHRoBmhlaWdodAAACAgHAAAAAAAAAAAAAAAF8////yZEZXZFeHByZXNzLlV0
+        aWxzLlRvb2xUaXBJbWFnZUFsaWdubWVudAEAAAAHdmFsdWVfXwAIAgAAAAAAAAD/////DgAAAAs=
+</value>
+  </data>
+  <data name="labelControl23.TabIndex" type="System.Int32, mscorlib">
+    <value>119</value>
+  </data>
+  <data name="labelControl23.Text" xml:space="preserve">
+    <value>Max Treated Inbox Emails :</value>
+  </data>
+  <data name="labelControl23.ToolTipTitle" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="&gt;&gt;labelControl23.Name" xml:space="preserve">
+    <value>labelControl23</value>
+  </data>
+  <data name="&gt;&gt;labelControl23.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;labelControl23.Parent" xml:space="preserve">
+    <value>tablePanel2</value>
+  </data>
+  <data name="&gt;&gt;labelControl23.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="warmupInboxFolderSwitch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
   </data>
   <data name="warmupInboxFolderSwitch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 397</value>
+    <value>186, 377</value>
   </data>
   <data name="warmupInboxFolderSwitch.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>30, 22</value>
@@ -1885,13 +1977,13 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;warmupInboxFolderSwitch.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="labelControl22.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
   </data>
   <data name="labelControl22.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 400</value>
+    <value>3, 381</value>
   </data>
   <data name="labelControl22.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 15</value>
@@ -1941,13 +2033,13 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;labelControl22.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="labelControl11.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
   </data>
   <data name="labelControl11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 90</value>
+    <value>3, 85</value>
   </data>
   <data name="labelControl11.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 15</value>
@@ -1968,13 +2060,13 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;labelControl11.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="labelControl12.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
   </data>
   <data name="labelControl12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 51</value>
+    <value>3, 48</value>
   </data>
   <data name="labelControl12.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 15</value>
@@ -1995,13 +2087,13 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;labelControl12.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="labelControl13.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
   </data>
   <data name="labelControl13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 246</value>
+    <value>3, 233</value>
   </data>
   <data name="labelControl13.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 15</value>
@@ -2010,7 +2102,7 @@ No available devices.</value>
     <value>123</value>
   </data>
   <data name="labelControl13.Text" xml:space="preserve">
-    <value>Failed Actions Max Retries :</value>
+    <value>Max Failed Actions Retries :</value>
   </data>
   <data name="&gt;&gt;labelControl13.Name" xml:space="preserve">
     <value>labelControl13</value>
@@ -2022,13 +2114,13 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;labelControl13.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="labelControl8.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
   </data>
   <data name="labelControl8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 324</value>
+    <value>3, 307</value>
   </data>
   <data name="labelControl8.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 15</value>
@@ -2049,13 +2141,13 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;labelControl8.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="labelControl7.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
   </data>
   <data name="labelControl7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 363</value>
+    <value>3, 344</value>
   </data>
   <data name="labelControl7.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 15</value>
@@ -2108,13 +2200,13 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;labelControl7.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="warmupAutoRunSwitch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
   </data>
   <data name="warmupAutoRunSwitch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 359</value>
+    <value>186, 340</value>
   </data>
   <data name="warmupAutoRunSwitch.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>30, 22</value>
@@ -2141,13 +2233,13 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;warmupAutoRunSwitch.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="labelControl10.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
   </data>
   <data name="labelControl10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 207</value>
+    <value>3, 196</value>
   </data>
   <data name="labelControl10.Size" type="System.Drawing.Size, System.Drawing">
     <value>113, 15</value>
@@ -2168,10 +2260,10 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;labelControl10.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="defaultScenarioGallery.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 320</value>
+    <value>186, 303</value>
   </data>
   <data name="defaultScenarioGallery.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
@@ -2183,7 +2275,7 @@ No available devices.</value>
     <value>select scenario</value>
   </data>
   <data name="defaultScenarioGallery.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 22</value>
+    <value>167, 22</value>
   </data>
   <data name="defaultScenarioGallery.TabIndex" type="System.Int32, mscorlib">
     <value>116</value>
@@ -2198,13 +2290,13 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;defaultScenarioGallery.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="labelControl9.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
   </data>
   <data name="labelControl9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 168</value>
+    <value>3, 159</value>
   </data>
   <data name="labelControl9.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 15</value>
@@ -2225,7 +2317,7 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;labelControl9.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="labelControl6.Appearance.BackColor2" type="System.Drawing.Color, System.Drawing">
     <value>45, 45, 48</value>
@@ -2240,13 +2332,13 @@ No available devices.</value>
     <value>None</value>
   </data>
   <data name="labelControl6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 280</value>
+    <value>3, 265</value>
   </data>
   <data name="labelControl6.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="labelControl6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 24</value>
+    <value>350, 24</value>
   </data>
   <data name="labelControl6.TabIndex" type="System.Int32, mscorlib">
     <value>117</value>
@@ -2264,7 +2356,7 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;labelControl6.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="labelControl5.Appearance.BackColor2" type="System.Drawing.Color, System.Drawing">
     <value>45, 45, 48</value>
@@ -2279,13 +2371,13 @@ No available devices.</value>
     <value>None</value>
   </data>
   <data name="labelControl5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 124</value>
+    <value>3, 117</value>
   </data>
   <data name="labelControl5.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="labelControl5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 24</value>
+    <value>350, 24</value>
   </data>
   <data name="labelControl5.TabIndex" type="System.Int32, mscorlib">
     <value>117</value>
@@ -2303,7 +2395,7 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;labelControl5.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="labelControl2.Appearance.BackColor2" type="System.Drawing.Color, System.Drawing">
     <value>45, 45, 48</value>
@@ -2318,13 +2410,13 @@ No available devices.</value>
     <value>None</value>
   </data>
   <data name="labelControl2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 123</value>
+    <value>3, 116</value>
   </data>
   <data name="labelControl2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="labelControl2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 26</value>
+    <value>350, 26</value>
   </data>
   <data name="labelControl2.TabIndex" type="System.Int32, mscorlib">
     <value>116</value>
@@ -2342,7 +2434,7 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;labelControl2.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="labelControl1.Appearance.BackColor2" type="System.Drawing.Color, System.Drawing">
     <value>45, 45, 48</value>
@@ -2357,13 +2449,13 @@ No available devices.</value>
     <value>None</value>
   </data>
   <data name="labelControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 6</value>
+    <value>3, 5</value>
   </data>
   <data name="labelControl1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="labelControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 26</value>
+    <value>350, 26</value>
   </data>
   <data name="labelControl1.TabIndex" type="System.Int32, mscorlib">
     <value>105</value>
@@ -2381,7 +2473,7 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;labelControl1.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>16</value>
   </data>
   <data name="failedActionsMaxRetriesNum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -2390,7 +2482,7 @@ No available devices.</value>
     <value>3</value>
   </data>
   <data name="failedActionsMaxRetriesNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 242</value>
+    <value>186, 229</value>
   </data>
   <data name="failedActionsMaxRetriesNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
@@ -2402,7 +2494,7 @@ No available devices.</value>
     <value>N00</value>
   </data>
   <data name="failedActionsMaxRetriesNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 22</value>
+    <value>167, 22</value>
   </data>
   <data name="failedActionsMaxRetriesNum.TabIndex" type="System.Int32, mscorlib">
     <value>104</value>
@@ -2417,13 +2509,13 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;failedActionsMaxRetriesNum.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>17</value>
   </data>
   <data name="appTransparentSwitch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
   </data>
   <data name="appTransparentSwitch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 86</value>
+    <value>186, 81</value>
   </data>
   <data name="appTransparentSwitch.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>30, 22</value>
@@ -2450,7 +2542,7 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;appTransparentSwitch.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>18</value>
   </data>
   <data name="threadsIntervalNum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -2459,7 +2551,7 @@ No available devices.</value>
     <value>10</value>
   </data>
   <data name="threadsIntervalNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 203</value>
+    <value>186, 192</value>
   </data>
   <data name="threadsIntervalNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
@@ -2471,7 +2563,7 @@ No available devices.</value>
     <value>N00</value>
   </data>
   <data name="threadsIntervalNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 22</value>
+    <value>167, 22</value>
   </data>
   <data name="threadsIntervalNum.TabIndex" type="System.Int32, mscorlib">
     <value>91</value>
@@ -2486,7 +2578,7 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;threadsIntervalNum.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>19</value>
   </data>
   <data name="concurrentThreadsNum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -2495,7 +2587,7 @@ No available devices.</value>
     <value>5</value>
   </data>
   <data name="concurrentThreadsNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 164</value>
+    <value>186, 155</value>
   </data>
   <data name="concurrentThreadsNum.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 10pt</value>
@@ -2507,7 +2599,7 @@ No available devices.</value>
     <value>N00</value>
   </data>
   <data name="concurrentThreadsNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 22</value>
+    <value>167, 22</value>
   </data>
   <data name="concurrentThreadsNum.TabIndex" type="System.Int32, mscorlib">
     <value>90</value>
@@ -2522,13 +2614,13 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;concurrentThreadsNum.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>20</value>
   </data>
   <data name="appTopMostSwitch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
   </data>
   <data name="appTopMostSwitch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 47</value>
+    <value>186, 44</value>
   </data>
   <data name="appTopMostSwitch.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>30, 22</value>
@@ -2555,7 +2647,7 @@ No available devices.</value>
     <value>tablePanel2</value>
   </data>
   <data name="&gt;&gt;appTopMostSwitch.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>21</value>
   </data>
   <data name="tablePanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -2564,7 +2656,7 @@ No available devices.</value>
     <value>0, 0</value>
   </data>
   <data name="tablePanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>373, 426</value>
+    <value>356, 448</value>
   </data>
   <data name="tablePanel2.TabIndex" type="System.Int32, mscorlib">
     <value>115</value>
@@ -2585,7 +2677,7 @@ No available devices.</value>
     <value>Panel2</value>
   </data>
   <data name="settingSplitContainer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 381</value>
+    <value>760, 340</value>
   </data>
   <data name="settingSplitContainer.TabIndex" type="System.Int32, mscorlib">
     <value>115</value>
@@ -2633,7 +2725,7 @@ No available devices.</value>
     <value>Bottom</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 383</value>
+    <value>2, 342</value>
   </data>
   <data name="panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
@@ -2663,7 +2755,7 @@ No available devices.</value>
     <value>2, 2, 2, 2</value>
   </data>
   <data name="SettingsXtraTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>764, 419</value>
+    <value>764, 378</value>
   </data>
   <data name="SettingsXtraTabPage.Text" xml:space="preserve">
     <value>Errors</value>
@@ -2759,7 +2851,7 @@ No available devices.</value>
     <value>Bottom</value>
   </data>
   <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 384</value>
+    <value>2, 480</value>
   </data>
   <data name="panel3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
@@ -2789,7 +2881,7 @@ No available devices.</value>
     <value>2, 2, 2, 2</value>
   </data>
   <data name="ActionsXtraTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>764, 419</value>
+    <value>764, 515</value>
   </data>
   <data name="ActionsXtraTabPage.Text" xml:space="preserve">
     <value>Blocked</value>
@@ -3047,7 +3139,7 @@ No available devices.</value>
     <value>9</value>
   </data>
   <data name="xtraTabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>764, 419</value>
+    <value>764, 515</value>
   </data>
   <data name="xtraTabPage1.Text" xml:space="preserve">
     <value>xtraTabPage1</value>
@@ -3092,7 +3184,7 @@ No available devices.</value>
     <value>0, 0</value>
   </data>
   <data name="accordionControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 421</value>
+    <value>40, 380</value>
   </data>
   <data name="accordionControl1.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -3527,7 +3619,7 @@ No available devices.</value>
     <value>Bottom</value>
   </data>
   <data name="autoHideContainer1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 421</value>
+    <value>0, 380</value>
   </data>
   <data name="autoHideContainer1.Size" type="System.Drawing.Size, System.Drawing">
     <value>806, 36</value>
@@ -4346,7 +4438,7 @@ No available devices.</value>
     <value>0, 0, 0, 0</value>
   </data>
   <data name="galleryControl2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 382</value>
+    <value>434, 478</value>
   </data>
   <data name="galleryControl2.TabIndex" type="System.Int32, mscorlib">
     <value>122</value>
@@ -4370,7 +4462,7 @@ No available devices.</value>
     <value>Panel2</value>
   </data>
   <data name="splitContainerControl3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 382</value>
+    <value>760, 478</value>
   </data>
   <data name="splitContainerControl3.TabIndex" type="System.Int32, mscorlib">
     <value>112</value>
