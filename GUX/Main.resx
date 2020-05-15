@@ -490,7 +490,7 @@ No available devices.</value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAA4
-        GgAAAk1TRnQBSQFMAwEBAAFoAQoBaAEKATIBAAEgAQAE/wEhAQAI/wFCAU0BNgcAATYDAAEoAwAByAMA
+        GgAAAk1TRnQBSQFMAwEBAAGYAQoBmAEKATIBAAEgAQAE/wEhAQAI/wFCAU0BNgcAATYDAAEoAwAByAMA
         ASADAAEBAQABIAYAAWQSAAMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgEN
         AwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgEN
         AwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgENAwoBDQMKAQ0DCgEN
@@ -2851,7 +2851,7 @@ No available devices.</value>
     <value>Bottom</value>
   </data>
   <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 480</value>
+    <value>2, 343</value>
   </data>
   <data name="panel3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
@@ -2881,7 +2881,7 @@ No available devices.</value>
     <value>2, 2, 2, 2</value>
   </data>
   <data name="ActionsXtraTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>764, 515</value>
+    <value>764, 378</value>
   </data>
   <data name="ActionsXtraTabPage.Text" xml:space="preserve">
     <value>Blocked</value>
@@ -3139,7 +3139,7 @@ No available devices.</value>
     <value>9</value>
   </data>
   <data name="xtraTabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>764, 515</value>
+    <value>764, 378</value>
   </data>
   <data name="xtraTabPage1.Text" xml:space="preserve">
     <value>xtraTabPage1</value>
@@ -4438,7 +4438,7 @@ No available devices.</value>
     <value>0, 0, 0, 0</value>
   </data>
   <data name="galleryControl2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 478</value>
+    <value>434, 341</value>
   </data>
   <data name="galleryControl2.TabIndex" type="System.Int32, mscorlib">
     <value>122</value>
@@ -4462,7 +4462,7 @@ No available devices.</value>
     <value>Panel2</value>
   </data>
   <data name="splitContainerControl3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>760, 478</value>
+    <value>760, 341</value>
   </data>
   <data name="splitContainerControl3.TabIndex" type="System.Int32, mscorlib">
     <value>112</value>

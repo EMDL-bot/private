@@ -1,38 +1,38 @@
-﻿using GmailDemo;
-using GUX.Core;
-using Npgsql;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GUX.UC;
-using System.IO;
-using System.Text.RegularExpressions;
-using FastColoredTextBoxNS;
-using Polly;
-using Polly.Bulkhead;
+using System.Xml;
 using AppiumHelper;
-using GUX.Services;
-using GUX.Extensions;
-using XanderUI;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
+using DevExpress.LookAndFeel;
+using DevExpress.Skins;
+using DevExpress.Utils;
+using DevExpress.Utils.Svg;
+using DevExpress.XtraBars.Docking2010;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
-using DevExpress.XtraBars.Docking2010;
-using DevExpress.Utils;
 using DevExpress.XtraSplashScreen;
-using DevExpress.Skins;
-using DevExpress.LookAndFeel;
-using System.Text;
-using System.Xml;
-using DevExpress.Utils.Svg;
+using FastColoredTextBoxNS;
+using GmailDemo;
+using GUX.Core;
+using GUX.Extensions;
+using GUX.Services;
+using GUX.UC;
+using Npgsql;
+using Polly;
+using Polly.Bulkhead;
+using XanderUI;
 
 namespace GUX
 {
@@ -50,10 +50,10 @@ namespace GUX
         private _CONFIG _Config;
         private DevicesContainer iDevices = null;
         private string actionsLogFile = "",
-         errorsLogFile = "",
-         blockedLogFile = "",
-         disabledLogFile = "",
-         warningLogFile = "";
+            errorsLogFile = "",
+            blockedLogFile = "",
+            disabledLogFile = "",
+            warningLogFile = "";
         private PerformanceCounter ram = new PerformanceCounter("Memory", "% Committed Bytes In Use", String.Empty, Environment.MachineName);
         private PerformanceCounter cpu = new PerformanceCounter("Processor", "% Processor Time", "_Total", Environment.MachineName);
         private CancellationTokenSource _CancellationTokenSource;
@@ -346,7 +346,7 @@ namespace GUX
                                     Globals.DEFAULT_SCENARIO = _Config._DEFAULT_SCENARIO;
                                     var scenario = new ImageComboBoxItem()
                                     {
-                                        Value = Globals.DEFAULT_SCENARIO.ID,
+                                        Value = $"{Globals.DEFAULT_SCENARIO.name[0]}|{Globals.DEFAULT_SCENARIO.ID}",
                                         Description = Globals.DEFAULT_SCENARIO.name
                                     };
                                     this.defaultScenarioGallery.Properties.Items.Add(scenario);
@@ -354,6 +354,7 @@ namespace GUX
 
                                     this.warmupAutoRunSwitch.SwitchState = (Globals.WARMUP_AUTORUN = _Config._WARMUP_AUTORUN) ? XUISwitch.State.On : XUISwitch.State.Off;
                                     this.warmupInboxFolderSwitch.SwitchState = (Globals.WARMUP_PROCEED_INBOX_FOLDER = _Config._WARMUP_PROCEED_INBOX_FOLDER) ? XUISwitch.State.On : XUISwitch.State.Off;
+                                    this.treatedInboxEmailsMaxNum.Value = Globals.WARMUP_MAX_TREATED_INBOX_EMAILS = _Config._WARMUP_MAX_TREATED_INBOX_EMAILS;
                                 }
                                 catch (Exception c)
                                 {
@@ -435,7 +436,7 @@ namespace GUX
             e.ChangedRange.SetStyle(WarnStyle, @"\bwarning\b|\bdisabled\b|\bblocked\b", RegexOptions.Multiline);
         }
 
-        #region: CallAPI
+        #region : CallAPI
         /*
          try
             {
@@ -873,7 +874,8 @@ namespace GUX
                                         blockedLogPath = blockedPath,
                                         actionRetries = Globals.FAILED_ACTION_MAX_RETRIES,
                                         cancelationToken = _CancellationTokenSource.Token,
-                                        scenario = Globals.DEFAULT_SCENARIO.actions
+                                        scenario = Globals.DEFAULT_SCENARIO.actions,
+                                        maxTreatedInboxEmails = Globals.WARMUP_MAX_TREATED_INBOX_EMAILS
                                     };
 
                                     var account = device["account"].ToString();
@@ -1260,6 +1262,8 @@ namespace GUX
                                         disabledLogPath = disabledPath,
                                         blockedLogPath = blockedPath,
                                         actionRetries = Globals.FAILED_ACTION_MAX_RETRIES,
+                                        scenario = Globals.DEFAULT_SCENARIO.actions,
+                                        maxTreatedInboxEmails = Globals.WARMUP_MAX_TREATED_INBOX_EMAILS,
                                         cancelationToken = _CancellationTokenSource.Token
                                     };
 
@@ -1346,103 +1350,104 @@ namespace GUX
                                                                                     //iDevices.Fit();
                                                                                     _gunit.actionRetries = Globals.FAILED_ACTION_MAX_RETRIES;
                                                                                     var sitk = _gunit.SignIn(new string[] { seeds["email"].ToString(), seeds["password"].ToString(), seeds["recovery"].ToString() }).ContinueWith((sit) =>
-                      {
-                          if (sit.IsCompleted)
-                          {
-                              if (sit.Status == TaskStatus.Canceled)
-                                  return;
-                              if (sit.Result.ToString() != "signin successed!")
-                              {
-                                  timer?.Dispose();
-                                  _gunit?.Dispose();
+                                                                                    {
+                                                                                        if (sit.IsCompleted)
+                                                                                        {
+                                                                                            if (sit.Status == TaskStatus.Canceled)
+                                                                                                return;
+                                                                                            if (sit.Result.ToString() != "signin successed!")
+                                                                                            {
+                                                                                                timer?.Dispose();
+                                                                                                _gunit?.Dispose();
 
-                                  Log("signin failed!", index, "error");
-                                  //iDevices.Fit();
-                                  return;
-                              }
-                              else
-                              {
-                                  var stp = stopWatch.Elapsed;
-                                  Log(string.Format("setup done! [{0:D2}:{1:D2}:{2:D3}]", stp.Minutes, stp.Seconds, stp.Milliseconds), index, "info");
-                                  stopWatch.Stop();
-                                  stopWatch.Reset();
-                                  //iDevices.Fit();
-                                  if (Globals.WARMUP_AUTORUN)
-                                  {
-                                      _gunit.actionRetries = Globals.FAILED_ACTION_MAX_RETRIES;
-                                      _gunit.scenario = Globals.DEFAULT_SCENARIO.actions;
-                                      stopWatch.Start();
-                                      var spm = _gunit.SpamProcess(Globals.DEFAULT_SCENARIO.keyword, Globals.DEFAULT_SCENARIO.date).ContinueWith((sp) =>
-                                      {
-                                          //sp.Wait();
-                                          //iDevices.Fit();
-                                          if (sp.IsCompleted)
-                                          {
-                                              if (sp.Status == TaskStatus.Canceled)
-                                                  return;
-                                              if (sp.Result.ToString() == "spam actions successed!")
-                                              {
-                                                  //iDevices.Fit();
-                                                  if (Globals.WARMUP_PROCEED_INBOX_FOLDER)
-                                                  {
-                                                      _gunit.actionRetries = Globals.FAILED_ACTION_MAX_RETRIES;
-                                                      var inbx = _gunit.InboxProcess(Globals.DEFAULT_SCENARIO.keyword, Globals.DEFAULT_SCENARIO.date).ContinueWith((inb) =>
-                                                  {
-                                                      //inb.Wait();
-                                                      if (inb.IsCompleted)
-                                                      {
-                                                          if (inb.Status == TaskStatus.Canceled)
-                                                              return;
-                                                          if (inb.Result.ToString() != "inbox actions successed!")
-                                                          {
-                                                              timer?.Dispose();
-                                                              _gunit?.Dispose();
-                                                              Log("inbox actions failed!", index, "error");
-                                                              //iDevices.Fit();
-                                                              return;
-                                                          }
-                                                          else
-                                                          {
-                                                              var wstp = stopWatch.Elapsed;
-                                                              Log(string.Format("warmup done! [{0:D2}:{1:D2}:{2:D3}]", wstp.Minutes, wstp.Seconds, wstp.Milliseconds), index, "info");
-                                                              stopWatch.Stop();
-                                                              stopWatch.Reset();
-                                                              timer?.Dispose();
-                                                              _gunit?.Dispose();
-                                                              //iDevices.Fit();
-                                                          }
-                                                      }
-                                                  });
-                                                      if (inbx != null && (inbx.Status == TaskStatus.RanToCompletion || inbx.Status != TaskStatus.Running)) inbx.Wait();
-                                                  }
-                                                  else
-                                                  {
-                                                      timer?.Dispose();
-                                                      _gunit?.Dispose();
-                                                      //iDevices.Fit();
-                                                  }
-                                              }
-                                              else
-                                              {
-                                                  Log("spam actions failed!", index, "error");
-                                                  timer?.Dispose();
-                                                  _gunit?.Dispose();
-                                                  //iDevices.Fit();
-                                                  return;
-                                              }
-                                          }
-                                      });
-                                      if (spm != null && (spm.Status == TaskStatus.RanToCompletion || spm.Status != TaskStatus.Running)) spm.Wait();
-                                  }
-                                  else
-                                  {
-                                      timer?.Dispose();
-                                      _gunit?.Dispose();
-                                      //iDevices.Fit();
-                                  }
-                              }
-                          }
-                      });
+                                                                                                Log("signin failed!", index, "error");
+                                                                                                //iDevices.Fit();
+                                                                                                return;
+                                                                                            }
+                                                                                            else
+                                                                                            {
+                                                                                                var stp = stopWatch.Elapsed;
+                                                                                                Log(string.Format("setup done! [{0:D2}:{1:D2}:{2:D3}]", stp.Minutes, stp.Seconds, stp.Milliseconds), index, "info");
+                                                                                                stopWatch.Stop();
+                                                                                                stopWatch.Reset();
+                                                                                                //iDevices.Fit();
+                                                                                                if (Globals.WARMUP_AUTORUN)
+                                                                                                {
+                                                                                                    _gunit.actionRetries = Globals.FAILED_ACTION_MAX_RETRIES;
+                                                                                                    _gunit.scenario = Globals.DEFAULT_SCENARIO.actions;
+                                                                                                    stopWatch.Start();
+                                                                                                    var spm = _gunit.SpamProcess(Globals.DEFAULT_SCENARIO.keyword, Globals.DEFAULT_SCENARIO.date).ContinueWith((sp) =>
+                                                                                                    {
+                                                                                                        //sp.Wait();
+                                                                                                        //iDevices.Fit();
+                                                                                                        if (sp.IsCompleted)
+                                                                                                        {
+                                                                                                            if (sp.Status == TaskStatus.Canceled)
+                                                                                                                return;
+                                                                                                            if (sp.Result.ToString() == "spam actions successed!")
+                                                                                                            {
+                                                                                                                //iDevices.Fit();
+                                                                                                                if (Globals.WARMUP_PROCEED_INBOX_FOLDER)
+                                                                                                                {
+                                                                                                                    _gunit.actionRetries = Globals.FAILED_ACTION_MAX_RETRIES;
+                                                                                                                    _gunit.maxTreatedInboxEmails = Globals.WARMUP_MAX_TREATED_INBOX_EMAILS;
+                                                                                                                    var inbx = _gunit.InboxProcess(Globals.DEFAULT_SCENARIO.keyword, Globals.DEFAULT_SCENARIO.date).ContinueWith((inb) =>
+                                                                                                                    {
+                                                                                                                        //inb.Wait();
+                                                                                                                        if (inb.IsCompleted)
+                                                                                                                        {
+                                                                                                                            if (inb.Status == TaskStatus.Canceled)
+                                                                                                                                return;
+                                                                                                                            if (inb.Result.ToString() != "inbox actions successed!")
+                                                                                                                            {
+                                                                                                                                timer?.Dispose();
+                                                                                                                                _gunit?.Dispose();
+                                                                                                                                Log("inbox actions failed!", index, "error");
+                                                                                                                                //iDevices.Fit();
+                                                                                                                                return;
+                                                                                                                            }
+                                                                                                                            else
+                                                                                                                            {
+                                                                                                                                var wstp = stopWatch.Elapsed;
+                                                                                                                                Log(string.Format("warmup done! [{0:D2}:{1:D2}:{2:D3}]", wstp.Minutes, wstp.Seconds, wstp.Milliseconds), index, "info");
+                                                                                                                                stopWatch.Stop();
+                                                                                                                                stopWatch.Reset();
+                                                                                                                                timer?.Dispose();
+                                                                                                                                _gunit?.Dispose();
+                                                                                                                                //iDevices.Fit();
+                                                                                                                            }
+                                                                                                                        }
+                                                                                                                    });
+                                                                                                                    if (inbx != null && (inbx.Status == TaskStatus.RanToCompletion || inbx.Status != TaskStatus.Running)) inbx.Wait();
+                                                                                                                }
+                                                                                                                else
+                                                                                                                {
+                                                                                                                    timer?.Dispose();
+                                                                                                                    _gunit?.Dispose();
+                                                                                                                    //iDevices.Fit();
+                                                                                                                }
+                                                                                                            }
+                                                                                                            else
+                                                                                                            {
+                                                                                                                Log("spam actions failed!", index, "error");
+                                                                                                                timer?.Dispose();
+                                                                                                                _gunit?.Dispose();
+                                                                                                                //iDevices.Fit();
+                                                                                                                return;
+                                                                                                            }
+                                                                                                        }
+                                                                                                    });
+                                                                                                    if (spm != null && (spm.Status == TaskStatus.RanToCompletion || spm.Status != TaskStatus.Running)) spm.Wait();
+                                                                                                }
+                                                                                                else
+                                                                                                {
+                                                                                                    timer?.Dispose();
+                                                                                                    _gunit?.Dispose();
+                                                                                                    //iDevices.Fit();
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    });
                                                                                     if (sitk != null && (sitk.Status == TaskStatus.RanToCompletion || sitk.Status != TaskStatus.Running))
                                                                                         sitk.Wait();
                                                                                 }
@@ -2391,7 +2396,7 @@ namespace GUX
                     _FAILED_ACTION_MAX_RETRIES = Globals.FAILED_ACTION_MAX_RETRIES = (Int32)failedActionsMaxRetriesNum.Value,
                     _UI_TOP_MOST = Globals.UI_TOP_MOST = appTopMostSwitch.SwitchState == XUISwitch.State.On,
                     _UI_TRANSPARENT = Globals.UI_TRANSPARENT = appTransparentSwitch.SwitchState == XUISwitch.State.On,
-                    _DEFAULT_SCENARIO = Globals.DEFAULT_SCENARIO = await GetScenario((int)defaultScenarioGallery.EditValue),
+                    _DEFAULT_SCENARIO = Globals.DEFAULT_SCENARIO = await GetScenario(Convert.ToInt32(defaultScenarioGallery.EditValue.ToString().Split('|')[1])),
                     _WARMUP_AUTORUN = Globals.WARMUP_AUTORUN = warmupAutoRunSwitch.SwitchState == XUISwitch.State.On,
                     _WARMUP_PROCEED_INBOX_FOLDER = Globals.WARMUP_PROCEED_INBOX_FOLDER = warmupInboxFolderSwitch.SwitchState == XUISwitch.State.On,
                     _WARMUP_MAX_TREATED_INBOX_EMAILS = Globals.WARMUP_MAX_TREATED_INBOX_EMAILS = (Int32)treatedInboxEmailsMaxNum.Value
@@ -2596,7 +2601,6 @@ namespace GUX
                         });
                     }
 
-
                     _psqlHelper.Dispose();
                 }
                 catch (Exception ex)
@@ -2735,41 +2739,36 @@ namespace GUX
             return semiTransparentImage;
         }
 
-        private /*DevExpress.Utils.Svg.SvgImage*/ Task Placeholder(string keyword, string color, string background, int height = 500, int width = 500, double fontsize = 290, double DY = 10.5, int X = 50, int Y = 50)
+        private Task<Image> Placeholder(string keyword, string color, string background, int height = 500, int width = 500, double fontsize = 290, double DY = 10.5, int X = 50, int Y = 50)
         {
             return Task.Factory.StartNew(() =>
             {
+                Image placeholder = null;
                 var backgrounds = new string[] {
-     "#21E7FF",
-     "#B9EBE6",
-     "#C7FFEF",
-     "#B5EBD1",
-     "#5DFF91",
-     "#BFFCFF",
-     "#B9EBE5",
-     "#C7FFEF",
-     "#94F0C6",
-     "#5CFF9A"
-    };
+            "#21E7FF",
+            "#B9EBE6",
+            "#C7FFEF",
+            "#B5EBD1",
+            "#5DFF91",
+            "#BFFCFF",
+            "#B9EBE5",
+            "#C7FFEF",
+            "#94F0C6",
+            "#5CFF9A"
+                };
                 var backcolor = backgrounds[new Random().Next(0, backgrounds.Count() - 1)];
-                byte[] bytes = new ASCIIEncoding().GetBytes($"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"{width}\" height=\"{height}\"><rect width=\"{width}\" height=\"{height}\" fill=\"{backcolor}\"/><text fill=\"rgba(0,0,0,0.7)\" font-family=\"sans-serif\" font-weight=\"bold\" x=\"{width / 2}\" y=\"{(height / 2) + (height / 6)}\" font-size=\"{width / 2}\" text-anchor=\"middle\">{keyword}</text></svg>");
+                byte[] bytes = new ASCIIEncoding().GetBytes($"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"{width}\" height=\"{height}\"><rect width=\"{width}\" height=\"{height}\" fill=\"{backcolor}\"/><text fill=\"rgba(0,0,0,1)\" font-family=\"sans-serif\" font-weight=\"bolder\" x=\"{width / 2}\" y=\"{(height / 2) + (height / 6)}\" font-size=\"{width / 2}\" text-anchor=\"middle\">{keyword[0]}</text></svg>");
                 using (MemoryStream ms = new MemoryStream(bytes))
                 {
                     using (var xmlReader = XmlReader.Create(ms))
                     {
                         var svgImage = SvgLoader.ParseDocument(xmlReader);
-                        svgBox.Invoke((MethodInvoker)delegate
-                        {
-                            svgBox.SvgImage = svgImage;
-                        });
-
                         var img = SvgBitmap.Create(svgImage);
-                        picBox.Invoke((MethodInvoker)delegate
-                        {
-                            picBox.Image = img.Render(null, 1.0D);
-                        });
+                        placeholder = img.Render(null, 1.0D);
                     }
                 }
+
+                return placeholder;
             });
         }
 
@@ -2781,26 +2780,27 @@ namespace GUX
             {
                 if (gs.IsCompleted)
                 {
-                    defaultScenarioGallery.BeginInvoke((MethodInvoker)delegate
+                    defaultScenarioGallery.BeginInvoke((MethodInvoker)async delegate
                     {
                         defaultScenarioGallery.Properties.Items.Clear();
+                        defaultScenarioGallery.Properties.SmallImages = null;
+                        defaultScenarioGallery.Properties.LargeImages = null;
                         var imageList = new ImageList();
                         int index = 0;
+                        var items = new List<ImageComboBoxItem>();
                         foreach (DataRow dt in gs.Result.Rows)
                         {
+                            var img = await Placeholder(dt["name"].ToString(), "", "");
+                            imageList.Images.Add(img);
                             var scenario = new ImageComboBoxItem()
                             {
-                                Value = (int)dt["id"],
-                                Description = dt["name"].ToString()
+                                Description = dt["name"].ToString(),
+                                Value = $"{dt["name"].ToString()[0]}|{(int)dt["id"]}"
                             };
-                            //var img = await Placeholder("G", "", "");
-                            //img.Save("haha.png");
-                            //ImageList.Images.Add(dt["id"].ToString(), img);
-                            //scenario.ImageIndex = index;
-                            defaultScenarioGallery.Properties.Items.Add(scenario);
+                            items.Add(scenario);
                             index++;
                         }
-                        //defaultScenarioGallery.Properties.SmallImages = imageList;
+                        defaultScenarioGallery.Properties.Items.AddRange(items);
                     });
                     SplashScreenManager.CloseDefaultWaitForm();
                 }
@@ -3078,7 +3078,6 @@ namespace GUX
                             }
                         });
 
-
                     }
                     catch (Exception c)
                     {
@@ -3323,7 +3322,7 @@ namespace GUX
 
         private void defaultScenarioGallery_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Console.WriteLine(defaultScenarioGallery.EditValue);
+            Console.WriteLine(Convert.ToInt32(defaultScenarioGallery.EditValue.ToString().Split('|')[1]));
         }
 
         private async void DevicesDriverCheck_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -3400,7 +3399,7 @@ namespace GUX
             var dy = (double)iDY.Value;
             var x = Convert.ToInt32(iX.Text);
             var y = Convert.ToInt32(iY.Text);
-            await Placeholder(k, "", "", h, w, f, dy, x, y);
+            //await Placeholder(k, "", "", h, w, f, dy, x, y);
         }
 
         private void warmupAutoRunSwitch_SwitchStateChanged(object sender, EventArgs e)

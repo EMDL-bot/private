@@ -1418,6 +1418,7 @@
             // 
             // defaultScenarioGallery
             // 
+            stubGlyphOptions1.CaseMode = DevExpress.Utils.Drawing.GlyphTextCaseMode.UpperCase;
             this.behaviorManager1.SetBehaviors(this.defaultScenarioGallery, new DevExpress.Utils.Behaviors.Behavior[] {
             ((DevExpress.Utils.Behaviors.Behavior)(DevExpress.Utils.Behaviors.Common.StubGlyphBehavior.Create(typeof(DevExpress.XtraEditors.Behaviors.StubGlyphBehaviorSourceForImageComboBox), stubGlyphOptions1, new System.Drawing.Size(16, 16))))});
             this.tablePanel2.SetColumn(this.defaultScenarioGallery, 1);
@@ -1432,6 +1433,7 @@
             this.defaultScenarioGallery.Properties.HighlightedItemStyle = DevExpress.XtraEditors.HighlightStyle.Skinned;
             this.defaultScenarioGallery.Properties.NullText = resources.GetString("defaultScenarioGallery.Properties.NullText");
             this.tablePanel2.SetRow(this.defaultScenarioGallery, 8);
+            this.defaultScenarioGallery.SelectedIndexChanged += new System.EventHandler(this.defaultScenarioGallery_SelectedIndexChanged);
             // 
             // labelControl9
             // 

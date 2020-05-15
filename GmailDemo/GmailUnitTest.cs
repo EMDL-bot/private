@@ -2718,7 +2718,7 @@ namespace GmailDemo
         {
             return Task<string>.Factory.StartNew(() =>
             {
-                Log("warmup 'inbox' process started", "info");
+                Log($"warmup 'inbox' process started ({maxTreatedInboxEmails})", "info");
                 var doInbox = InboxActions(keyword, date);
                 Log(doInbox, doInbox.Contains("failed") ? "error" : "success");
                 return doInbox;
